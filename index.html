@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="light">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>The Autumn Atelier · 2026 西班牙 × 法国 · 10 天艺术慢旅行</title>
+<meta name="description" content="Living Europe, Not Visiting Europe. — KK 的私人电子旅行手册。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+<!-- 光标磁性小圆点 -->
+<div class="cursor-dot" id="cursorDot"></div>
+
+<!-- 顶部导航 -->
+<nav class="top-nav">
+  <div class="brand">
+    <span class="brand-mark">A/A</span>
+    <span class="brand-name">The Autumn Atelier</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#journey">Journey</a></li>
+    <li><a href="#days">Days</a></li>
+    <li><a href="#collections">Collections</a></li>
+    <li><a href="#missions">Missions</a></li>
+    <li><a href="#packing">Packing</a></li>
+  </ul>
+  <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
+    <span class="theme-icon light-icon">☾</span>
+    <span class="theme-icon dark-icon">☀</span>
+  </button>
+</nav>
+
+<!-- 封面 -->
+<section class="hero">
+  <canvas id="heroCanvas"></canvas>
+  <div class="hero-inner">
+    <div class="hero-meta">
+      <span class="issue">Issue 01 · Autumn 2026</span>
+      <span class="issue-dot">·</span>
+      <span class="issue">A Private Edition for KK</span>
+    </div>
+    <h1 class="hero-title">
+      <span class="line line-1">The</span>
+      <span class="line line-2"><em>Autumn</em></span>
+      <span class="line line-3">Atelier</span>
+    </h1>
+    <p class="hero-sub">2026 西班牙 × 法国 · 10 天艺术慢旅行手册</p>
+    <p class="hero-tag">Living Europe, Not Visiting Europe.<br /><span class="hero-tag-cn">不是去欧洲，而是在欧洲生活十天。</span></p>
+    <div class="hero-cta">
+      <a href="#journey" class="btn-magnetic">开始翻阅</a>
+      <span class="scroll-hint">↓ scroll</span>
+    </div>
+  </div>
+</section>
+
+<!-- Journey Map -->
+<section id="journey" class="section journey">
+  <div class="section-head">
+    <span class="section-idx">Part 01</span>
+    <h2 class="section-title">Journey Map</h2>
+    <p class="section-lead">一张地图，一条以慢节奏串起的艺术动线。从马德里的阳光到巴黎的雨。</p>
+  </div>
+
+  <div class="route">
+    <div class="route-node" data-city="Hong Kong">
+      <span class="node-flag">🇭🇰</span>
+      <span class="node-name">Hong Kong</span>
+      <span class="node-role">出发</span>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-node" data-city="Madrid">
+      <span class="node-flag">🇪🇸</span>
+      <span class="node-name">Madrid</span>
+      <span class="node-role">Day 1–2 · Arrival & Masterpieces</span>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-node" data-city="Barcelona">
+      <span class="node-flag">🇪🇸</span>
+      <span class="node-name">Barcelona</span>
+      <span class="node-role">Day 3–5 · Gaudí & Mercè</span>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-node" data-city="Provence">
+      <span class="node-flag">🇫🇷</span>
+      <span class="node-name">Provence</span>
+      <span class="node-role">Day 6–7 · Countryside</span>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-node" data-city="Paris">
+      <span class="node-flag">🇫🇷</span>
+      <span class="node-name">Paris</span>
+      <span class="node-role">Day 8–10 · Fashion Week</span>
+    </div>
+    <div class="route-arrow"></div>
+    <div class="route-node" data-city="Guangzhou">
+      <span class="node-flag">🇨🇳</span>
+      <span class="node-name">Guangzhou</span>
+      <span class="node-role">返程</span>
+    </div>
+  </div>
+
+  <div class="journey-stats">
+    <div class="stat"><span class="stat-num">10</span><span class="stat-label">天</span></div>
+    <div class="stat"><span class="stat-num">4</span><span class="stat-label">城市</span></div>
+    <div class="stat"><span class="stat-num">2</span><span class="stat-label">国家</span></div>
+    <div class="stat"><span class="stat-num">∞</span><span class="stat-label">机位</span></div>
+  </div>
+
+  <!-- Flight Ledger · 真实机票 -->
+  <div class="flight-ledger">
+    <div class="ledger-head">
+      <span class="ledger-idx">Flight Ledger</span>
+      <h3 class="ledger-title">Two Long-Hauls, Six Time Zones</h3>
+      <p class="ledger-lead">这次的两段跨洲航班已定。经停阿布扎比与吉达，全程约 25 小时飞行。</p>
+    </div>
+    <div class="ledger-grid">
+      <article class="ledger-card">
+        <header class="ledger-card-head">
+          <span class="ledger-tag">Outbound · 去程</span>
+          <span class="ledger-fare">¥ 5,444</span>
+        </header>
+        <div class="ledger-leg">
+          <div class="leg-time">
+            <span class="leg-date">09-23</span>
+            <span class="leg-hm">20:10</span>
+          </div>
+          <div class="leg-arrow">→</div>
+          <div class="leg-time">
+            <span class="leg-date">09-24</span>
+            <span class="leg-hm">00:25</span>
+          </div>
+          <div class="leg-route">
+            <span>HKG T1 · 香港</span>
+            <span class="leg-sep">·</span>
+            <span>AUH · 阿布扎比</span>
+          </div>
+        </div>
+        <div class="ledger-stop">Layover · 转机 2h</div>
+        <div class="ledger-leg">
+          <div class="leg-time">
+            <span class="leg-date">09-24</span>
+            <span class="leg-hm">02:25</span>
+          </div>
+          <div class="leg-arrow">→</div>
+          <div class="leg-time">
+            <span class="leg-date">09-24</span>
+            <span class="leg-hm">08:10</span>
+          </div>
+          <div class="leg-route">
+            <span>AUH · 阿布扎比</span>
+            <span class="leg-sep">·</span>
+            <span>MAD T4 · 马德里</span>
+          </div>
+        </div>
+      </article>
+
+      <article class="ledger-card">
+        <header class="ledger-card-head">
+          <span class="ledger-tag">Return · 返程</span>
+          <span class="ledger-fare">¥ 6,332</span>
+        </header>
+        <div class="ledger-leg">
+          <div class="leg-time">
+            <span class="leg-date">10-04</span>
+            <span class="leg-hm">15:55</span>
+          </div>
+          <div class="leg-arrow">→</div>
+          <div class="leg-time">
+            <span class="leg-date">10-04</span>
+            <span class="leg-hm">22:40</span>
+          </div>
+          <div class="leg-route">
+            <span>CDG T1 · 巴黎</span>
+            <span class="leg-sep">·</span>
+            <span>JED · 吉达</span>
+          </div>
+        </div>
+        <div class="ledger-stop">Layover · 转机 2h 25m</div>
+        <div class="ledger-leg">
+          <div class="leg-time">
+            <span class="leg-date">10-05</span>
+            <span class="leg-hm">01:05</span>
+          </div>
+          <div class="leg-arrow">→</div>
+          <div class="leg-time">
+            <span class="leg-date">10-05</span>
+            <span class="leg-hm">15:25</span>
+          </div>
+          <div class="leg-route">
+            <span>JED · 吉达</span>
+            <span class="leg-sep">·</span>
+            <span>CAN T2 · 广州</span>
+          </div>
+        </div>
+      </article>
+    </div>
+    <p class="ledger-foot">机票合计 <b>¥ 11,776</b> · 两段都是"待出行"状态，出发前 24h 记得网上值机。</p>
+  </div>
+</section>
+
+<!-- Days -->
+<section id="days" class="section days">
+  <div class="section-head">
+    <span class="section-idx">Part 02</span>
+    <h2 class="section-title">Every Day, A Chapter</h2>
+    <p class="section-lead">每一天都是一支短片：从抵达的迟缓早晨，到时装周的雨夜。</p>
+  </div>
+
+  <div class="days-tabs" id="daysTabs">
+    <button class="day-tab is-active" data-day="1">Day 1</button>
+    <button class="day-tab" data-day="2">Day 2</button>
+    <button class="day-tab" data-day="3">Day 3</button>
+    <button class="day-tab" data-day="4">Day 4</button>
+    <button class="day-tab" data-day="5">Day 5</button>
+    <button class="day-tab" data-day="6">Day 6</button>
+    <button class="day-tab" data-day="7">Day 7</button>
+    <button class="day-tab" data-day="8">Day 8</button>
+    <button class="day-tab" data-day="9">Day 9</button>
+    <button class="day-tab" data-day="10">Day 10</button>
+  </div>
+
+  <div class="days-content" id="daysContent"></div>
+</section>
+
+<!-- Experience Collection -->
+<section id="collections" class="section collections">
+  <div class="section-head">
+    <span class="section-idx">Part 03</span>
+    <h2 class="section-title">Experience Collection</h2>
+    <p class="section-lead">值得提前预约的六件事——避开人潮，站在最好的机位。</p>
+  </div>
+  <div class="cards-grid">
+    <article class="lux-card">
+      <div class="card-rating">★★★★★</div>
+      <h3>米拉之家 · 晨间导览</h3>
+      <p class="card-city">Barcelona</p>
+      <p>Casa Milà 开门第一小时的天光最柔，屋顶烟囱像超现实主义雕塑。</p>
+      <div class="card-meta"><span>约 300 元</span><span>90 min</span></div>
+    </article>
+    <article class="lux-card">
+      <div class="card-rating">★★★★★</div>
+      <h3>普拉多 · VIP 早鸟票</h3>
+      <p class="card-city">Madrid</p>
+      <p>比公众早 30 分钟入馆，独自面对委拉斯凯兹的《宫娥》。</p>
+      <div class="card-meta"><span>约 350 元</span><span>2.5 hr</span></div>
+    </article>
+    <article class="lux-card">
+      <div class="card-rating">★★★★☆</div>
+      <h3>Rioja 酒庄一日游</h3>
+      <p class="card-city">Rioja / from Bilbao</p>
+      <p>在 Frank Gehry 设计的 Marqués de Riscal 酒庄用一顿慢午餐。</p>
+      <div class="card-meta"><span>约 1,500 元</span><span>全日</span></div>
+    </article>
+    <article class="lux-card">
+      <div class="card-rating">★★★★★</div>
+      <h3>Camiral Golf · 18 洞</h3>
+      <p class="card-city">Costa Brava</p>
+      <p>Robert Trent Jones Sr. 设计的赛事级球场，秋日草色最上镜。</p>
+      <div class="card-meta"><span>约 2,200 元</span><span>4.5 hr</span></div>
+    </article>
+    <article class="lux-card">
+      <div class="card-rating">★★★★☆</div>
+      <h3>普罗旺斯帆船一小时</h3>
+      <p class="card-city">Cassis</p>
+      <p>Calanques 峭壁下的地中海蓝，日落前一小时最好。</p>
+      <div class="card-meta"><span>约 500 元</span><span>1 hr</span></div>
+    </article>
+    <article class="lux-card">
+      <div class="card-rating">★★★★★</div>
+      <h3>Paris Food Tour · Marais</h3>
+      <p class="card-city">Paris</p>
+      <p>本地主厨带你钻进不接受游客预订的 5 家小店。</p>
+      <div class="card-meta"><span>约 900 元</span><span>3 hr</span></div>
+    </article>
+  </div>
+</section>
+
+<!-- Hidden Cafés + Design Guide -->
+<section class="section split-two">
+  <div class="split-col">
+    <span class="section-idx">Part 04</span>
+    <h2 class="section-title">Hidden Cafés</h2>
+    <ul class="minimal-list">
+      <li><b>Madrid</b> · Toma Café · La Bicicleta · HanSo · Hola Coffee · Misión</li>
+      <li><b>Barcelona</b> · Nomad · Satan's Coffee · Federal · SlowMov · Skye</li>
+      <li><b>Provence</b> · Café de la Poste · La Mercerie · Chez Nino</li>
+      <li><b>Paris</b> · Ten Belles · Télescope · Fragments · Café Kitsuné · Substance</li>
+    </ul>
+    <p class="footnote">不是 Blue Bottle，而是当地人自己去的地方。</p>
+  </div>
+  <div class="split-col split-alt">
+    <span class="section-idx">Part 05</span>
+    <h2 class="section-title">Design Guide</h2>
+    <div class="chip-grid">
+      <span class="chip">独立书店</span>
+      <span class="chip">摄影店</span>
+      <span class="chip">家具店</span>
+      <span class="chip">香氛店</span>
+      <span class="chip">Vintage</span>
+      <span class="chip">海报店</span>
+      <span class="chip">设计买手店</span>
+    </div>
+    <p class="footnote">按城市分卷，翻到每日章节可看当日路线穿插的店铺。</p>
+  </div>
+</section>
+
+<!-- Highlights: Golf / Fashion Week / Mercè / Art Calendar -->
+<section class="section highlights">
+  <div class="section-head">
+    <span class="section-idx">Part 06 – 09</span>
+    <h2 class="section-title">Four Highlights</h2>
+    <p class="section-lead">四件不写进日程但会重塑这趟旅行的事情。</p>
+  </div>
+  <div class="highlight-grid">
+    <div class="hl-card">
+      <span class="hl-num">06</span>
+      <h3>Golf Guide</h3>
+      <p>为什么选 Camiral 而不是游客球场？球洞特色、摄影机位、着装建议、下场节奏。</p>
+    </div>
+    <div class="hl-card">
+      <span class="hl-num">07</span>
+      <h3>Paris Fashion Week</h3>
+      <p>去哪儿最容易遇到摄影师、模特与街拍？主秀场外的三条街道地图。</p>
+    </div>
+    <div class="hl-card">
+      <span class="hl-num">08</span>
+      <h3>Mercè Festival</h3>
+      <p>什么时候看人塔（Castellers）、火龙（Correfoc）、烟火与音乐节？内嵌时间表。</p>
+    </div>
+    <div class="hl-card">
+      <span class="hl-num">09</span>
+      <h3>Autumn Art Calendar</h3>
+      <p>你旅行期间所有值得看的艺术展、建筑展、摄影展——临时新增会持续更新。</p>
+    </div>
+  </div>
+</section>
+
+<!-- Packing List -->
+<section id="packing" class="section packing">
+  <div class="section-head">
+    <span class="section-idx">Part 10</span>
+    <h2 class="section-title">Packing List</h2>
+    <p class="section-lead">适合拍照、适合欧洲、适合每天两万步。</p>
+  </div>
+  <div class="pack-columns">
+    <div class="pack-col">
+      <h4>WEAR</h4>
+      <label><input type="checkbox" checked> 白衬衫（两件）</label>
+      <label><input type="checkbox" checked> 亚麻裤</label>
+      <label><input type="checkbox" checked> 乐福鞋</label>
+      <label><input type="checkbox" checked> Gore-Tex 外套（秋雨备用）</label>
+      <label><input type="checkbox"> 深色针织开衫</label>
+      <label><input type="checkbox"> 一条白色 T</label>
+      <label><input type="checkbox"> 一条修身牛仔</label>
+    </div>
+    <div class="pack-col">
+      <h4>CARRY</h4>
+      <label><input type="checkbox" checked> 轻便斜挎包</label>
+      <label><input type="checkbox"> 折叠雨伞</label>
+      <label><input type="checkbox"> 太阳镜</label>
+      <label><input type="checkbox"> 一支好用的钢笔 + 小本子</label>
+      <label><input type="checkbox"> 相机 + 备用电池 × 2</label>
+      <label><input type="checkbox"> 万能转换插头</label>
+    </div>
+    <div class="pack-col">
+      <h4>PAPERS</h4>
+      <label><input type="checkbox"> 护照 + 复印件</label>
+      <label><input type="checkbox"> 申根签证页扫描</label>
+      <label><input type="checkbox"> 保险单</label>
+      <label><input type="checkbox"> 预约票据整理夹</label>
+      <label><input type="checkbox"> 现金 300 欧</label>
+      <label><input type="checkbox"> 备用信用卡</label>
+    </div>
+  </div>
+</section>
+
+<!-- Creative Missions -->
+<section id="missions" class="section missions">
+  <div class="section-head">
+    <span class="section-idx">Extra</span>
+    <h2 class="section-title">Creative Missions</h2>
+    <p class="section-lead">每天一个不占时间但会留下记忆点的小任务。别人的攻略里没有。</p>
+  </div>
+  <div class="mission-grid" id="missionGrid"></div>
+</section>
+
+<!-- Footer -->
+<footer class="site-foot">
+  <p class="foot-title">The Autumn Atelier</p>
+  <p class="foot-sub">A private travel edition · Designed for KK · 2026</p>
+  <p class="foot-tiny">在飞机上、咖啡馆里都愿意翻阅的电子杂志。</p>
+</footer>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
