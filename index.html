@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>The Autumn Atelier · 2026 西班牙 × 法国 · 10 天艺术慢旅行</title>
+<title>The Autumn Atelier · 2026 西班牙 × 法国 · 11 天艺术慢旅行</title>
 <meta name="description" content="Living Europe, Not Visiting Europe. — KK 的私人电子旅行手册。" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+<link rel="stylesheet" href="assets/style.css?v=20260827a" />
 </head>
 <body>
 <!-- 光标磁性小圆点 -->
@@ -22,10 +24,12 @@
   </div>
   <ul class="nav-links">
     <li><a href="#journey">Journey</a></li>
+    <li><a href="#todo">TODO</a></li>
     <li><a href="#days">Days</a></li>
     <li><a href="#collections">Collections</a></li>
-    <li><a href="#missions">Missions</a></li>
     <li><a href="#packing">Packing</a></li>
+    <li><a href="#budget">Budget</a></li>
+    <li><a href="#missions">Missions</a></li>
   </ul>
   <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
     <span class="theme-icon light-icon">☾</span>
@@ -47,8 +51,8 @@
       <span class="line line-2"><em>Autumn</em></span>
       <span class="line line-3">Atelier</span>
     </h1>
-    <p class="hero-sub">2026 西班牙 × 法国 · 10 天艺术慢旅行手册</p>
-    <p class="hero-tag">Living Europe, Not Visiting Europe.<br /><span class="hero-tag-cn">不是去欧洲，而是在欧洲生活十天。</span></p>
+    <p class="hero-sub">2026 西班牙 × 法国 · 11 天艺术慢旅行手册</p>
+    <p class="hero-tag">Living Europe, Not Visiting Europe.<br /><span class="hero-tag-cn">不是去欧洲，而是在欧洲生活十一天。</span></p>
     <div class="hero-cta">
       <a href="#journey" class="btn-magnetic">开始翻阅</a>
       <span class="scroll-hint">↓ scroll</span>
@@ -74,25 +78,25 @@
     <div class="route-node" data-city="Madrid">
       <span class="node-flag">🇪🇸</span>
       <span class="node-name">Madrid</span>
-      <span class="node-role">Day 1–2 · Arrival & Masterpieces</span>
+      <span class="node-role">Day 1 · Arrival & Retiro</span>
     </div>
     <div class="route-arrow"></div>
     <div class="route-node" data-city="Barcelona">
       <span class="node-flag">🇪🇸</span>
       <span class="node-name">Barcelona</span>
-      <span class="node-role">Day 3–5 · Gaudí & Mercè</span>
+      <span class="node-role">Day 2–4 · Gaudí · Mercè · Sail</span>
     </div>
     <div class="route-arrow"></div>
-    <div class="route-node" data-city="Provence">
+    <div class="route-node" data-city="Nice">
       <span class="node-flag">🇫🇷</span>
-      <span class="node-name">Provence</span>
-      <span class="node-role">Day 6–7 · Countryside</span>
+      <span class="node-name">Nice · Côte d'Azur</span>
+      <span class="node-role">Day 5–7 · Antibes · Èze · Villefranche</span>
     </div>
     <div class="route-arrow"></div>
     <div class="route-node" data-city="Paris">
       <span class="node-flag">🇫🇷</span>
       <span class="node-name">Paris</span>
-      <span class="node-role">Day 8–10 · Fashion Week</span>
+      <span class="node-role">Day 8–11 · Louvre · Notre-Dame · Eiffel</span>
     </div>
     <div class="route-arrow"></div>
     <div class="route-node" data-city="Guangzhou">
@@ -120,7 +124,7 @@
       <article class="ledger-card">
         <header class="ledger-card-head">
           <span class="ledger-tag">Outbound · 去程</span>
-          <span class="ledger-fare">¥ 5,444</span>
+          <span class="ledger-fare"><span class="fare-per">人均</span>¥ 2,722<span class="fare-total">双人 ¥5,444</span></span>
         </header>
         <div class="ledger-leg">
           <div class="leg-time">
@@ -160,7 +164,7 @@
       <article class="ledger-card">
         <header class="ledger-card-head">
           <span class="ledger-tag">Return · 返程</span>
-          <span class="ledger-fare">¥ 6,332</span>
+          <span class="ledger-fare"><span class="fare-per">人均</span>¥ 3,166<span class="fare-total">双人 ¥6,332</span></span>
         </header>
         <div class="ledger-leg">
           <div class="leg-time">
@@ -197,8 +201,412 @@
         </div>
       </article>
     </div>
-    <p class="ledger-foot">机票合计 <b>¥ 11,776</b> · 两段都是"待出行"状态，出发前 24h 记得网上值机。</p>
+    <p class="ledger-foot">机票单人合计 <b>¥ 5,888</b>（双人 ¥11,776）· 两段都是"待出行"状态，出发前 24h 记得网上值机。</p>
   </div>
+
+  <!-- Stay Ledger · 住宿 -->
+  <div class="stay-ledger">
+    <div class="ledger-head">
+      <span class="ledger-idx">Stay Ledger</span>
+      <h3 class="ledger-title">Where We Sleep, Matters.</h3>
+      <p class="ledger-lead">住宿是慢旅行的另一半。四家已订 + 10/1 一晚待补——马德里的阳台正对老街，巴塞是植物 Loft 靠海，尼斯海边一步到天使湾，巴黎终点换成了左岸 Saint-Germain-des-Prés 的老书店街 46 Rue Jacob（奥赛 12 分钟步行、卢浮宫 10 分钟）。</p>
+    </div>
+    <div class="stay-grid">
+      <a class="stay-card is-booked is-linked" href="https://www.airbnb.cn/rooms/1254627226967989817" target="_blank" rel="noopener">
+        <header class="stay-card-head">
+          <span class="stay-city">Madrid · 马德里</span>
+          <span class="stay-status booked">已预订 ↗</span>
+          <span class="stay-price"><span class="price-per">人均</span><b>¥642</b><span class="price-total">总 ¥1,284.09</span></span>
+        </header>
+        <div class="stay-hero" style="background-image: url('assets/img/stay/madrid.jpg?v=20260827a'); background-size: cover; background-position: center;">
+          <div class="stay-hero-inner">
+            <span class="stay-hero-tag">Balcony View</span>
+            <span class="stay-hero-cap">正对 Calle Mayor 的老街阳台，秋阳一整天。</span>
+          </div>
+        </div>
+        <div class="stay-body">
+          <h4 class="stay-name">Heart Of Madrid Apartments</h4>
+          <p class="stay-addr">Calle Mayor, 49 · 马约尔广场旁</p>
+          <div class="stay-dates">
+            <div class="stay-date"><span class="date-label">入住</span><span class="date-value">9/24 Thu 13:00</span></div>
+            <div class="stay-arrow">→</div>
+            <div class="stay-date"><span class="date-label">退房</span><span class="date-value">9/25 Fri 11:00</span></div>
+          </div>
+          <div class="stay-nights">1 晚 · 房东 Heart Of Madrid Apartments</div>
+          <span class="stay-link">在 Airbnb 查看 →</span>
+        </div>
+      </a>
+
+      <a class="stay-card is-booked is-linked" href="https://www.airbnb.cn/rooms/9140899" target="_blank" rel="noopener">
+        <header class="stay-card-head">
+          <span class="stay-city">Barcelona · 巴塞罗那</span>
+          <span class="stay-status booked">已预订 ↗</span>
+          <span class="stay-price"><span class="price-per">人均</span><b>¥2,623</b><span class="price-total">总 ¥5,245.62</span></span>
+        </header>
+        <div class="stay-hero" style="background-image: url('assets/img/stay/barcelona.jpg?v=20260827a'); background-size: cover; background-position: center;">
+          <div class="stay-hero-inner">
+            <span class="stay-hero-tag">Bohemian Loft</span>
+            <span class="stay-hero-cap">植物设计 Loft · 靠海的 Poblenou · 波希米亚。</span>
+          </div>
+        </div>
+        <div class="stay-body">
+          <h4 class="stay-name">Rut's Loft · Poblenou</h4>
+          <p class="stay-addr">Calle Pellaires 35 · Poblenou · 靠海</p>
+          <div class="stay-dates">
+            <div class="stay-date"><span class="date-label">入住</span><span class="date-value">9/25 Fri 15:00</span></div>
+            <div class="stay-arrow">→</div>
+            <div class="stay-date"><span class="date-label">退房</span><span class="date-value">9/28 Mon 11:00</span></div>
+          </div>
+          <div class="stay-nights">3 晚 · 房东 Rut</div>
+          <span class="stay-link">在 Airbnb 查看 →</span>
+        </div>
+      </a>
+
+      <a class="stay-card is-booked is-linked" href="https://www.airbnb.cn/rooms/1705767598377386136" target="_blank" rel="noopener">
+        <header class="stay-card-head">
+          <span class="stay-city">Nice · 尼斯</span>
+          <span class="stay-status booked">已预订 ↗</span>
+          <span class="stay-price"><span class="price-per">人均</span><b>¥1,670</b><span class="price-total">总 ¥3,339.72</span></span>
+        </header>
+        <div class="stay-hero" style="background-image: url('assets/img/stay/nice.jpg?v=20260827a'); background-size: cover; background-position: center;">
+          <div class="stay-hero-inner">
+            <span class="stay-hero-tag">Seaside Apt</span>
+            <span class="stay-hero-cap">步行 8min 到天使湾 · Promenade des Anglais 边上。</span>
+          </div>
+        </div>
+        <div class="stay-body">
+          <h4 class="stay-name">New, Casa Californie Terrace &amp; Beach</h4>
+          <p class="stay-addr">220 Avenue de la Californie · 尼斯西区海边</p>
+          <div class="stay-dates">
+            <div class="stay-date"><span class="date-label">入住</span><span class="date-value">9/28 Mon 16:00</span></div>
+            <div class="stay-arrow">→</div>
+            <div class="stay-date"><span class="date-label">退房</span><span class="date-value">10/1 Thu 11:00</span></div>
+          </div>
+          <div class="stay-nights">3 晚 · 房东 Aurore · 确认号 HM8A4N4MFY</div>
+          <span class="stay-link">在 Airbnb 查看 →</span>
+        </div>
+      </a>
+
+      <a class="stay-card is-booked is-linked" href="https://www.airbnb.com/rooms/23476199" target="_blank" rel="noopener">
+        <header class="stay-card-head">
+          <span class="stay-city">Paris · 巴黎</span>
+          <span class="stay-status booked">已预订 ↗ ★4.91</span>
+          <span class="stay-price"><span class="price-per">人均</span><b>¥2,168.89</b><span class="price-total">总 ¥4,337.78</span></span>
+        </header>
+        <div class="stay-hero" style="background-image: url('assets/img/stay/paris.jpg?v=20260827a'); background-size: cover; background-position: center;">
+          <div class="stay-hero-inner">
+            <span class="stay-hero-tag">Left Bank · St-Germain</span>
+            <span class="stay-hero-cap">左岸 6 区 · Truly Parisien 老公寓 · 奥赛 12min / 卢浮宫 10min 步行。</span>
+          </div>
+        </div>
+        <div class="stay-body">
+          <h4 class="stay-name">Truly parisien apartment in St Germain des Prés</h4>
+          <p class="stay-addr">46 Rue Jacob · 75006 Paris · Île-de-France · 2 人</p>
+          <div class="stay-dates">
+            <div class="stay-date"><span class="date-label">入住</span><span class="date-value">10/2 Fri 15:00</span></div>
+            <div class="stay-arrow">→</div>
+            <div class="stay-date"><span class="date-label">退房</span><span class="date-value">10/4 Sun 10:00</span></div>
+          </div>
+          <div class="stay-nights">2 晚 · ★4.91 · 1 卧 1 床 1 卫 · 房东 Alexandra</div>
+          <span class="stay-link">在 Airbnb 查看 →</span>
+        </div>
+      </a>
+
+      <div class="stay-card is-tentative" style="opacity:.92;">
+        <header class="stay-card-head">
+          <span class="stay-city">Paris · 10/1 夜</span>
+          <span class="stay-status" style="background:#c98a4b;color:#fff;">占位 · 待补</span>
+          <span class="stay-price"><span class="price-per">1 晚</span><b>?</b><span class="price-total">6 区周边</span></span>
+        </header>
+        <div class="stay-hero" style="background:linear-gradient(135deg, #d9c4a3 0%, #b78e5c 100%);">
+          <div class="stay-hero-inner">
+            <span class="stay-hero-tag">Placeholder</span>
+            <span class="stay-hero-cap">10/1 尼斯 → 巴黎，46 Rue Jacob 10/2 才 check-in — 这晚待你补酒店信息。</span>
+          </div>
+        </div>
+        <div class="stay-body">
+          <h4 class="stay-name">10/1 巴黎过渡酒店 · 6 区周边</h4>
+          <p class="stay-addr">KK 已另订 · 具体名称/地址待补</p>
+          <div class="stay-dates">
+            <div class="stay-date"><span class="date-label">入住</span><span class="date-value">10/1 Thu 傍晚</span></div>
+            <div class="stay-arrow">→</div>
+            <div class="stay-date"><span class="date-label">退房</span><span class="date-value">10/2 Fri 中午</span></div>
+          </div>
+          <div class="stay-nights">1 晚 · 你说是 46 Rue Jacob 附近，先按 6 区规划</div>
+          <span class="stay-link" style="color:#b78e5c;">TODO：补酒店名 + 地址 + 单价</span>
+        </div>
+      </div>
+    </div>
+    <p class="ledger-foot">已订 <b>4 家 · 共 9 晚</b>（马德里 1 + 巴塞 3 + 尼斯 3 + 巴黎 2）· <b style="color:#b78e5c;">+ 10/1 巴黎过渡 1 晚待补</b> = 全程 10 晚。</p>
+  </div>
+</section>
+
+<!-- Booking TODO · 预订清单 -->
+<section id="todo" class="section todo">
+  <div class="section-head">
+    <span class="section-idx">Part 01½</span>
+    <h2 class="section-title">Booking TODO · 按难度倒数出发</h2>
+    <p class="section-sub">今天 <b>8/16</b>，出发 <b>9/23</b>——还有 <b>38 天</b>。越难约的越先动手，等到临出发只剩自由散步 + 家门口咖啡。</p>
+  </div>
+
+  <div class="todo-legend">
+    <span class="todo-chip chip-red">🔴 极难 · 需 30 天+</span>
+    <span class="todo-chip chip-orange">🟠 较难 · 需 14-21 天</span>
+    <span class="todo-chip chip-yellow">🟡 中等 · 需 7-14 天</span>
+    <span class="todo-chip chip-green">🟢 好订 · 出发前几天即可</span>
+  </div>
+
+  <div class="todo-grid">
+    <!-- 🔴 极难 -->
+    <article class="todo-card level-red">
+      <header class="todo-head">
+        <span class="todo-level">🔴 极难</span>
+        <h3 class="todo-title">L'Ambroisie / Guy Savoy · 米其林 3 星（可选升级）</h3>
+        <span class="todo-ddl">DDL <b>8/24</b>（提前 40 天）</span>
+      </header>
+      <p class="todo-desc">如果你想在巴黎最后一晚吃一顿真正的 3 星（Rue Jacob 走过去 15min 到 L'Ambroisie），必须现在订。人均 €400+，Guy Savoy 有 lunch menu €200。<b>KK 减负版没排，属于奢华选项。</b></p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.ambroisie-paris.com/en/reservation/" target="_blank" rel="noopener">L'Ambroisie 官网订位 →</a>
+        <a class="todo-link" href="https://www.guysavoy.com/en/reservations/" target="_blank" rel="noopener">Guy Savoy 订位 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-red">
+      <header class="todo-head">
+        <span class="todo-level">🔴 极难</span>
+        <h3 class="todo-title">Septime · Clamato · Le Comptoir du Relais</h3>
+        <span class="todo-ddl">DDL <b>8/30</b>（Septime 官网 21 天前 10:00 巴黎时间放位）</span>
+      </header>
+      <p class="todo-desc">Septime 是巴黎最难订之一（Michelin 1★，全球排行榜），只放 21 天前的座位，10:00 CET 秒杀。姊妹店 Clamato 不订位排队。Le Comptoir 也需订。<b>Day 9 (10/2) 晚上可以吃</b>。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://septime-charonne.fr/en/" target="_blank" rel="noopener">Septime 官网 →</a>
+        <a class="todo-link" href="https://www.hotelparislatin.com/le-comptoir-du-relais-saint-germain" target="_blank" rel="noopener">Comptoir du Relais →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-red">
+      <header class="todo-head">
+        <span class="todo-level">🔴 极难</span>
+        <h3 class="todo-title">Park Güell · Mercè 主周六早场</h3>
+        <span class="todo-ddl">DDL <b>9/12</b>（提前 14 天必抢）</span>
+      </header>
+      <p class="todo-desc">2026 是 <b>高迪逝世 100 周年 + 公园百年双庆典</b>，9/26 周六早场必然售罄。9:30 场次抢定，不然当天要排 90 分钟人山人海。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://parkguell.barcelona/en/buy-tickets" target="_blank" rel="noopener">Park Güell 官网订票 →</a>
+      </div>
+    </article>
+
+    <!-- 🟠 较难 -->
+    <article class="todo-card level-orange">
+      <header class="todo-head">
+        <span class="todo-level">🟠 较难</span>
+        <h3 class="todo-title">卢浮宫 · 强制预约 32€</h3>
+        <span class="todo-ddl">DDL <b>9/18</b>（14 天）</span>
+      </header>
+      <p class="todo-desc">Louvre 现在 <b>非 EEA 32€ 且强制在官网预约时段</b>，不是买票就能进。10/2 (Day 9) 09:00 开馆场——早鸟 9:00 时段最抢手。选 Porte des Lions 侧门入口。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.ticketlouvre.fr/" target="_blank" rel="noopener">卢浮宫官方 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-orange">
+      <header class="todo-head">
+        <span class="todo-level">🟠 较难</span>
+        <h3 class="todo-title">巴黎圣母院 · 内殿免费但需预约</h3>
+        <span class="todo-ddl">DDL <b>9/20</b>（14 天，重开后需抢时段）</span>
+      </header>
+      <p class="todo-desc">2024 年 12 月重开后，内殿虽免费但要在官网抢时段，尤其周六下午（10/3 Day 10 15:30 场）竞争激烈。塔楼登顶需另订（另收费）。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.notredamedeparis.fr/en/visiting/reservation/" target="_blank" rel="noopener">圣母院预约 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-orange">
+      <header class="todo-head">
+        <span class="todo-level">🟠 较难</span>
+        <h3 class="todo-title">奥赛博物馆 · 10/2 Day 9 下午场</h3>
+        <span class="todo-ddl">DDL <b>9/20</b>（14 天）</span>
+      </header>
+      <p class="todo-desc">线上 16€ 比现场便宜 2€，且可跳队。周五延时开到 21:45，选 15:45 场次配合当天卢浮宫下午动线。<b>周一闭馆</b>。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://billetterie.musee-orsay.fr/" target="_blank" rel="noopener">奥赛官网 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-orange">
+      <header class="todo-head">
+        <span class="todo-level">🟠 较难</span>
+        <h3 class="todo-title">GYG · 地中海帆船 + 滨海酒庄</h3>
+        <span class="todo-ddl">DDL <b>9/13</b>（21 天，周日 10:00 场易售罄）</span>
+      </header>
+      <p class="todo-desc">Day 4 (9/27) 10:00 出海 4h 含 4 款红酒。Mercè 主周日巴塞海边全部游客扎堆，早订才有位置。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.getyourguide.com/barcelona-l45/" target="_blank" rel="noopener">GYG Barcelona 帆船 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-orange">
+      <header class="todo-head">
+        <span class="todo-level">🟠 较难</span>
+        <h3 class="todo-title">BCN → NCE 航班 · Vueling / easyJet</h3>
+        <span class="todo-ddl">DDL <b>9/6</b>（提前 3 周价差最大）</span>
+      </header>
+      <p class="todo-desc">Day 5 (9/28) 中午航班 1h40m。现在订 60-100€/人，出发前一周会翻倍到 180€+。选 11:00-12:30 起飞的班次配合尼斯 16:00 入住。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.vueling.com/" target="_blank" rel="noopener">Vueling →</a>
+        <a class="todo-link" href="https://www.easyjet.com/" target="_blank" rel="noopener">easyJet →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-orange">
+      <header class="todo-head">
+        <span class="todo-level">🟠 较难</span>
+        <h3 class="todo-title">NCE → PAR 航班 (10/1)</h3>
+        <span class="todo-ddl">DDL <b>9/10</b>（21 天）</span>
+      </header>
+      <p class="todo-desc">Day 8 (10/1) 中午飞尼斯到 CDG/ORY 1h35m。首选 easyJet 40-90€。也可选 SNCF TGV Inoui 5h40m（70-160€）——飞机更快省时间。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.easyjet.com/" target="_blank" rel="noopener">easyJet →</a>
+        <a class="todo-link" href="https://www.sncf-connect.com/" target="_blank" rel="noopener">SNCF Inoui →</a>
+      </div>
+    </article>
+
+    <!-- 🟡 中等 -->
+    <article class="todo-card level-yellow">
+      <header class="todo-head">
+        <span class="todo-level">🟡 中等</span>
+        <h3 class="todo-title">Casa Batlló · Day 2 下午</h3>
+        <span class="todo-ddl">DDL <b>9/18</b>（14 天）</span>
+      </header>
+      <p class="todo-desc">Blue Ticket 基础 35€，Silver 45€ 可跳队。Mercè 期间中午特别挤，建议 14:00 场次。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.casabatllo.es/en/tickets/" target="_blank" rel="noopener">Casa Batlló →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-yellow">
+      <header class="todo-head">
+        <span class="todo-level">🟡 中等</span>
+        <h3 class="todo-title">Casa Milà GYG 小团</h3>
+        <span class="todo-ddl">DDL <b>9/18</b>（14 天）</span>
+      </header>
+      <p class="todo-desc">Day 3 (9/26) 11:15 小团 90min 含屋顶烟囱 + 阁楼 + Batlló 公寓。€39/人。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.getyourguide.com/barcelona-l45/barcelona-casa-mila-early-morning-access-guided-tour-t913306/" target="_blank" rel="noopener">GYG 预订 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-yellow">
+      <header class="todo-head">
+        <span class="todo-level">🟡 中等</span>
+        <h3 class="todo-title">GYG · Paella 烹饪课 + Boqueria</h3>
+        <span class="todo-ddl">DDL <b>9/11</b>（14 天，晚场易满）</span>
+      </header>
+      <p class="todo-desc">Day 2 (9/25) 17:00 场 4h，€92/人。Mercè 期间西班牙人也去玩，比平常紧俏。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/" target="_blank" rel="noopener">GYG 预订 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-yellow">
+      <header class="todo-head">
+        <span class="todo-level">🟡 中等</span>
+        <h3 class="todo-title">Palais Garnier 加尼叶歌剧院</h3>
+        <span class="todo-ddl">DDL <b>9/25</b>（一周前）</span>
+      </header>
+      <p class="todo-desc">自助参观 14€，导览 20€。Day 10 (10/3) 上午/中午参观（如果你想加入的话——KK 减负版删了这个 slot，可自行加回）。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.operadeparis.fr/en/visits/palais-garnier" target="_blank" rel="noopener">Palais Garnier →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-yellow">
+      <header class="todo-head">
+        <span class="todo-level">🟡 中等</span>
+        <h3 class="todo-title">Musée Picasso Antibes</h3>
+        <span class="todo-ddl">DDL <b>9/20</b>（14 天）</span>
+      </header>
+      <p class="todo-desc">Day 6 (9/29) 13:00 场。城堡博物馆 8€。周一闭馆。当天现场买通常也 OK，但周二秋高气爽人会多。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.antibes-juanlespins.com/culture/musee-picasso" target="_blank" rel="noopener">官网 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-yellow">
+      <header class="todo-head">
+        <span class="todo-level">🟡 中等</span>
+        <h3 class="todo-title">10/1 巴黎过渡酒店 · 6 区</h3>
+        <span class="todo-ddl">DDL <b>9/5</b>（越早越好，越拖越贵）</span>
+      </header>
+      <p class="todo-desc"><b style="color:#b78e5c;">KK 说已另订，待你补名字/地址/单价。</b>如果还没订，Booking.com 上搜 St-Germain 6 区 4 星以下 3 星以上，人均 €150-220 单晚。推荐 Hôtel des Marronniers（花园中庭）、Hôtel Récamier（卢森堡公园对面）、Relais Christine。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.booking.com/searchresults.html?ss=Saint-Germain-des-Pr%C3%A9s%2C+Paris&checkin=2026-10-01&checkout=2026-10-02" target="_blank" rel="noopener">Booking.com 6 区 →</a>
+      </div>
+    </article>
+
+    <!-- 🟢 好订 -->
+    <article class="todo-card level-green">
+      <header class="todo-head">
+        <span class="todo-level">🟢 好订</span>
+        <h3 class="todo-title">塞纳河游船 · Bateaux Parisiens</h3>
+        <span class="todo-ddl">DDL <b>9/29</b>（3 天前）</span>
+      </header>
+      <p class="todo-desc">Day 10 (10/3) 18:30 蓝调时刻场。18€ 现场 / 15€ 线上。座位很多，但选靠窗需早到 15min。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.bateauxparisiens.com/" target="_blank" rel="noopener">Bateaux Parisiens →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-green">
+      <header class="todo-head">
+        <span class="todo-level">🟢 好订</span>
+        <h3 class="todo-title">尼斯 La Merenda · 家常菜</h3>
+        <span class="todo-ddl">当天到店 · 不接受电话/网站订位</span>
+      </header>
+      <p class="todo-desc">Day 6 (9/29) 20:30 晚餐。米其林厨师 Dominique Le Stanc 开放式厨房，只能到店排队/纸条留位。40 分钟内会有位。</p>
+      <div class="todo-actions">
+        <span class="todo-link" style="color:#8a7860;">现场排队 · 无预订</span>
+      </div>
+    </article>
+
+    <article class="todo-card level-green">
+      <header class="todo-head">
+        <span class="todo-level">🟢 好订</span>
+        <h3 class="todo-title">Círculo de Bellas Artes 屋顶</h3>
+        <span class="todo-ddl">当天现场 5€</span>
+      </header>
+      <p class="todo-desc">Day 1 (9/24) 21:30 收尾。5€ 附赠一杯。露台开到 24:00，没什么排队。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.circulobellasartes.com/azotea/" target="_blank" rel="noopener">Círculo 官网 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-green">
+      <header class="todo-head">
+        <span class="todo-level">🟢 好订</span>
+        <h3 class="todo-title">Jardin Exotique d'Èze</h3>
+        <span class="todo-ddl">当天现场 8€</span>
+      </header>
+      <p class="todo-desc">Day 7 (9/30) 10:45。山顶植物园直接买票入园，无需网上预约。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.eze-tourisme.com/le-jardin-exotique-deze/" target="_blank" rel="noopener">Èze 官网 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-green">
+      <header class="todo-head">
+        <span class="todo-level">🟢 好订</span>
+        <h3 class="todo-title">Prado 美术馆（可选）</h3>
+        <span class="todo-ddl">当天现场 / 官网 15€</span>
+      </header>
+      <p class="todo-desc">Day 1 (9/24) 若倒时差还有力气加。<b>每天 18:00-20:00 免费</b>——正好赶抵达日傍晚。人多但看《宫娥》够了。</p>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://www.museodelprado.es/en/tickets" target="_blank" rel="noopener">Prado 官网 →</a>
+      </div>
+    </article>
+  </div>
+
+  <p class="todo-foot">✓ 已购：<b>Etihad + Saudia 机票</b>、<b>OUIGO QG3UVL</b>（9/25）、<b>圣家堂 9/26 12:45 场</b>、<b>4 家 Airbnb（马德里/巴塞/尼斯/巴黎 46 Rue Jacob）</b>。剩下的按上方 DDL 倒推执行。</p>
 </section>
 
 <!-- Days -->
@@ -210,16 +618,17 @@
   </div>
 
   <div class="days-tabs" id="daysTabs">
-    <button class="day-tab is-active" data-day="1">Day 1</button>
-    <button class="day-tab" data-day="2">Day 2</button>
-    <button class="day-tab" data-day="3">Day 3</button>
-    <button class="day-tab" data-day="4">Day 4</button>
-    <button class="day-tab" data-day="5">Day 5</button>
-    <button class="day-tab" data-day="6">Day 6</button>
-    <button class="day-tab" data-day="7">Day 7</button>
-    <button class="day-tab" data-day="8">Day 8</button>
-    <button class="day-tab" data-day="9">Day 9</button>
-    <button class="day-tab" data-day="10">Day 10</button>
+    <button class="day-tab is-active" data-day="1"><span class="tab-n">Day 1</span><span class="tab-d">Sep 23–24</span></button>
+    <button class="day-tab" data-day="2"><span class="tab-n">Day 2</span><span class="tab-d">Sep 25</span></button>
+    <button class="day-tab" data-day="3"><span class="tab-n">Day 3</span><span class="tab-d">Sep 26</span></button>
+    <button class="day-tab" data-day="4"><span class="tab-n">Day 4</span><span class="tab-d">Sep 27</span></button>
+    <button class="day-tab" data-day="5"><span class="tab-n">Day 5</span><span class="tab-d">Sep 28</span></button>
+    <button class="day-tab" data-day="6"><span class="tab-n">Day 6</span><span class="tab-d">Sep 29</span></button>
+    <button class="day-tab" data-day="7"><span class="tab-n">Day 7</span><span class="tab-d">Sep 30</span></button>
+    <button class="day-tab" data-day="8"><span class="tab-n">Day 8</span><span class="tab-d">Oct 1</span></button>
+    <button class="day-tab" data-day="9"><span class="tab-n">Day 9</span><span class="tab-d">Oct 2</span></button>
+    <button class="day-tab" data-day="10"><span class="tab-n">Day 10</span><span class="tab-d">Oct 3</span></button>
+    <button class="day-tab" data-day="11"><span class="tab-n">Day 11</span><span class="tab-d">Oct 4–5</span></button>
   </div>
 
   <div class="days-content" id="daysContent"></div>
@@ -256,10 +665,10 @@
     </article>
     <article class="lux-card">
       <div class="card-rating">★★★★★</div>
-      <h3>Camiral Golf · 18 洞</h3>
-      <p class="card-city">Costa Brava</p>
-      <p>Robert Trent Jones Sr. 设计的赛事级球场，秋日草色最上镜。</p>
-      <div class="card-meta"><span>约 2,200 元</span><span>4.5 hr</span></div>
+      <h3>Bunkers del Carmel · 免费全景</h3>
+      <p class="card-city">Barcelona · Gràcia 山头</p>
+      <p>Turó de la Rovira 山头的西班牙内战炮台遗址，360° 巴塞全景。免费，本地人下班后来发呆的地方。日落前一小时最好。</p>
+      <div class="card-meta"><span>免费</span><span>1.5 hr</span></div>
     </article>
     <article class="lux-card">
       <div class="card-rating">★★★★☆</div>
@@ -286,7 +695,7 @@
     <ul class="minimal-list">
       <li><b>Madrid</b> · Toma Café · La Bicicleta · HanSo · Hola Coffee · Misión</li>
       <li><b>Barcelona</b> · Nomad · Satan's Coffee · Federal · SlowMov · Skye</li>
-      <li><b>Provence</b> · Café de la Poste · La Mercerie · Chez Nino</li>
+      <li><b>Côte d'Azur</b> · Emilie &amp; the Cool Kids (Nice) · Malongo · Café Marché · Le Vieux Antibes</li>
       <li><b>Paris</b> · Ten Belles · Télescope · Fragments · Café Kitsuné · Substance</li>
     </ul>
     <p class="footnote">不是 Blue Bottle，而是当地人自己去的地方。</p>
@@ -317,8 +726,8 @@
   <div class="highlight-grid">
     <div class="hl-card">
       <span class="hl-num">06</span>
-      <h3>Golf Guide</h3>
-      <p>为什么选 Camiral 而不是游客球场？球洞特色、摄影机位、着装建议、下场节奏。</p>
+      <h3>Barcelona · Two Legends</h3>
+      <p>Day 3 圣家堂彩窗 + Day 4 毕加索博物馆 + Mirador de la Farma 蓝调紫调日落——一座城的两条大师线索，Gaudí 的曲线和 Picasso 的骨相同一天穿完。</p>
     </div>
     <div class="hl-card">
       <span class="hl-num">07</span>
@@ -377,6 +786,16 @@
   </div>
 </section>
 
+<!-- Budget · Part 11 -->
+<section id="budget" class="section budget">
+  <div class="section-head">
+    <span class="section-idx">Part 11</span>
+    <h2 class="section-title">Budget · 预算规划</h2>
+    <p class="section-lead">机票 + 住宿 + 门票 + 交通 + 餐饮 + 杂项。已订部分是实际金额，其余是可控范围内的估算。餐饮购物可上下浮动 30%。</p>
+  </div>
+  <div id="budgetContent"></div>
+</section>
+
 <!-- Creative Missions -->
 <section id="missions" class="section missions">
   <div class="section-head">
@@ -394,6 +813,6 @@
   <p class="foot-tiny">在飞机上、咖啡馆里都愿意翻阅的电子杂志。</p>
 </footer>
 
-<script src="assets/app.js"></script>
+<script src="assets/app.js?v=20260827a"></script>
 </body>
 </html>
