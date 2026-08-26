@@ -228,6 +228,18 @@ function slotIcon(kind) {
   return map[kind] || "📍";
 }
 
+/* Renaissance: Arabic → Roman numerals (1..99 sufficient) */
+function toRoman(num) {
+  const map = [
+    [10, "X"], [9, "IX"], [5, "V"], [4, "IV"], [1, "I"]
+  ];
+  let n = num, out = "";
+  for (const [v, s] of map) {
+    while (n >= v) { out += s; n -= v; }
+  }
+  return out;
+}
+
 function renderDay(n) {
   const d = days[n - 1];
 
@@ -300,7 +312,8 @@ function renderDay(n) {
   daysContent.innerHTML = `
     <div class="day-card">
       <div class="day-hero">
-        <span class="day-hero-num">${String(d.n).padStart(2, "0")}</span>
+        <span class="day-hero-num">${toRoman(d.n)}</span>
+        <span class="day-hero-num-arabic">Day ${String(d.n).padStart(2, "0")}</span>
         ${d.date ? `<span class="day-hero-date">${d.date}</span>` : ""}
         <span class="day-hero-city">${d.city}</span>
         <span class="day-hero-theme">${d.theme}</span>
@@ -665,14 +678,17 @@ renderBudget();
 
 /* ---------- Theme Toggle ---------- */
 const themeToggle = document.getElementById("themeToggle");
+const mnavThemeToggle = document.getElementById("mnavThemeToggle");
 const savedTheme = localStorage.getItem("aa-theme");
 if (savedTheme) document.documentElement.setAttribute("data-theme", savedTheme);
-themeToggle.addEventListener("click", () => {
+function toggleTheme() {
   const cur = document.documentElement.getAttribute("data-theme");
   const next = cur === "dark" ? "light" : "dark";
   document.documentElement.setAttribute("data-theme", next);
   localStorage.setItem("aa-theme", next);
-});
+}
+themeToggle?.addEventListener("click", toggleTheme);
+mnavThemeToggle?.addEventListener("click", toggleTheme);
 
 /* ---------- Cursor Dot ---------- */
 const dot = document.getElementById("cursorDot");

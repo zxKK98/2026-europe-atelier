@@ -458,11 +458,23 @@ button { font-family: inherit; cursor: pointer; }
 .day-hero { display: flex; flex-direction: column; gap: 16px; }
 .day-hero-num {
   font-family: var(--display);
-  font-weight: 300;
-  font-size: 140px;
+  font-weight: 400;
+  font-size: 128px;
   line-height: 0.85;
   color: var(--accent);
-  letter-spacing: -0.05em;
+  letter-spacing: 0.02em;
+  font-feature-settings: "lnum", "onum" off;
+}
+.day-hero-num-arabic {
+  display: inline-block;
+  align-self: flex-start;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-top: -8px;
 }
 .day-hero-date {
   display: inline-block;
@@ -2123,10 +2135,11 @@ button { font-family: inherit; cursor: pointer; }
   .todo-title { font-size: 17px; }
 }
 
-/* ================================
-   移动端底部快跳导航（Mobile Sticky Nav）
-   仅在 <= 900px 显示；桌面端默认隐藏
-================================ */
+
+/* ============================================================
+   Renaissance Mobile Navigation
+   顶部粘性 · 罗马数字 · fleuron 装饰 · 手抄本气质
+============================================================ */
 .mobile-nav {
   display: none;
 }
@@ -2135,82 +2148,154 @@ button { font-family: inherit; cursor: pointer; }
 }
 
 @media (max-width: 900px) {
-  /* 底部固定导航条 */
+  /* 桌面顶部导航在移动端完全隐藏（mobile-nav 替代） */
+  .top-nav {
+    display: none !important;
+  }
+
+  /* 移动端顶部粘性 nav */
   .mobile-nav {
     position: fixed;
+    top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    z-index: 90;
-    display: flex;
-    align-items: stretch;
-    gap: 0;
-    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
-    background: color-mix(in oklab, var(--bg) 88%, transparent);
-    backdrop-filter: blur(24px) saturate(160%);
-    -webkit-backdrop-filter: blur(24px) saturate(160%);
-    border-top: 1px solid var(--line);
-    box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, 0.15);
+    z-index: 100;
+    display: block;
+    padding: calc(env(safe-area-inset-top, 0px) + 10px) 0 8px;
+    background:
+      linear-gradient(
+        to bottom,
+        color-mix(in oklab, var(--bg) 96%, transparent) 0%,
+        color-mix(in oklab, var(--bg) 92%, transparent) 85%,
+        color-mix(in oklab, var(--bg) 78%, transparent) 100%
+      );
+    backdrop-filter: blur(28px) saturate(160%);
+    -webkit-backdrop-filter: blur(28px) saturate(160%);
+    border-bottom: 1px solid var(--line);
+    box-shadow: 0 2px 18px -12px rgba(26, 24, 21, 0.28);
   }
-  /* 目录菜单按钮 */
-  .mnav-menu-btn {
+
+  /* 顶部一栏：目录 + 品牌 + 主题切换 */
+  .mnav-bar {
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 4px 18px 6px;
+  }
+  .mnav-menu-btn,
+  .mnav-theme {
+    width: 34px;
+    height: 34px;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 3px;
-    min-width: 56px;
-    padding: 6px 10px;
-    margin-right: 8px;
-    background: var(--ink);
-    color: var(--bg);
-    border: none;
-    border-radius: 12px;
-    font-family: var(--sans);
-    font-size: 10.5px;
-    letter-spacing: 0.06em;
-    font-weight: 600;
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line);
+    border-radius: 999px;
     cursor: pointer;
     flex-shrink: 0;
-    transition: transform 0.2s ease;
+    transition: all 0.3s ease;
   }
-  .mnav-menu-btn:active {
-    transform: scale(0.95);
+  .mnav-menu-btn:active,
+  .mnav-theme:active {
+    transform: scale(0.94);
+    background: var(--accent-soft);
   }
   .mnav-menu-icon {
     display: inline-flex;
     flex-direction: column;
     gap: 3px;
-    width: 16px;
+    width: 15px;
   }
   .mnav-menu-icon span {
     display: block;
-    height: 1.6px;
+    height: 1.4px;
     background: currentColor;
     border-radius: 2px;
   }
   .mnav-menu-icon span:nth-child(2) { width: 70%; }
   .mnav-menu-icon span:nth-child(3) { width: 90%; }
-  .mnav-menu-txt {
-    font-size: 10px;
-    letter-spacing: 0.1em;
-    opacity: 0.95;
-  }
-  /* 横滚 Day chip 容器 */
-  .mnav-days {
+  .mnav-theme .theme-icon { font-size: 14px; line-height: 1; }
+  [data-theme="light"] .mnav-theme .dark-icon { display: none; }
+  [data-theme="dark"]  .mnav-theme .light-icon { display: none; }
+
+  .mnav-brand {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
     flex: 1;
+    justify-content: center;
+    min-width: 0;
+  }
+  .mnav-brand-mark {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 17px;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    font-style: italic;
+  }
+  .mnav-brand-name {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 13.5px;
+    letter-spacing: 0.03em;
+    color: var(--ink);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  /* Fleuron 分隔线：中央花饰 + 双横线 */
+  .mnav-rule {
     display: flex;
-    gap: 6px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 6px 26px 2px;
+    color: var(--accent-2);
+  }
+  .mnav-rule::before,
+  .mnav-rule::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(
+      to right,
+      transparent,
+      color-mix(in oklab, var(--accent-2) 55%, transparent) 30%,
+      color-mix(in oklab, var(--accent-2) 55%, transparent) 70%,
+      transparent
+    );
+  }
+  .mnav-fleuron {
+    font-family: var(--serif);
+    font-size: 11px;
+    line-height: 1;
+    color: var(--accent);
+    opacity: 0.85;
+    letter-spacing: 0;
+  }
+
+  /* 横滚罗马数字 Day chip */
+  .mnav-days {
+    display: flex;
+    gap: 8px;
     overflow-x: auto;
     overflow-y: hidden;
-    scroll-snap-type: x proximity;
     -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x proximity;
     scrollbar-width: none;
-    padding: 0 2px;
-    mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+    padding: 4px 20px 8px;
+    mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 16px, black calc(100% - 16px), transparent 100%);
   }
   .mnav-days::-webkit-scrollbar { display: none; }
+
   .mnav-chip {
     display: inline-flex;
     flex-direction: column;
@@ -2218,37 +2303,45 @@ button { font-family: inherit; cursor: pointer; }
     justify-content: center;
     gap: 1px;
     flex-shrink: 0;
-    min-width: 54px;
-    padding: 6px 10px;
+    min-width: 52px;
+    padding: 5px 10px 6px;
     background: transparent;
     border: 1px solid var(--line);
-    border-radius: 12px;
-    color: var(--ink-2);
-    font-family: var(--mono);
+    border-radius: 4px;
+    color: var(--ink);
     cursor: pointer;
     scroll-snap-align: center;
-    transition: all 0.25s ease;
+    transition: all 0.3s ease;
   }
-  .mnav-chip:active { transform: scale(0.95); }
+  .mnav-chip:active { transform: scale(0.94); }
   .mnav-chip .mnav-n {
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.06em;
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 1;
+    letter-spacing: 0.04em;
     color: var(--ink);
   }
   .mnav-chip .mnav-d {
-    font-size: 9.5px;
-    letter-spacing: 0.02em;
-    color: var(--accent);
-    font-weight: 600;
+    font-family: var(--mono);
+    font-size: 9px;
+    letter-spacing: 0.06em;
+    color: var(--ink-3);
+    font-weight: 500;
+    margin-top: 2px;
   }
   .mnav-chip.is-active {
     background: var(--ink);
     border-color: var(--ink);
+    box-shadow: 0 6px 16px -6px rgba(26, 24, 21, 0.3),
+                inset 0 0 0 2px color-mix(in oklab, var(--accent-2) 30%, transparent);
   }
-  .mnav-chip.is-active .mnav-n,
+  .mnav-chip.is-active .mnav-n {
+    color: var(--accent-2);
+    font-weight: 600;
+  }
   .mnav-chip.is-active .mnav-d {
-    color: var(--bg);
+    color: color-mix(in oklab, var(--bg) 80%, transparent);
   }
 
   /* 目录抽屉（从下往上弹） */
@@ -2267,11 +2360,12 @@ button { font-family: inherit; cursor: pointer; }
   .mnav-sheet-backdrop {
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0);
-    transition: background 0.35s ease;
+    background: rgba(20, 16, 12, 0);
+    transition: background 0.4s ease;
   }
   .mnav-sheet.is-open .mnav-sheet-backdrop {
-    background: rgba(0, 0, 0, 0.35);
+    background: rgba(20, 16, 12, 0.45);
+    backdrop-filter: blur(2px);
   }
   .mnav-sheet-panel {
     position: absolute;
@@ -2279,14 +2373,25 @@ button { font-family: inherit; cursor: pointer; }
     right: 0;
     bottom: 0;
     background: var(--bg);
-    border-top: 1px solid var(--line);
-    border-radius: 20px 20px 0 0;
-    padding: 20px 20px calc(20px + env(safe-area-inset-bottom, 0px));
-    max-height: 75vh;
+    border-top: 2px solid var(--accent);
+    border-radius: 6px 6px 0 0;
+    padding: 24px 24px calc(28px + env(safe-area-inset-bottom, 0px));
+    max-height: 82vh;
     overflow-y: auto;
     transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 -12px 40px -8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -16px 50px -8px rgba(20, 16, 12, 0.35);
+  }
+  .mnav-sheet-panel::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 44px;
+    height: 3px;
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--ink-3) 60%, transparent);
   }
   .mnav-sheet.is-open .mnav-sheet-panel {
     transform: translateY(0);
@@ -2294,31 +2399,53 @@ button { font-family: inherit; cursor: pointer; }
   .mnav-sheet-head {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 14px;
-    margin-bottom: 6px;
-    border-bottom: 1px solid var(--line);
+    align-items: flex-start;
+    padding: 10px 0 14px;
+  }
+  .mnav-sheet-titles {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .mnav-sheet-eyebrow {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    font-weight: 600;
   }
   .mnav-sheet-title {
     font-family: var(--display);
-    font-size: 14px;
+    font-size: 26px;
     font-weight: 500;
-    letter-spacing: 0.02em;
+    letter-spacing: 0.08em;
     color: var(--ink);
+    line-height: 1.1;
   }
   .mnav-sheet-close {
     width: 32px;
     height: 32px;
-    border: none;
+    border: 1px solid var(--line);
     background: transparent;
     color: var(--ink-2);
-    font-size: 22px;
+    font-size: 20px;
     line-height: 1;
     cursor: pointer;
     border-radius: 999px;
   }
   .mnav-sheet-close:active {
-    background: var(--paper-2);
+    background: var(--accent-soft);
+    color: var(--accent);
+  }
+  .mnav-sheet-fleuron {
+    text-align: center;
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--accent);
+    opacity: 0.7;
+    padding: 4px 0 10px;
+    letter-spacing: 0.2em;
   }
   .mnav-sheet-list {
     list-style: none;
@@ -2328,8 +2455,8 @@ button { font-family: inherit; cursor: pointer; }
   .mnav-sheet-list li a {
     display: flex;
     align-items: baseline;
-    gap: 12px;
-    padding: 14px 4px;
+    gap: 18px;
+    padding: 16px 6px;
     border-bottom: 1px solid var(--line);
     text-decoration: none;
     color: var(--ink);
@@ -2338,39 +2465,48 @@ button { font-family: inherit; cursor: pointer; }
     border-bottom: none;
   }
   .mnav-sheet-list li a:active {
-    background: var(--paper-2);
+    background: var(--accent-soft);
   }
   .mnav-part {
-    font-family: var(--mono);
-    font-size: 10.5px;
-    letter-spacing: 0.14em;
+    font-family: var(--display);
+    font-style: italic;
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
     color: var(--accent);
-    font-weight: 700;
-    min-width: 52px;
-    text-transform: uppercase;
+    min-width: 42px;
+    text-align: center;
+    line-height: 1;
   }
   .mnav-name {
-    font-family: var(--sans);
-    font-size: 15px;
+    font-family: var(--display);
+    font-size: 17px;
     font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--ink);
+    flex: 1;
   }
 
-  /* 页面底部留出空间避免被固定条遮挡 */
-  .site-foot {
-    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
-  }
-  /* 顶部导航移动端简化：让 brand 可点跳顶部 */
-  .top-nav .brand { cursor: pointer; }
-
-  /* 桌面版 days-tabs 在移动端占了太多空间，缩小 */
+  /* 移动端隐藏原 days-tabs 网格（顶部 mnav 已经能选 Day） */
   .days-tabs {
-    gap: 6px;
-    margin-bottom: 32px;
+    display: none !important;
   }
-  .day-tab {
-    padding: 6px 10px 6px 8px;
-    gap: 6px;
+
+  /* Hero 顶部让出粘性 nav 空间（约 106px） */
+  .hero {
+    padding-top: calc(env(safe-area-inset-top, 0px) + 118px);
   }
-  .day-tab .tab-n { font-size: 11px; }
-  .day-tab .tab-d { font-size: 9.5px; padding: 1.5px 5px; }
+  /* Section 锚点跳转时避开顶部 nav */
+  section[id] {
+    scroll-margin-top: calc(env(safe-area-inset-top, 0px) + 112px);
+  }
+
+  /* 章节标题两行式：小 caps eyebrow + 大标题 */
+  .section-head .section-idx {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
 }
