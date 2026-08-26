@@ -2122,3 +2122,255 @@ button { font-family: inherit; cursor: pointer; }
   .todo-card { padding: 18px 16px; }
   .todo-title { font-size: 17px; }
 }
+
+/* ================================
+   移动端底部快跳导航（Mobile Sticky Nav）
+   仅在 <= 900px 显示；桌面端默认隐藏
+================================ */
+.mobile-nav {
+  display: none;
+}
+.mnav-sheet {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  /* 底部固定导航条 */
+  .mobile-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom, 0px));
+    background: color-mix(in oklab, var(--bg) 88%, transparent);
+    backdrop-filter: blur(24px) saturate(160%);
+    -webkit-backdrop-filter: blur(24px) saturate(160%);
+    border-top: 1px solid var(--line);
+    box-shadow: 0 -8px 24px -12px rgba(0, 0, 0, 0.15);
+  }
+  /* 目录菜单按钮 */
+  .mnav-menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-width: 56px;
+    padding: 6px 10px;
+    margin-right: 8px;
+    background: var(--ink);
+    color: var(--bg);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--sans);
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+  }
+  .mnav-menu-btn:active {
+    transform: scale(0.95);
+  }
+  .mnav-menu-icon {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 3px;
+    width: 16px;
+  }
+  .mnav-menu-icon span {
+    display: block;
+    height: 1.6px;
+    background: currentColor;
+    border-radius: 2px;
+  }
+  .mnav-menu-icon span:nth-child(2) { width: 70%; }
+  .mnav-menu-icon span:nth-child(3) { width: 90%; }
+  .mnav-menu-txt {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    opacity: 0.95;
+  }
+  /* 横滚 Day chip 容器 */
+  .mnav-days {
+    flex: 1;
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding: 0 2px;
+    mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0, black 12px, black calc(100% - 12px), transparent 100%);
+  }
+  .mnav-days::-webkit-scrollbar { display: none; }
+  .mnav-chip {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1px;
+    flex-shrink: 0;
+    min-width: 54px;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    color: var(--ink-2);
+    font-family: var(--mono);
+    cursor: pointer;
+    scroll-snap-align: center;
+    transition: all 0.25s ease;
+  }
+  .mnav-chip:active { transform: scale(0.95); }
+  .mnav-chip .mnav-n {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+  }
+  .mnav-chip .mnav-d {
+    font-size: 9.5px;
+    letter-spacing: 0.02em;
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .mnav-chip.is-active {
+    background: var(--ink);
+    border-color: var(--ink);
+  }
+  .mnav-chip.is-active .mnav-n,
+  .mnav-chip.is-active .mnav-d {
+    color: var(--bg);
+  }
+
+  /* 目录抽屉（从下往上弹） */
+  .mnav-sheet {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: block;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .mnav-sheet.is-open {
+    pointer-events: auto;
+    visibility: visible;
+  }
+  .mnav-sheet-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.35s ease;
+  }
+  .mnav-sheet.is-open .mnav-sheet-backdrop {
+    background: rgba(0, 0, 0, 0.35);
+  }
+  .mnav-sheet-panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+    border-radius: 20px 20px 0 0;
+    padding: 20px 20px calc(20px + env(safe-area-inset-bottom, 0px));
+    max-height: 75vh;
+    overflow-y: auto;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 -12px 40px -8px rgba(0, 0, 0, 0.2);
+  }
+  .mnav-sheet.is-open .mnav-sheet-panel {
+    transform: translateY(0);
+  }
+  .mnav-sheet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 14px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--line);
+  }
+  .mnav-sheet-title {
+    font-family: var(--display);
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .mnav-sheet-close {
+    width: 32px;
+    height: 32px;
+    border: none;
+    background: transparent;
+    color: var(--ink-2);
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 999px;
+  }
+  .mnav-sheet-close:active {
+    background: var(--paper-2);
+  }
+  .mnav-sheet-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .mnav-sheet-list li a {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .mnav-sheet-list li:last-child a {
+    border-bottom: none;
+  }
+  .mnav-sheet-list li a:active {
+    background: var(--paper-2);
+  }
+  .mnav-part {
+    font-family: var(--mono);
+    font-size: 10.5px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    font-weight: 700;
+    min-width: 52px;
+    text-transform: uppercase;
+  }
+  .mnav-name {
+    font-family: var(--sans);
+    font-size: 15px;
+    font-weight: 500;
+  }
+
+  /* 页面底部留出空间避免被固定条遮挡 */
+  .site-foot {
+    padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px));
+  }
+  /* 顶部导航移动端简化：让 brand 可点跳顶部 */
+  .top-nav .brand { cursor: pointer; }
+
+  /* 桌面版 days-tabs 在移动端占了太多空间，缩小 */
+  .days-tabs {
+    gap: 6px;
+    margin-bottom: 32px;
+  }
+  .day-tab {
+    padding: 6px 10px 6px 8px;
+    gap: 6px;
+  }
+  .day-tab .tab-n { font-size: 11px; }
+  .day-tab .tab-d { font-size: 9.5px; padding: 1.5px 5px; }
+}

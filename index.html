@@ -10,7 +10,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<link rel="stylesheet" href="assets/style.css?v=20260827a" />
+<link rel="stylesheet" href="assets/style.css?v=20260827b" />
 </head>
 <body>
 <!-- 光标磁性小圆点 -->
@@ -813,6 +813,47 @@
   <p class="foot-tiny">在飞机上、咖啡馆里都愿意翻阅的电子杂志。</p>
 </footer>
 
-<script src="assets/app.js?v=20260827a"></script>
+<!-- 移动端底部快跳栏 -->
+<nav class="mobile-nav" id="mobileNav" aria-label="快速跳转">
+  <button class="mnav-menu-btn" id="mnavMenuBtn" aria-label="打开目录">
+    <span class="mnav-menu-icon"><span></span><span></span><span></span></span>
+    <span class="mnav-menu-txt">目录</span>
+  </button>
+  <div class="mnav-days" id="mnavDays">
+    <button class="mnav-chip" data-jump-day="1"><span class="mnav-n">D1</span><span class="mnav-d">9/23–24</span></button>
+    <button class="mnav-chip" data-jump-day="2"><span class="mnav-n">D2</span><span class="mnav-d">9/25</span></button>
+    <button class="mnav-chip" data-jump-day="3"><span class="mnav-n">D3</span><span class="mnav-d">9/26</span></button>
+    <button class="mnav-chip" data-jump-day="4"><span class="mnav-n">D4</span><span class="mnav-d">9/27</span></button>
+    <button class="mnav-chip" data-jump-day="5"><span class="mnav-n">D5</span><span class="mnav-d">9/28</span></button>
+    <button class="mnav-chip" data-jump-day="6"><span class="mnav-n">D6</span><span class="mnav-d">9/29</span></button>
+    <button class="mnav-chip" data-jump-day="7"><span class="mnav-n">D7</span><span class="mnav-d">9/30</span></button>
+    <button class="mnav-chip" data-jump-day="8"><span class="mnav-n">D8</span><span class="mnav-d">10/1</span></button>
+    <button class="mnav-chip" data-jump-day="9"><span class="mnav-n">D9</span><span class="mnav-d">10/2</span></button>
+    <button class="mnav-chip" data-jump-day="10"><span class="mnav-n">D10</span><span class="mnav-d">10/3</span></button>
+    <button class="mnav-chip" data-jump-day="11"><span class="mnav-n">D11</span><span class="mnav-d">10/4–5</span></button>
+  </div>
+</nav>
+
+<!-- 移动端目录抽屉 -->
+<div class="mnav-sheet" id="mnavSheet" aria-hidden="true">
+  <div class="mnav-sheet-backdrop" data-mnav-close></div>
+  <div class="mnav-sheet-panel">
+    <div class="mnav-sheet-head">
+      <span class="mnav-sheet-title">目录 / Table of Contents</span>
+      <button class="mnav-sheet-close" data-mnav-close aria-label="关闭">×</button>
+    </div>
+    <ul class="mnav-sheet-list">
+      <li><a href="#journey" data-mnav-close><span class="mnav-part">Part 01</span><span class="mnav-name">Journey · 旅程概览</span></a></li>
+      <li><a href="#todo" data-mnav-close><span class="mnav-part">Part 02</span><span class="mnav-name">Booking TODO · 预订清单</span></a></li>
+      <li><a href="#days" data-mnav-close><span class="mnav-part">Part 02</span><span class="mnav-name">Days · 逐日行程</span></a></li>
+      <li><a href="#collections" data-mnav-close><span class="mnav-part">Part 03</span><span class="mnav-name">Collections · 体验收藏</span></a></li>
+      <li><a href="#packing" data-mnav-close><span class="mnav-part">Part 10</span><span class="mnav-name">Packing · 行装清单</span></a></li>
+      <li><a href="#budget" data-mnav-close><span class="mnav-part">Part 11</span><span class="mnav-name">Budget · 预算</span></a></li>
+      <li><a href="#missions" data-mnav-close><span class="mnav-part">Extra</span><span class="mnav-name">Creative Missions</span></a></li>
+    </ul>
+  </div>
+</div>
+
+<script src="assets/app.js?v=20260827b"></script>
 </body>
 </html>

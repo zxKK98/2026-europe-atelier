@@ -419,12 +419,60 @@ function renderMap(d) {
 
 daysTabs.forEach(btn => {
   btn.addEventListener("click", () => {
-    daysTabs.forEach(b => b.classList.remove("is-active"));
-    btn.classList.add("is-active");
-    renderDay(parseInt(btn.dataset.day, 10));
+    switchToDay(parseInt(btn.dataset.day, 10));
   });
 });
+
+/* 统一的 Day 切换函数：同步 tabs + 移动端 chip + 渲染内容 */
+function switchToDay(n, opts = {}) {
+  const { scrollIntoView = false } = opts;
+  daysTabs.forEach(b => b.classList.toggle("is-active", parseInt(b.dataset.day, 10) === n));
+  document.querySelectorAll(".mnav-chip").forEach(c => c.classList.toggle("is-active", parseInt(c.dataset.jumpDay, 10) === n));
+  renderDay(n);
+  if (scrollIntoView) {
+    const target = document.getElementById("days");
+    if (target) {
+      const y = target.getBoundingClientRect().top + window.pageYOffset - 20;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  }
+}
+
 renderDay(1);
+// 初始化移动端 chip 高亮
+document.querySelector('.mnav-chip[data-jump-day="1"]')?.classList.add("is-active");
+
+/* ---------- 移动端底部导航：Day chip + 目录抽屉 ---------- */
+document.querySelectorAll(".mnav-chip").forEach(chip => {
+  chip.addEventListener("click", () => {
+    const n = parseInt(chip.dataset.jumpDay, 10);
+    switchToDay(n, { scrollIntoView: true });
+    // 把点中的 chip 滚到可视区
+    chip.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+  });
+});
+
+const mnavSheet = document.getElementById("mnavSheet");
+const mnavMenuBtn = document.getElementById("mnavMenuBtn");
+if (mnavMenuBtn && mnavSheet) {
+  mnavMenuBtn.addEventListener("click", () => {
+    mnavSheet.classList.add("is-open");
+    mnavSheet.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  });
+  mnavSheet.querySelectorAll("[data-mnav-close]").forEach(el => {
+    el.addEventListener("click", () => {
+      mnavSheet.classList.remove("is-open");
+      mnavSheet.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    });
+  });
+}
+
+/* Brand 点击回顶部 */
+document.querySelector(".top-nav .brand")?.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 /* ---------- Missions ---------- */
 const missionGrid = document.getElementById("missionGrid");
