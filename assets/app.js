@@ -130,25 +130,27 @@ const days = [
     mapCenter: {lat: 43.7100, lng: 7.3300, zoom: 12}
   },
   {
-    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · 左岸过渡夜", theme: "TGV North · St-Germain Arrival",
-    desc: "尼斯 11:00 从 Casa Californie 退房，中午 TGV Inoui 或飞机去巴黎。傍晚到 6 区 Saint-Germain-des-Prés 附近的『过渡酒店』（46 Rue Jacob 明天 15:00 才 check-in）。今晚不折腾——放行李 → 花神咖啡吃一顿早晚饭 → 圣日耳曼德佩教堂门口散步 → Le Bon Marché Grande Épicerie 晃一圈买点面包次日早餐。",
+    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · 拉丁区之夜", theme: "Northbound · Latin Quarter Arrival",
+    desc: "尼斯 11:00 从 Casa Californie 退房，中午飞机或 TGV 去巴黎。傍晚落进 5 区拉丁区的公寓——推开阳台窗，正对巴黎大清真寺的绿瓦穹顶。今晚不折腾也不跑远：Rue Mouffetard 老市集街吃一顿、植物园边散个步、清真寺的摩尔风茶室喝杯薄荷茶，全部在家门口 10 分钟内。明天再搬去左岸 46 Rue Jacob。",
     slots: [
       { t: "10:00", h: "Casa Californie 民宿收拾行李", d: "民宿 11:00 硬性退房。天气好可以先在天使湾走一段（民宿到 Promenade 步行 4min · 0.35km），最后拍几张海。行李寄存房东。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373} },
       { t: "11:00", h: "退房 · 打车/Tram 去 Nice-Ville 站或机场", d: "从 Californie 到 Nice-Ville 火车站：打车 12min · 15€；到尼斯机场 T2 打车 10min · 22€。看下午班次哪个更早。", kind: "transit", loc: {lat: 43.68793, lng: 7.24373}, hop: {via: "打车", dur: "10-15min · 15-22€"} },
-      { t: "13:00", h: "尼斯 → 巴黎 · 飞机 or TGV Inoui", d: "首选 easyJet/Air France 尼斯→巴黎 CDG/ORY 1h35m（40-90€），落地后 RER B/Orlyval 进城 45min；或 TGV Inoui 尼斯 Ville → 巴黎 Gare de Lyon 5h40m（二等 70-160€）。飞机更快省时间。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "航班 40-90€ · TGV 70-160€" },
-      { t: "17:30", h: "10/1 过渡酒店 Check-in · 6 区 St-Germain", d: "KK 已另订 · 具体名称/地址待补。落位在 46 Rue Jacob 附近（步行 5-10min 内），方便明天早晨直接走过去继续玩。行李放下就好。", kind: "stay", loc: {lat: 48.85604, lng: 2.33403}, hop: {via: "打车 CDG → 6 区", dur: "45min · €55 / RER B ~1h"} },
-      { t: "19:30", h: "Café de Flore · 迟到的晚餐 + 早的哲学家", d: "从过渡酒店步行 3-5min（约 1.1km ÷ 4.5km/h ≈ 15min，走短点估 5min）。花神 24 点前都开，随便点一份牛排薯条 + 一杯 Sancerre，跟隔壁桌法国老太太一起面对 Boulevard Saint-Germain 发呆。人均 40-50€。", kind: "food", img: "assets/img/spots/cafe-flore.jpg", loc: {lat: 48.85398, lng: 2.33325}, link: "https://cafedeflore.fr/", hop: {via: "步行", dur: "5min · 0.35km"} },
-      { t: "21:30", h: "圣日耳曼德佩教堂夜灯 · Le Bon Marché", d: "花神隔壁 30 秒就是巴黎最古老的教堂之一（10 世纪），夜里打灯很美。之后往南走 6-7min 到 Le Bon Marché 的 Grande Épicerie（周四营业到 22:00），买明早的可颂 + 一瓶 Perrier。回酒店 6-8min。", kind: "walk", img: "assets/img/spots/st-germain-church.jpg", loc: {lat: 48.85403, lng: 2.33395}, hop: {via: "步行 回酒店", dur: "全程 15min · 1.4km"} }
+      { t: "13:00", h: "尼斯 → 巴黎 · 飞机 or TGV Inoui", d: "首选 easyJet/Air France 尼斯→巴黎 CDG/ORY 1h35m（40-90€），落地后 RER B/Orlyval 进城 45min；或 TGV Inoui 尼斯 Ville → 巴黎 Gare de Lyon 5h40m（二等 70-160€）。飞机更快省时间。机票还没定，下面时间按傍晚抵达估算。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "航班 40-90€ · TGV 70-160€", notice: "10/1 的尼斯→巴黎班次还没订。定下来后这一天的时间轴要跟着调。" },
+      { t: "17:30", h: "拉丁区公寓 Check-in · 清真寺景观阳台", d: "Airbnb「绝美景色 | 巴黎拉丁区」，房东 Audrey，★4.87（39 评）· 1 卧 2 床 1 卫 · 15:00 后可入住、明天 11:00 前退房。阳台正对巴黎大清真寺的绿瓦穹顶和白墙庭院。从 CDG 打车约 45min €55，或 RER B 到 Gare du Nord 换 M5 到 Place Monge 约 1h。到 Gare de Lyon 的话地铁 M1+M7 或打车 12min。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.airbnb.cn/rooms/14190318", hop: {via: "打车 CDG → 5 区 / RER B + M5", dur: "45min · €55 / ~1h"} },
+      { t: "18:30", h: "Rue Mouffetard 老市集街 · 晚餐", d: "从公寓步行 5-6min（0.5km）到巴黎最古老的市集街之一。傍晚菜摊陆续收，餐馆和酒馆正好开场——奶酪店 Androuet、Le Vieux Chêne 老酒馆（1900 年招牌还在）。随便找家露天桌吃 steak frites 或 couscous，人均 25-40€。", kind: "food", loc: {lat: 48.8425, lng: 2.3499}, hop: {via: "步行", dur: "6min · 0.5km"} },
+      { t: "20:30", h: "巴黎大清真寺茶室 · 薄荷茶与摩尔庭院", d: "就在公寓楼下 1-2min。La Mosquée de Paris 的 Salon de Thé 有摩尔风瓷砖庭院和无花果树，一杯薄荷茶 3€、一块 pâtisserie orientale 2€，营业到 23:00。房源标题说的「土耳其浴室 1 分钟」就是这里的 hammam（要预约、单独收费）。抬头就是白天从你阳台看到的那个绿顶。", kind: "walk", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.grandemosqueedeparis.fr/", ticket: "茶室 3-8€ · hammam 约 45€ 需预约", hop: {via: "步行", dur: "2min · 150m"} },
+      { t: "21:30", h: "植物园外墙夜行 · 回家", d: "沿 Rue Geoffroy-Saint-Hilaire 走 5min 到 Jardin des Plantes 铁栅栏外（园内 20:00 闭园，夜里看外墙老树剪影和自然史博物馆的灯就够）。回公寓 8min。路上 Franprix（营业到 22:00）买明早可颂 + Perrier。", kind: "walk", loc: {lat: 48.8434, lng: 2.3597}, hop: {via: "步行 回公寓", dur: "全程 15min · 1.1km"} }
     ],
-    vlog: ["天使湾晨间告别", "Nice-Ville 站台/机场值机", "空中云海转场", "过渡酒店房卡 → 46 Rue Jacob 门牌预告", "花神咖啡露天桌", "St-Germain 教堂夜灯"],
-    stay: { name: "Paris · 6 区过渡酒店（KK 另订）", area: "St-Germain-des-Prés · 46 Rue Jacob 周边", note: "1 晚占位 · 具体名/确认号 TODO 补充", url: null },
-    mapCenter: {lat: 48.8570, lng: 2.3350, zoom: 13}
+    vlog: ["天使湾晨间告别", "Nice-Ville 站台/机场值机", "空中云海转场", "推开阳台窗 → 清真寺绿顶第一眼", "Rue Mouffetard 傍晚市集街", "清真寺茶室的薄荷茶与瓷砖庭院"],
+    stay: { name: "绝美景色 · 巴黎拉丁区 · 土耳其浴室 1 分钟", area: "Quartier Latin · 75005 Paris · 清真寺景观阳台", note: "1 晚 · ★4.87（39 评）· 1 卧 2 床 1 卫 · 房东 Audrey · 人均 ¥882.96（总 ¥1,765.91）· 15:00 后入住 / 11:00 前退房", url: "https://www.airbnb.cn/rooms/14190318" },
+    mapCenter: {lat: 48.8432, lng: 2.3530, zoom: 14}
   },
   {
     n: 9, date: "Oct 2 · Fri", city: "巴黎 · 左岸卢浮宫日", theme: "Louvre + Rive Gauche Salon",
-    desc: "上午从 6 区 St-Germain 步行 10min 到卢浮宫 Porte des Lions 侧门，9:00-12:30 减负三宝路线。杜乐丽花园吃个 crêpe，13:30 走回左岸把行李搬进 46 Rue Jacob（新住宿 15:00 才 check-in）。下午奥赛博物馆步行 12min，看印象派 5 楼。傍晚花神/双叟咖啡露天座 + 圣日耳曼大道晚风。今晚开始就住 Truly Parisien 老公寓——奥赛/卢浮宫都是家门口。",
+    desc: "早上从拉丁区公寓 11:00 前退房，行李寄存或直接拖到 46 Rue Jacob。地铁 M7 一趟到卢浮宫，9:00-12:30 减负三宝路线。杜乐丽花园吃个 crêpe，13:30 走过塞纳河把行李搬进 46 Rue Jacob（15:00 才 check-in）。下午奥赛博物馆步行 12min，看印象派 5 楼。傍晚花神/双叟咖啡露天座 + 圣日耳曼大道晚风。今晚开始就住 Truly Parisien 老公寓——奥赛/卢浮宫都是家门口。",
     slots: [
-      { t: "08:30", h: "过渡酒店 → 卢浮宫 Porte des Lions", d: "从 6 区过渡酒店步行 10-12min 沿 Rue Bonaparte 过塞纳河 Pont du Carrousel 到卢浮宫南侧 Porte des Lions（黎塞留翼下），几乎不用等。9:00 准时开门。行李寄存过渡酒店，或提前拉到 46 Rue Jacob 的 Nannybag。", kind: "walk", loc: {lat: 48.8590, lng: 2.3346}, hop: {via: "步行 从 46 Rue Jacob 出发", dur: "10min · 1.2km"} },
+      { t: "08:20", h: "拉丁区公寓退房 · 行李处理", d: "公寓 11:00 前退房，但今天早出门，提前收拾好。两个选择：① 行李寄存在公寓（跟 Audrey 确认是否可以）；② 直接拖到 46 Rue Jacob 楼下用 Nannybag 寄存（5€/件/天），从公寓地铁 M7 到 Saint-Germain 约 15min。轻装去卢浮宫更舒服。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554} },
+      { t: "08:40", h: "M7 地铁 → 卢浮宫 Porte des Lions", d: "从公寓步行 3min 到 Place Monge 站，M7 线坐 6 站到 Palais Royal-Musée du Louvre（约 12min），出站走 4min 到南侧 Porte des Lions（黎塞留翼下）——这个侧门几乎不用排队。9:00 准时开门。", kind: "transit", loc: {lat: 48.8590, lng: 2.3346}, hop: {via: "步行 3min + M7 地铁 12min", dur: "20min · 2.15€"} },
       { t: "09:00", h: "卢浮宫 · 三宝主线（减负版）", d: "只看三样：《蒙娜丽莎》→《米洛的维纳斯》→《萨莫色雷斯的胜利女神》。走德农馆 2 楼长廊直插蒙娜丽莎，9:15 前到画前人还不多；再往回走看维罗内塞《迦拿的婚礼》。整场 3.5h 而非 5h。", kind: "museum", img: "assets/img/spots/louvre-mona-lisa.jpg", loc: {lat: 48.8606, lng: 2.3376}, link: "https://www.ticketlouvre.fr/", ticket: "非 EEA 32€ · 强制预约", notice: "周二闭馆。热浪或维修期部分展厅可能临时闭馆，参观当天可致电 +33 1 40 20 53 17 确认。" },
       { t: "11:30", h: "卢浮宫 · 法国浪漫主义红厅", d: "德农馆红厅：德拉克罗瓦《自由引导人民》、大卫《拿破仑加冕》、席里柯《美杜莎之筏》。三张大画都在同一个房间，20 分钟看完出门。", kind: "museum", loc: {lat: 48.8606, lng: 2.3376} },
       { t: "13:00", h: "杜乐丽花园 · 绿椅子 + crêpe 午餐", d: "出馆 5 分钟就是 Tuileries 花园。经典绿椅子摆在喷水池边把脚抬高。路边买一份 Angelina 栗子蛋糕或 crêpe。40 分钟。", kind: "food", img: "assets/img/spots/tuileries.jpg", loc: {lat: 48.8635, lng: 2.3275}, hop: {via: "步行", dur: "5min · 400m"} },
@@ -529,8 +531,8 @@ const budget = {
         { t: "Madrid · Heart Of Madrid Apartments (1 晚)", amt: 642, note: "9/24 · 已订 · 单人 = 总 ¥1,284.09 / 2" },
         { t: "Barcelona · Rut's Loft Poblenou (3 晚)", amt: 2623, note: "9/25-9/28 · 已订 · 单人 = 总 ¥5,245.62 / 2" },
         { t: "Nice · Casa Californie Terrace & Beach (3 晚)", amt: 1670, note: "9/28-10/1 · 已订 · 单人 = 总 ¥3,339.72 / 2 · 房东 Aurore · HM8A4N4MFY" },
-        { t: "Paris · Truly Parisien St-Germain 46 Rue Jacob (2 晚)", amt: 2169, note: "10/2-10/4 · 已订 · ★4.91 · 单人 ¥2,168.89 = 总 ¥4,337.78 / 2 · airbnb.com/rooms/23476199" },
-        { t: "Paris · 10/1 过渡酒店 (1 晚)", amt: 1200, note: "10/1 夜 · KK 另订 · 6 区 46 Rue Jacob 周边 · 待补名称/单价" }
+        { t: "Paris · 拉丁区清真寺景观公寓 (1 晚)", amt: 883, note: "10/1 夜 · 已订 · ★4.87 · 单人 ¥882.96 = 总 ¥1,765.91 / 2 · 房东 Audrey · airbnb.cn/rooms/14190318" },
+        { t: "Paris · Truly Parisien St-Germain 46 Rue Jacob (2 晚)", amt: 2169, note: "10/2-10/4 · 已订 · ★4.91 · 单人 ¥2,168.89 = 总 ¥4,337.78 / 2 · airbnb.com/rooms/23476199" }
       ]
     },
     {
@@ -619,11 +621,11 @@ function renderBudget() {
 
 function refreshBudgetTotals() {
   let grand = 0;
-  // 已订固定 = 机票 2 项 + OUIGO（intra[0]）+ 4 家 Airbnb（stay 全部）+ 圣家堂票（ticket[0]）
+  // 已订固定 = 机票 2 项 + OUIGO（intra[0]）+ 5 家 Airbnb（stay 全部）+ 圣家堂票（ticket[0]）
   const bookedFixed =
     budget.cats[0].items[0].amt + budget.cats[0].items[1].amt   // 机票 x2
     + budget.cats[1].items[0].amt                                // OUIGO
-    + budget.cats[2].items.reduce((a, b) => a + b.amt, 0)        // 4 家 Airbnb
+    + budget.cats[2].items.reduce((a, b) => a + b.amt, 0)        // 5 家 Airbnb
     + budget.cats[3].items[0].amt;                               // 圣家堂
   budget.cats.forEach((cat, ci) => {
     const sum = cat.items.reduce((a, b) => a + b.amt, 0);
