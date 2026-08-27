@@ -365,11 +365,13 @@ function renderMap(d) {
     // 从 slot.h 提取一个短地名（取 · 或 空格 或 - 前的部分，去除类别后缀）
     const shortName = (s.label || s.h.split(/[·]|—|–|,/)[0]).trim().slice(0, 14);
     // 只画小圆点，label 用 tooltip（可点击展开，鼠标悬停显示）
+    // 移动端把圆点放大到 34px，保证手指可以稳定点中
+    const pinSize = window.matchMedia("(max-width: 900px)").matches ? 34 : 28;
     const icon = L.divIcon({
       className: "custom-map-marker",
       html: `<div class="marker-pin-only" style="background:${bg}">${i + 1}</div>`,
-      iconSize: [28, 28],
-      iconAnchor: [14, 14]
+      iconSize: [pinSize, pinSize],
+      iconAnchor: [pinSize / 2, pinSize / 2]
     });
 
     const popup = `
