@@ -126,22 +126,25 @@ const days = [
       { t: "20:00", h: "尼斯松弛晚餐", d: "民宿附近或老城随便找一家法式 bistro，Steak-frites + 一支 Bandol 红。今天走了两个村，早睡。", kind: "food", loc: {lat: 43.6900, lng: 7.2434} }
     ],
     vlog: ["Fragonard 蒸馏铜锅", "Jardin Exotique 悬崖仙人掌 hyperlapse", "Villefranche 彩色海湾广角", "Rue Obscure 地下石廊", "沙滩鹅卵石对比"],
-    stay: { name: "New, Casa Californie Terrace & Beach", area: "尼斯西区海边 · 220 Avenue de la Californie", note: "最后一晚 · 10/1 11:00 退房 → 巴黎", url: "https://www.airbnb.cn/rooms/1705767598377386136" },
+    stay: { name: "New, Casa Californie Terrace & Beach", area: "尼斯西区海边 · 220 Avenue de la Californie", note: "最后一晚 · 10/1 提前退房赶 12:35 航班 → 巴黎", url: "https://www.airbnb.cn/rooms/1705767598377386136" },
     mapCenter: {lat: 43.7100, lng: 7.3300, zoom: 12}
   },
   {
     n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · 拉丁区之夜", theme: "Northbound · Latin Quarter Arrival",
-    desc: "尼斯 11:00 从 Casa Californie 退房，中午飞机或 TGV 去巴黎。傍晚落进 5 区拉丁区的公寓——推开阳台窗，正对巴黎大清真寺的绿瓦穹顶。今晚不折腾也不跑远：Rue Mouffetard 老市集街吃一顿、植物园边散个步、清真寺的摩尔风茶室喝杯薄荷茶，全部在家门口 10 分钟内。明天再搬去左岸 46 Rue Jacob。",
+    desc: "航班定了：易捷 U24856，尼斯 12:35 → 奥利 14:05。为了赶 11:00 值机，民宿要提前退房——今早不去天使湾了，行李收好直接打车 T2。下午 14:05 落地奥利，打车 35min 进城，早早就能 check-in 5 区拉丁区的公寓——推开阳台窗，正对巴黎大清真寺的绿瓦穹顶。傍晚不折腾也不跑远：Rue Mouffetard 老市集街吃一顿、清真寺的摩尔风茶室喝杯薄荷茶、植物园边散个步，全部在家门口 10 分钟内。明天再搬去左岸 46 Rue Jacob。",
     slots: [
-      { t: "10:00", h: "Casa Californie 民宿收拾行李", d: "民宿 11:00 硬性退房。天气好可以先在天使湾走一段（民宿到 Promenade 步行 4min · 0.35km），最后拍几张海。行李寄存房东。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373} },
-      { t: "11:00", h: "退房 · 打车/Tram 去 Nice-Ville 站或机场", d: "从 Californie 到 Nice-Ville 火车站：打车 12min · 15€；到尼斯机场 T2 打车 10min · 22€。看下午班次哪个更早。", kind: "transit", loc: {lat: 43.68793, lng: 7.24373}, hop: {via: "打车", dur: "10-15min · 15-22€"} },
-      { t: "13:00", h: "尼斯 → 巴黎 · 飞机 or TGV Inoui", d: "首选 easyJet/Air France 尼斯→巴黎 CDG/ORY 1h35m（40-90€），落地后 RER B/Orlyval 进城 45min；或 TGV Inoui 尼斯 Ville → 巴黎 Gare de Lyon 5h40m（二等 70-160€）。飞机更快省时间。机票还没定，下面时间按傍晚抵达估算。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "航班 40-90€ · TGV 70-160€", notice: "10/1 的尼斯→巴黎班次还没订。定下来后这一天的时间轴要跟着调。" },
-      { t: "17:30", h: "拉丁区公寓 Check-in · 清真寺景观阳台", d: "Airbnb「绝美景色 | 巴黎拉丁区」，房东 Audrey，★4.87（39 评）· 1 卧 2 床 1 卫 · 15:00 后可入住、明天 11:00 前退房。阳台正对巴黎大清真寺的绿瓦穹顶和白墙庭院。从 CDG 打车约 45min €55，或 RER B 到 Gare du Nord 换 M5 到 Place Monge 约 1h。到 Gare de Lyon 的话地铁 M1+M7 或打车 12min。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.airbnb.cn/rooms/14190318", hop: {via: "打车 CDG → 5 区 / RER B + M5", dur: "45min · €55 / ~1h"} },
+      { t: "09:30", h: "Casa Californie 提前退房 · 收拾行李", d: "12:35 的航班要 11:00 到 T2 值机，所以今早提前退房（比 11:00 的硬性时间早）。天使湾散步这次跳过——留给明年。房东那边打个招呼，行李直接带走不寄存。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373}, notice: "为赶航班提前退房，原计划的 Promenade 晨间散步取消。" },
+      { t: "10:30", h: "打车 Californie → 尼斯机场 T2", d: "从 220 Avenue de la Californie 到 NCE T2 打车约 10-12min · 22€（双人分摊 11€）。也可以走 Tram T2（1.5€/人）但带行李换乘麻烦，赶飞机就打车。11:00 前到航站楼。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "打车", dur: "10-12min · 22€"} },
+      { t: "11:00", h: "T2 值机 + 安检 · 机场吃早午饭", d: "易捷是廉航，网上提前 check-in 好、行李额确认清楚（随身 56×45×25cm 免费，托运需另购）。安检后 T2 有 Paul、Pret 之类，随便吃点——这趟航班**无餐食**，飞机上什么都没有。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, notice: "easyJet 经济舱无餐食。登机前吃饱或买点带上。" },
+      { t: "12:35", h: "NCE T2 → ORY T1 · easyJet U24856", d: "尼斯蔚蓝海岸 T2 12:35 起飞 → 巴黎奥利 T1 14:05 落地，飞行 1h30m，空客 320（中型）。订单号 1128150429939513，携程出票中。靠窗能看到阿尔卑斯山脊往北铺开——起飞后 20 分钟左右最好看。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "已购 · 总 ¥1,744 双人（人均 ¥872）", notice: "易捷 U24856 · 经济舱无餐食 · 空客 320。落地是奥利 ORY 不是 CDG。" },
+      { t: "14:05", h: "ORY T1 落地 · 打车进城", d: "奥利 T1 到 5 区拉丁区约 19km，打车 35-40min · €35-45（双人分摊约 €20）。出到达层直接上官方 taxi 队伍（巴黎奥利到左岸有固定价 €37），别理揽客的。两人带行李，这段就别折腾 Orlybus 换地铁了。", kind: "transit", loc: {lat: 48.7262, lng: 2.3652}, hop: {via: "打车 ORY T1 → 5 区", dur: "35-40min · €35-45"} },
+      { t: "15:00", h: "拉丁区公寓 Check-in · 清真寺景观阳台", d: "Airbnb「绝美景色 | 巴黎拉丁区」，房东 Audrey，★4.87（39 评）· 1 卧 2 床 1 卫 · 15:00 后可入住、明天 11:00 前退房。阳台正对巴黎大清真寺的绿瓦穹顶和白墙庭院。落地时间刚好卡上入住时段，行李放下就能休息——比原先估的傍晚抵达宽松多了。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.airbnb.cn/rooms/14190318" },
+      { t: "16:30", h: "阳台下午茶 · 或补个觉", d: "多出来的两小时是意外之喜。阳台正对绿顶，下午光线斜过来的时候最好拍。楼下 Franprix 买瓶水和水果上来，坐着发会呆。前面七天连轴转，这半天该歇。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554} },
       { t: "18:30", h: "Rue Mouffetard 老市集街 · 晚餐", d: "从公寓步行 5-6min（0.5km）到巴黎最古老的市集街之一。傍晚菜摊陆续收，餐馆和酒馆正好开场——奶酪店 Androuet、Le Vieux Chêne 老酒馆（1900 年招牌还在）。随便找家露天桌吃 steak frites 或 couscous，人均 25-40€。", kind: "food", loc: {lat: 48.8425, lng: 2.3499}, hop: {via: "步行", dur: "6min · 0.5km"} },
       { t: "20:30", h: "巴黎大清真寺茶室 · 薄荷茶与摩尔庭院", d: "就在公寓楼下 1-2min。La Mosquée de Paris 的 Salon de Thé 有摩尔风瓷砖庭院和无花果树，一杯薄荷茶 3€、一块 pâtisserie orientale 2€，营业到 23:00。房源标题说的「土耳其浴室 1 分钟」就是这里的 hammam（要预约、单独收费）。抬头就是白天从你阳台看到的那个绿顶。", kind: "walk", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.grandemosqueedeparis.fr/", ticket: "茶室 3-8€ · hammam 约 45€ 需预约", hop: {via: "步行", dur: "2min · 150m"} },
       { t: "21:30", h: "植物园外墙夜行 · 回家", d: "沿 Rue Geoffroy-Saint-Hilaire 走 5min 到 Jardin des Plantes 铁栅栏外（园内 20:00 闭园，夜里看外墙老树剪影和自然史博物馆的灯就够）。回公寓 8min。路上 Franprix（营业到 22:00）买明早可颂 + Perrier。", kind: "walk", loc: {lat: 48.8434, lng: 2.3597}, hop: {via: "步行 回公寓", dur: "全程 15min · 1.1km"} }
     ],
-    vlog: ["天使湾晨间告别", "Nice-Ville 站台/机场值机", "空中云海转场", "推开阳台窗 → 清真寺绿顶第一眼", "Rue Mouffetard 傍晚市集街", "清真寺茶室的薄荷茶与瓷砖庭院"],
+    vlog: ["Californie 提前退房 · 关门那一刻", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站的第一口巴黎空气", "推开阳台窗 → 清真寺绿顶第一眼", "Rue Mouffetard 傍晚市集街", "清真寺茶室的薄荷茶与瓷砖庭院"],
     stay: { name: "绝美景色 · 巴黎拉丁区 · 土耳其浴室 1 分钟", area: "Quartier Latin · 75005 Paris · 清真寺景观阳台", note: "1 晚 · ★4.87（39 评）· 1 卧 2 床 1 卫 · 房东 Audrey · 人均 ¥882.96（总 ¥1,765.91）· 15:00 后入住 / 11:00 前退房", url: "https://www.airbnb.cn/rooms/14190318" },
     mapCenter: {lat: 48.8432, lng: 2.3530, zoom: 14}
   },
@@ -519,8 +522,9 @@ const budget = {
         { t: "BCN 市内 T-Casual 地铁 10 次卡", amt: 98, note: "€12.55 · 单人一张够 3-4 天用" },
         { t: "BCN → NCE · Vueling/easyJet 单程", amt: 700, note: "9/28 11:30 · 早鸟 60-100€ 单人" },
         { t: "NCE 机场 → 民宿 · Tram T2/打车", amt: 20, note: "Tram 1.5€ 或打车 20€ 分摊" },
-        { t: "NCE → PAR · 飞机 or TGV Inoui", amt: 500, note: "10/1 · 首选 easyJet 40-90€ / TGV 二等 70-160€ 单人" },
+        { t: "NCE → ORY · easyJet U24856 已购", amt: 872, note: "10/1 12:35-14:05 · 携程 1128150429939513 · 空客 320 · 经济舱无餐食 · 总 ¥1,744 / 2" },
         { t: "巴黎 Navigo Semaine 周票", amt: 235, note: "€30 周票（含 CDG↔市区），Sun-Sat 有效" },
+        { t: "ORY T1 → 拉丁区公寓 · 打车双人分摊", amt: 160, note: "10/1 14:05 落地 · €35-45 打车 / 2 · 35-40min · 约 19km" },
         { t: "10/4 打车 46 Rue Jacob → CDG · 双人分摊", amt: 220, note: "€55 打车 / 2 · 45-55min · 29.6km" },
         { t: "各城市打车零散 · 单人分摊", amt: 350, note: "巴塞/尼斯/巴黎 · 双人分摊后单人一半" }
       ]
@@ -621,10 +625,11 @@ function renderBudget() {
 
 function refreshBudgetTotals() {
   let grand = 0;
-  // 已订固定 = 机票 2 项 + OUIGO（intra[0]）+ 5 家 Airbnb（stay 全部）+ 圣家堂票（ticket[0]）
+  // 已订固定 = 国际机票 2 项 + OUIGO（intra[0]）+ easyJet NCE→ORY（intra[4]）+ 5 家 Airbnb（stay 全部）+ 圣家堂票（ticket[0]）
   const bookedFixed =
-    budget.cats[0].items[0].amt + budget.cats[0].items[1].amt   // 机票 x2
+    budget.cats[0].items[0].amt + budget.cats[0].items[1].amt   // 国际机票 x2
     + budget.cats[1].items[0].amt                                // OUIGO
+    + budget.cats[1].items[4].amt                                // easyJet U24856
     + budget.cats[2].items.reduce((a, b) => a + b.amt, 0)        // 5 家 Airbnb
     + budget.cats[3].items[0].amt;                               // 圣家堂
   budget.cats.forEach((cat, ci) => {
