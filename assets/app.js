@@ -477,6 +477,7 @@ daysTabs.forEach(btn => {
 /* 统一的 Day 切换函数：同步 tabs + 移动端 chip + 渲染内容 */
 function switchToDay(n, opts = {}) {
   const { scrollIntoView = false } = opts;
+  if (document.body.dataset.activePart !== "days") showPart("days", { scroll: false });
   daysTabs.forEach(b => b.classList.toggle("is-active", parseInt(b.dataset.day, 10) === n));
   document.querySelectorAll(".mnav-chip").forEach(c => c.classList.toggle("is-active", parseInt(c.dataset.jumpDay, 10) === n));
   renderDay(n);
@@ -520,9 +521,58 @@ if (mnavMenuBtn && mnavSheet) {
   });
 }
 
-/* Brand 点击回顶部 */
+/* ---------- Part View Router · 目录一次只打开一个 Part ---------- */
+const partNames = new Set(["journey", "todo", "days", "collections", "packing", "budget", "missions", "home"]);
+const partSurfaces = [...document.querySelectorAll(".section"), document.querySelector(".hero"), document.querySelector(".site-foot")].filter(Boolean);
+
+function showPart(part, { scroll = true } = {}) {
+  const active = partNames.has(part) ? part : "days";
+  document.body.dataset.activePart = active;
+
+  const targets = active === "home"
+    ? [document.querySelector(".hero"), document.querySelector(".site-foot")]
+    : active === "collections"
+      ? [document.getElementById("collections"), ...document.querySelectorAll('[data-part-group="collections"]')]
+      : [document.getElementById(active)];
+
+  partSurfaces.forEach(el => el.classList.toggle("part-is-hidden", !targets.includes(el)));
+  targets.filter(Boolean).forEach(el => {
+    el.style.opacity = "1";
+    el.style.transform = "translateY(0)";
+  });
+  document.querySelectorAll("[data-part-nav]").forEach(link => {
+    link.classList.toggle("is-active", link.dataset.partNav === active);
+    link.setAttribute("aria-current", link.dataset.partNav === active ? "page" : "false");
+  });
+
+  if (scroll) window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+function openPartFromHash({ scroll = false } = {}) {
+  const requested = window.location.hash.replace("#", "");
+  showPart(requested === "top" ? "home" : (partNames.has(requested) ? requested : "days"), { scroll });
+}
+
+document.querySelectorAll("[data-part-nav]").forEach(link => {
+  link.addEventListener("click", event => {
+    event.preventDefault();
+    const part = link.dataset.partNav;
+    history.pushState(null, "", `#${part}`);
+    showPart(part);
+  });
+});
+window.addEventListener("hashchange", () => openPartFromHash({ scroll: true }));
+openPartFromHash();
+
+/* Brand 点击回目录首页 */
 document.querySelector(".top-nav .brand")?.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
+  history.pushState(null, "", "#top");
+  showPart("home");
+});
+document.querySelector(".mnav-brand")?.addEventListener("click", event => {
+  event.preventDefault();
+  history.pushState(null, "", "#top");
+  showPart("home");
 });
 
 /* ---------- Missions ---------- */

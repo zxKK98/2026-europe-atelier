@@ -134,6 +134,13 @@ button { font-family: inherit; cursor: pointer; }
 }
 .nav-links a:hover { color: var(--ink); }
 .nav-links a:hover::after { width: 100%; }
+.nav-links a.is-active { color: var(--ink); }
+.nav-links a.is-active::after { width: 100%; }
+
+/* ---- Part View Router · 每次只展开一个内容章节 ---- */
+.part-is-hidden { display: none !important; }
+body[data-active-part="days"] .mnav-days { display: flex; }
+body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none; }
 
 .theme-toggle {
   width: 36px; height: 36px;

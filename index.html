@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<link rel="stylesheet" href="assets/style.css?v=20260831c" />
+<link rel="stylesheet" href="assets/style.css?v=20260831d" />
 </head>
 <body>
 <a id="top"></a>
@@ -26,14 +26,14 @@
     <span class="brand-mark">A/A</span>
     <span class="brand-name">The Autumn Atelier</span>
   </div>
-  <ul class="nav-links">
-    <li><a href="#journey">Journey</a></li>
-    <li><a href="#todo">TODO</a></li>
-    <li><a href="#days">Days</a></li>
-    <li><a href="#collections">Collections</a></li>
-    <li><a href="#packing">Packing</a></li>
-    <li><a href="#budget">Budget</a></li>
-    <li><a href="#missions">Missions</a></li>
+  <ul class="nav-links" aria-label="内容目录">
+    <li><a href="#journey" data-part-nav="journey">Journey</a></li>
+    <li><a href="#todo" data-part-nav="todo">TODO</a></li>
+    <li><a href="#days" data-part-nav="days">Days</a></li>
+    <li><a href="#collections" data-part-nav="collections">Collections</a></li>
+    <li><a href="#packing" data-part-nav="packing">Packing</a></li>
+    <li><a href="#budget" data-part-nav="budget">Budget</a></li>
+    <li><a href="#missions" data-part-nav="missions">Missions</a></li>
   </ul>
   <button class="theme-toggle" id="themeToggle" aria-label="切换主题">
     <span class="theme-icon light-icon">☾</span>
@@ -1164,7 +1164,7 @@
 </section>
 
 <!-- Hidden Cafés + Design Guide -->
-<section class="section split-two">
+<section class="section split-two" data-part-group="collections">
   <div class="split-col">
     <span class="section-idx">Part 04</span>
     <h2 class="section-title">Hidden Cafés</h2>
@@ -1193,7 +1193,7 @@
 </section>
 
 <!-- Highlights: Golf / Fashion Week / Mercè / Art Calendar -->
-<section class="section highlights">
+<section class="section highlights" data-part-group="collections">
   <div class="section-head">
     <span class="section-idx">Part 06 – 09</span>
     <h2 class="section-title">Four Highlights</h2>
@@ -1333,17 +1333,17 @@
     </div>
     <div class="mnav-sheet-fleuron">❦</div>
     <ul class="mnav-sheet-list">
-      <li><a href="#journey" data-mnav-close><span class="mnav-part">I</span><span class="mnav-name">Journey · 旅程概览</span></a></li>
-      <li><a href="#todo" data-mnav-close><span class="mnav-part">II</span><span class="mnav-name">Booking · 预订清单</span></a></li>
-      <li><a href="#days" data-mnav-close><span class="mnav-part">III</span><span class="mnav-name">Days · 逐日行程</span></a></li>
-      <li><a href="#collections" data-mnav-close><span class="mnav-part">IV</span><span class="mnav-name">Collections · 体验收藏</span></a></li>
-      <li><a href="#packing" data-mnav-close><span class="mnav-part">V</span><span class="mnav-name">Packing · 行装清单</span></a></li>
-      <li><a href="#budget" data-mnav-close><span class="mnav-part">VI</span><span class="mnav-name">Budget · 预算</span></a></li>
-      <li><a href="#missions" data-mnav-close><span class="mnav-part">✦</span><span class="mnav-name">Missions · 创意任务</span></a></li>
+      <li><a href="#journey" data-part-nav="journey" data-mnav-close><span class="mnav-part">I</span><span class="mnav-name">Journey · 旅程概览</span></a></li>
+      <li><a href="#todo" data-part-nav="todo" data-mnav-close><span class="mnav-part">II</span><span class="mnav-name">Booking · 预订清单</span></a></li>
+      <li><a href="#days" data-part-nav="days" data-mnav-close><span class="mnav-part">III</span><span class="mnav-name">Days · 逐日行程</span></a></li>
+      <li><a href="#collections" data-part-nav="collections" data-mnav-close><span class="mnav-part">IV</span><span class="mnav-name">Collections · 体验收藏</span></a></li>
+      <li><a href="#packing" data-part-nav="packing" data-mnav-close><span class="mnav-part">V</span><span class="mnav-name">Packing · 行装清单</span></a></li>
+      <li><a href="#budget" data-part-nav="budget" data-mnav-close><span class="mnav-part">VI</span><span class="mnav-name">Budget · 预算</span></a></li>
+      <li><a href="#missions" data-part-nav="missions" data-mnav-close><span class="mnav-part">✦</span><span class="mnav-name">Missions · 创意任务</span></a></li>
     </ul>
   </div>
 </div>
 
-<script src="assets/app.js?v=20260831c"></script>
+<script src="assets/app.js?v=20260831d"></script>
 </body>
 </html>
