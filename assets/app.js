@@ -28,7 +28,8 @@ const days = [
     ],
     vlog: ["香港 T1 值机牌", "阿布扎比转机航站楼", "飞机窗外日出", "Retiro 树影", "太阳门夜色", "Mercado San Miguel 火腿摊"],
     stay: { name: "Heart Of Madrid Apartments", area: "Sol · Calle Mayor 49", note: "马约尔广场旁 · 阳台正对老街", url: "https://www.airbnb.cn/rooms/1254627226967989817" },
-    mapCenter: {lat: 40.4170, lng: -3.7040, zoom: 15}
+    mapCenter: {lat: 40.4170, lng: -3.7040, zoom: 15},
+    returnHome: { from: "Círculo 屋顶", to: "Heart Of Madrid", distance: "1.1km", via: "步行", duration: "15min", note: "沿 Calle de Alcalá → Puerta del Sol → Calle Mayor，夜间主街人流稳定。" }
   },
   {
     n: 2, date: "Sep 25 · Fri", city: "马德里 → 巴塞罗那", theme: "OUIGO Morning · Casa Batlló · OBC Symphony Night",
@@ -46,7 +47,8 @@ const days = [
     ],
     vlog: ["Atocha Almudena Grandes 站牌特写", "OUIGO 二层车厢座位 1D", "Casa Batlló 龙鳞屋顶仰角", "Poblenou 第一晚街角", "OBC 交响乐团 Nou Barris 广场全景", "天鹅湖终章时的人群"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
-    mapCenter: {lat: 41.3900, lng: 2.1700, zoom: 13}
+    mapCenter: {lat: 41.3900, lng: 2.1700, zoom: 13},
+    returnHome: { from: "OBC / Nou Barris", to: "Rut's Loft · Poblenou", distance: "约 7.0km", via: "L11 → L4 → 步行", duration: "35-40min", note: "若 OBC 后仍去 Bogatell，音乐散场后直接步行 6min 回民宿；不去则按此地铁线回家。" }
   },
   {
     n: 3, date: "Sep 26 · Sat", city: "巴塞罗那 · Mercè + 高迪百年", theme: "Gaudí Centennial × Correfoc",
@@ -65,21 +67,23 @@ const days = [
     ],
     vlog: ["哥特区 gegants 巨人穿街", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Love of Lesbian 开场前的 Bogatell 人海"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
-    mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13}
+    mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13},
+    returnHome: { from: "Bogatell 海滩舞台", to: "Rut's Loft · Poblenou", distance: "0.9km", via: "海滨步行", duration: "12min", note: "01:30 之后不必打车；沿 Passeig Marítim 回 Calle Pellaires，结伴走、手机收好。" }
   },
   {
     n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà + Tibidabo Sunset",
     desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程）。下午看 Casa Milà；傍晚只留一段完整的 Tibidabo 体验：圣心堂最高露台、全城日落和蓝调。下山后直接回 Bogatell Beach，看 22:00 的 Mercè Piromusical 烟火闭幕。",
     slots: [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
-      { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
+      { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", img: "assets/img/spots/els-pescadors.jpg", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
       { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Poblenou 打车约 15min（€10-12），看完直接打车去 Mirador 看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 Poblenou → Passeig de Gràcia", dur: "15min · €10-12"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
       { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-summit.jpg", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, remote: { metric: "单程 70min · 往返 4h25", copy: "距离远，且 111 路下山末班约 21:30。若 16:50 仍未离开 Casa Milà、天气转差或体力不足，直接放弃登顶：回 Poblenou 休息，21:30 去 Bogatell 看烟火闭幕。" }, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
       { t: "22:00", h: "Mercè Piromusical · Bogatell Beach 烟火闭幕", d: "La Mercè 2026 的最后一场：音乐编排烟火在 Bogatell 海滩举行。今年因 Montjuïc 施工首次移到这里。住处步行 5 分钟，提前在海滩靠北一侧找位；结束后直接步行回民宿。", kind: "event", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.39423, lng: 2.20488}, hop: {via: "Plaça Catalunya → L4 Poblenou → 步行", dur: "Tibidabo 下山后约 20min"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 22:00" }
     ],
     vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱下午光", "Tibidabo 耶稣雕像与巴塞全景", "日落 → 蓝调延时", "Bogatell 海面上的 Piromusical 烟火"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
-    mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12}
+    mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12},
+    returnHome: { from: "Bogatell Piromusical", to: "Rut's Loft · Poblenou", distance: "0.9km", via: "海滨步行", duration: "12min", note: "烟火散场人潮大，先在海滩边缘停 10 分钟再走；无需打车，步行回家最稳。" }
   },
   {
     n: 5, date: "Sep 28 · Mon", city: "巴塞罗那 → 尼斯", theme: "Barcelona to Côte d'Azur",
@@ -87,7 +91,7 @@ const days = [
     slots: [
       { t: "11:00", h: "Rut's Loft 退房 · 行李寄存", d: "航班在下午，不用早起。11:00 正常退房时间，行李寄民宿或用 Bounce/Radical Storage 寄存点（5-6€/件）——楼下 Poblenou 就有。空手过完上午最后半天。", kind: "stay", loc: {lat: 41.4023, lng: 2.2013} },
       { t: "11:30", h: "Bogatell 海滩 · 告别地中海", d: "民宿步行 5min 的 Bogatell 海滩，巴塞本地人的海滩（比 Barceloneta 清静得多）。下水或者就坐在沙上吹半小时风——这是这趟旅行最后一次见地中海西段。", kind: "walk", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.3970, lng: 2.2040}, hop: {via: "步行", dur: "5min"} },
-      { t: "12:30", h: "Poblenou 早午餐 · Can Recasens", d: "Poblenou 老仓库改的酒馆，暖光木架 + 一整墙葡萄酒，招牌是烤面包配加泰隆奶酪冷肉拼盘。人均 30€。（Day 4 已去过 Els Pescadors 就换这家；反过来也行。）吃完取行李直接打车走。", kind: "food", loc: {lat: 41.4008, lng: 2.1985}, hop: {via: "步行", dur: "5min"}, link: "https://www.canrecasens.com/" },
+      { t: "12:30", h: "Poblenou 早午餐 · Rambla 当天选", d: "原定 Can Recasens 不能作为这天午餐锚点：其公开时段与周一午餐不一致。改为在 Rambla del Poblenou 当天选一家已营业的早午餐店；吃完取行李直接打车去机场。", kind: "food", loc: {lat: 41.4008, lng: 2.1985}, hop: {via: "步行", dur: "5min"} , notice: "周一午餐不再押 Can Recasens；这是刻意保留的 walk-in 空档，无需订位。" },
       { t: "13:30", h: "Poblenou → BCN El Prat T1", d: "取行李后打车 25min 到 T1（30€ 双人分摊），或 Aerobús A1（6.75€/人，Plaça Catalunya 出发 35min）。Vueling 在 T1，国内申根线值机柜台建议留 1.5h。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, hop: {via: "打车", dur: "25min · 30€"} },
       { t: "15:25", h: "VY1521 · BCN T1 → NCE T1 · 已出票", d: "西班牙伏林航空 Vueling VY1521，15:25 起飞 16:50 落地，飞行 1h25m。出行人 DUAN/JINNAN、CHEN/KANG，状态已出票。廉航——随身行李尺寸提前量好，托运额确认清楚；机上无免费餐食。窗边看比利牛斯山东段 + 法国南部海岸线。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, link: "https://www.vueling.com/", ticket: "VY1521 · 已出票 · 1h25m" },
       { t: "16:50", h: "抵达尼斯 Côte d'Azur T1", d: "落地航站楼是 T1。T1 出来走 5min 有 Tram T2 站，30min 到市区（1.5€）；带行李赶入住建议直接打车 15min 到 Californie（约 25€ 双人分摊）。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "Vueling VY1521", dur: "1h25m"}, notice: "落地航站楼是 NCE T1，机场内 T1↔T2 有免费穿梭巴士。" },
@@ -97,7 +101,8 @@ const days = [
     ],
     vlog: ["Bogatell 海滩告别镜头", "Can Recasens 酒墙暖光", "BCN T1 值机牌 VY1521", "航班窗外比利牛斯东段", "NCE T1 出站第一口海风", "天使湾蓝椅子 + 日落", "Socca 出炉"],
     stay: { name: "New, Casa Californie Terrace & Beach", area: "尼斯西区海边 · 220 Avenue de la Californie", note: "3 晚 ¥3,339.72 · 房东 Aurore · HM8A4N4MFY", url: "https://www.airbnb.cn/rooms/1705767598377386136" },
-    mapCenter: {lat: 43.6950, lng: 7.2600, zoom: 13}
+    mapCenter: {lat: 43.6950, lng: 7.2600, zoom: 13},
+    returnHome: { from: "尼斯老城 · socca", to: "Casa Californie", distance: "3.2km", via: "Tram L1 → 步行", duration: "25min", note: "从 Opéra / Vieille Ville 上 L1 往 Hôpital Pasteur 反向至 Magnan，再步行 7min；22:00 后可直接打车约 12min。" }
   },
   {
     n: 6, date: "Sep 29 · Tue", city: "尼斯 → 昂蒂布 → 尼斯", theme: "Antibes · Picasso",
@@ -114,7 +119,8 @@ const days = [
     ],
     vlog: ["Marché Provençal 橄榄油瓶", "毕加索博物馆城堡外墙", "海边生蚝手持", "Colline du Château 日落全景", "尼斯老城橘红屋顶"],
     stay: { name: "New, Casa Californie Terrace & Beach", area: "尼斯西区海边 · 220 Avenue de la Californie", note: "续住 · 房东 Aurore · HM8A4N4MFY", url: "https://www.airbnb.cn/rooms/1705767598377386136" },
-    mapCenter: {lat: 43.6400, lng: 7.2000, zoom: 10}
+    mapCenter: {lat: 43.6400, lng: 7.2000, zoom: 10},
+    returnHome: { from: "La Merenda / Chez Palmyre", to: "Casa Californie", distance: "3.1km", via: "打车", duration: "12min", note: "晚餐后优先用 Uber / 官方 taxi 回 220 Avenue de la Californie；两人分摊约 €12-15，避免夜间换乘。" }
   },
   {
     n: 7, date: "Sep 30 · Wed", city: "Èze + Villefranche · 蔚蓝海岸", theme: "Cliff Villages & Bays",
@@ -132,7 +138,8 @@ const days = [
     ],
     vlog: ["Fragonard 蒸馏铜锅", "Jardin Exotique 悬崖仙人掌 hyperlapse", "Villefranche 彩色海湾广角", "Rue Obscure 地下石廊", "沙滩鹅卵石对比"],
     stay: { name: "New, Casa Californie Terrace & Beach", area: "尼斯西区海边 · 220 Avenue de la Californie", note: "最后一晚 · 10/1 提前退房赶 12:35 航班 → 巴黎", url: "https://www.airbnb.cn/rooms/1705767598377386136" },
-    mapCenter: {lat: 43.7100, lng: 7.3300, zoom: 12}
+    mapCenter: {lat: 43.7100, lng: 7.3300, zoom: 12},
+    returnHome: { from: "尼斯晚餐", to: "Casa Californie", distance: "视地点约 1-4km", via: "打车", duration: "8-15min", note: "这晚不锁定单一餐厅；饭后直接叫车回 220 Avenue de la Californie，避免为回程再折返 Tram。" }
   },
   {
     n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · Septime 之夜", theme: "Northbound · A Table at Septime",
@@ -152,7 +159,8 @@ const days = [
     ],
     vlog: ["Californie 提前退房 · 关门那一刻", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站的第一口巴黎空气", "推开阳台窗 → 清真寺绿顶第一眼", "Septime 门牌与开放式厨房", "tasting menu 每一道的特写", "夜里 M5 车厢与回家的路"],
     stay: { name: "绝美景色 · 巴黎拉丁区 · 土耳其浴室 1 分钟", area: "Quartier Latin · 75005 Paris · 清真寺景观阳台", note: "1 晚 · ★4.87（39 评）· 1 卧 2 床 1 卫 · 房东 Audrey · 人均 ¥882.96（总 ¥1,765.91）· 15:00 后入住 / 11:00 前退房", url: "https://www.airbnb.cn/rooms/14190318" },
-    mapCenter: {lat: 48.8432, lng: 2.3530, zoom: 14}
+    mapCenter: {lat: 48.8432, lng: 2.3530, zoom: 14},
+    returnHome: { from: "清真寺茶室", to: "拉丁区 Airbnb", distance: "150m", via: "步行", duration: "2min", note: "茶室就在 5 区公寓旁；23:00 前离开后沿 Rue Geoffroy-Saint-Hilaire 回家即可。" }
   },
   {
     n: 9, date: "Oct 2 · Fri", city: "巴黎 · 左岸卢浮宫日", theme: "Louvre + Rive Gauche Salon",
@@ -171,7 +179,8 @@ const days = [
     ],
     vlog: ["Rue Jacob 门牌", "Porte des Lions 侧门排队", "蒙娜丽莎前的人群（不拍画）", "胜利女神楼梯广角", "杜乐丽绿椅子特写", "奥赛大钟", "Rue de Buci 生蚝台", "塞纳河夜灯"],
     stay: { name: "Paris · Truly parisien apartment in St Germain des Prés", area: "6 区 · 46 Rue Jacob · ★4.91", note: "首晚 · 15:00 check-in · 1 卧 1 床 1 卫", url: "https://www.airbnb.com/rooms/23476199" },
-    mapCenter: {lat: 48.8590, lng: 2.3350, zoom: 14}
+    mapCenter: {lat: 48.8590, lng: 2.3350, zoom: 14},
+    returnHome: { from: "Pont des Arts 河岸", to: "46 Rue Jacob", distance: "0.8km", via: "塞纳河边步行", duration: "10min", note: "沿 Quai de Conti / Rue de Seine 回左岸公寓；夜里主路有灯、人流稳定，不必打车。" }
   },
   {
     n: 10, date: "Oct 3 · Sat", city: "巴黎 · 左岸慢日 + 圣母院 + 铁塔", theme: "Rive Gauche + Notre-Dame + Eiffel",
@@ -188,7 +197,8 @@ const days = [
     ],
     vlog: ["Rue de Buci 早市可颂", "卢森堡绿椅子特写", "双叟咖啡桌面（假装读书）", "Pont Neuf 石雕仰拍", "圣母院飞天拱壁", "塞纳河蓝调水面", "铁塔金色闪烁 hyperlapse", "夏乐宫仰角"],
     stay: { name: "Paris · Truly parisien apartment in St Germain des Prés", area: "6 区 · 46 Rue Jacob · ★4.91", note: "最后一晚 · 10/4 10:00 退房赶 CDG", url: "https://www.airbnb.com/rooms/23476199" },
-    mapCenter: {lat: 48.8560, lng: 2.3380, zoom: 13}
+    mapCenter: {lat: 48.8560, lng: 2.3380, zoom: 13},
+    returnHome: { from: "夏乐宫 / Trocadéro", to: "46 Rue Jacob", distance: "4.2km", via: "官方 taxi", duration: "18-25min", note: "22:15 后从 Trocadéro 直接叫车回 Rue Jacob；两人分摊约 €14，避免夜间两次地铁换乘。" }
   },
   {
     n: 11, date: "Oct 4–5 · Sun–Mon", city: "巴黎 → 广州", theme: "Farewell · Homebound",
@@ -206,7 +216,8 @@ const days = [
     ],
     vlog: ["Rue Jacob 晨间空街", "Poilâne 面包架", "46 Rue Jacob 门牌告别特写", "CDG 值机牌", "机窗云海", "吉达机场夜色", "广州落地舷窗"],
     stay: { name: "Return · 返程在路上", area: "CDG → 吉达 → 广州", note: "两段飞行 · 明天回到深圳" },
-    mapCenter: {lat: 48.8560, lng: 2.3380, zoom: 12}
+    mapCenter: {lat: 48.8560, lng: 2.3380, zoom: 12},
+    returnHome: { from: "广州白云 T2", to: "深圳", distance: "约 130km", via: "高铁 / 预约专车", duration: "1.5-2.5h", note: "抵达当天按落地状态选：精力够就转广州南高铁回深圳；带大件行李或太晚则预约跨城专车。" }
   }
 ];
 
@@ -322,6 +333,17 @@ function renderDay(n) {
         </div>`
   ) : "";
 
+  const returnHomeHtml = d.returnHome ? `
+    <aside class="day-return" aria-label="当晚回住宿动线">
+      <div class="day-return-top">
+        <span class="day-return-kicker">Return · 回住所</span>
+        <span class="day-return-distance">${d.returnHome.distance}</span>
+      </div>
+      <div class="day-return-route"><span>${d.returnHome.from}</span><i>→</i><span>${d.returnHome.to}</span></div>
+      <div class="day-return-meta"><b>${d.returnHome.via}</b><span>${d.returnHome.duration}</span></div>
+      ${d.returnHome.note ? `<p>${d.returnHome.note}</p>` : ""}
+    </aside>` : "";
+
   daysContent.innerHTML = `
     <div class="day-card">
       <div class="day-hero">
@@ -345,6 +367,7 @@ function renderDay(n) {
         <div class="day-map" id="dayMap"></div>
       </div>
       <div class="day-timeline">${slotsHtml}</div>
+      ${returnHomeHtml}
     </div>`;
 
   // 渲染 Leaflet 地图

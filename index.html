@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<link rel="stylesheet" href="assets/style.css?v=20260831b" />
+<link rel="stylesheet" href="assets/style.css?v=20260831c" />
 </head>
 <body>
 <a id="top"></a>
@@ -389,7 +389,7 @@
   </div>
 
   <div class="todo-progress">
-    <span class="tp-count"><b id="tpDone">0</b><span>/19</span></span>
+    <span class="tp-count"><b id="tpDone">0</b><span>/20</span></span>
     <span class="tp-label">已预订</span>
     <span class="tp-bar"><span class="tp-fill" id="tpFill"></span></span>
     <button class="tp-reset" type="button" id="tpReset">全部重置</button>
@@ -905,10 +905,10 @@
       </div>
     </article>
 
-    <article class="todo-card level-green">
+    <article class="todo-card level-orange">
       <div class="tc-media">
-        <img src="assets/img/spots/socca-nice.jpg?v=20260830j" alt="尼斯 La Merenda · 家常菜" loading="lazy" />
-        <span class="tc-badge"><i></i>现场排队</span>
+        <img src="assets/img/spots/socca-nice.jpg?v=20260831c" alt="尼斯 La Merenda · 家常菜" loading="lazy" />
+        <span class="tc-badge"><i></i>需订位</span>
         <span class="tc-price">€40</span>
         <h3 class="tc-title">尼斯 La Merenda · 家常菜</h3>
       </div>
@@ -923,19 +923,21 @@
       </label>
       <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
-        <span class="tc-when-label">无法预约</span>
-        <span class="tc-when-date">当天到店</span>
-        <span class="tc-when-note">无电话 · 无网站</span>
+        <span class="tc-when-label">优先完成</span>
+        <span class="tc-when-date">9/23 周三</span>
+        <span class="tc-when-note">官网开放时直接订 9/29 晚餐</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/23 前完成线上订位</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">9/29 周二 20:30 晚餐（Day 6）</span></li>
-          <li class="is-warn"><span class="k">怎么订</span><span class="v">只能亲自到店在纸条上留位 —— 建议中午路过时先去留名</span></li>
+          <li class="is-warn"><span class="k">订位</span><span class="v"><b>官网或到店订位</b>；无电话，座位很少</span></li>
           <li class="is-warn"><span class="k">付款</span><span class="v"><b>只收现金</b>，记得取钱</span></li>
-          <li><span class="k">等位</span><span class="v">24 座翻台快，40 分钟内有位</span></li>
-          <li><span class="k">备选</span><span class="v">隔壁 Chez Palmyre 人均 €30，也是现金</span></li>
+          <li><span class="k">营业</span><span class="v">周二至周五午、晚餐；9/29 周二正常营业</span></li>
+          <li><span class="k">备选</span><span class="v">Chez Palmyre 需电话订位：+33 4 93 85 72 32</span></li>
       </ul>
       <div class="todo-actions">
-          <span class="todo-link" style="color:var(--ink-3);">现场排队 · 无预订</span>
+          <a class="todo-link" href="https://lamerenda.net/" target="_blank" rel="noopener">La Merenda 订位 →</a>
+          <a class="todo-link" href="tel:+33493857232">Chez Palmyre 电话 →</a>
       </div>
     </article>
 
@@ -1036,17 +1038,50 @@
           <a class="todo-link" href="https://www.guysavoy.com/en/reservations/" target="_blank" rel="noopener">Guy Savoy →</a>
       </div>
     </article>
+
+    <article class="todo-card level-orange">
+      <div class="tc-media">
+        <img src="assets/img/spots/els-pescadors.jpg?v=20260831c" alt="Els Pescadors · Poblenou 露台" loading="lazy" />
+        <span class="tc-badge"><i></i>需订位</span>
+        <span class="tc-price">€50</span>
+        <h3 class="tc-title">Els Pescadors · Poblenou 海鲜午餐</h3>
+      </div>
+      <label class="tc-check" for="chk-els-pescadors">
+        <input type="checkbox" id="chk-els-pescadors" data-todo="els-pescadors" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded"><span class="tc-folded-title">Els Pescadors · 海鲜午餐</span><span class="tc-folded-price">€50</span></span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="tc-when">
+        <span class="tc-when-label">优先完成</span>
+        <span class="tc-when-date">9/13 周日前</span>
+        <span class="tc-when-note">周日午餐，露台座位紧</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/13 周日前完成订位</span>
+      </div>
+      <ul class="tc-facts">
+        <li><span class="k">目标</span><span class="v">9/27 周日 14:30（Day 4）</span></li>
+        <li class="is-warn"><span class="k">订位</span><span class="v">周末建议提前订；想坐 Plaça de Prim 露台要写进备注</span></li>
+        <li><span class="k">渠道</span><span class="v">官网 CoverManager 或电话 +34 932 252 018</span></li>
+        <li><span class="k">时段</span><span class="v">周日午餐正常营业</span></li>
+      </ul>
+      <div class="todo-actions">
+        <a class="todo-link" href="https://elspescadors.com/en/" target="_blank" rel="noopener">官网订位 →</a>
+        <a class="todo-link" href="tel:+34932252018">电话订位 →</a>
+      </div>
+    </article>
   </div>
 
   <p class="todo-foot">
   <b>以下全部为北京时间</b><br>
   <b>📅 9/5 周六前</b> — 卢浮宫 · 奥赛 · Casa Batlló · Casa Milà<br>
   <b>📅 9/10 周四 16:00</b> — <b style="color:var(--accent);">Septime 开抢</b>（巴黎当地 10:00），设 15:58 闹钟<br>
-  <b>📅 9/13 周日前</b> — 帆船出海 · Paella 烹饪课<br>
+  <b>📅 9/13 周日前</b> — 帆船出海 · Paella 烹饪课 · <b>Els Pescadors 周日午餐</b><br>
   <b>📅 9/19 周六前</b> — Palais Garnier（想去的话）<br>
+  <b>📅 9/23 周三前</b> — <b>La Merenda 9/29 晚餐</b>（官网 / 到店订位，现金）<br>
   <b>📅 9/30 周三</b> — 塞纳河游船 · <b style="color:var(--accent);">圣母院时段（旅途中手机抢）</b><br>
-  <b>🎫 现场买</b> — Picasso Antibes · Èze 植物园 · Círculo 屋顶 · Prado · La Merenda（现金）<br>
-  <b>⚠ Mercè 官方逐时日程 9 月初才发布</b>，出发前查 barcelona.cat/lamerce 确认（全部免费）
+  <b>🎫 现场买</b> — Picasso Antibes · Èze 植物园 · Círculo 屋顶 · Prado<br>
+  <b>🎵 Mercè 官方时段已对齐</b> — 9/26 Bogatell：Love of Lesbian 23:30 · Svetlana 01:30
   </p>
 </section>
 
@@ -1309,6 +1344,6 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=20260831b"></script>
+<script src="assets/app.js?v=20260831c"></script>
 </body>
 </html>

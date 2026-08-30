@@ -531,6 +531,65 @@ button { font-family: inherit; cursor: pointer; }
   flex-direction: column;
   gap: 24px;
 }
+.day-return {
+  margin: 8px 0 34px 104px;
+  padding: 15px 17px 16px;
+  border: 1px solid color-mix(in oklab, var(--accent-2) 48%, var(--line));
+  border-radius: 12px;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent-2) 11%, var(--paper)), var(--paper));
+}
+.day-return-top,
+.day-return-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.day-return-kicker {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.day-return-distance {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  color: var(--ink-2);
+  white-space: nowrap;
+}
+.day-return-route {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0 9px;
+  font-family: var(--display);
+  font-size: 17px;
+  line-height: 1.25;
+  color: var(--ink-1);
+}
+.day-return-route i {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-style: normal;
+  color: var(--accent);
+}
+.day-return-meta {
+  padding-top: 9px;
+  border-top: 1px solid color-mix(in oklab, var(--accent-2) 32%, var(--line));
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: .04em;
+  color: var(--ink-2);
+}
+.day-return-meta b { color: var(--accent); font-weight: 600; }
+.day-return p {
+  margin: 10px 0 0;
+  font-size: 12px;
+  line-height: 1.55;
+  color: var(--ink-2);
+}
 .slot {
   display: grid;
   grid-template-columns: 80px 1fr;
@@ -3488,4 +3547,14 @@ button { font-family: inherit; cursor: pointer; }
   .tc-folded-title { font-size: 14.5px; }
   .tc-when-bj { font-size: 11px; }
   .todo-card.is-done { padding-bottom: 12px; }
+}
+
+@media (max-width: 900px) {
+  .day-return {
+    margin: 2px 0 28px 68px;
+    padding: 13px 14px;
+  }
+  .day-return-route { font-size: 16px; }
+  .day-return-meta { align-items: flex-start; flex-direction: column; gap: 4px; }
+  .day-return p { font-size: 12.5px; }
 }
