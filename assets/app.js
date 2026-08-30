@@ -49,21 +49,20 @@ const days = [
   },
   {
     n: 3, date: "Sep 26 · Sat", city: "巴塞罗那 · Mercè + 高迪百年", theme: "Gaudí Centennial × Correfoc",
-    desc: "2026 是高迪去世 100 周年 + Park Güell 落成 100 周年双庆典。上午只安排 Park Güell 一座——2h 从容看，不用赶。中午在圣家堂周边正经吃个饭，12:45 进圣家堂（已购票，正午彩窗最强，留 2.5h）。Casa Milà 挪到了 Day 4 下午，那天时间宽裕。下午 Cavalcada 游行 + 夜晚 Correfoc + 音乐夜，是巴塞最疯的一天。",
+    desc: "全天交给 Mercè 节庆 + 一座圣家堂。上午不排任何收费景点，睡到自然醒，去哥特区和 Plaça de Sant Jaume 一带泡 Mercè 街头——周六上午有巨人游行（gegants），2026 主宾城市上海带来 100+ 艺术家的街头项目，全部免费。中午在圣家堂周边吃饭，12:45 进圣家堂（已购票，正午彩窗最强，留 2.5h）。下午继续 Mercè 街头与音乐舞台，夜晚 Correfoc 火跑 + 音乐夜。⚠ Mercè 官方逐时日程通常 9 月初发布，出发前查 barcelona.cat/lamerce 确认。",
     slots: [
-      { t: "08:00", h: "Poblenou 出发 → Gràcia 区吃早餐", d: "不用赶早了——上午只有 Park Güell 一座，可以从容出发。先到 Park Güell 山下的 Gràcia 老城区吃早餐（这一带是本地人生活区，比景区门口便宜一半）。吃完步行或短打车到公园入口。", kind: "transit", loc: {lat: 41.40650, lng: 2.20313}, hop: {via: "打车 Poblenou → Gràcia", dur: "20min · €12 · 6.5km"} },
-      { t: "08:25", h: "Gràcia 老城区早餐", d: "Park Güell 山下的本地生活区，随便找家带露台的咖啡馆。推荐方向：Carrer de Verdi 一带。这顿要吃饱——下一段到 15:30 才有正经东西吃。", kind: "food", loc: {lat: 41.4040, lng: 2.1560} },
-      { t: "09:30", h: "Park Güell · 高迪逝世 100 周年 + 公园百年", d: "2026 双百年（1926 高迪逝世 + 1926 公园正式对外开放），Mercè 期间有特别装置和讲解。经典马赛克蜥蜴、龙椅长廊、Sala Hipóstila 石柱厅，再往上走到 Calvary 三十字架高点俯瞰全城——很多人跳过，但那是唯一能看到圣家堂从城市网格里冒出来的位置（带长焦）。⚠ 9/1–10/24 售票第一场就是 9:30：7:00-9:30 是「Bon Dia Barcelona」居民专属时段，游客进不去，别指望更早。这天不用赶场，留 2h 慢慢走，11:30 出园。", kind: "museum", loc: {lat: 41.41449, lng: 2.15282}, img: "assets/img/spots/park-guell.jpg", link: "https://parkguell.barcelona/en/buy-tickets", ticket: "18€ 预约票 · 26 号可能有百年特典升级票", notice: "Mercè 主周六人流暴增，9:30 首场是唯一能避开人潮的选择，务必提前订。迟到超过 30min 票作废不退款。" },
-      { t: "11:30", h: "出园 → 打车去圣家堂", d: "Park Güell 下山往 Eixample 区，约 4km。Mercè 周六路面拥堵，打车按 20-25min 算（别按平日的 15min）。若堵得厉害改 Metro L3 Lesseps → L5 Diagonal 再换，约 30min 但时间可控。", kind: "transit", loc: {lat: 41.4036, lng: 2.1744}, hop: {via: "打车 / Metro", dur: "20-30min · €12" } },
+      { t: "09:30", h: "自然醒 · Poblenou 本地早餐", d: "今天上午不赶任何景点。民宿楼下找家咖啡馆慢慢吃——Rambla del Poblenou 一带都是本地人去的，游客价没有。", kind: "food", loc: {lat: 41.4023, lng: 2.2013} },
+      { t: "10:30", h: "Mercè 街头 · 哥特区 + Plaça de Sant Jaume", d: "Metro L4 Poblenou → Jaume I 约 15min，出来就是节庆心脏地带。周六上午固定会有 gegants（巨人游行）——三四米高的巨型人偶配鼓队穿过老城。2026 的主宾城市是上海，带来 100+ 艺术家的街头项目，是这届独有的内容。⚠ 官方逐时日程通常 9 月初才发布，出发前查 barcelona.cat/lamerce 确认具体时间地点。全部免费，不用订票。", kind: "event", img: "assets/img/spots/merce-cavalcada.jpg", loc: {lat: 41.38260, lng: 2.17707}, hop: {via: "Metro L4 → Jaume I", dur: "15min · 2.5€"}, link: "https://www.barcelona.cat/lamerce/en" },
+      { t: "11:45", h: "Mercè 街头 → 圣家堂", d: "从哥特区坐 Metro L2 到 Sagrada Família 约 18min。节庆日路面拥堵，别打车。", kind: "transit", loc: {lat: 41.4036, lng: 2.1744}, hop: {via: "Metro L2 Jaume I → Sagrada Família", dur: "18min · 2.5€"} },
       { t: "12:00", h: "圣家堂周边午饭（正经坐下来吃）", d: "45min 从容吃一顿。别在圣家堂正门口那圈吃——游客价且品质一般。往 Eixample 街区里走两条街（Carrer de Provença 或 Carrer de Mallorca 内侧）本地小馆多得多。简单点就叫个 menú del día（午市套餐 €15-20，含前菜+主菜+甜点+饮料）。", kind: "food", loc: {lat: 41.4045, lng: 2.1760}, hop: {via: "步行", dur: "5min"} },
       { t: "12:45", h: "圣家堂 · 已购票入内（留 2h30m）", d: "已购 12:45 场次（票面 30min 宽限，13:15 前入场有效）。正值午间太阳穿透西侧受难立面彩窗，把内殿柱林染成一整片橙红——高迪毕生的『石头森林』最魔幻的时刻。⚠ 这段没有午饭时间，出门前买个 bocadillo 带着，或在圣家堂旁边的 Eixample 街区随手解决。正经的一顿挪到 15:30 Sirvent。", kind: "museum", loc: {lat: 41.4036, lng: 2.1744}, img: "assets/img/spots/sagrada-familia.jpg", link: "https://sagradafamilia.org/en/tickets-individuals", ticket: "Basilica 26€（已购）· 含塔 36€", notice: "9 月开放 09:00-20:00。已购 9/26 周六 12:45 场次，13:15 前必须入场。需遮住肩膀和膝盖。" },
       { t: "15:15", h: "出圣家堂 · 喘口气", d: "看完出来给 30min 缓冲——走到 Sirvent 只要 5min，剩下的时间坐着歇会儿。上午连转三个高迪，信息量很大，需要放空一下再进下午的 Mercè 场子。", kind: "walk", loc: {lat: 41.4020, lng: 2.1698}, hop: {via: "步行", dur: "5min · 400m"} },
       { t: "15:30", h: "Sirvent Horchata · 加泰下午茶", d: "圣家堂旁的百年 Horchata 老店（1926 年，刚好也 100 岁），老虎豆冰饮 + Fartons 甜面包。百年老店的 horchata 要配 fartons 蘸着吃。5 分钟步行。", kind: "food", loc: {lat: 41.4020, lng: 2.1698}, img: "assets/img/spots/sirvent-horchata.jpg", hop: {via: "步行", dur: "5min · 400m"} },
-      { t: "17:00", h: "Mercè · Cavalcada de la Mercè 大教堂大道游行", d: "2026 官方版本：周六 17:00 Cavalcada de la Mercè 沿 Avinguda de la Catedral → Via Laietana 的大型花车 + 巨人 + 恶魔 + 龙的游行队伍。可以在大教堂前广场找台阶坐着看。（注：Castellers 人塔在 9/24 中午 Sant Jaume 已错过。）", kind: "event", loc: {lat: 41.38460, lng: 2.17607}, img: "assets/img/spots/merce-cavalcada.jpg", hop: {via: "Metro L2 Sagrada Família → L4 Jaume I", dur: "18min · 2.5€"}, link: "https://www.barcelona.cat/lamerce/en" },
+      { t: "17:00", h: "Mercè 街头艺术 & 免费音乐舞台", d: "周六下午是 BAM 和 Música Mercè 的主场——Plaça Reial、Rambla del Raval、Plaça de Catalunya 几个舞台轮着演，全部免费。MAC 街头艺术分散在 Via Laietana 和老城广场。不用赶场，跟着声音走就行。⚠ 具体阵容和时间以官方日程为准（9 月初发布）。", kind: "event", loc: {lat: 41.38160, lng: 2.17607}, img: "assets/img/spots/merce-cavalcada.jpg", hop: {via: "Metro L2 → Jaume I", dur: "18min · 2.5€"}, link: "https://www.barcelona.cat/lamerce/en" },
       { t: "20:00", h: "Mercè 2026 新装置 · Porta de l'Infern Correfoc @ Glòries", d: "2026 Mercè 大更新——Correfoc 从 Via Laietana 挪到 Plaça de les Glòries，配全新 4×8m 铸铁『地狱之门』装置。魔鬼队伍从门里出来放烟花跑穿人群。长袖长裤 + 戴帽子 + 遮住脖子，站两侧不要正中间。约 20:00-22:30。", kind: "event", loc: {lat: 41.40384, lng: 2.18960}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Metro L4 Jaume I → Glòries", dur: "15min"}, link: "https://www.barcelona.cat/lamerce/en" },
       { t: "22:45", h: "Bogatell 海滩音乐夜 Day 2 · La Pegatina + Svetlana", d: "Correfoc 结束后步行/打车 12min 回 Poblenou 沙滩看 Mercè Música。周六 9/26 场：La Pegatina（加泰罗尼亚乡愁 skanka）+ Svetlana + Cala Vento。免费，从民宿走过去 6min。", kind: "event", loc: {lat: 41.39423, lng: 2.20488}, img: "assets/img/spots/bogatell-beach.jpg", hop: {via: "打车 Glòries → Bogatell", dur: "10min · €8"}, link: "https://www.barcelona.cat/lamerce/en" }
     ],
-    vlog: ["Park Güell 马赛克蜥蜴（百年庆）", "Casa Milà 屋顶烟囱慢摇", "圣家堂彩窗染红的手", "Cavalcada 花车 + 大龙", "Porta de l'Infern 火花特写", "Bogatell 沙滩音乐夜人海"],
+    vlog: ["哥特区 gegants 巨人穿街", "Casa Milà 屋顶烟囱慢摇", "圣家堂彩窗染红的手", "Cavalcada 花车 + 大龙", "Porta de l'Infern 火花特写", "Bogatell 沙滩音乐夜人海"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13}
   },
@@ -549,7 +548,6 @@ const budget = {
       key: "ticket", name: "门票 & 演出", icon: "🎫",
       items: [
         { t: "圣家堂 Basilica 内殿", amt: 204, note: "26€ · KK 已购 9/26 12:45 场次" },
-        { t: "Park Güell 纪念区", amt: 141, note: "18€ · 9/26 早场 · 高迪百年必抢 · timed entry" },
         { t: "米拉之家 La Pedrera", amt: 204, note: "26€ 官网自助票 · 9/27 Day 4 下午（从 Day 3 挪过来）" },
         { t: "Casa Batlló", amt: 275, note: "35€ Blue · Silver 45€ 可跳队 · Day 2 下午入内" },
         { t: "Musée Picasso Antibes", amt: 63, note: "8€ · 城堡博物馆 · 现场买即可" },
