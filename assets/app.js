@@ -132,21 +132,22 @@ const days = [
     mapCenter: {lat: 43.7100, lng: 7.3300, zoom: 12}
   },
   {
-    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · 拉丁区之夜", theme: "Northbound · Latin Quarter Arrival",
-    desc: "航班定了：易捷 U24856，尼斯 12:35 → 奥利 14:05。为了赶 11:00 值机，民宿要提前退房——今早不去天使湾了，行李收好直接打车 T2。下午 14:05 落地奥利，打车 35min 进城，早早就能 check-in 5 区拉丁区的公寓——推开阳台窗，正对巴黎大清真寺的绿瓦穹顶。傍晚不折腾也不跑远：Rue Mouffetard 老市集街吃一顿、清真寺的摩尔风茶室喝杯薄荷茶、植物园边散个步，全部在家门口 10 分钟内。明天再搬去左岸 46 Rue Jacob。",
+    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · Septime 之夜", theme: "Northbound · A Table at Septime",
+    desc: "航班定了：易捷 U24856，尼斯 12:35 → 奥利 14:05。为了赶 11:00 值机，民宿要提前退房——今早不去天使湾了，行李收好直接打车 T2。下午 14:05 落地奥利，打车 35min 进城，早早就能 check-in 5 区拉丁区的公寓——推开阳台窗，正对巴黎大清真寺的绿瓦穹顶。今晚的重头戏是 Septime：19:30 晚市，地铁 M5 直达 20min，米其林一星、全球 50 佳，一份 tasting menu 吃到快 22:00。回来路上再拐进清真寺茶室喝杯薄荷茶收尾。明天搬去左岸 46 Rue Jacob。",
     slots: [
-      { t: "09:30", h: "Casa Californie 提前退房 · 收拾行李", d: "12:35 的航班要 11:00 到 T2 值机，所以今早提前退房（比 11:00 的硬性时间早）。天使湾散步这次跳过——留给明年。房东那边打个招呼，行李直接带走不寄存。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373}, notice: "为赶航班提前退房，原计划的 Promenade 晨间散步取消。" },
+      { t: "09:30", h: "Casa Californie 提前退房 · 收拾行李", d: "12:35 的航班要 11:00 到 T2 值机，所以今早提前退房（比 11:00 的硬性时间早）。天使湾散步这次跳过——留给明年。房东那边打个招呼，行李直接带走不寄存。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373}, notice: "为赶航班提前退房，不安排 Promenade 晨间散步。" },
       { t: "10:30", h: "打车 Californie → 尼斯机场 T2", d: "从 220 Avenue de la Californie 到 NCE T2 打车约 10-12min · 22€（双人分摊 11€）。也可以走 Tram T2（1.5€/人）但带行李换乘麻烦，赶飞机就打车。11:00 前到航站楼。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "打车", dur: "10-12min · 22€"} },
-      { t: "11:00", h: "T2 值机 + 安检 · 机场吃早午饭", d: "易捷是廉航，网上提前 check-in 好、行李额确认清楚（随身 56×45×25cm 免费，托运需另购）。安检后 T2 有 Paul、Pret 之类，随便吃点——这趟航班无餐食，飞机上什么都没有。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, notice: "easyJet 经济舱无餐食。登机前吃饱或买点带上。" },
+      { t: "11:00", h: "T2 值机 + 安检 · 机场吃早午饭", d: "易捷是廉航，网上提前 check-in 好、行李额确认清楚（随身 56×45×25cm 免费，托运需另购）。安检后 T2 有 Paul、Pret 之类，随便吃点——这趟航班无餐食，飞机上什么都没有。今晚 Septime 是 tasting menu，中午别吃太饱。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, notice: "easyJet 经济舱无餐食。登机前吃饱或买点带上。" },
       { t: "12:35", h: "NCE T2 → ORY T1 · easyJet U24856", d: "尼斯蔚蓝海岸 T2 12:35 起飞 → 巴黎奥利 T1 14:05 落地，飞行 1h30m，空客 320（中型）。订单号 1128150429939513，携程出票中。靠窗能看到阿尔卑斯山脊往北铺开——起飞后 20 分钟左右最好看。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "已购 · 总 ¥1,744 双人（人均 ¥872）", notice: "易捷 U24856 · 经济舱无餐食 · 空客 320。落地是奥利 ORY 不是 CDG。" },
       { t: "14:05", h: "ORY T1 落地 · 打车进城", d: "奥利 T1 到 5 区拉丁区约 19km，打车 35-40min · €35-45（双人分摊约 €20）。出到达层直接上官方 taxi 队伍（巴黎奥利到左岸有固定价 €37），别理揽客的。两人带行李，这段就别折腾 Orlybus 换地铁了。", kind: "transit", loc: {lat: 48.7262, lng: 2.3652}, hop: {via: "打车 ORY T1 → 5 区", dur: "35-40min · €35-45"} },
-      { t: "15:00", h: "拉丁区公寓 Check-in · 清真寺景观阳台", d: "Airbnb「绝美景色 | 巴黎拉丁区」，房东 Audrey，★4.87（39 评）· 1 卧 2 床 1 卫 · 15:00 后可入住、明天 11:00 前退房。阳台正对巴黎大清真寺的绿瓦穹顶和白墙庭院。落地时间刚好卡上入住时段，行李放下就能休息——比原先估的傍晚抵达宽松多了。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.airbnb.cn/rooms/14190318" },
-      { t: "16:30", h: "阳台下午茶 · 或补个觉", d: "多出来的两小时是意外之喜。阳台正对绿顶，下午光线斜过来的时候最好拍。楼下 Franprix 买瓶水和水果上来，坐着发会呆。前面七天连轴转，这半天该歇。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554} },
-      { t: "18:30", h: "Rue Mouffetard 老市集街 · 晚餐", d: "从公寓步行 5-6min（0.5km）到巴黎最古老的市集街之一。傍晚菜摊陆续收，餐馆和酒馆正好开场——奶酪店 Androuet、Le Vieux Chêne 老酒馆（1900 年招牌还在）。随便找家露天桌吃 steak frites 或 couscous，人均 25-40€。", kind: "food", loc: {lat: 48.8425, lng: 2.3499}, hop: {via: "步行", dur: "6min · 0.5km"} },
-      { t: "20:30", h: "巴黎大清真寺茶室 · 薄荷茶与摩尔庭院", d: "就在公寓楼下 1-2min。La Mosquée de Paris 的 Salon de Thé 有摩尔风瓷砖庭院和无花果树，一杯薄荷茶 3€、一块 pâtisserie orientale 2€，营业到 23:00。房源标题说的「土耳其浴室 1 分钟」就是这里的 hammam（要预约、单独收费）。抬头就是白天从你阳台看到的那个绿顶。", kind: "walk", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.grandemosqueedeparis.fr/", ticket: "茶室 3-8€ · hammam 约 45€ 需预约", hop: {via: "步行", dur: "2min · 150m"} },
-      { t: "21:30", h: "植物园外墙夜行 · 回家", d: "沿 Rue Geoffroy-Saint-Hilaire 走 5min 到 Jardin des Plantes 铁栅栏外（园内 20:00 闭园，夜里看外墙老树剪影和自然史博物馆的灯就够）。回公寓 8min。路上 Franprix（营业到 22:00）买明早可颂 + Perrier。", kind: "walk", loc: {lat: 48.8434, lng: 2.3597}, hop: {via: "步行 回公寓", dur: "全程 15min · 1.1km"} }
+      { t: "15:00", h: "拉丁区公寓 Check-in · 清真寺景观阳台", d: "Airbnb「绝美景色 | 巴黎拉丁区」，房东 Audrey，★4.87（39 评）· 1 卧 2 床 1 卫 · 15:00 后可入住、明天 11:00 前退房。阳台正对巴黎大清真寺的绿瓦穹顶和白墙庭院。落地时间刚好卡上入住时段，行李放下就能休息。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.airbnb.cn/rooms/14190318" },
+      { t: "16:30", h: "阳台下午茶 · 或补个觉 · 换衣服", d: "阳台正对绿顶，下午光线斜过来的时候最好拍。楼下 Franprix 买瓶水上来，坐着发会呆。前面七天连轴转，这两小时该歇。18:50 要出门去 Septime，提前换身干净衣服——不用正装，smart casual 就好（干净的牛仔裤 + 衬衫/针织衫足够）。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554} },
+      { t: "18:50", h: "M5 地铁 → Septime（11 区 Charonne）", d: "从公寓步行 3min 到 Place Monge，M5 线 Bastille 方向坐 4 站到 Bréguet-Sabin，出站走 8min 到 80 Rue de Charonne；或 M5 到 Bastille 换 M8 一站。全程约 20-25min · 2.15€/人。19:20 到店最舒服——早 10 分钟，不用赶。", kind: "transit", loc: {lat: 48.8547, lng: 2.3806}, hop: {via: "步行 3min + M5 地铁 · 4 站", dur: "20-25min · 2.15€"} },
+      { t: "19:30", h: "Septime · 米其林一星 tasting menu", d: "80 Rue de Charonne, 75011。Bertrand Grébaut 的餐厅，米其林一星 + 全球 50 佳常客，开创了巴黎「neo-bistro」这一派。晚市只有一套 tasting menu（无点菜），厨师按当天市场决定内容，蔬菜是主角而不是配角。室内 45 座、开放式厨房推到最里侧，声压约 68 分贝——能正常说话。南墙那排长条沙发（banquette）是最好的位置，订位时可以在备注里写一句。建议加配酒（自然酒为主，€90/人），或者按杯点。别跳过附加的奶酪拼盘。吃到 21:45-22:00。", kind: "food", img: "assets/img/spots/rue-de-charonne.jpg", loc: {lat: 48.8547, lng: 2.3806}, link: "https://septime-charonne.fr/en/", ticket: "晚市 tasting €135-160/人 · 配酒 +€90", notice: "订位必须在 9/10（周四）10:00 巴黎时间上官网抢——只放 21 天后的位，热门场次 4 分钟清空。周六周日不营业。" },
+      { t: "22:10", h: "Septime La Cave 或 M5 回拉丁区", d: "吃完还想坐一会：往回走 2min 是 Septime La Cave（3 Rue Basfroi），同一家的自然酒吧，站着喝一杯 €8-12，开到 23:00。不想续摊就直接 M5 回 Place Monge，20min。", kind: "walk", loc: {lat: 48.8542, lng: 2.3822}, hop: {via: "步行 2min / M5 回程 20min", dur: "视心情"} },
+      { t: "23:00", h: "清真寺茶室夜宵 · 薄荷茶收尾", d: "回到公寓楼下 1-2min 就是 La Mosquée de Paris 的 Salon de Thé，摩尔风瓷砖庭院和无花果树，营业到 23:00——赶得紧的话直接明早来喝，早上人更少、光更好。一杯薄荷茶 3€、一块东方酥点 2€。房源标题说的「土耳其浴室 1 分钟」就是这里的 hammam（要预约、单独收费）。抬头就是白天从阳台看到的那个绿顶。", kind: "walk", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.grandemosqueedeparis.fr/", ticket: "茶室 3-8€ · hammam 约 45€ 需预约", hop: {via: "步行", dur: "2min · 150m"} }
     ],
-    vlog: ["Californie 提前退房 · 关门那一刻", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站的第一口巴黎空气", "推开阳台窗 → 清真寺绿顶第一眼", "Rue Mouffetard 傍晚市集街", "清真寺茶室的薄荷茶与瓷砖庭院"],
+    vlog: ["Californie 提前退房 · 关门那一刻", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站的第一口巴黎空气", "推开阳台窗 → 清真寺绿顶第一眼", "Septime 门牌与开放式厨房", "tasting menu 每一道的特写", "夜里 M5 车厢与回家的路"],
     stay: { name: "绝美景色 · 巴黎拉丁区 · 土耳其浴室 1 分钟", area: "Quartier Latin · 75005 Paris · 清真寺景观阳台", note: "1 晚 · ★4.87（39 评）· 1 卧 2 床 1 卫 · 房东 Audrey · 人均 ¥882.96（总 ¥1,765.91）· 15:00 后入住 / 11:00 前退房", url: "https://www.airbnb.cn/rooms/14190318" },
     mapCenter: {lat: 48.8432, lng: 2.3530, zoom: 14}
   },
@@ -564,7 +565,8 @@ const budget = {
       items: [
         { t: "早餐 x 11 · 咖啡店/面包房", amt: 770, note: "每天 8-10€ 单人" },
         { t: "午餐 x 11 · 中档小馆", amt: 2310, note: "每餐 25-35€ 单人" },
-        { t: "晚餐 x 11 · 一顿好餐 + 日常", amt: 3850, note: "含 Casa Amàlia/Denassus/Clamato 级别 45-60€ 单人" },
+        { t: "Septime 晚市 tasting（10/1）", amt: 1176, note: "€150/人（tasting €135-160 + 配酒 €90 可选）· 米其林一星" },
+        { t: "晚餐 x 10 · 一顿好餐 + 日常", amt: 3500, note: "含 Casa Amàlia/Denassus/La Merenda 级别 45-60€ 单人" },
         { t: "咖啡/甜品/tapas 零花", amt: 900, note: "Nomad/Ten Belles/Café de Flore 等 单人" }
       ]
     },

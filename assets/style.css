@@ -3023,3 +3023,175 @@ button { font-family: inherit; cursor: pointer; }
   .cursor-dot { display: none !important; }
 }
 
+
+/* ============================================================
+   Booking TODO v2 · 图卡 + 单一日期 + 极简价格
+   沿用既有 token：--accent 秋赭 / --accent-2 香槟金 / Fraunces / Space Grotesk
+============================================================ */
+
+/* ---- 图片头 ---- */
+.tc-media {
+  position: relative;
+  margin: -22px -22px 0;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 12px 12px 0 0;
+  background: var(--bg-soft);
+}
+.tc-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.todo-card:hover .tc-media img { transform: scale(1.03); }
+.tc-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(20, 16, 12, 0.55) 0%, rgba(20, 16, 12, 0.05) 45%, transparent 100%);
+}
+
+/* 图上左上角：难度徽标 */
+.tc-badge {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  background: rgba(255, 255, 255, 0.93);
+  color: var(--ink);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 2px 8px rgba(20, 16, 12, 0.18);
+}
+.tc-badge i {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+.level-red    .tc-badge i { background: #c2553a; }
+.level-orange .tc-badge i { background: #c98a4b; }
+.level-yellow .tc-badge i { background: #c9a94b; }
+.level-green  .tc-badge i { background: #6f9350; }
+.level-done   .tc-badge i { background: #4d8a5c; }
+
+/* 图上右上角：价格 chip（极简） */
+.tc-price {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 2;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-family: var(--mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  background: rgba(20, 16, 12, 0.72);
+  color: #fff;
+  backdrop-filter: blur(8px);
+}
+.tc-price.is-free { background: rgba(77, 138, 92, 0.88); }
+
+/* 图上底部：标题压在渐变上 */
+.tc-media .tc-title {
+  position: absolute;
+  left: 16px;
+  right: 16px;
+  bottom: 12px;
+  z-index: 2;
+  margin: 0;
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.01em;
+  color: #fff;
+  text-shadow: 0 1px 12px rgba(20, 16, 12, 0.5);
+}
+
+/* ---- 唯一的日期行（最重要的信息）---- */
+.tc-when {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding: 14px 0 12px;
+  border-bottom: 1px solid var(--line);
+}
+.tc-when-label {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+.tc-when-date {
+  font-family: var(--display);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: var(--accent);
+}
+.tc-when-note {
+  font-family: var(--sans);
+  font-size: 11.5px;
+  color: var(--ink-3);
+  margin-left: auto;
+  text-align: right;
+  line-height: 1.35;
+}
+.level-done .tc-when-date { color: #4d8a5c; font-size: 20px; }
+
+/* ---- 要点行（每条一行，不要大段文字）---- */
+.tc-facts {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+.tc-facts li {
+  display: grid;
+  grid-template-columns: 62px 1fr;
+  gap: 10px;
+  font-family: var(--sans);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--ink-2);
+}
+.tc-facts .k {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  padding-top: 3px;
+}
+.tc-facts .v b { color: var(--ink); font-weight: 600; }
+.tc-facts li.is-warn .v { color: var(--accent); }
+.tc-facts li.is-warn .k { color: var(--accent); opacity: 0.75; }
+
+@media (max-width: 900px) {
+  .tc-media { margin: -18px -16px 0; aspect-ratio: 3 / 2; }
+  .tc-media .tc-title { font-size: 18px; }
+  .tc-when { padding: 12px 0 10px; flex-wrap: wrap; gap: 8px; }
+  .tc-when-date { font-size: 22px; }
+  .tc-when-note { margin-left: 0; width: 100%; text-align: left; }
+  .tc-facts li { grid-template-columns: 56px 1fr; font-size: 13px; }
+}
