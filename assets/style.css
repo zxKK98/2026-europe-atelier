@@ -3195,3 +3195,259 @@ button { font-family: inherit; cursor: pointer; }
   .tc-when-note { margin-left: 0; width: 100%; text-align: left; }
   .tc-facts li { grid-template-columns: 56px 1fr; font-size: 13px; }
 }
+
+/* ============================================================
+   Booking TODO v3 · 勾选 + 已订折叠
+============================================================ */
+
+/* ---- 勾选栏（图片下方第一行）---- */
+.tc-check {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 0 0;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.tc-check input {
+  position: absolute;
+  opacity: 0;
+  width: 0; height: 0;
+  pointer-events: none;
+}
+.tc-box {
+  width: 22px; height: 22px;
+  flex-shrink: 0;
+  border: 1.6px solid var(--ink-3);
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  background: transparent;
+}
+.tc-box svg {
+  width: 13px; height: 13px;
+  stroke: #fff;
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  opacity: 0;
+  transform: scale(0.5);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tc-check:hover .tc-box { border-color: var(--accent); }
+.tc-check input:focus-visible + .tc-box {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.tc-check input:checked + .tc-box {
+  background: #4d8a5c;
+  border-color: #4d8a5c;
+}
+.tc-check input:checked + .tc-box svg { opacity: 1; transform: scale(1); }
+.tc-check-txt {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  transition: color 0.22s ease;
+}
+.tc-check input:checked ~ .tc-check-txt { color: #4d8a5c; }
+
+/* ---- 折叠态（.is-done）---- */
+.todo-card.is-done {
+  border-left-color: #4d8a5c;
+  background: linear-gradient(180deg, rgba(122, 168, 122, 0.07), rgba(122, 168, 122, 0.02));
+  gap: 0;
+  padding-bottom: 14px;
+}
+/* 折叠时隐藏图片 / 日期 / 要点 / 链接 */
+.todo-card.is-done .tc-media,
+.todo-card.is-done .tc-when,
+.todo-card.is-done .tc-facts,
+.todo-card.is-done .todo-actions {
+  display: none;
+}
+/* 折叠时把标题 + 价格搬到勾选栏同一行 */
+.todo-card.is-done .tc-check { padding: 0; }
+.tc-folded {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  min-width: 0;
+}
+.todo-card.is-done .tc-folded { display: flex; }
+.tc-folded-title {
+  font-family: var(--display);
+  font-size: 15.5px;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #3f6b4a;
+  text-decoration: line-through;
+  text-decoration-color: rgba(63, 107, 74, 0.4);
+  text-decoration-thickness: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+  min-width: 0;
+}
+.tc-folded-price {
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #4d8a5c;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+/* 展开箭头 */
+.tc-caret {
+  display: none;
+  width: 26px; height: 26px;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  color: #4d8a5c;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: background 0.22s ease, transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.todo-card.is-done .tc-caret { display: inline-flex; }
+.tc-caret:hover { background: rgba(77, 138, 92, 0.12); }
+.tc-caret svg { width: 12px; height: 12px; stroke: currentColor; stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+/* 已订但手动展开 */
+.todo-card.is-done.is-open .tc-media,
+.todo-card.is-done.is-open .tc-when,
+.todo-card.is-done.is-open .tc-facts,
+.todo-card.is-done.is-open .todo-actions {
+  display: revert;
+}
+.todo-card.is-done.is-open { gap: 14px; padding-bottom: 20px; }
+.todo-card.is-done.is-open .tc-media { display: block; }
+.todo-card.is-done.is-open .tc-when { display: flex; }
+.todo-card.is-done.is-open .tc-facts { display: flex; }
+.todo-card.is-done.is-open .todo-actions { display: flex; }
+.todo-card.is-done.is-open .tc-check { padding: 12px 0 0; order: 2; }
+.todo-card.is-done.is-open .tc-folded { display: none; }
+.todo-card.is-done.is-open .tc-caret { transform: rotate(180deg); }
+/* 已订态下已在原地的图片头压暗一点，暗示"完成" */
+.todo-card.is-done.is-open .tc-media img { filter: saturate(0.75) brightness(0.96); }
+
+/* ---- 双时区日期 ---- */
+.tc-when { flex-wrap: wrap; }
+.tc-when-bj {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  font-family: var(--mono);
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  color: var(--ink-2);
+}
+.tc-when-bj em {
+  font-style: normal;
+  color: var(--accent);
+  font-weight: 700;
+}
+.tc-when-bj .tz {
+  font-size: 9.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  font-weight: 600;
+  margin-right: 5px;
+}
+
+/* ---- 进度条 ---- */
+.todo-progress {
+  max-width: 1280px;
+  margin: 0 auto 24px;
+  padding: 16px 20px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.tp-count {
+  font-family: var(--display);
+  font-size: 26px;
+  font-weight: 600;
+  line-height: 1;
+  color: var(--accent);
+  flex-shrink: 0;
+}
+.tp-count b { font-size: 26px; }
+.tp-count span { font-size: 15px; color: var(--ink-3); font-weight: 400; }
+.tp-bar {
+  flex: 1;
+  height: 6px;
+  border-radius: 99px;
+  background: var(--bg-soft);
+  overflow: hidden;
+  min-width: 60px;
+}
+.tp-fill {
+  height: 100%;
+  border-radius: 99px;
+  background: linear-gradient(90deg, #4d8a5c, #7ea45c);
+  width: 0%;
+  transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.tp-label {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  flex-shrink: 0;
+}
+.tp-reset {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: transparent;
+  border: 1px solid var(--line);
+  border-radius: 99px;
+  padding: 6px 12px;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.22s ease;
+}
+.tp-reset:hover { color: var(--accent); border-color: var(--accent); }
+
+@media (max-width: 900px) {
+  .todo-progress {
+    padding: 14px 16px;
+    gap: 10px 12px;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .tp-count { font-size: 22px; }
+  .tp-count b { font-size: 22px; }
+  .tp-label { font-size: 10px; margin-right: auto; }
+  .tp-reset { order: 2; }
+  .tp-bar {
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    min-width: 0;
+    height: 5px;
+  }
+  .tc-folded-title { font-size: 14.5px; }
+  .tc-when-bj { font-size: 11px; }
+  .todo-card.is-done { padding-bottom: 12px; }
+}

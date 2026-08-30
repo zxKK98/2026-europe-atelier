@@ -13,7 +13,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
-<link rel="stylesheet" href="assets/style.css?v=20260830d" />
+<link rel="stylesheet" href="assets/style.css?v=20260830e" />
 </head>
 <body>
 <a id="top"></a>
@@ -324,7 +324,7 @@
           <span class="stay-status booked">已预订 ↗ ★4.87</span>
           <span class="stay-price"><span class="price-per">人均</span><b>¥882.96</b><span class="price-total">总 ¥1,765.91</span></span>
         </header>
-        <div class="stay-hero" style="background-image: url('assets/img/stay/paris-latin.jpg?v=20260830d'); background-size: cover; background-position: center;">
+        <div class="stay-hero" style="background-image: url('assets/img/stay/paris-latin.jpg?v=20260830e'); background-size: cover; background-position: center;">
           <div class="stay-hero-inner">
             <span class="stay-hero-tag">Latin Quarter · Mosque View</span>
             <span class="stay-hero-cap">拉丁区 5 区 · 阳台正对巴黎大清真寺的绿瓦穹顶 · 土耳其浴室 1 分钟。</span>
@@ -377,7 +377,7 @@
   <div class="section-head">
     <span class="section-idx">Part 01½</span>
     <h2 class="section-title">Booking TODO · 按难度倒数出发</h2>
-    <p class="section-sub">今天 <b>8/30</b>，出发 <b>9/23</b>——还有 <b>24 天</b>。每张卡只给一个日期：那天之前下单就行。</p>
+    <p class="section-sub">今天 <b>8/30</b>，出发 <b>9/23</b>——还有 <b>24 天</b>。每张卡只给一个日期，<b>DDL 均已换算为北京时间</b>。订好了就勾上，卡片会自动折叠。</p>
   </div>
 
   <div class="todo-legend">
@@ -388,18 +388,36 @@
     <span class="todo-chip chip-green">🟢 好订 · 现场或临行前</span>
   </div>
 
+  <div class="todo-progress">
+    <span class="tp-count"><b id="tpDone">0</b><span>/19</span></span>
+    <span class="tp-label">已预订</span>
+    <span class="tp-bar"><span class="tp-fill" id="tpFill"></span></span>
+    <button class="tp-reset" type="button" id="tpReset">全部重置</button>
+  </div>
+
   <div class="todo-grid">
     <article class="todo-card level-done">
       <div class="tc-media">
-        <img src="assets/img/spots/promenade-anglais.jpg?v=20260830d" alt="Vueling VY1521 · 巴塞 → 尼斯" loading="lazy" />
+        <img src="assets/img/spots/promenade-anglais.jpg?v=20260830e" alt="Vueling VY1521 · 巴塞 → 尼斯" loading="lazy" />
         <span class="tc-badge"><i></i>已订</span>
         <span class="tc-price is-free">已出票</span>
         <h3 class="tc-title">Vueling VY1521 · 巴塞 → 尼斯</h3>
       </div>
+      <label class="tc-check" for="chk-vueling-vy1521">
+        <input type="checkbox" id="chk-vueling-vy1521" data-todo="vueling-vy1521" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Vueling VY1521 · 巴塞 → 尼斯</span>
+          <span class="tc-folded-price">已出票</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">出发</span>
         <span class="tc-when-date">9/28 15:25</span>
         <span class="tc-when-note">BCN T1 → NCE T1 · 1h25m</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>已完成 · 无需操作</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">航班</span><span class="v"><b>VY1521</b> 15:25 巴塞 T1 → 16:50 尼斯 T1</span></li>
@@ -414,15 +432,26 @@
 
     <article class="todo-card level-done">
       <div class="tc-media">
-        <img src="assets/img/spots/sagrada-familia.jpg?v=20260830d" alt="圣家堂 · Basilica 内殿" loading="lazy" />
+        <img src="assets/img/spots/sagrada-familia.jpg?v=20260830e" alt="圣家堂 · Basilica 内殿" loading="lazy" />
         <span class="tc-badge"><i></i>已订</span>
         <span class="tc-price">€26</span>
         <h3 class="tc-title">圣家堂 · Basilica 内殿</h3>
       </div>
+      <label class="tc-check" for="chk-basilica">
+        <input type="checkbox" id="chk-basilica" data-todo="basilica" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">圣家堂 · Basilica 内殿</span>
+          <span class="tc-folded-price">€26</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">已购场次</span>
         <span class="tc-when-date">9/26 12:45</span>
         <span class="tc-when-note">周六 · 午间彩窗最魔幻</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>已完成 · 无需操作</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">时长</span><span class="v">留 2h30m 慢慢走</span></li>
@@ -436,20 +465,31 @@
 
     <article class="todo-card level-red">
       <div class="tc-media">
-        <img src="assets/img/spots/rue-de-charonne.jpg?v=20260830d" alt="Septime · 米其林一星晚市" loading="lazy" />
+        <img src="assets/img/spots/rue-de-charonne.jpg?v=20260830e" alt="Septime · 米其林一星晚市" loading="lazy" />
         <span class="tc-badge"><i></i>极难 · 蹲点</span>
         <span class="tc-price">€150</span>
         <h3 class="tc-title">Septime · 米其林一星晚市</h3>
       </div>
+      <label class="tc-check" for="chk-septime">
+        <input type="checkbox" id="chk-septime" data-todo="septime" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Septime · 米其林一星晚市</span>
+          <span class="tc-folded-price">€150</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">抢位日</span>
         <span class="tc-when-date">9/10 周四</span>
-        <span class="tc-when-note">10:00 巴黎时间 · 上官网</span>
+        <span class="tc-when-note">巴黎当地 10:00 · 官网放号</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span><em>9/10 周四 16:00</em> 开抢（闹钟 15:58）</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">为什么</span><span class="v">只放 21 天后的座位，热门场次 <b>4 分钟</b>清空</span></li>
           <li><span class="k">已排入</span><span class="v"><b>10/1 周四 19:30</b> 晚市（Day 8）</span></li>
-          <li class="is-warn"><span class="k">闹钟</span><span class="v">9/10 上午 <b>09:58</b> 打开官网，10:00 整刷新</span></li>
+          <li class="is-warn"><span class="k">闹钟</span><span class="v">北京 <b>9/10 下午 15:58</b> 打开官网，16:00 整刷新</span></li>
           <li><span class="k">套餐</span><span class="v">晚市 tasting €135–160 · 配酒 +€90</span></li>
           <li><span class="k">注意</span><span class="v">周六周日不营业。订位备注写 banquette（南墙长沙发）</span></li>
       </ul>
@@ -460,15 +500,26 @@
 
     <article class="todo-card level-red">
       <div class="tc-media">
-        <img src="assets/img/spots/park-guell.jpg?v=20260830d" alt="Park Güell · 纪念区早场" loading="lazy" />
+        <img src="assets/img/spots/park-guell.jpg?v=20260830e" alt="Park Güell · 纪念区早场" loading="lazy" />
         <span class="tc-badge"><i></i>极难 · 现在订</span>
         <span class="tc-price">€18</span>
         <h3 class="tc-title">Park Güell · 纪念区早场</h3>
       </div>
+      <label class="tc-check" for="chk-park-g-ell">
+        <input type="checkbox" id="chk-park-g-ell" data-todo="park-g-ell" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Park Güell · 纪念区早场</span>
+          <span class="tc-folded-price">€18</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/5 周六</span>
         <span class="tc-when-note">已开卖 · 越早越好</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/5 周六前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">9/26 周六 <b>9:30 早场</b></span></li>
@@ -483,15 +534,26 @@
 
     <article class="todo-card level-red">
       <div class="tc-media">
-        <img src="assets/img/spots/notre-dame.jpg?v=20260830d" alt="巴黎圣母院 · 内殿时段" loading="lazy" />
+        <img src="assets/img/spots/notre-dame.jpg?v=20260830e" alt="巴黎圣母院 · 内殿时段" loading="lazy" />
         <span class="tc-badge"><i></i>极难 · 旅途中</span>
         <span class="tc-price is-free">免费</span>
         <h3 class="tc-title">巴黎圣母院 · 内殿时段</h3>
       </div>
+      <label class="tc-check" for="chk-">
+        <input type="checkbox" id="chk-" data-todo="" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">巴黎圣母院 · 内殿时段</span>
+          <span class="tc-folded-price">免费</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">抢号日</span>
         <span class="tc-when-date">9/30 周三</span>
         <span class="tc-when-note">只提前 2–3 天放号</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span><em>9/30 周三</em> 起盯 App（放号即抢）</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">10/3 周六 15:30 场（Day 10）</span></li>
@@ -507,15 +569,26 @@
 
     <article class="todo-card level-orange">
       <div class="tc-media">
-        <img src="assets/img/spots/louvre-mona-lisa.jpg?v=20260830d" alt="卢浮宫 · 9:00 早鸟场" loading="lazy" />
+        <img src="assets/img/spots/louvre-mona-lisa.jpg?v=20260830e" alt="卢浮宫 · 9:00 早鸟场" loading="lazy" />
         <span class="tc-badge"><i></i>现在就订</span>
         <span class="tc-price">€32</span>
         <h3 class="tc-title">卢浮宫 · 9:00 早鸟场</h3>
       </div>
+      <label class="tc-check" for="chk-9-00">
+        <input type="checkbox" id="chk-9-00" data-todo="9-00" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">卢浮宫 · 9:00 早鸟场</span>
+          <span class="tc-folded-price">€32</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/5 周六</span>
         <span class="tc-when-note">90 天前放票 · 已开卖</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/5 周六前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">10/2 周五 <b>09:00 开馆场</b>（Day 9）</span></li>
@@ -531,15 +604,26 @@
 
     <article class="todo-card level-orange">
       <div class="tc-media">
-        <img src="assets/img/spots/orsay-clock.jpg?v=20260830d" alt="奥赛博物馆 · 印象派 5 楼" loading="lazy" />
+        <img src="assets/img/spots/orsay-clock.jpg?v=20260830e" alt="奥赛博物馆 · 印象派 5 楼" loading="lazy" />
         <span class="tc-badge"><i></i>现在就订</span>
         <span class="tc-price">€16</span>
         <h3 class="tc-title">奥赛博物馆 · 印象派 5 楼</h3>
       </div>
+      <label class="tc-check" for="chk-5">
+        <input type="checkbox" id="chk-5" data-todo="5" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">奥赛博物馆 · 印象派 5 楼</span>
+          <span class="tc-folded-price">€16</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/5 周六</span>
         <span class="tc-when-note">3–4 月前放票 · 已开卖</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/5 周六前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">10/2 周五 <b>15:45 场</b>（Day 9）</span></li>
@@ -555,15 +639,26 @@
 
     <article class="todo-card level-orange">
       <div class="tc-media">
-        <img src="assets/img/spots/sailing-mediterranean.jpg?v=20260830d" alt="地中海帆船 + 滨海酒庄" loading="lazy" />
+        <img src="assets/img/spots/sailing-mediterranean.jpg?v=20260830e" alt="地中海帆船 + 滨海酒庄" loading="lazy" />
         <span class="tc-badge"><i></i>现在就订</span>
         <span class="tc-price">€85</span>
         <h3 class="tc-title">地中海帆船 + 滨海酒庄</h3>
       </div>
+      <label class="tc-check" for="chk-">
+        <input type="checkbox" id="chk-" data-todo="" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">地中海帆船 + 滨海酒庄</span>
+          <span class="tc-folded-price">€85</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/13 周日</span>
         <span class="tc-when-note">24h 前可免费取消</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/13 周日前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">9/27 周日 10:00 出海 4h（Day 4）</span></li>
@@ -578,15 +673,26 @@
 
     <article class="todo-card level-yellow">
       <div class="tc-media">
-        <img src="assets/img/spots/casa-batllo.jpg?v=20260830d" alt="Casa Batlló · 波浪之家" loading="lazy" />
+        <img src="assets/img/spots/casa-batllo.jpg?v=20260830e" alt="Casa Batlló · 波浪之家" loading="lazy" />
         <span class="tc-badge"><i></i>建议 1 月前</span>
         <span class="tc-price">€35</span>
         <h3 class="tc-title">Casa Batlló · 波浪之家</h3>
       </div>
+      <label class="tc-check" for="chk-casa-batll">
+        <input type="checkbox" id="chk-casa-batll" data-todo="casa-batll" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Casa Batlló · 波浪之家</span>
+          <span class="tc-folded-price">€35</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/5 周六</span>
         <span class="tc-when-note">高迪百年 · 需求上涨</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/5 周六前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">9/25 周五 <b>14:00 场</b>（Day 2）</span></li>
@@ -601,15 +707,26 @@
 
     <article class="todo-card level-yellow">
       <div class="tc-media">
-        <img src="assets/img/spots/casa-mila.jpg?v=20260830d" alt="Casa Milà · 屋顶烟囱小团" loading="lazy" />
+        <img src="assets/img/spots/casa-mila.jpg?v=20260830e" alt="Casa Milà · 屋顶烟囱小团" loading="lazy" />
         <span class="tc-badge"><i></i>建议 1 月前</span>
         <span class="tc-price">€39</span>
         <h3 class="tc-title">Casa Milà · 屋顶烟囱小团</h3>
       </div>
+      <label class="tc-check" for="chk-casa-mil">
+        <input type="checkbox" id="chk-casa-mil" data-todo="casa-mil" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Casa Milà · 屋顶烟囱小团</span>
+          <span class="tc-folded-price">€39</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/5 周六</span>
         <span class="tc-when-note">高迪百年 · 9/26 是主周六</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/5 周六前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">9/26 周六 <b>11:15 小团</b> 90min（Day 3）</span></li>
@@ -624,15 +741,26 @@
 
     <article class="todo-card level-yellow">
       <div class="tc-media">
-        <img src="assets/img/spots/mercado-san-miguel.jpg?v=20260830d" alt="Paella 烹饪课 + Boqueria 市集" loading="lazy" />
+        <img src="assets/img/spots/mercado-san-miguel.jpg?v=20260830e" alt="Paella 烹饪课 + Boqueria 市集" loading="lazy" />
         <span class="tc-badge"><i></i>随时可订</span>
         <span class="tc-price">€92</span>
         <h3 class="tc-title">Paella 烹饪课 + Boqueria 市集</h3>
       </div>
+      <label class="tc-check" for="chk-paella-boqueria">
+        <input type="checkbox" id="chk-paella-boqueria" data-todo="paella-boqueria" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Paella 烹饪课 + Boqueria 市集</span>
+          <span class="tc-folded-price">€92</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/13 周日</span>
         <span class="tc-when-note">24h 前可免费取消</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/13 周日前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">9/25 周五 <b>17:00 场</b> 4h（Day 2）</span></li>
@@ -647,15 +775,26 @@
 
     <article class="todo-card level-yellow">
       <div class="tc-media">
-        <img src="assets/img/spots/palais-garnier.jpg?v=20260830d" alt="Palais Garnier · 加尼叶歌剧院" loading="lazy" />
+        <img src="assets/img/spots/palais-garnier.jpg?v=20260830e" alt="Palais Garnier · 加尼叶歌剧院" loading="lazy" />
         <span class="tc-badge"><i></i>可选加回</span>
         <span class="tc-price">€15</span>
         <h3 class="tc-title">Palais Garnier · 加尼叶歌剧院</h3>
       </div>
+      <label class="tc-check" for="chk-palais-garnier">
+        <input type="checkbox" id="chk-palais-garnier" data-todo="palais-garnier" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Palais Garnier · 加尼叶歌剧院</span>
+          <span class="tc-folded-price">€15</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/19 周六</span>
         <span class="tc-when-note">约 1 月前放票</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/19 周六前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">10/3 周六上午（Day 10 · 目前未排）</span></li>
@@ -671,15 +810,26 @@
 
     <article class="todo-card level-green">
       <div class="tc-media">
-        <img src="assets/img/spots/seine-cruise.jpg?v=20260830d" alt="塞纳河游船 · 蓝调时刻" loading="lazy" />
+        <img src="assets/img/spots/seine-cruise.jpg?v=20260830e" alt="塞纳河游船 · 蓝调时刻" loading="lazy" />
         <span class="tc-badge"><i></i>临行前订</span>
         <span class="tc-price">€15</span>
         <h3 class="tc-title">塞纳河游船 · 蓝调时刻</h3>
       </div>
+      <label class="tc-check" for="chk-">
+        <input type="checkbox" id="chk-" data-todo="" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">塞纳河游船 · 蓝调时刻</span>
+          <span class="tc-folded-price">€15</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">下单前</span>
         <span class="tc-when-date">9/30 周三</span>
         <span class="tc-when-note">提前 2–3 天足够</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>9/30 周三前完成下单</span>
       </div>
       <ul class="tc-facts">
           <li><span class="k">目标</span><span class="v">10/3 周六 <b>18:30 场</b> 1h（Day 10）</span></li>
@@ -694,11 +844,21 @@
 
     <article class="todo-card level-green">
       <div class="tc-media">
-        <img src="assets/img/spots/picasso-antibes.jpg?v=20260830d" alt="Musée Picasso Antibes" loading="lazy" />
+        <img src="assets/img/spots/picasso-antibes.jpg?v=20260830e" alt="Musée Picasso Antibes" loading="lazy" />
         <span class="tc-badge"><i></i>现场买</span>
         <span class="tc-price">€8</span>
         <h3 class="tc-title">Musée Picasso Antibes</h3>
       </div>
+      <label class="tc-check" for="chk-mus-e-picasso-antibes">
+        <input type="checkbox" id="chk-mus-e-picasso-antibes" data-todo="mus-e-picasso-antibes" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Musée Picasso Antibes</span>
+          <span class="tc-folded-price">€8</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">无需预约</span>
         <span class="tc-when-date">当天现场</span>
@@ -716,11 +876,21 @@
 
     <article class="todo-card level-green">
       <div class="tc-media">
-        <img src="assets/img/spots/jardin-exotique-eze.jpg?v=20260830d" alt="Jardin Exotique d'Èze" loading="lazy" />
+        <img src="assets/img/spots/jardin-exotique-eze.jpg?v=20260830e" alt="Jardin Exotique d'Èze" loading="lazy" />
         <span class="tc-badge"><i></i>现场买</span>
         <span class="tc-price">€8</span>
         <h3 class="tc-title">Jardin Exotique d'Èze</h3>
       </div>
+      <label class="tc-check" for="chk-jardin-exotique-d-ze">
+        <input type="checkbox" id="chk-jardin-exotique-d-ze" data-todo="jardin-exotique-d-ze" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Jardin Exotique d'Èze</span>
+          <span class="tc-folded-price">€8</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">无需预约</span>
         <span class="tc-when-date">当天现场</span>
@@ -737,11 +907,21 @@
 
     <article class="todo-card level-green">
       <div class="tc-media">
-        <img src="assets/img/spots/socca-nice.jpg?v=20260830d" alt="尼斯 La Merenda · 家常菜" loading="lazy" />
+        <img src="assets/img/spots/socca-nice.jpg?v=20260830e" alt="尼斯 La Merenda · 家常菜" loading="lazy" />
         <span class="tc-badge"><i></i>现场排队</span>
         <span class="tc-price">€40</span>
         <h3 class="tc-title">尼斯 La Merenda · 家常菜</h3>
       </div>
+      <label class="tc-check" for="chk-la-merenda">
+        <input type="checkbox" id="chk-la-merenda" data-todo="la-merenda" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">尼斯 La Merenda · 家常菜</span>
+          <span class="tc-folded-price">€40</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">无法预约</span>
         <span class="tc-when-date">当天到店</span>
@@ -761,11 +941,21 @@
 
     <article class="todo-card level-green">
       <div class="tc-media">
-        <img src="assets/img/spots/circulo-bellas-artes.jpg?v=20260830d" alt="Círculo de Bellas Artes 屋顶" loading="lazy" />
+        <img src="assets/img/spots/circulo-bellas-artes.jpg?v=20260830e" alt="Círculo de Bellas Artes 屋顶" loading="lazy" />
         <span class="tc-badge"><i></i>现场买</span>
         <span class="tc-price">€5</span>
         <h3 class="tc-title">Círculo de Bellas Artes 屋顶</h3>
       </div>
+      <label class="tc-check" for="chk-c-rculo-de-bellas-artes">
+        <input type="checkbox" id="chk-c-rculo-de-bellas-artes" data-todo="c-rculo-de-bellas-artes" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Círculo de Bellas Artes 屋顶</span>
+          <span class="tc-folded-price">€5</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">无需预约</span>
         <span class="tc-when-date">当天现场</span>
@@ -782,11 +972,21 @@
 
     <article class="todo-card level-green">
       <div class="tc-media">
-        <img src="assets/img/spots/retiro-crystal-palace.jpg?v=20260830d" alt="Prado 美术馆" loading="lazy" />
+        <img src="assets/img/spots/retiro-crystal-palace.jpg?v=20260830e" alt="Prado 美术馆" loading="lazy" />
         <span class="tc-badge"><i></i>现场买</span>
         <span class="tc-price is-free">免费</span>
         <h3 class="tc-title">Prado 美术馆</h3>
       </div>
+      <label class="tc-check" for="chk-prado">
+        <input type="checkbox" id="chk-prado" data-todo="prado" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Prado 美术馆</span>
+          <span class="tc-folded-price">免费</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">无需预约</span>
         <span class="tc-when-date">当天现场</span>
@@ -804,15 +1004,26 @@
 
     <article class="todo-card level-red">
       <div class="tc-media">
-        <img src="assets/img/spots/cafe-flore.jpg?v=20260830d" alt="米其林 3 星 · L'Ambroisie / Guy Savoy" loading="lazy" />
+        <img src="assets/img/spots/cafe-flore.jpg?v=20260830e" alt="米其林 3 星 · L'Ambroisie / Guy Savoy" loading="lazy" />
         <span class="tc-badge"><i></i>窗口已过</span>
         <span class="tc-price">€400+</span>
         <h3 class="tc-title">米其林 3 星 · L'Ambroisie / Guy Savoy</h3>
       </div>
+      <label class="tc-check" for="chk-3-l-ambroisie-guy-savoy">
+        <input type="checkbox" id="chk-3-l-ambroisie-guy-savoy" data-todo="3-l-ambroisie-guy-savoy" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">米其林 3 星 · L'Ambroisie / Guy Savoy</span>
+          <span class="tc-folded-price">€400+</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
       <div class="tc-when">
         <span class="tc-when-label">本应下单</span>
         <span class="tc-when-date">8/24 已过</span>
         <span class="tc-when-note">距 10/3 只剩 34 天</span>
+        <span class="tc-when-bj"><span class="tz">北京时间</span>8/24 已过 · 只能碰运气</span>
       </div>
       <ul class="tc-facts">
           <li class="is-warn"><span class="k">现状</span><span class="v">这类餐厅要提前 40 天订，<b>大概率没位了</b></span></li>
@@ -828,8 +1039,9 @@
   </div>
 
   <p class="todo-foot">
+  <b>以下全部为北京时间</b><br>
   <b>📅 9/5 周六前</b> — 卢浮宫 · 奥赛 · Park Güell · Casa Batlló · Casa Milà<br>
-  <b>📅 9/10 周四 10:00</b>（巴黎时间）— <b style="color:var(--accent);">Septime 抢位</b>，设 09:58 闹钟<br>
+  <b>📅 9/10 周四 16:00</b> — <b style="color:var(--accent);">Septime 开抢</b>（巴黎当地 10:00），设 15:58 闹钟<br>
   <b>📅 9/13 周日前</b> — 帆船出海 · Paella 烹饪课<br>
   <b>📅 9/19 周六前</b> — Palais Garnier（想去的话）<br>
   <b>📅 9/30 周三</b> — 塞纳河游船 · <b style="color:var(--accent);">圣母院时段（旅途中手机抢）</b><br>
@@ -1096,6 +1308,6 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=20260830d"></script>
+<script src="assets/app.js?v=20260830e"></script>
 </body>
 </html>

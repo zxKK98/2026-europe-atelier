@@ -813,3 +813,88 @@ setTimeout(() => {
     if (s.style.opacity === "0" || s.style.opacity === 0) reveal(s);
   });
 }, 3000);
+
+/* ============================================================
+   Booking TODO · 勾选 / 折叠 / localStorage 持久化
+============================================================ */
+(function initTodoChecklist() {
+  const KEY = "aa-todo-done";
+  const cards = Array.from(document.querySelectorAll(".todo-card"));
+  if (!cards.length) return;
+
+  let saved = {};
+  try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch (e) { saved = {}; }
+
+  const fill = document.getElementById("tpFill");
+  const countEl = document.getElementById("tpDone");
+
+  function refreshProgress() {
+    const done = cards.filter(c => c.classList.contains("is-done")).length;
+    if (countEl) countEl.textContent = done;
+    if (fill) fill.style.width = (done / cards.length * 100).toFixed(1) + "%";
+  }
+
+  function persist() {
+    const out = {};
+    cards.forEach(c => {
+      const cb = c.querySelector('input[data-todo]');
+      if (cb && cb.checked) out[cb.dataset.todo] = 1;
+    });
+    try { localStorage.setItem(KEY, JSON.stringify(out)); } catch (e) {}
+  }
+
+  cards.forEach(card => {
+    const cb = card.querySelector('input[data-todo]');
+    const caret = card.querySelector(".tc-caret");
+    if (!cb) return;
+
+    // 恢复保存的状态
+    if (saved[cb.dataset.todo]) {
+      cb.checked = true;
+      card.classList.add("is-done");
+    }
+
+    cb.addEventListener("change", () => {
+      card.classList.toggle("is-done", cb.checked);
+      // 勾上时默认折叠；取消勾选时清掉展开态
+      card.classList.remove("is-open");
+      persist();
+      refreshProgress();
+    });
+
+    // 点箭头 = 展开/收起（不改变勾选状态）
+    if (caret) {
+      caret.addEventListener("click", e => {
+        e.preventDefault();
+        e.stopPropagation();
+        card.classList.toggle("is-open");
+      });
+    }
+
+    // 折叠态下点标题也能展开（勾选框本身仍走 label 逻辑）
+    const foldedTitle = card.querySelector(".tc-folded");
+    if (foldedTitle) {
+      foldedTitle.addEventListener("click", e => {
+        if (!card.classList.contains("is-done")) return;
+        e.preventDefault();
+        e.stopPropagation();
+        card.classList.toggle("is-open");
+      });
+    }
+  });
+
+  const reset = document.getElementById("tpReset");
+  if (reset) {
+    reset.addEventListener("click", () => {
+      cards.forEach(c => {
+        const cb = c.querySelector('input[data-todo]');
+        if (cb) cb.checked = false;
+        c.classList.remove("is-done", "is-open");
+      });
+      persist();
+      refreshProgress();
+    });
+  }
+
+  refreshProgress();
+})();
