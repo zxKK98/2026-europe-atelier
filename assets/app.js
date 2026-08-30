@@ -77,7 +77,7 @@ const days = [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
       { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", img: "assets/img/spots/els-pescadors.jpg", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
       { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Poblenou 打车约 15min（€10-12），看完直接打车去 Mirador 看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 Poblenou → Passeig de Gràcia", dur: "15min · €10-12"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
-      { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-summit.jpg", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, remote: { metric: "单程 70min · 往返 4h25", copy: "距离远，且 111 路下山末班约 21:30。若 16:50 仍未离开 Casa Milà、天气转差或体力不足，直接放弃登顶：回 Poblenou 休息，21:30 去 Bogatell 看烟火闭幕。" }, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
+      { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-xhs-sunset.jpg", imgMode: "portrait", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, remote: { metric: "单程 70min · 往返 4h25", copy: "距离远，且 111 路下山末班约 21:30。若 16:50 仍未离开 Casa Milà、天气转差或体力不足，直接放弃登顶：回 Poblenou 休息，21:30 去 Bogatell 看烟火闭幕。" }, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
       { t: "22:00", h: "Mercè Piromusical · Bogatell Beach 烟火闭幕", d: "La Mercè 2026 的最后一场：音乐编排烟火在 Bogatell 海滩举行。今年因 Montjuïc 施工首次移到这里。住处步行 5 分钟，提前在海滩靠北一侧找位；结束后直接步行回民宿。", kind: "event", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.39423, lng: 2.20488}, hop: {via: "Plaça Catalunya → L4 Poblenou → 步行", dur: "Tibidabo 下山后约 20min"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 22:00" }
     ],
     vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱下午光", "Tibidabo 耶稣雕像与巴塞全景", "日落 → 蓝调延时", "Bogatell 海面上的 Piromusical 烟火"],
@@ -291,7 +291,7 @@ function renderDay(n) {
         </div>
       </a>` : "";
     const imgHtml = s.img ? `
-        <div class="slot-img">
+        <div class="slot-img${s.imgMode ? ` is-${s.imgMode}` : ""}">
           <img src="${s.img}" alt="${s.h}" loading="lazy" />
         </div>` : "";
     return `

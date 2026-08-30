@@ -621,6 +621,10 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   aspect-ratio: 16 / 10;
   position: relative;
 }
+.slot-img.is-portrait {
+  aspect-ratio: 3 / 4;
+  max-width: min(420px, 100%);
+}
 .slot-img img {
   width: 100%;
   height: 100%;
