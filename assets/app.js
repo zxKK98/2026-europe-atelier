@@ -781,17 +781,33 @@ window.addEventListener("resize", resize);
 resize(); tick();
 
 /* ---------- Smooth-in Sections ---------- */
+/* ⚠ 不要用 threshold 百分比：section 一旦比视口高很多（如 Booking TODO 7700px），
+   8% 阈值(620px) 会超过视口高度(469px)，条件数学上永远不成立 → 整块永久 opacity:0。
+   改用 rootMargin 负底边：只要 section 顶部进入视口上方 12% 处就触发，与高度无关。 */
+const reveal = el => {
+  el.style.opacity = 1;
+  el.style.transform = "translateY(0)";
+};
 const io = new IntersectionObserver(entries => {
   entries.forEach(en => {
     if (en.isIntersecting) {
-      en.target.style.opacity = 1;
-      en.target.style.transform = "translateY(0)";
+      reveal(en.target);
+      io.unobserve(en.target);
     }
   });
-}, { threshold: 0.08 });
+}, { threshold: 0, rootMargin: "0px 0px -12% 0px" });
+
 document.querySelectorAll(".section").forEach(s => {
   s.style.opacity = 0;
   s.style.transform = "translateY(30px)";
   s.style.transition = "opacity 0.9s cubic-bezier(0.16,1,0.3,1), transform 0.9s cubic-bezier(0.16,1,0.3,1)";
   io.observe(s);
 });
+
+/* 兜底：3 秒后强制显示任何仍处于 opacity:0 的 section。
+   覆盖 observer 未触发、prefers-reduced-motion、老浏览器等所有异常路径。 */
+setTimeout(() => {
+  document.querySelectorAll(".section").forEach(s => {
+    if (s.style.opacity === "0" || s.style.opacity === 0) reveal(s);
+  });
+}, 3000);
