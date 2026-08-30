@@ -49,17 +49,16 @@ const days = [
   },
   {
     n: 3, date: "Sep 26 · Sat", city: "巴塞罗那 · Mercè + 高迪百年", theme: "Gaudí Centennial × Correfoc",
-    desc: "2026 是高迪去世 100 周年 + Park Güell 落成 100 周年双庆典。这天上午连看三座高迪——Park Güell 9:30 开门场、Casa Milà 屋顶、圣家堂 12:45（已购票，正午彩窗最强）。⚠ 三个都是重磅，官方建议合计 4.5-5.5h，所以上午排得很紧：午饭挪到 15:30 Sirvent 下午茶一起吃，全程每个环节只有 5-10min 缓冲。下午 Cavalcada 游行 + 夜晚 Correfoc + 音乐夜，是巴塞最疯的一天。",
+    desc: "2026 是高迪去世 100 周年 + Park Güell 落成 100 周年双庆典。上午只安排 Park Güell 一座——2h 从容看，不用赶。中午在圣家堂周边正经吃个饭，12:45 进圣家堂（已购票，正午彩窗最强，留 2.5h）。Casa Milà 挪到了 Day 4 下午，那天时间宽裕。下午 Cavalcada 游行 + 夜晚 Correfoc + 音乐夜，是巴塞最疯的一天。",
     slots: [
-      { t: "07:50", h: "Poblenou 出发 → Gràcia 区吃早餐", d: "比原计划提早 40min 出门——Mercè 主周六上午市中心开始交通管制，打车会明显变慢。先到 Park Güell 山下的 Gràcia 老城区吃早餐（这一带是本地人生活区，比景区门口便宜一半）。吃完步行或短打车到公园入口。", kind: "transit", loc: {lat: 41.40650, lng: 2.20313}, hop: {via: "打车 Poblenou → Gràcia", dur: "20min · €12 · 6.5km"} },
-      { t: "08:20", h: "Gràcia 老城区早餐", d: "Park Güell 山下的本地生活区，随便找家带露台的咖啡馆。推荐方向：Carrer de Verdi 一带。这顿要吃饱——下一段到 15:30 才有正经东西吃。", kind: "food", loc: {lat: 41.4040, lng: 2.1560} },
-      { t: "09:30", h: "Park Güell · 高迪逝世 100 周年 + 公园百年", d: "2026 双百年（1926 高迪逝世 + 1926 公园正式对外开放），Mercè 期间有特别装置和讲解。经典马赛克蜥蜴、龙椅长廊、Sala Hipóstila 石柱厅，再往上走到 Calvary 三十字架高点俯瞰全城——很多人跳过，但那是唯一能看到圣家堂从城市网格里冒出来的位置。<b>⚠ 9/1–10/24 售票第一场就是 9:30</b>：7:00-9:30 是「Bon Dia Barcelona」居民专属时段，游客进不去，别指望更早。90min 精读，11:00 准时出园。", kind: "museum", loc: {lat: 41.41449, lng: 2.15282}, img: "assets/img/spots/park-guell.jpg", link: "https://parkguell.barcelona/en/buy-tickets", ticket: "18€ 预约票 · 26 号可能有百年特典升级票", notice: "Mercè 主周六人流暴增，9:30 首场是唯一能避开人潮的选择，务必提前订。迟到超过 30min 票作废不退款。" },
-      { t: "11:00", h: "打车 Park Güell → Casa Milà", d: "下山往 Eixample 区，约 3.5km。Mercè 周六路面拥堵，打车按 15-20min 算（别按平日的 12min）。如果司机说要走海边绕路，改坐 Metro L3 Lesseps → Diagonal 约 25min 更稳。", kind: "transit", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 / Metro L3", dur: "15-20min · €10-12"} },
-      { t: "11:25", h: "Casa Milà 米拉之家 · 屋顶优先（65min 自助）", d: "从 Park Güell 下来直奔 Passeig de Gràcia 92 号。<b>时间只有 65min，所以顺序必须是：先上屋顶 → 阁楼 → 公寓</b>。屋顶那片「战士」烟囱群是整栋楼最值钱的部分，光线好的时候砖石曲线会发光；阁楼的悬链拱像鲸鱼骨架；公寓复原了高迪时代的家具。<b>⚠ 改自助票不用 GYG 90min 小团</b>——小团会多占 25min，赶不上圣家堂。自助票 €24-28，且省 €11-15/人。12:30 准时出门。", kind: "museum", loc: {lat: 41.3954, lng: 2.1620}, img: "assets/img/spots/casa-mila.jpg", hop: {via: "步行进馆", dur: "65min"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 不用 GYG 小团 €39" },
-      { t: "12:30", h: "打车 Casa Milà → 圣家堂", d: "约 1.6km，打车 8-10min（€7-9）。或沿 Passeig de Gràcia 步行 20min 穿过 Eixample 街区，沿途建筑都好看，但今天时间不够，打车。", kind: "transit", loc: {lat: 41.4036, lng: 2.1744}, hop: {via: "打车", dur: "8-10min · €7-9"} },
-      { t: "12:45", h: "圣家堂 · 已购票入内（留 2h15m）", d: "已购 12:45 场次（票面 30min 宽限，13:15 前入场有效）。正值午间太阳穿透西侧受难立面彩窗，把内殿柱林染成一整片橙红——高迪毕生的『石头森林』最魔幻的时刻。<b>⚠ 这段没有午饭时间</b>，出门前买个 bocadillo 带着，或在圣家堂旁边的 Eixample 街区随手解决。正经的一顿挪到 15:30 Sirvent。", kind: "museum", loc: {lat: 41.4036, lng: 2.1744}, img: "assets/img/spots/sagrada-familia.jpg", link: "https://sagradafamilia.org/en/tickets-individuals", ticket: "Basilica 26€（已购）· 含塔 36€", notice: "9 月开放 09:00-20:00。已购 9/26 周六 12:45 场次，13:15 前必须入场。需遮住肩膀和膝盖。" },
-      { t: "15:00", h: "出圣家堂 · 喘口气", d: "看完出来给 30min 缓冲——走到 Sirvent 只要 5min，剩下的时间坐着歇会儿。上午连转三个高迪，信息量很大，需要放空一下再进下午的 Mercè 场子。", kind: "walk", loc: {lat: 41.4020, lng: 2.1698}, hop: {via: "步行", dur: "5min · 400m"} },
-      { t: "15:30", h: "Sirvent Horchata · 迟到的午饭 + 加泰下午茶", d: "圣家堂旁的百年 Horchata 老店（1926 年，刚好也 100 岁），老虎豆冰饮 + Fartons 甜面包。<b>这顿兼当午饭，多点几样。</b>5 分钟步行。", kind: "food", loc: {lat: 41.4020, lng: 2.1698}, img: "assets/img/spots/sirvent-horchata.jpg", hop: {via: "步行", dur: "5min · 400m"} },
+      { t: "08:00", h: "Poblenou 出发 → Gràcia 区吃早餐", d: "不用赶早了——上午只有 Park Güell 一座，可以从容出发。先到 Park Güell 山下的 Gràcia 老城区吃早餐（这一带是本地人生活区，比景区门口便宜一半）。吃完步行或短打车到公园入口。", kind: "transit", loc: {lat: 41.40650, lng: 2.20313}, hop: {via: "打车 Poblenou → Gràcia", dur: "20min · €12 · 6.5km"} },
+      { t: "08:25", h: "Gràcia 老城区早餐", d: "Park Güell 山下的本地生活区，随便找家带露台的咖啡馆。推荐方向：Carrer de Verdi 一带。这顿要吃饱——下一段到 15:30 才有正经东西吃。", kind: "food", loc: {lat: 41.4040, lng: 2.1560} },
+      { t: "09:30", h: "Park Güell · 高迪逝世 100 周年 + 公园百年", d: "2026 双百年（1926 高迪逝世 + 1926 公园正式对外开放），Mercè 期间有特别装置和讲解。经典马赛克蜥蜴、龙椅长廊、Sala Hipóstila 石柱厅，再往上走到 Calvary 三十字架高点俯瞰全城——很多人跳过，但那是唯一能看到圣家堂从城市网格里冒出来的位置（带长焦）。⚠ 9/1–10/24 售票第一场就是 9:30：7:00-9:30 是「Bon Dia Barcelona」居民专属时段，游客进不去，别指望更早。这天不用赶场，留 2h 慢慢走，11:30 出园。", kind: "museum", loc: {lat: 41.41449, lng: 2.15282}, img: "assets/img/spots/park-guell.jpg", link: "https://parkguell.barcelona/en/buy-tickets", ticket: "18€ 预约票 · 26 号可能有百年特典升级票", notice: "Mercè 主周六人流暴增，9:30 首场是唯一能避开人潮的选择，务必提前订。迟到超过 30min 票作废不退款。" },
+      { t: "11:30", h: "出园 → 打车去圣家堂", d: "Park Güell 下山往 Eixample 区，约 4km。Mercè 周六路面拥堵，打车按 20-25min 算（别按平日的 15min）。若堵得厉害改 Metro L3 Lesseps → L5 Diagonal 再换，约 30min 但时间可控。", kind: "transit", loc: {lat: 41.4036, lng: 2.1744}, hop: {via: "打车 / Metro", dur: "20-30min · €12" } },
+      { t: "12:00", h: "圣家堂周边午饭（正经坐下来吃）", d: "45min 从容吃一顿。别在圣家堂正门口那圈吃——游客价且品质一般。往 Eixample 街区里走两条街（Carrer de Provença 或 Carrer de Mallorca 内侧）本地小馆多得多。简单点就叫个 menú del día（午市套餐 €15-20，含前菜+主菜+甜点+饮料）。", kind: "food", loc: {lat: 41.4045, lng: 2.1760}, hop: {via: "步行", dur: "5min"} },
+      { t: "12:45", h: "圣家堂 · 已购票入内（留 2h30m）", d: "已购 12:45 场次（票面 30min 宽限，13:15 前入场有效）。正值午间太阳穿透西侧受难立面彩窗，把内殿柱林染成一整片橙红——高迪毕生的『石头森林』最魔幻的时刻。⚠ 这段没有午饭时间，出门前买个 bocadillo 带着，或在圣家堂旁边的 Eixample 街区随手解决。正经的一顿挪到 15:30 Sirvent。", kind: "museum", loc: {lat: 41.4036, lng: 2.1744}, img: "assets/img/spots/sagrada-familia.jpg", link: "https://sagradafamilia.org/en/tickets-individuals", ticket: "Basilica 26€（已购）· 含塔 36€", notice: "9 月开放 09:00-20:00。已购 9/26 周六 12:45 场次，13:15 前必须入场。需遮住肩膀和膝盖。" },
+      { t: "15:15", h: "出圣家堂 · 喘口气", d: "看完出来给 30min 缓冲——走到 Sirvent 只要 5min，剩下的时间坐着歇会儿。上午连转三个高迪，信息量很大，需要放空一下再进下午的 Mercè 场子。", kind: "walk", loc: {lat: 41.4020, lng: 2.1698}, hop: {via: "步行", dur: "5min · 400m"} },
+      { t: "15:30", h: "Sirvent Horchata · 加泰下午茶", d: "圣家堂旁的百年 Horchata 老店（1926 年，刚好也 100 岁），老虎豆冰饮 + Fartons 甜面包。百年老店的 horchata 要配 fartons 蘸着吃。5 分钟步行。", kind: "food", loc: {lat: 41.4020, lng: 2.1698}, img: "assets/img/spots/sirvent-horchata.jpg", hop: {via: "步行", dur: "5min · 400m"} },
       { t: "17:00", h: "Mercè · Cavalcada de la Mercè 大教堂大道游行", d: "2026 官方版本：周六 17:00 Cavalcada de la Mercè 沿 Avinguda de la Catedral → Via Laietana 的大型花车 + 巨人 + 恶魔 + 龙的游行队伍。可以在大教堂前广场找台阶坐着看。（注：Castellers 人塔在 9/24 中午 Sant Jaume 已错过。）", kind: "event", loc: {lat: 41.38460, lng: 2.17607}, img: "assets/img/spots/merce-cavalcada.jpg", hop: {via: "Metro L2 Sagrada Família → L4 Jaume I", dur: "18min · 2.5€"}, link: "https://www.barcelona.cat/lamerce/en" },
       { t: "20:00", h: "Mercè 2026 新装置 · Porta de l'Infern Correfoc @ Glòries", d: "2026 Mercè 大更新——Correfoc 从 Via Laietana 挪到 Plaça de les Glòries，配全新 4×8m 铸铁『地狱之门』装置。魔鬼队伍从门里出来放烟花跑穿人群。长袖长裤 + 戴帽子 + 遮住脖子，站两侧不要正中间。约 20:00-22:30。", kind: "event", loc: {lat: 41.40384, lng: 2.18960}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Metro L4 Jaume I → Glòries", dur: "15min"}, link: "https://www.barcelona.cat/lamerce/en" },
       { t: "22:45", h: "Bogatell 海滩音乐夜 Day 2 · La Pegatina + Svetlana", d: "Correfoc 结束后步行/打车 12min 回 Poblenou 沙滩看 Mercè Música。周六 9/26 场：La Pegatina（加泰罗尼亚乡愁 skanka）+ Svetlana + Cala Vento。免费，从民宿走过去 6min。", kind: "event", loc: {lat: 41.39423, lng: 2.20488}, img: "assets/img/spots/bogatell-beach.jpg", hop: {via: "打车 Glòries → Bogatell", dur: "10min · €8"}, link: "https://www.barcelona.cat/lamerce/en" }
@@ -69,16 +68,16 @@ const days = [
     mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13}
   },
   {
-    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Picasso Museum",
-    desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程），下午去 El Born 的毕加索博物馆看蓝色时期到蒙马特的完整弧线，日落去 Mirador de la Farma 拍 LaLaLand 蓝调紫调，晚上 Poble Sec Denassus 塔帕斯晚餐。",
+    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà",
+    desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程）。下午补上 Casa Milà——从 Day 3 挪过来的，因为那天上午塞三个高迪实在太赶。这天时间宽裕，可以在屋顶烟囱群里慢慢待着。日落去 Mirador de la Farma 拍 LaLaLand 蓝调紫调，晚上 Poble Sec Denassus 塔帕斯晚餐。",
     slots: [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
       { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
-      { t: "15:30", h: "Museu Picasso · El Born", d: "毕加索博物馆藏在 El Born 中世纪窄巷里，占了五座 13-15 世纪的哥特宅邸。看点是他 14-24 岁在巴塞罗那的青涩期作品，尤其蓝色时期与《宫娥》系列。周日 15:00 后半价（7€），周日 15:30 场次人流舒服。馆藏丰富但不大，1.5h 够。", kind: "museum", img: "assets/img/spots/museu-picasso.jpg", loc: {lat: 41.3852, lng: 2.1810}, hop: {via: "打车 Poblenou → El Born", dur: "10min · 8€"}, link: "https://www.museupicassobcn.cat/en", ticket: "成人 14€ · 周日 15:00 后半价 7€ · 需预约" },
-      { t: "18:00", h: "Mirador de la Farma · 蓝调紫调日落", d: "从 El Born 打车到 Las Delicias 附近的 Mirador de la Farma 观景台——比 Bunkers 更小众，视野同样 360° 但没有清场压力，蓝调紫调时段拍 LaLaLand 风格照片最上镜。日落约 19:30。", kind: "walk", img: "assets/img/spots/mirador-farma.jpg", loc: {lat: 41.4190, lng: 2.1650}, hop: {via: "打车", dur: "18min · 12€"} },
+      { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Poblenou 打车约 15min（€10-12），看完直接打车去 Mirador 看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 Poblenou → Passeig de Gràcia", dur: "15min · €10-12"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
+      { t: "18:00", h: "Mirador de la Farma · 蓝调紫调日落", d: "从 Casa Milà 打车到 Las Delicias 附近的 Mirador de la Farma 观景台——比 Bunkers 更小众，视野同样 360° 但没有清场压力，蓝调紫调时段拍 LaLaLand 风格照片最上镜。日落约 19:30。", kind: "walk", img: "assets/img/spots/mirador-farma.jpg", loc: {lat: 41.4190, lng: 2.1650}, hop: {via: "打车 Casa Milà → Mirador", dur: "18min · 12€"} },
       { t: "20:30", h: "Denassus · Poble Sec 塔帕斯晚餐", d: "Poble Sec 热门小酒馆，特色 Tapas 与选酒极其惊艳。必订位。人均 40€。", kind: "food", img: "assets/img/spots/denassus.jpg", loc: {lat: 41.3736, lng: 2.1614}, hop: {via: "打车 Bunkers → Poble Sec", dur: "20min · 12€"} }
     ],
-    vlog: ["帆船出港航拍", "Sangria 特写", "El Born 石巷手持推镜", "毕加索蓝色时期定格", "Mirador 全景 hyperlapse", "Denassus tapas 手持"],
+    vlog: ["帆船出港航拍", "Sangria 特写", "El Born 石巷手持推镜", "Casa Milà 屋顶烟囱下午光", "Mirador 全景 hyperlapse", "Denassus tapas 手持"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.4020, lng: 2.1750, zoom: 12}
   },
@@ -551,9 +550,8 @@ const budget = {
       items: [
         { t: "圣家堂 Basilica 内殿", amt: 204, note: "26€ · KK 已购 9/26 12:45 场次" },
         { t: "Park Güell 纪念区", amt: 141, note: "18€ · 9/26 早场 · 高迪百年必抢 · timed entry" },
-        { t: "米拉之家 La Pedrera", amt: 204, note: "26€ 官网自助票 · 改自助放弃 GYG 39€ 小团，省 25min 赶圣家堂" },
+        { t: "米拉之家 La Pedrera", amt: 204, note: "26€ 官网自助票 · 9/27 Day 4 下午（从 Day 3 挪过来）" },
         { t: "Casa Batlló", amt: 275, note: "35€ Blue · Silver 45€ 可跳队 · Day 2 下午入内" },
-        { t: "Museu Picasso Barcelona", amt: 110, note: "14€ · 周日 15:00 后半价 7€" },
         { t: "Musée Picasso Antibes", amt: 63, note: "8€ · 城堡博物馆 · 现场买即可" },
         { t: "Jardin Exotique d'Èze", amt: 63, note: "8€ · 悬崖植物园 · 现场买即可" },
         { t: "卢浮宫（非 EEA）", amt: 251, note: "32€ · 2026-01 涨价 · 强制预约 · 10/2 上午 9:00 场" },
