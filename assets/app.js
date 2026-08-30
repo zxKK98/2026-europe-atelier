@@ -32,38 +32,38 @@ const days = [
   },
   {
     n: 2, date: "Sep 25 · Fri", city: "马德里 → 巴塞罗那", theme: "OUIGO Morning · Casa Batlló · OBC Symphony Night",
-    desc: "早班 OUIGO 高铁 9:31 从 Atocha Almudena Grandes 站厅出发，12:58 抵达 Barcelona Sants。下午在巴特罗之家入内，15:00 民宿 Check-in，傍晚跟着 GYG Paella 烹饪课在 Boqueria 市集选食材做海鲜饭。晚上重头戏：Mercè 音乐节免费广场交响乐——OBC（巴塞罗那交响乐团暨加泰罗尼亚国家交响乐团）在 Nou Barris 广场演 Borodin + Bartók + Tchaikovsky《天鹅湖》，指挥 Miguel Sepúlveda。Paella 课 21:00 结束后直接赶场，迟到 30 分钟赶上后半场（户外免费音乐会，随时进出）。回程顺路去 Bogatell 海滩收个尾。",
+    desc: "早班 OUIGO 高铁 9:31 从 Atocha Almudena Grandes 站厅出发，12:58 抵达 Barcelona Sants。下午在巴特罗之家入内，15:00 民宿 Check-in。傍晚留给第一晚安顿、晚餐和前往 Nou Barris 的路程；今晚只安排你收藏的 OBC 免费交响乐，完整听完 Bartók 与《天鹅湖》压轴。",
     slots: [
       { t: "08:00", h: "民宿退房 → Atocha Almudena Grandes", d: "打车或 Metro L1 到 Atocha。注意 OUIGO 用的是 Atocha 子站厅『Almudena Grandes』，不是主 AVE 大厅——认准指示牌。行李需过安检，30 min 前登机口开、5 min 前关闸。", kind: "transit", img: "assets/img/spots/atocha-station.jpg", loc: {lat: 40.4067, lng: -3.6900}, hop: {via: "打车", dur: "10min · 8€"} },
       { t: "09:31", h: "OUIGO 06501 · 座位 1D + 1E", d: "OUIGO Max/XL 舱等，含 1 手提 + 1 客舱行李 + 1 额外 25kg 行李（票 QG3UVL 已付）。二层双人排，靠窗看西班牙内陆平原变加泰罗尼亚。", kind: "transit", loc: {lat: 40.4067, lng: -3.6900}, link: "https://www.ouigo.com/", ticket: "OUIGO Max/XL · 已购 QG3UVL" },
       { t: "12:58", h: "Barcelona Sants 抵达", d: "下车往地铁 L5 走。先把行李拖到 Poblenou 民宿楼下寄存（Rut's Loft 15:00 才 check-in），或直接选站边寄存柜 Lockers Sants。", kind: "transit", loc: {lat: 41.3792, lng: 2.1400}, hop: {via: "OUIGO 直达", dur: "3h27m"} },
       { t: "14:00", h: "Casa Batlló 巴特罗之家 · 入内参观", d: "高迪 1904 年为 Josep Batlló 改造的立面，龙鳞屋顶 + 骨骼阳台，室内的漩涡采光井是最震撼的空间。选 Blue Ticket 基础票即可，加钱 Silver/Gold 可跳队。9 月开放 09:00-20:00。", kind: "museum", img: "assets/img/spots/casa-batllo.jpg", loc: {lat: 41.3917, lng: 2.1649}, hop: {via: "Metro L5 Sants → L3 Passeig de Gràcia", dur: "20min · 2.5€"}, link: "https://www.casabatllo.es/en/", ticket: "Blue 35€ · Silver 45€ · Gold 49€（跳队）" },
       { t: "15:30", h: "Rut's Loft 入住 · Poblenou", d: "打车 15min 到 Calle Pellaires 35。植物设计 Loft，房东 Rut 会亲自开门。距离 Bogatell 海滩步行 5 分钟。", kind: "stay", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "打车 Passeig de Gràcia → Poblenou", dur: "15min · 12€"} },
-      { t: "17:00", h: "GYG · Paella 烹饪课 + Boqueria 市集", d: "跟着大厨去 La Boqueria 亲手选食材（西班牙米、藏红花、海鲜），回小厨房现场做一整锅海鲜饭 + Sangria。4h 体验，晚餐一并解决。人均 92€。", kind: "food", loc: {lat: 41.3818, lng: 2.1717}, hop: {via: "打车 Poblenou → Raval", dur: "18min · 12€"}, link: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/", gyg: { title: "Paella 烹饪课 · Boqueria 市集采买", img: "assets/img/gyg/paella.jpg", rating: "4.8", reviews: "2,300+", price: "€92 起 · 4h", url: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/" } },
-      { t: "20:30", h: "Mercè · Xambanga de Gegants 巨人游行（待定）", d: "⚠ 官方逐时日程已发布，此活动具体时间以 barcelona.cat/lamerce 为准。Xambanga 是巨人们『精装打扮』沿 Rambla / Sant Jaume 一带边走边跳的准游行，每个村都有自己 3m 高的巨人木偶（Gegants）。若与 OBC 交响乐时间冲突则优先交响乐。", kind: "event", img: "assets/img/spots/xambanga-gegants.jpg", loc: {lat: 41.3830, lng: 2.1770}, hop: {via: "步行 Boqueria → 广场", dur: "10min · 700m"}, link: "https://www.barcelona.cat/lamerce/en", notice: "时间待官方确认，可能与 OBC 20:45 冲突——优先 OBC。" },
-      { t: "20:45", h: "OBC 交响乐团 · Mercè 广场免费音乐会", d: "巴塞罗那交响乐团暨加泰罗尼亚国家交响乐团（OBC）在 Nou Barris 区政府广场的年度免费公演。指挥 Miguel Sepúlveda，曲目：Borodin《波罗维茨舞曲》→ Bartók《罗马尼亚民间舞曲》→ Tchaikovsky《天鹅湖》选段。约 75 分钟，免预约，直接去占位。⚠ Paella 烹饪课 21:00 才结束，从 Boqueria 地铁到 Nou Barris 约 30-35 分钟，预计 21:15-21:20 到场——错过开场 Borodin 约 15-20 分钟，但能完整听到 Bartók + 整场天鹅湖压轴。户外广场音乐会，迟到进场完全正常。从 Nou Barris 回 Poblenou/Bogatell 地铁约 25 分钟。", kind: "event", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "地铁 L3→L11 或公交", dur: "Paella下课→Nou Barris 约 35min"}, link: "https://www.auditori.cat/en/events/obc-merce-2026/", ticket: "免费 · 免预约 · 约 75min" },
+      { t: "17:00", h: "Poblenou · 第一晚慢晚餐", d: "第一晚不再塞进体验课。民宿安顿后，在 Rambla del Poblenou 找一家坐得住的海鲜小馆慢慢吃；20:00 再出发去 Nou Barris，给 OBC 留足进场和找位置的时间。", kind: "food", loc: {lat: 41.4018, lng: 2.2004}, hop: {via: "步行", dur: "5min"} },
+      { t: "20:00", h: "Poblenou → Nou Barris · 提前进场", d: "从 Poblenou 出发，地铁转线约 35-40 分钟。20:40 前到 Plaça Major de Nou Barris，广场音乐会无需预约，提前到能从容找位置。", kind: "transit", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "L4 → L1 / L11", dur: "35-40min"} },
+      { t: "20:45", h: "OBC 交响乐团 · Mercè 广场免费音乐会", d: "巴塞罗那交响乐团暨加泰罗尼亚国家交响乐团（OBC）在 Nou Barris 区政府广场的年度免费公演。指挥 Miguel Sepúlveda，曲目：Borodin《波罗维茨舞曲》→ Bartók《罗马尼亚民间舞曲》→ Tchaikovsky《天鹅湖》选段。约 75 分钟，免预约。已提前抵达，可完整听完。", kind: "event", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "步行进场", dur: "20:40 前抵达"}, link: "https://www.auditori.cat/en/events/obc-merce-2026/", ticket: "免费 · 免预约 · 约 75min" },
       { t: "22:30", h: "Mercè Música · Bogatell 海滩音乐夜（可选）", d: "OBC 交响乐结束后若还有体力，从 Nou Barris 地铁回 Poblenou 约 25 分钟，到 Bogatell 沙滩收个尾。周五 9/25 场次：Miki Núñez + Buhos + Suu 系加泰罗尼亚 pop-rock 阵容，免费。舞台离 Poblenou 民宿步行 6min。⚠ 若 OBC 结束后太累可直接回民宿休息，Bogatell 离你家门口步行 6 分钟哪天都能来。", kind: "event", loc: {lat: 41.39423, lng: 2.20488}, hop: {via: "Nou Barris → 地铁 → Poblenou → 步行", dur: "约 25-30min"}, link: "https://www.barcelona.cat/lamerce/en" }
     ],
-    vlog: ["Atocha Almudena Grandes 站牌特写", "OUIGO 二层车厢座位 1D", "Casa Batlló 龙鳞屋顶仰角", "Boqueria 藏红花摊位", "Paella 出锅特写", "OBC 交响乐团 Nou Barris 广场全景", "天鹅湖终章时的人群"],
+    vlog: ["Atocha Almudena Grandes 站牌特写", "OUIGO 二层车厢座位 1D", "Casa Batlló 龙鳞屋顶仰角", "Poblenou 第一晚街角", "OBC 交响乐团 Nou Barris 广场全景", "天鹅湖终章时的人群"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1700, zoom: 13}
   },
   {
     n: 3, date: "Sep 26 · Sat", city: "巴塞罗那 · Mercè + 高迪百年", theme: "Gaudí Centennial × Correfoc",
-    desc: "全天交给 Mercè 节庆 + 一座圣家堂。上午不排任何收费景点，睡到自然醒，去哥特区和 Plaça de Sant Jaume 一带泡 Mercè 街头——周六上午有巨人游行（gegants），2026 主宾城市上海带来 100+ 艺术家的街头项目，全部免费。中午在圣家堂周边吃饭，12:45 进圣家堂（已购票，正午彩窗最强，留 2.5h）。下午继续 Mercè 街头与音乐舞台，夜晚 Correfoc 火跑 + 音乐夜。⚠ Mercè 官方逐时日程通常 9 月初发布，出发前查 barcelona.cat/lamerce 确认。",
+    desc: "上午留给 Mercè 街头与哥特区，12:45 进入已购票的圣家堂。下午把原本与 OBC 冲突的 GYG Paella 体验移到这里：周六 Boqueria 市集正常开放，可保留市集采买、海鲜饭、Sangria 的完整环节。晚间看 Glòries 的 Correfoc，之后到 Bogatell 接 Love of Lesbian 和 Svetlana。",
     slots: [
       { t: "09:30", h: "自然醒 · Poblenou 本地早餐", d: "今天上午不赶任何景点。民宿楼下找家咖啡馆慢慢吃——Rambla del Poblenou 一带都是本地人去的，游客价没有。", kind: "food", loc: {lat: 41.4023, lng: 2.2013} },
       { t: "10:30", h: "Mercè 街头 · 哥特区 + Plaça de Sant Jaume", d: "Metro L4 Poblenou → Jaume I 约 15min，出来就是节庆心脏地带。周六上午固定会有 gegants（巨人游行）——三四米高的巨型人偶配鼓队穿过老城。2026 的主宾城市是上海，带来 100+ 艺术家的街头项目，是这届独有的内容。⚠ 官方逐时日程通常 9 月初才发布，出发前查 barcelona.cat/lamerce 确认具体时间地点。全部免费，不用订票。", kind: "event", img: "assets/img/spots/merce-cavalcada.jpg", loc: {lat: 41.38260, lng: 2.17707}, hop: {via: "Metro L4 → Jaume I", dur: "15min · 2.5€"}, link: "https://www.barcelona.cat/lamerce/en" },
       { t: "11:45", h: "Mercè 街头 → 圣家堂", d: "从哥特区坐 Metro L2 到 Sagrada Família 约 18min。节庆日路面拥堵，别打车。", kind: "transit", loc: {lat: 41.4036, lng: 2.1744}, hop: {via: "Metro L2 Jaume I → Sagrada Família", dur: "18min · 2.5€"} },
       { t: "12:00", h: "圣家堂周边午饭（正经坐下来吃）", d: "45min 从容吃一顿。别在圣家堂正门口那圈吃——游客价且品质一般。往 Eixample 街区里走两条街（Carrer de Provença 或 Carrer de Mallorca 内侧）本地小馆多得多。简单点就叫个 menú del día（午市套餐 €15-20，含前菜+主菜+甜点+饮料）。", kind: "food", loc: {lat: 41.4045, lng: 2.1760}, hop: {via: "步行", dur: "5min"} },
-      { t: "12:45", h: "圣家堂 · 已购票入内（留 2h30m）", d: "已购 12:45 场次（票面 30min 宽限，13:15 前入场有效）。正值午间太阳穿透西侧受难立面彩窗，把内殿柱林染成一整片橙红——高迪毕生的『石头森林』最魔幻的时刻。⚠ 这段没有午饭时间，出门前买个 bocadillo 带着，或在圣家堂旁边的 Eixample 街区随手解决。正经的一顿挪到 15:30 Sirvent。", kind: "museum", loc: {lat: 41.4036, lng: 2.1744}, img: "assets/img/spots/sagrada-familia.jpg", link: "https://sagradafamilia.org/en/tickets-individuals", ticket: "Basilica 26€（已购）· 含塔 36€", notice: "9 月开放 09:00-20:00。已购 9/26 周六 12:45 场次，13:15 前必须入场。需遮住肩膀和膝盖。" },
-      { t: "15:15", h: "出圣家堂 · 喘口气", d: "看完出来给 30min 缓冲——走到 Sirvent 只要 5min，剩下的时间坐着歇会儿。上午连转三个高迪，信息量很大，需要放空一下再进下午的 Mercè 场子。", kind: "walk", loc: {lat: 41.4020, lng: 2.1698}, hop: {via: "步行", dur: "5min · 400m"} },
-      { t: "15:30", h: "Sirvent Horchata · 加泰下午茶", d: "圣家堂旁的百年 Horchata 老店（1926 年，刚好也 100 岁），老虎豆冰饮 + Fartons 甜面包。百年老店的 horchata 要配 fartons 蘸着吃。5 分钟步行。", kind: "food", loc: {lat: 41.4020, lng: 2.1698}, img: "assets/img/spots/sirvent-horchata.jpg", hop: {via: "步行", dur: "5min · 400m"} },
-      { t: "17:00", h: "Mercè 街头艺术 & 免费音乐舞台", d: "周六下午是 BAM 和 Música Mercè 的主场——Plaça Reial、Rambla del Raval、Plaça de Catalunya 几个舞台轮着演，全部免费。MAC 街头艺术分散在 Via Laietana 和老城广场。不用赶场，跟着声音走就行。⚠ 具体阵容和时间以官方日程为准（9 月初发布）。", kind: "event", loc: {lat: 41.38160, lng: 2.17607}, img: "assets/img/spots/merce-cavalcada.jpg", hop: {via: "Metro L2 → Jaume I", dur: "18min · 2.5€"}, link: "https://www.barcelona.cat/lamerce/en" },
+      { t: "12:45", h: "圣家堂 · 已购票入内（留 2h30m）", d: "已购 12:45 场次（票面 30min 宽限，13:15 前入场有效）。正值午间太阳穿透西侧受难立面彩窗，把内殿柱林染成一整片橙红——高迪毕生的『石头森林』最魔幻的时刻。12:00 已预留正经午饭；16:00 的 Paella 课会是下午的完整晚餐。",  kind: "museum", loc: {lat: 41.4036, lng: 2.1744}, img: "assets/img/spots/sagrada-familia.jpg", link: "https://sagradafamilia.org/en/tickets-individuals", ticket: "Basilica 26€（已购）· 含塔 36€", notice: "9 月开放 09:00-20:00。已购 9/26 周六 12:45 场次，13:15 前必须入场。需遮住肩膀和膝盖。" },
+      { t: "15:15", h: "圣家堂 → Boqueria · 赶 GYG 集合", d: "出圣家堂后直接坐 L2 转 L3 到 Liceu，约 25 分钟。9/26 是周六；Boqueria 官方营业时间为周一至周六 08:00-20:30，市场导览可完整保留。", kind: "transit", loc: {lat: 41.3818, lng: 2.1717}, hop: {via: "Metro L2 → L3 · Liceu", dur: "25min · 2.5€"} },
+      { t: "16:00", h: "GYG · Paella 烹饪课 + Boqueria 市集", d: "跟着大厨在 La Boqueria 选海鲜、米和藏红花，再回厨房做海鲜饭、Tapas 与 Sangria。全程 3 小时，市集导览、烹饪和晚餐都保留；9/26 是周六，不触发周日/节假日取消市集导览的规则。", kind: "food", loc: {lat: 41.3818, lng: 2.1717}, hop: {via: "步行出 Liceu", dur: "2min"}, link: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/", gyg: { title: "Paella 烹饪课 · Boqueria 市集采买", img: "assets/img/gyg/paella.jpg", rating: "4.8", reviews: "4,200+", price: "€72 起 · 3h", url: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/" }, notice: "预订时选 9/26 周六 16:00 左右场次；若预订页仅显示相邻时段，以保留市集导览为优先。" },
+      { t: "19:15", h: "Boqueria → Glòries · Correfoc 入场", d: "课程结束后直接打车前往 Glòries，约 15 分钟。19:35 左右抵达，换上长袖长裤并留出找安全观演位置的时间。", kind: "transit", loc: {lat: 41.40384, lng: 2.18960}, hop: {via: "打车", dur: "15min · 10-12€"} },
       { t: "20:00", h: "Mercè 2026 新装置 · Porta de l'Infern Correfoc @ Glòries", d: "2026 Mercè 大更新——Correfoc 从 Via Laietana 挪到 Plaça de les Glòries，配全新 4×8m 铸铁『地狱之门』装置。魔鬼队伍从门里出来放烟花跑穿人群。长袖长裤 + 戴帽子 + 遮住脖子，站两侧不要正中间。约 20:00-22:30。", kind: "event", loc: {lat: 41.40384, lng: 2.18960}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Metro L4 Jaume I → Glòries", dur: "15min"}, link: "https://www.barcelona.cat/lamerce/en" },
-      { t: "22:45", h: "Bogatell 海滩音乐夜 · La Pegatina + Svetlana",  d: "Correfoc 结束后步行/打车 12min 回 Poblenou 沙滩看 Mercè Música。周六 9/26 场：La Pegatina（加泰罗尼亚乡愁 skanka）+ Svetlana + Cala Vento。免费，从民宿走过去 6min。", kind: "event", loc: {lat: 41.39423, lng: 2.20488}, img: "assets/img/spots/bogatell-beach.jpg", hop: {via: "打车 Glòries → Bogatell", dur: "10min · €8"}, link: "https://www.barcelona.cat/lamerce/en" }
+      { t: "22:45", h: "Bogatell 海滩音乐夜 · Love of Lesbian + Svetlana", d: "官方 9/26 时段：20:00 Al·lèrgiques al Pol·len → 21:30 La Pegatina → 23:30 Love of Lesbian → 01:30 Svetlana。你从 Correfoc 抵达时，正好接 23:30 的 Love of Lesbian；想留到深夜再听 Svetlana 就步行 6 分钟回民宿。全部免费。", kind: "event", loc: {lat: 41.39423, lng: 2.20488}, img: "assets/img/spots/bogatell-beach.jpg", hop: {via: "打车 Glòries → Bogatell", dur: "10min · €8"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · Love of Lesbian 23:30" }
     ],
-    vlog: ["哥特区 gegants 巨人穿街", "Casa Milà 屋顶烟囱慢摇", "圣家堂彩窗染红的手", "Cavalcada 花车 + 大龙", "Porta de l'Infern 火花特写", "Bogatell 沙滩音乐夜人海"],
+    vlog: ["哥特区 gegants 巨人穿街", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Love of Lesbian 开场前的 Bogatell 人海"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13}
   },
@@ -74,7 +74,7 @@ const days = [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
       { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
       { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Poblenou 打车约 15min（€10-12），看完直接打车去 Mirador 看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 Poblenou → Passeig de Gràcia", dur: "15min · €10-12"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
-      { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-summit.jpg", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
+      { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-summit.jpg", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, remote: { metric: "单程 70min · 往返 4h25", copy: "距离远，且 111 路下山末班约 21:30。若 16:50 仍未离开 Casa Milà、天气转差或体力不足，直接放弃登顶：回 Poblenou 休息，21:30 去 Bogatell 看烟火闭幕。" }, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
       { t: "22:00", h: "Mercè Piromusical · Bogatell Beach 烟火闭幕", d: "La Mercè 2026 的最后一场：音乐编排烟火在 Bogatell 海滩举行。今年因 Montjuïc 施工首次移到这里。住处步行 5 分钟，提前在海滩靠北一侧找位；结束后直接步行回民宿。", kind: "event", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.39423, lng: 2.20488}, hop: {via: "Plaça Catalunya → L4 Poblenou → 步行", dur: "Tibidabo 下山后约 20min"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 22:00" }
     ],
     vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱下午光", "Tibidabo 耶稣雕像与巴塞全景", "日落 → 蓝调延时", "Bogatell 海面上的 Piromusical 烟火"],
@@ -264,6 +264,7 @@ function renderDay(n) {
     const linkHtml = s.link ? `<a class="slot-link" href="${s.link}" target="_blank" rel="noopener">🔗 官网 / 订票</a>` : "";
     const ticketHtml = s.ticket ? `<div class="slot-ticket"><span class="ticket-tag">Ticket</span> ${s.ticket}</div>` : "";
     const noticeHtml = s.notice ? `<div class="slot-notice"><span class="notice-tag">⚠ 公告</span> ${s.notice}</div>` : "";
+    const remoteHtml = s.remote ? `<aside class="slot-remote" aria-label="远距离出行提醒"><div class="slot-remote-head"><span>Distance check</span><b>${s.remote.metric}</b></div><p>${s.remote.copy}</p></aside>` : "";
     const hopHtml = s.hop ? `<div class="slot-hop"><span class="hop-arr">↳</span> <b>${s.hop.via}</b> · ${s.hop.dur}</div>` : "";
     const gygHtml = s.gyg ? `
       <a class="slot-gyg" href="${s.gyg.url}" target="_blank" rel="noopener">
@@ -288,6 +289,7 @@ function renderDay(n) {
       <div class="slot-body">
         ${imgHtml}
         ${hopHtml}
+        ${remoteHtml}
         <h4><span class="slot-icon">${slotIcon(s.kind)}</span> ${s.h}</h4>
         <p>${s.d}</p>
         ${ticketHtml}
@@ -576,7 +578,7 @@ const budget = {
       key: "gyg", name: "GYG 体验预订（可选升级）", icon: "🎟️",
       items: [
         { t: "Casa Milà 早鸟小团导览（Day 3）", amt: 307, note: "€39 · 替代 28€ 白天普通票 · 90min" },
-        { t: "Paella 烹饪课 + Boqueria（Day 2）", amt: 724, note: "€92 · 到巴塞当晚 · 4h 含晚餐" },
+        { t: "Paella 烹饪课 + Boqueria（Day 3）", amt: 565, note: "€72 起 · 9/26 周六 · 3h 含市集导览与晚餐" },
         { t: "地中海帆船 + 滨海酒庄（Day 4）", amt: 872, note: "€111 · 9/27 10:00 出发 · 4h 含 4 款红酒" },
         { t: "Seine Cruise 蓝调时刻 1h 游船（Day 10）", amt: 141, note: "€18 · 圣母院 Pont au Double 码头 · 提前购便宜" }
       ]
