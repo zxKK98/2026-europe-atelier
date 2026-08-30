@@ -67,18 +67,21 @@ const days = [
     mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13}
   },
   {
-    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà",
-    desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程）。下午补上 Casa Milà——从 Day 3 挪过来的，因为那天上午塞三个高迪实在太赶。这天时间宽裕，可以在屋顶烟囱群里慢慢待着。日落去 Mirador de la Farma 拍 LaLaLand 蓝调紫调，晚上 Poble Sec Denassus 塔帕斯晚餐。",
+    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà + Tibidabo Sunset",
+    desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程）。下午补上 Casa Milà（从 Day 3 挪过来的）。傍晚登 Tibidabo——512 米全城最高点，圣心堂顶上就是那尊「神爱世人」耶稣像，站在雕像底座下俯瞰整个巴塞罗那和地中海，日落前 1 小时上去能拍全白天→日落→蓝调三种光。晚上回市区 Poble Sec 吃 Denassus 塔帕斯。",
     slots: [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
       { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
       { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Poblenou 打车约 15min（€10-12），看完直接打车去 Mirador 看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 Poblenou → Passeig de Gràcia", dur: "15min · €10-12"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
-      { t: "18:00", h: "Mirador de la Farma · 蓝调紫调日落", d: "从 Casa Milà 打车到 Las Delicias 附近的 Mirador de la Farma 观景台——比 Bunkers 更小众，视野同样 360° 但没有清场压力，蓝调紫调时段拍 LaLaLand 风格照片最上镜。日落约 19:30。", kind: "walk", img: "assets/img/spots/mirador-farma.jpg", loc: {lat: 41.4190, lng: 2.1650}, hop: {via: "打车 Casa Milà → Mirador", dur: "18min · 12€"} },
-      { t: "20:30", h: "Denassus · Poble Sec 塔帕斯晚餐", d: "Poble Sec 热门小酒馆，特色 Tapas 与选酒极其惊艳。必订位。人均 40€。", kind: "food", img: "assets/img/spots/denassus.jpg", loc: {lat: 41.3736, lng: 2.1614}, hop: {via: "打车 Bunkers → Poble Sec", dur: "20min · 12€"} }
+      { t: "17:00", h: "出发去 Tibidabo（三段交通）", d: "从 Passeig de Gràcia 走到 Plaça Catalunya 坐 FGC 的 S1 或 S2 线（注意是 FGC 不是 TMB 地铁，在 Plaça Catalunya 站内找 S1/S2 指示牌），约 15 分钟到终点站 Peu del Funicular。⚠ 上车一定要坐中间几节车厢——头尾车厢到站不开门，这是最容易踩的坑。到站后不要出站，跟着 Vallvidrera Superior 指示牌上楼换缆车（免费，含在交通卡里），3 分钟到半山腰。出缆车站过个小广场就是 111 路红色小巴站，9 分钟到终点 Plaça Tibidabo。全程约 1 小时 10 分。", kind: "transit", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + 缆车 + 111 路", dur: "约 70min · T-Casual 一区票"} },
+      { t: "18:20", h: "Tibidabo 山顶 · 圣心堂登顶（€4）", d: "512 米，巴塞罗那最高点。教堂本身和地穴免费，登顶电梯 €4——先坐电梯，最后一段要步行爬上去，最高处就在那尊「神爱世人」耶稣雕像底座下。站在这里整个巴塞罗那和地中海铺在脚下，晴天能望到 70 公里外的比利牛斯山。观景区（Panoramic Area）免费，那架 Avió 老飞机复刻版和 Giradabo 摩天轮就在这一层，不花钱也能拍到。", kind: "museum", img: "assets/img/spots/mirador-farma.jpg", loc: {lat: 41.4225, lng: 2.1190}, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4 · 教堂与观景区免费" },
+      { t: "18:45", h: "Tibidabo 日落 + 蓝调（日落约 19:38）", d: "日落前 1 小时登顶是这条线最关键的安排——能一路拍下来：白天全景 → 金色时刻 → 日落 → 蓝调时刻，光线每半小时换一次。机位就在耶稣雕像底座下，让雕像的手臂入镜，脚下是整座城市。⚠ 山顶比市区低 3-5°C 且风很大，务必带防风外套。", kind: "walk", img: "assets/img/spots/mirador-farma.jpg", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "徒步登顶段", dur: "拍到 20:00"}, notice: "111 路下山末班约 21:30（部分资料写 22:00，保守按 21:30 算）。拍完蓝调 20:00 开始下山，时间充裕。" },
+      { t: "20:00", h: "下山 · 111 路 → 缆车 → FGC", d: "原路返回。111 路下山末班约 21:30，20:00 出发绰绰有余。若错过末班，山下打车回市区约 €25-30。到 Plaça Catalunya 约 21:15。", kind: "transit", loc: {lat: 41.3870, lng: 2.1700}, hop: {via: "111 路 + 缆车 + FGC S1/S2", dur: "约 70min"} },
+      { t: "21:30", h: "Denassus · Poble Sec 塔帕斯晚餐", d: "Poble Sec 热门小酒馆，特色 Tapas 与选酒极其惊艳。必订位（订 21:30 场，说明是从 Tibidabo 下山过来）。人均 40€。", kind: "food", img: "assets/img/spots/denassus.jpg", loc: {lat: 41.3736, lng: 2.1614}, hop: {via: "打车 Plaça Catalunya → Poble Sec", dur: "12min · €9"} }
     ],
-    vlog: ["帆船出港航拍", "Sangria 特写", "El Born 石巷手持推镜", "Casa Milà 屋顶烟囱下午光", "Mirador 全景 hyperlapse", "Denassus tapas 手持"],
+    vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱下午光", "FGC 车厢 + 缆车 + 111 路小巴上山", "耶稣雕像底座下的全城俯瞰", "日落 → 蓝调延时", "Denassus tapas 手持"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
-    mapCenter: {lat: 41.4020, lng: 2.1750, zoom: 12}
+    mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12}
   },
   {
     n: 5, date: "Sep 28 · Mon", city: "巴塞罗那 → 尼斯", theme: "Barcelona to Côte d'Azur",
@@ -557,7 +560,8 @@ const budget = {
         { t: "Palais Garnier 加尼叶歌剧院自助", amt: 118, note: "15€ · 10/3 上午（可选）· 现场不售票，必须线上订" },
         { t: "巴黎圣母院", amt: 0, note: "内殿免费 · 仅提前 2-3 天放号 · 塔楼登顶另付 16€" },
         { t: "塞纳河蓝调游船", amt: 118, note: "€15（提前网购）· 现场 18€ · Bateaux Parisiens" },
-        { t: "Círculo Bellas Artes 屋顶", amt: 39, note: "5€ 含一杯 · 9/24 收尾" }
+        { t: "Círculo Bellas Artes 屋顶", amt: 39, note: "5€ 含一杯 · 9/24 收尾" },
+        { t: "Tibidabo 圣心堂登顶电梯", amt: 31, note: "4€ · 9/27 日落登顶 · 教堂与观景区免费" }
       ]
     },
     {
