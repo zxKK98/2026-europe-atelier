@@ -80,17 +80,19 @@ const days = [
   },
   {
     n: 5, date: "Sep 28 · Mon", city: "巴塞罗那 → 尼斯", theme: "Barcelona to Côte d'Azur",
-    desc: "9:00 退房，Vueling/easyJet BCN→NCE 航班约 1h40m，13:30 抵尼斯机场。打车或 Tram T2 直达 Airbnb 220 Avenue de la Californie（西区海边），16:00 入住。傍晚天使湾（Baie des Anges）散步 + 海边咖啡馆开启蔚蓝海岸模式。",
+    desc: "航班是下午的 Vueling VY1521（15:25 BCN T1 → 16:50 NCE T1，1h25m，已出票），所以上午在巴塞多赚半天：11:00 退房寄存行李，Bogatell 海滩 + Poblenou 老渔村午餐，13:00 去机场。16:50 落地尼斯 T1，18:00 入住 220 Avenue de la Californie，正好赶上 19:30 天使湾日落，老城 socca 收尾。",
     slots: [
-      { t: "09:00", h: "Rut's Loft 退房 → BCN 机场", d: "打车 25min 到 Barcelona El Prat T1（30€），或 Aerobús 直达（6.75€）。Vueling/easyJet 早班机 11:00-12:00 起飞。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, hop: {via: "打车", dur: "25min · 30€"} },
-      { t: "11:30", h: "BCN → NCE · 蔚蓝海岸线", d: "Vueling VY8600 或 easyJet U2 直飞尼斯，飞行 1h40m。窗边看比利牛斯山、法国南部海岸线。行李托运费单独。早鸟 60-100€。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, link: "https://www.vueling.com/" },
-      { t: "13:30", h: "抵达尼斯 Côte d'Azur 机场", d: "尼斯机场 T2 出来直接是 Tram T2 站，7 号线 30min 到市区 Grand Arénas / Magnan 站（1.5€），或打车 20min 到民宿（20€）。", kind: "transit", loc: {lat: 43.6653, lng: 7.2150}, hop: {via: "航班", dur: "1h40m"} },
-      { t: "14:30", h: "民宿附近 → 天使湾漫步", d: "民宿 220 Avenue de la Californie 就在西区海边，Promenade des Anglais 走出去就是 Baie des Anges 天使湾。海水蓝调，鹅卵石海滩。找一家海边咖啡馆坐下。如未能提前入住先寄放行李。", kind: "walk", img: "assets/img/spots/baie-des-anges.jpg", loc: {lat: 43.6900, lng: 7.2434}, hop: {via: "步行", dur: "8min · 600m"} },
-      { t: "16:00", h: "Airbnb Check-in · 尼斯西区海边", d: "220 Avenue de la Californie，走出门就是 Promenade des Anglais 海滨大道。蔚蓝海岸度假模式正式开启——放行李冲个澡休整。", kind: "stay", loc: {lat: 43.6900, lng: 7.2434} },
-      { t: "18:30", h: "Promenade des Anglais 蓝调散步", d: "海滨大道 7km 长，从民宿一路走到老城 Cours Saleya。日落 19:30，海水从金到玫瑰到深蓝。买一支冰淇淋边走边吃。", kind: "walk", img: "assets/img/spots/promenade-anglais.jpg", loc: {lat: 43.6950, lng: 7.2600} },
-      { t: "20:30", h: "尼斯老城 · 第一顿 socca", d: "Chez Pipo（1923 年老店）或 René Socca，尝尼斯特色鹰嘴豆饼 socca，配 Rosé de Provence 玫瑰酒。人均 20€。", kind: "food", img: "assets/img/spots/socca-nice.jpg", loc: {lat: 43.7018, lng: 7.2778}, hop: {via: "打车", dur: "10min · 8€"}, link: "https://chezpipo.fr/" }
+      { t: "11:00", h: "Rut's Loft 退房 · 行李寄存", d: "航班在下午，不用早起。11:00 正常退房时间，行李寄民宿或用 Bounce/Radical Storage 寄存点（5-6€/件）——楼下 Poblenou 就有。空手过完上午最后半天。", kind: "stay", loc: {lat: 41.4023, lng: 2.2013} },
+      { t: "11:30", h: "Bogatell 海滩 · 告别地中海", d: "民宿步行 5min 的 Bogatell 海滩，巴塞本地人的海滩（比 Barceloneta 清静得多）。下水或者就坐在沙上吹半小时风——这是这趟旅行最后一次见地中海西段。", kind: "walk", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.3970, lng: 2.2040}, hop: {via: "步行", dur: "5min"} },
+      { t: "12:30", h: "Poblenou 早午餐 · Can Recasens", d: "Poblenou 老仓库改的酒馆，暖光木架 + 一整墙葡萄酒，招牌是烤面包配加泰隆奶酪冷肉拼盘。人均 30€。（Day 4 已去过 Els Pescadors 就换这家；反过来也行。）吃完取行李直接打车走。", kind: "food", loc: {lat: 41.4008, lng: 2.1985}, hop: {via: "步行", dur: "5min"}, link: "https://www.canrecasens.com/" },
+      { t: "13:30", h: "Poblenou → BCN El Prat T1", d: "取行李后打车 25min 到 T1（30€ 双人分摊），或 Aerobús A1（6.75€/人，Plaça Catalunya 出发 35min）。Vueling 在 T1，国内申根线值机柜台建议留 1.5h。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, hop: {via: "打车", dur: "25min · 30€"} },
+      { t: "15:25", h: "VY1521 · BCN T1 → NCE T1 · 已出票", d: "西班牙伏林航空 Vueling VY1521，15:25 起飞 16:50 落地，飞行 1h25m。出行人 DUAN/JINNAN、CHEN/KANG，状态已出票。廉航——随身行李尺寸提前量好，托运额确认清楚；机上无免费餐食。窗边看比利牛斯山东段 + 法国南部海岸线。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, link: "https://www.vueling.com/", ticket: "VY1521 · 已出票 · 1h25m" },
+      { t: "16:50", h: "抵达尼斯 Côte d'Azur T1", d: "注意是 **T1 到达**（不是之前以为的 T2）。T1 出来走 5min 有 Tram T2 站，30min 到市区（1.5€）；带行李赶入住建议直接打车 15min 到 Californie（约 25€ 双人分摊）。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "Vueling VY1521", dur: "1h25m"}, notice: "落地航站楼是 NCE T1，机场内 T1↔T2 有免费穿梭巴士。" },
+      { t: "18:00", h: "Airbnb Check-in · 尼斯西区海边", d: "220 Avenue de la Californie，走出门就是 Promenade des Anglais 海滨大道。比原计划晚 2 小时到，跟房东 Aurore 提前说一声晚点入住（自助门锁 HM8A4N4MFY）。放行李冲个澡，20 分钟就能出门。", kind: "stay", loc: {lat: 43.6900, lng: 7.2434}, hop: {via: "打车", dur: "15min · 25€"} },
+      { t: "19:00", h: "天使湾 · Promenade des Anglais 日落", d: "民宿走 8min 就到 Baie des Anges 天使湾。日落 19:30，海水从金到玫瑰到深蓝，蓝椅子那一排是标志画面。沿海滨大道往老城方向慢慢走，边走边吃冰淇淋——这段刚好接晚餐。", kind: "walk", img: "assets/img/spots/baie-des-anges.jpg", loc: {lat: 43.6900, lng: 7.2434}, hop: {via: "步行", dur: "8min · 600m"} },
+      { t: "20:30", h: "尼斯老城 · 第一顿 socca", d: "Chez Pipo（1923 年老店）或 René Socca，尝尼斯特色鹰嘴豆饼 socca，配 Rosé de Provence 玫瑰酒。人均 20€。从海滨大道走到老城约 25min，或打车 10min（8€）。", kind: "food", img: "assets/img/spots/socca-nice.jpg", loc: {lat: 43.7018, lng: 7.2778}, hop: {via: "步行/打车", dur: "25min 步行 · 或 8€ 打车"}, link: "https://chezpipo.fr/" }
     ],
-    vlog: ["BCN 机场跑道", "航班窗外阿尔卑斯余脉", "天使湾鹅卵石特写", "Promenade des Anglais 蓝椅子", "Socca 出炉"],
+    vlog: ["Bogatell 海滩告别镜头", "Can Recasens 酒墙暖光", "BCN T1 值机牌 VY1521", "航班窗外比利牛斯东段", "NCE T1 出站第一口海风", "天使湾蓝椅子 + 日落", "Socca 出炉"],
     stay: { name: "New, Casa Californie Terrace & Beach", area: "尼斯西区海边 · 220 Avenue de la Californie", note: "3 晚 ¥3,339.72 · 房东 Aurore · HM8A4N4MFY", url: "https://www.airbnb.cn/rooms/1705767598377386136" },
     mapCenter: {lat: 43.6950, lng: 7.2600, zoom: 13}
   },
@@ -520,8 +522,8 @@ const budget = {
       items: [
         { t: "MAD → BCN · OUIGO Max/XL 已购", amt: 447, note: "9/25 09:31 · QG3UVL · €57 x 2 = ¥895 双人 / 2 · 座位 1D+1E" },
         { t: "BCN 市内 T-Casual 地铁 10 次卡", amt: 98, note: "€12.55 · 单人一张够 3-4 天用" },
-        { t: "BCN → NCE · Vueling/easyJet 单程", amt: 700, note: "9/28 11:30 · 早鸟 60-100€ 单人" },
-        { t: "NCE 机场 → 民宿 · Tram T2/打车", amt: 20, note: "Tram 1.5€ 或打车 20€ 分摊" },
+        { t: "BCN → NCE · Vueling VY1521 已购", amt: 700, note: "9/28 15:25-16:50 · 已出票 · DUAN/JINNAN + CHEN/KANG · 票价待确认，点数字可改" },
+        { t: "NCE 机场 T1 → 民宿 · 打车/Tram T2", amt: 20, note: "打车 15min 约 25€ 双人分摊，或 Tram T2 1.5€" },
         { t: "NCE → ORY · easyJet U24856 已购", amt: 872, note: "10/1 12:35-14:05 · 携程 1128150429939513 · 空客 320 · 经济舱无餐食 · 总 ¥1,744 / 2" },
         { t: "巴黎 Navigo Semaine 周票", amt: 235, note: "€30 周票（含 CDG↔市区），Sun-Sat 有效" },
         { t: "ORY T1 → 拉丁区公寓 · 打车双人分摊", amt: 160, note: "10/1 14:05 落地 · €35-45 打车 / 2 · 35-40min · 约 19km" },
@@ -543,17 +545,18 @@ const budget = {
       key: "ticket", name: "门票 & 演出", icon: "🎫",
       items: [
         { t: "圣家堂 Basilica 内殿", amt: 204, note: "26€ · KK 已购 9/26 12:45 场次" },
-        { t: "米拉之家 La Pedrera", amt: 220, note: "28€ · 或 GYG 早鸟 39€" },
-        { t: "Casa Batlló", amt: 275, note: "35€ · Day 2 下午入内" },
+        { t: "Park Güell 纪念区", amt: 141, note: "18€ · 9/26 早场 · 高迪百年必抢 · timed entry" },
+        { t: "米拉之家 La Pedrera", amt: 306, note: "39€ GYG 小团（含导览）· 官网自助票 24-28€ 更省" },
+        { t: "Casa Batlló", amt: 275, note: "35€ Blue · Silver 45€ 可跳队 · Day 2 下午入内" },
         { t: "Museu Picasso Barcelona", amt: 110, note: "14€ · 周日 15:00 后半价 7€" },
-        { t: "Musée Picasso Antibes", amt: 63, note: "8€ · 城堡博物馆" },
-        { t: "Jardin Exotique d'Èze", amt: 63, note: "8€ · 悬崖植物园" },
-        { t: "卢浮宫（非 EEA）", amt: 251, note: "32€ · 强制预约 · 10/2 上午" },
-        { t: "奥赛博物馆", amt: 126, note: "16€ 线上 · 10/3 上午" },
-        { t: "Palais Garnier 加尼叶歌剧院自助", amt: 110, note: "14€ · 10/2 下午" },
-        { t: "巴黎圣母院", amt: 0, note: "内殿免费 · 需官网预约时段" },
-        { t: "塞纳河蓝调游船", amt: 118, note: "€15（提前网购）· Bateaux Parisiens" },
-        { t: "Círculo Bellas Artes 屋顶", amt: 39, note: "5€ · 9/24 收尾" }
+        { t: "Musée Picasso Antibes", amt: 63, note: "8€ · 城堡博物馆 · 现场买即可" },
+        { t: "Jardin Exotique d'Èze", amt: 63, note: "8€ · 悬崖植物园 · 现场买即可" },
+        { t: "卢浮宫（非 EEA）", amt: 251, note: "32€ · 2026-01 涨价 · 强制预约 · 10/2 上午 9:00 场" },
+        { t: "奥赛博物馆", amt: 126, note: "16€ 线上 · 10/2 下午 15:45 场 · 2026-03 起全员强制预约" },
+        { t: "Palais Garnier 加尼叶歌剧院自助", amt: 118, note: "15€ · 10/3 上午（可选）· 现场不售票，必须线上订" },
+        { t: "巴黎圣母院", amt: 0, note: "内殿免费 · 仅提前 2-3 天放号 · 塔楼登顶另付 16€" },
+        { t: "塞纳河蓝调游船", amt: 118, note: "€15（提前网购）· 现场 18€ · Bateaux Parisiens" },
+        { t: "Círculo Bellas Artes 屋顶", amt: 39, note: "5€ 含一杯 · 9/24 收尾" }
       ]
     },
     {
@@ -625,10 +628,11 @@ function renderBudget() {
 
 function refreshBudgetTotals() {
   let grand = 0;
-  // 已订固定 = 国际机票 2 项 + OUIGO（intra[0]）+ easyJet NCE→ORY（intra[4]）+ 5 家 Airbnb（stay 全部）+ 圣家堂票（ticket[0]）
+  // 已订固定 = 国际机票 2 项 + OUIGO（intra[0]）+ Vueling VY1521（intra[2]）+ easyJet NCE→ORY（intra[4]）+ 5 家 Airbnb（stay 全部）+ 圣家堂票（ticket[0]）
   const bookedFixed =
     budget.cats[0].items[0].amt + budget.cats[0].items[1].amt   // 国际机票 x2
     + budget.cats[1].items[0].amt                                // OUIGO
+    + budget.cats[1].items[2].amt                                // Vueling VY1521
     + budget.cats[1].items[4].amt                                // easyJet U24856
     + budget.cats[2].items.reduce((a, b) => a + b.amt, 0)        // 5 家 Airbnb
     + budget.cats[3].items[0].amt;                               // 圣家堂

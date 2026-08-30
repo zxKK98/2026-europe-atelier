@@ -1058,6 +1058,70 @@ button { font-family: inherit; cursor: pointer; }
   color: var(--ink-3);
   text-align: center;
 }
+/* ---- Intra-Europe 境内三段 ---- */
+.intra-legs {
+  margin-top: 26px;
+  padding: 20px 22px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.42);
+}
+.intra-title {
+  display: block;
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: 14px;
+}
+.intra-row {
+  display: grid;
+  grid-template-columns: 54px 118px 1fr auto auto;
+  align-items: center;
+  gap: 14px;
+  padding: 11px 0;
+  border-top: 1px solid var(--line);
+  font-family: var(--sans);
+  font-size: 13.5px;
+  color: var(--ink-2);
+}
+.intra-row.is-new { background: rgba(122, 168, 122, 0.07); }
+.intra-date {
+  font-family: var(--display);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+}
+.intra-time {
+  font-family: var(--display);
+  font-size: 16px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+}
+.intra-route { color: var(--ink); }
+.intra-carrier { font-size: 12.5px; color: var(--ink-3); }
+.intra-status {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  padding: 4px 9px;
+  border-radius: 20px;
+  border: 1px solid #4d8a5c;
+  color: #356b48;
+  background: #e2efe6;
+  white-space: nowrap;
+}
+.intra-note {
+  margin: 14px 0 0;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ink-3);
+}
+.intra-note b { color: var(--accent); }
+
 .ledger-foot {
   margin-top: 22px;
   padding-top: 20px;
@@ -2036,6 +2100,7 @@ button { font-family: inherit; cursor: pointer; }
 .todo-chip.chip-orange { border-color: #c98a4b; color: #8a5a20; background: #f8ecd8; }
 .todo-chip.chip-yellow { border-color: #c9a94b; color: #7c6420; background: #f7efd0; }
 .todo-chip.chip-green  { border-color: #7ea45c; color: #4d6a2f; background: #eaf1d9; }
+.todo-chip.chip-done   { border-color: #4d8a5c; color: #356b48; background: #e2efe6; }
 
 .todo-grid {
   display: grid;
@@ -2063,6 +2128,12 @@ button { font-family: inherit; cursor: pointer; }
 .todo-card.level-orange { border-left-color: #c98a4b; }
 .todo-card.level-yellow { border-left-color: #c9a94b; }
 .todo-card.level-green  { border-left-color: #7ea45c; }
+.todo-card.level-done {
+  border-left-color: #4d8a5c;
+  background: linear-gradient(180deg, rgba(122, 168, 122, 0.07), rgba(122, 168, 122, 0.02));
+}
+.todo-card.level-done .todo-title { color: #3f6b4a; }
+.todo-card.level-done .todo-ddl b { color: #4d8a5c; }
 
 .todo-head {
   display: flex;
@@ -2691,6 +2762,23 @@ button { font-family: inherit; cursor: pointer; }
   .ledger-stop { font-size: 10.5px; letter-spacing: 0.12em; }
   .ledger-foot { font-size: 13.5px; }
   .ledger-foot b { font-size: 16px; }
+  /* 境内三段：手机单列堆叠 */
+  .intra-legs { padding: 16px 16px 14px; margin-top: 20px; }
+  .intra-row {
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "date time"
+      "route route"
+      "carrier status";
+    gap: 6px 12px;
+    padding: 13px 0;
+  }
+  .intra-date { grid-area: date; }
+  .intra-time { grid-area: time; font-size: 18px; }
+  .intra-route { grid-area: route; font-size: 13.5px; }
+  .intra-carrier { grid-area: carrier; }
+  .intra-status { grid-area: status; justify-self: end; }
+  .intra-row.is-new { margin: 0 -16px; padding: 13px 16px; }
 
   /* ---------- 6. 住宿 Ledger ---------- */
   .stay-card-head { padding: 14px 16px; }
