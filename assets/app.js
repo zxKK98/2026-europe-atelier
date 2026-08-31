@@ -63,20 +63,20 @@ const days = [
       { t: "16:00", h: "GYG · Paella 烹饪课 + Boqueria 市集", d: "跟着大厨在 La Boqueria 选海鲜、米和藏红花，再回厨房做海鲜饭、Tapas 与 Sangria。全程 3 小时，市集导览、烹饪和晚餐都保留；9/26 是周六，不触发周日/节假日取消市集导览的规则。", kind: "food", loc: {lat: 41.3818, lng: 2.1717}, hop: {via: "步行出 Liceu", dur: "2min"}, link: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/", gyg: { title: "Paella 烹饪课 · Boqueria 市集采买", img: "assets/img/gyg/paella.jpg", rating: "4.8", reviews: "4,200+", price: "€72 起 · 3h", url: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/" }, notice: "预订时选 9/26 周六 16:00 左右场次；若预订页仅显示相邻时段，以保留市集导览为优先。" },
       { t: "19:15", h: "Boqueria → Glòries · Correfoc 入场", d: "课程结束后直接打车前往 Glòries，约 15 分钟。19:35 左右抵达，换上长袖长裤并留出找安全观演位置的时间。", kind: "transit", loc: {lat: 41.40384, lng: 2.18960}, hop: {via: "打车", dur: "15min · 10-12€"} },
       { t: "20:00", h: "Mercè 2026 新装置 · Porta de l'Infern Correfoc @ Glòries", d: "2026 Mercè 大更新——Correfoc 从 Via Laietana 挪到 Plaça de les Glòries，配全新 4×8m 铸铁『地狱之门』装置。魔鬼队伍从门里出来放烟花跑穿人群。长袖长裤 + 戴帽子 + 遮住脖子，站两侧不要正中间。约 20:00-22:30。", kind: "event", loc: {lat: 41.40384, lng: 2.18960}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Metro L4 Jaume I → Glòries", dur: "15min"}, link: "https://www.barcelona.cat/lamerce/en" },
-      { t: "22:45", h: "Bogatell 海滩音乐夜 · Love of Lesbian + Svetlana", d: "官方 9/26 时段：20:00 Al·lèrgiques al Pol·len → 21:30 La Pegatina → 23:30 Love of Lesbian → 01:30 Svetlana。你从 Correfoc 抵达时，正好接 23:30 的 Love of Lesbian；想留到深夜再听 Svetlana 就步行 6 分钟回民宿。全部免费。", kind: "event", loc: {lat: 41.39423, lng: 2.20488}, img: "assets/img/spots/bogatell-beach.jpg", hop: {via: "打车 Glòries → Bogatell", dur: "10min · €8"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · Love of Lesbian 23:30" }
+      { t: "22:45", h: "Sips · 世界第一酒吧（火魔游行后直奔）", d: "Correfoc 约 22:30 收尾，出 Glòries 直接打车到 Muntaner 108——别去挤地铁，身上全是火药灰。Sips 是 2023 年全球最佳酒吧、近三年稳定全球前三，做的是「吧台即剧场」：中央岛吧、没有传统 back bar，酒在桌上完成最后一步。必点 Krypta（倒进嗅觉装置里喝）、Primordial（双手捧金属铸模）、Frozen Martinez，多数 €15。周六开到 02:00。", kind: "food", img: "assets/img/spots/sips-barcelona.jpg", loc: {lat: 41.3925, lng: 2.1570}, hop: {via: "打车 Glòries → Muntaner 108", dur: "12-15min · €10-13"}, link: "https://sips.barcelona/", ticket: "鸡尾酒 €15-25", notice: "周二至周六 18:30-02:00，周日周一休。不接电话订位，只能发邮件 bookings@sips.barcelona；walk-in 看空位，23:00 后最难排。" }
     ],
-    vlog: ["哥特区 gegants 巨人穿街", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Love of Lesbian 开场前的 Bogatell 人海"],
+    vlog: ["哥特区 gegants 巨人穿街", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Sips 中央岛吧的 Krypta 嗅觉装置"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13},
-    returnHome: { from: "Bogatell 海滩舞台", to: "Rut's Loft · Poblenou", distance: "0.9km", via: "海滨步行", duration: "12min", note: "01:30 之后不必打车；沿 Passeig Marítim 回 Calle Pellaires，结伴走、手机收好。" }
+    returnHome: { from: "Sips · Muntaner 108", to: "Rut's Loft · Poblenou", distance: "4.6km", via: "打车", duration: "15-18min", note: "01:00 后地铁已收班，直接在 Muntaner 街口叫 FreeNow / Cabify 回 Calle Pellaires，€13-17。周六深夜街上人多，手机收好。" }
   },
   {
     n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà + Tibidabo Sunset",
     desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程）。下午看 Casa Milà；傍晚只留一段完整的 Tibidabo 体验：圣心堂最高露台、全城日落和蓝调。下山后直接回 Bogatell Beach，看 22:00 的 Mercè Piromusical 烟火闭幕。",
     slots: [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
-      { t: "14:30", h: "Poblenou 简午餐 · Els Pescadors", d: "回你 Airbnb 楼下的老渔村区。Els Pescadors 是三代经营的海鲜餐厅，藏在广场角落被大榕树包围，Suquet 炖鱼和黑米海鲜饭本地口碑。船上已吃过就跳过。", kind: "food", img: "assets/img/spots/els-pescadors.jpg", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "步行/打车", dur: "10min"}, link: "https://elspescadors.com/en/" },
-      { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Poblenou 打车约 15min（€10-12），看完直接打车去 Mirador 看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "打车 Poblenou → Passeig de Gràcia", dur: "15min · €10-12"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
+      { t: "14:30", h: "Paco Meralgo · 米其林收录 alta taberna", d: "C/ Muntaner 171（Eixample Esquerra），与 Sips 同一条街、相距 500m。米其林指南「Good Cooking」收录，自称 alta taberna 高级酒馆，Google 近 6000 条评价 4.5 分。必点：Steak Tartare montadito（米其林点名必点）、竹蛏 razor clams、patatas bravas、pan con tomate、俄式沙拉 La Rusa、扇贝；黑板上的当日野生鱼和午市限定的米饭按市场走。tapas €12 起，人均 €35-45。", kind: "food", img: "assets/img/spots/paco-meralgo.jpg", loc: {lat: 41.3960, lng: 2.1530}, hop: {via: "步行 → Casa Milà", dur: "12-15min"}, link: "https://www.restaurantpacomeralgo.com/", ticket: "tapas €12 起 · 人均 €35-45", notice: "每日 13:00-16:00 / 20:00-00:30，周日照常营业。必须在官网 restaurantpacomeralgo.com 订位，周日午市也建议提前订。" },
+      { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Paco Meralgo 吃完步行 12-15min 就到，动线完全顺，看完直接上山看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "步行 从 Paco Meralgo", dur: "12-15min"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
       { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-xhs-sunset.jpg", imgMode: "portrait", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, remote: { metric: "单程 70min · 往返 4h25", copy: "距离远，且 111 路下山末班约 21:30。若 16:50 仍未离开 Casa Milà、天气转差或体力不足，直接放弃登顶：回 Poblenou 休息，21:30 去 Bogatell 看烟火闭幕。" }, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
       { t: "22:00", h: "Mercè Piromusical · Bogatell Beach 烟火闭幕", d: "La Mercè 2026 的最后一场：音乐编排烟火在 Bogatell 海滩举行。今年因 Montjuïc 施工首次移到这里。住处步行 5 分钟，提前在海滩靠北一侧找位；结束后直接步行回民宿。", kind: "event", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.39423, lng: 2.20488}, hop: {via: "Plaça Catalunya → L4 Poblenou → 步行", dur: "Tibidabo 下山后约 20min"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 22:00" }
     ],
@@ -91,7 +91,7 @@ const days = [
     slots: [
       { t: "11:00", h: "Rut's Loft 退房 · 行李寄存", d: "航班在下午，不用早起。11:00 正常退房时间，行李寄民宿或用 Bounce/Radical Storage 寄存点（5-6€/件）——楼下 Poblenou 就有。空手过完上午最后半天。", kind: "stay", loc: {lat: 41.4023, lng: 2.2013} },
       { t: "11:30", h: "Bogatell 海滩 · 告别地中海", d: "民宿步行 5min 的 Bogatell 海滩，巴塞本地人的海滩（比 Barceloneta 清静得多）。下水或者就坐在沙上吹半小时风——这是这趟旅行最后一次见地中海西段。", kind: "walk", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.3970, lng: 2.2040}, hop: {via: "步行", dur: "5min"} },
-      { t: "12:30", h: "Poblenou 早午餐 · Rambla 当天选", d: "原定 Can Recasens 不能作为这天午餐锚点：其公开时段与周一午餐不一致。改为在 Rambla del Poblenou 当天选一家已营业的早午餐店；吃完取行李直接打车去机场。", kind: "food", loc: {lat: 41.4008, lng: 2.1985}, hop: {via: "步行", dur: "5min"} , notice: "周一午餐不再押 Can Recasens；这是刻意保留的 walk-in 空档，无需订位。" },
+      { t: "12:30", h: "barbocata2（Diagonal 店） · 巴塞最后一顿早午餐", d: "Av. Diagonal 343（Eixample Dreta）。全天营业的休闲复古小店，有吧台也有露台，从早餐一路做到晚餐和酒。必点：焦糖洋葱 tortilla、各种 bocata 三明治、Lucas 的焗通心粉（周一限定）、厚巧克力慕斯（橄榄油 + 海盐 + 榛子）、俄式沙拉、鹰嘴豆配 Perol 香肠、海鲈鱼。从 Poblenou 打车 10-12min，吃完往西南去机场也是顺路，不用折返。", kind: "food", img: "assets/img/spots/barbocata2.jpg", loc: {lat: 41.3975, lng: 2.1730}, hop: {via: "打车 Poblenou → Diagonal 343", dur: "10-12min · €8-10"}, link: "https://barbocata.com/pages/diagonal", ticket: "人均 €15-25", notice: "全天营业无需订位；周一的焗通心粉是限定款，想吃到就别去太晚。" },
       { t: "13:30", h: "Poblenou → BCN El Prat T1", d: "取行李后打车 25min 到 T1（30€ 双人分摊），或 Aerobús A1（6.75€/人，Plaça Catalunya 出发 35min）。Vueling 在 T1，国内申根线值机柜台建议留 1.5h。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, hop: {via: "打车", dur: "25min · 30€"} },
       { t: "15:25", h: "VY1521 · BCN T1 → NCE T1 · 已出票", d: "西班牙伏林航空 Vueling VY1521，15:25 起飞 16:50 落地，飞行 1h25m。出行人 DUAN/JINNAN、CHEN/KANG，状态已出票。廉航——随身行李尺寸提前量好，托运额确认清楚；机上无免费餐食。窗边看比利牛斯山东段 + 法国南部海岸线。", kind: "transit", loc: {lat: 41.2971, lng: 2.0785}, link: "https://www.vueling.com/", ticket: "VY1521 · 已出票 · 1h25m" },
       { t: "16:50", h: "抵达尼斯 Côte d'Azur T1", d: "落地航站楼是 T1。T1 出来走 5min 有 Tram T2 站，30min 到市区（1.5€）；带行李赶入住建议直接打车 15min 到 Californie（约 25€ 双人分摊）。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "Vueling VY1521", dur: "1h25m"}, notice: "落地航站楼是 NCE T1，机场内 T1↔T2 有免费穿梭巴士。" },
@@ -175,12 +175,13 @@ const days = [
       { t: "15:45", h: "奥赛博物馆 · 印象派 5 楼", d: "从 46 Rue Jacob 步行 12min（1.4km）沿 Rue de l'Université 到奥赛。只上 5 楼——莫奈 → 马奈 → 修拉 → 梵高。1h30m 精读足够。周五延时到 21:45。", kind: "museum", loc: {lat: 48.8600, lng: 2.3266}, hop: {via: "步行", dur: "12min · 1.4km"}, link: "https://billetterie.musee-orsay.fr/", ticket: "线上 16€ · 现场 14€", notice: "周一闭馆！每月第一个周日免费但需预约。" },
       { t: "18:30", h: "回家小憩 · 换衣服", d: "奥赛步行 12min 回 46 Rue Jacob。淋浴、换鞋、给相机充电。慢旅行的关键——今晚附近全部步行搞定，不用赶地铁。", kind: "stay", loc: {lat: 48.85604, lng: 2.33403}, hop: {via: "步行", dur: "12min"} },
       { t: "19:30", h: "Rue de Buci 集市街 · 生蚝与自然酒", d: "从家门口 Rue Jacob 向东走 3 分钟就是 Rue de Buci，露天海鲜台 Huitrerie Régis 或 L'Avant Comptoir de la Mer——站着吃 6 只 Belon 生蚝 + 一杯 Sancerre 20€。或坐进 Semilla / Le Comptoir du Relais 慢慢吃。人均 40-60€。", kind: "food", img: "assets/img/spots/rue-de-buci.jpg", loc: {lat: 48.85358, lng: 2.33645}, hop: {via: "步行", dur: "3min · 300m"} },
-      { t: "22:00", h: "塞纳河夜灯散步回家", d: "从 Rue de Buci 走到塞纳河 Pont des Arts / Institut de France 拍夜景（步行 5min），沿河向西走 400m 回家门口。整天最后一步都是走回家——奢侈。", kind: "walk", loc: {lat: 48.85720, lng: 2.33810}, hop: {via: "步行 回 46 Rue Jacob", dur: "8min · 0.7km", gyg: null } }
+      { t: "22:00", h: "塞纳河夜灯散步 · 沿河东行到 Châtelet", d: "今晚不直接回家，改成沿塞纳河往东走：Rue de Buci → Pont des Arts → 卢浮宫外滩 → Pont Neuf → Châtelet，约 25min · 2.0km。这段夜里最安静，铁塔在身后、新桥的灯在前面，走完正好接上地铁去玛黑区。", kind: "walk", img: "assets/img/spots/seine-cruise.jpg", loc: {lat: 48.85720, lng: 2.33810}, hop: {via: "河岸步行 → Châtelet", dur: "25min · 2.0km" } },
+      { t: "22:45", h: "Bar Nouveau · 全球第 17 的 Art Nouveau 酒吧", d: "从 Châtelet 坐 M11 两站到 Rambuteau，步行 4min 到 5 Rue des Haudriettes（玛黑区 3 区）。World's 50 Best Bars 2025 全球第 17、欧洲第 5。两层空间：一层明亮 Art Nouveau，镜面天花 + 全球最大的私人 Bimini 古董玻璃杯收藏；地下室是暗调砖墙的未来感。招牌 Ramos Whiskey Fizz（香草酸奶 + peat + 接骨木花 + 牡蛎壳勺）、Fine À L'eau、The Parisien，约 €14/杯。15:00 开门，开到约 02:00。", kind: "food", img: "assets/img/spots/bar-nouveau.jpg", loc: {lat: 48.8618, lng: 2.3586}, hop: {via: "M11 Châtelet → Rambuteau（2 站）+ 步行 4min", dur: "15min"}, link: "https://www.instagram.com/bar_nouveau_/", ticket: "鸡尾酒约 €14", notice: "不接任何预订，只能现场排队；周五 23:00 后可能等 30-45min，先在一层等位。" },
     ],
-    vlog: ["Rue Jacob 门牌", "Porte des Lions 侧门排队", "蒙娜丽莎前的人群（不拍画）", "胜利女神楼梯广角", "杜乐丽绿椅子特写", "奥赛大钟", "Rue de Buci 生蚝台", "塞纳河夜灯"],
+    vlog: ["Rue Jacob 门牌", "Porte des Lions 侧门排队", "蒙娜丽莎前的人群（不拍画）", "胜利女神楼梯广角", "杜乐丽绿椅子特写", "奥赛大钟", "Rue de Buci 生蚝台", "塞纳河夜灯", "Bar Nouveau 镜面天花下的古董杯墙"],
     stay: { name: "Paris · Truly parisien apartment in St Germain des Prés", area: "6 区 · 46 Rue Jacob · ★4.91", note: "首晚 · 15:00 check-in · 1 卧 1 床 1 卫", url: "https://www.airbnb.com/rooms/23476199" },
     mapCenter: {lat: 48.8590, lng: 2.3350, zoom: 14},
-    returnHome: { from: "Pont des Arts 河岸", to: "46 Rue Jacob", distance: "0.8km", via: "塞纳河边步行", duration: "10min", note: "沿 Quai de Conti / Rue de Seine 回左岸公寓；夜里主路有灯、人流稳定，不必打车。" }
+    returnHome: { from: "Bar Nouveau（玛黑 3 区）", to: "46 Rue Jacob", distance: "1.9km", via: "打车 / 周五末班地铁", duration: "12-15min · €13-16", note: "周五地铁开到 01:40，可坐 M11 Rambuteau → Châtelet 换 M4 到 Saint-Germain-des-Prés（约 22min）；过了末班或喝多了就直接叫 G7 / 官方 taxi，跨塞纳河 12-15min，€13-16。" }
   },
   {
     n: 10, date: "Oct 3 · Sat", city: "巴黎 · 左岸慢日 + 圣母院 + 铁塔", theme: "Rive Gauche + Notre-Dame + Eiffel",
@@ -193,12 +194,12 @@ const days = [
       { t: "15:30", h: "巴黎圣母院 · 西堤岛修复主界面", d: "2019 年火灾后修复重开，塔尖 + 飞天拱壁 + 玫瑰花窗全部原样重建。目前进内殿排队约 30min，官网可预约免费时段（必须提前订）。", kind: "museum", img: "assets/img/spots/notre-dame.jpg", loc: {lat: 48.85299, lng: 2.34992}, hop: {via: "步行", dur: "10min · 0.8km"}, link: "https://www.notredamedeparis.fr/", ticket: "内殿免费 · 需官网预约时段", notice: "2024 年 12 月重开，塔楼登顶需另订。" },
       { t: "18:30", h: "塞纳河蓝调游船 · Bateaux Parisiens", d: "圣母院旁的 Pont au Double 码头就有游船。18:45-19:15 是蓝调日落最佳时刻，20:00 整点在船上看铁塔第一次金色闪烁（Scintillement）。1h 航程 18€。", kind: "venue", loc: {lat: 48.8528, lng: 2.3501}, hop: {via: "步行", dur: "3min"}, link: "https://www.bateauxparisiens.com/", ticket: "1h 游船 18€ · 提前网购可 15€", gyg: { title: "Seine Cruise · 蓝调时刻 1h 游船", img: "assets/img/gyg/nodietclub.jpg", rating: "4.8", reviews: "45,000+", price: "€18 起 · 1h", url: "https://www.getyourguide.com/paris-l16/1-hour-seine-river-sightseeing-cruise-t128772/" } },
       { t: "20:30", h: "Trocadéro 夏乐宫观景台", d: "游船下船后 Metro L6 到 Trocadéro（15min）。夏乐宫平台是拍铁塔的经典陆地视角。21:00 整点铁塔再一次 5 分钟金色闪烁——这是当晚第二次机会，比船上视角更近。免费。", kind: "walk", img: "assets/img/spots/eiffel-trocadero.jpg", loc: {lat: 48.8619, lng: 2.2886}, hop: {via: "游船 + Metro L6", dur: "40min"} },
-      { t: "22:15", h: "打车回家门口 · 最后一晚宵夜", d: "从 Trocadéro 打车回 46 Rue Jacob 约 12min · €14（比转 2 次 Metro 快也不比它贵多少）。到家门口 Rue de Buci 还有几家开到凌晨的小酒吧，喝一杯庆祝今晚圆满。今晚不去红磨坊——体力留给明早退房。", kind: "food", loc: {lat: 48.85604, lng: 2.33403}, hop: {via: "打车 Trocadéro → 46 Rue Jacob", dur: "12min · €14 · 4.8km"} }
+      { t: "22:15", h: "The Cambridge Public House · 世界第 20 收尾", d: "看完铁塔金色闪烁不回家，直接 M9 从 Trocadéro 坐到 République（11 站 25min）+ 步行 8min，约 22:20 到 8 Rue de Poitou。World's 50 Best Bars 2025 全球第 20，也是全球第一家 B Corp 认证酒吧——英式 pub 的外壳，精酿鸡尾酒的内核。必点：Guinness、house Pimm's（阿尔萨斯葡萄酒 + St Germain + gin）、每周一换的极简鸡尾酒（一份酒只用 3-6 种材料），配 sausage rolls / pies / pasties 垫肚子。不接预订、walk-in 友好，开到 01:00。", kind: "food", img: "assets/img/spots/the-cambridge.jpg", loc: {lat: 48.8637, lng: 2.3625}, hop: {via: "M9 Trocadéro → République + 步行 8min", dur: "33min"}, link: "https://www.thecambridge.paris/en/", ticket: "鸡尾酒 €14 · 精酿 €4.5-10 · 自然酒 €7 起", notice: "不接预订，walk-in 即可；周六 23:00 后会满，22:30 前到比较稳。" }
     ],
-    vlog: ["Rue de Buci 早市可颂", "卢森堡绿椅子特写", "双叟咖啡桌面（假装读书）", "Pont Neuf 石雕仰拍", "圣母院飞天拱壁", "塞纳河蓝调水面", "铁塔金色闪烁 hyperlapse", "夏乐宫仰角"],
+    vlog: ["Rue de Buci 早市可颂", "卢森堡绿椅子特写", "双叟咖啡桌面（假装读书）", "Pont Neuf 石雕仰拍", "圣母院飞天拱壁", "塞纳河蓝调水面", "铁塔金色闪烁 hyperlapse", "夏乐宫仰角", "Cambridge 的第一口 Pimm's"],
     stay: { name: "Paris · Truly parisien apartment in St Germain des Prés", area: "6 区 · 46 Rue Jacob · ★4.91", note: "最后一晚 · 10/4 10:00 退房赶 CDG", url: "https://www.airbnb.com/rooms/23476199" },
     mapCenter: {lat: 48.8560, lng: 2.3380, zoom: 13},
-    returnHome: { from: "夏乐宫 / Trocadéro", to: "46 Rue Jacob", distance: "4.2km", via: "官方 taxi", duration: "18-25min", note: "22:15 后从 Trocadéro 直接叫车回 Rue Jacob；两人分摊约 €14，避免夜间两次地铁换乘。" }
+    returnHome: { from: "The Cambridge（玛黑 3 区）", to: "46 Rue Jacob", distance: "2.3km", via: "打车 / 周六末班地铁", duration: "13-16min · €14-18", note: "周六地铁开到 01:40，可坐 M11 → Châtelet 换 M4 到 Saint-Germain-des-Prés（约 25min）；00:30 之后建议直接叫车，跨塞纳河 13-16min，€14-18。明早 10:00 退房赶 CDG，别硬撑。" }
   },
   {
     n: 11, date: "Oct 4–5 · Sun–Mon", city: "巴黎 → 广州", theme: "Farewell · Homebound",
@@ -366,8 +367,7 @@ function renderDay(n) {
         </div>
         <div class="day-map" id="dayMap"></div>
       </div>
-      <div class="day-timeline">${slotsHtml}</div>
-      ${returnHomeHtml}
+      <div class="day-timeline">${slotsHtml}${returnHomeHtml}</div>
     </div>`;
 
   // 渲染 Leaflet 地图
@@ -974,4 +974,36 @@ setTimeout(() => {
   }
 
   refreshProgress();
+})();
+
+
+/* ---------- Hero · 出发倒计时 ---------- */
+(function () {
+  var el = document.getElementById("heroCountdown");
+  if (!el) return;
+  var trip = new Date(2026, 8, 23);
+  var today = new Date();
+  today.setHours(0, 0, 0, 0);
+  var days = Math.round((trip - today) / 86400000);
+  if (days > 0) el.textContent = "T\u2212" + days + " \u5929 \u00b7 2026.09.23 \u51fa\u53d1";
+  else if (days === 0) el.textContent = "\u4eca\u5929\u51fa\u53d1 \u2708";
+  else el.textContent = "\u65c5\u9014\u7b2c " + (-days + 1) + " \u5929";
+})();
+
+/* ---------- Hero · 明信片轻微视差（尊重减少动效偏好） ---------- */
+(function () {
+  var items = document.querySelectorAll(".hg-item");
+  if (!items.length) return;
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var raf = null;
+  function tick() {
+    raf = null;
+    var y = window.scrollY || window.pageYOffset || 0;
+    for (var i = 0; i < items.length; i++) {
+      items[i].style.translate = "0 " + (y * (0.05 + i * 0.018)).toFixed(1) + "px";
+    }
+  }
+  window.addEventListener("scroll", function () {
+    if (raf === null) raf = requestAnimationFrame(tick);
+  }, { passive: true });
 })();
