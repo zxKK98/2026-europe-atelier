@@ -89,7 +89,7 @@ const days = [
   },
   {
     n: 5, date: "Sep 28 · Mon", city: "巴塞罗那 → 尼斯", theme: "Barcelona to Côte d'Azur",
-    desc: "航班是下午的 Vueling VY1521（15:25 BCN T1 → 16:50 NCE T1，1h25m，已出票）。11:00 退房寄存行李，Bogatell 海滩吹风；12:30 去全天营业的 barbocata2 吃最后一顿早午餐——这是特例，不套用巴塞普通餐厅 14:00 才开午餐的规律。16:50 落地尼斯 T1，18:00 入住，19:30 天使湾日落，20:30 才按尼斯节奏去老城吃 socca。", 
+    desc: "航班是下午的 Vueling VY1521（15:25 BCN T1 → 16:50 NCE T1，1h25m，已出票）。11:00 退房寄存行李，Bogatell 海滩吹风；12:30 去全天营业的 barbocata2 吃最后一顿早午餐——这是特例，不套用巴塞普通餐厅 14:00 才开午餐的规律。16:50 落地尼斯 T1，18:00 入住，19:30 天使湾日落，20:30 才按尼斯节奏去老城吃 socca。",
     slots: [
       { t: "11:00", h: "Rut's Loft 退房 · 行李寄存", d: "航班在下午，不用早起。11:00 正常退房时间，行李寄民宿或用 Bounce/Radical Storage 寄存点（5-6€/件）——楼下 Poblenou 就有。空手过完上午最后半天。", kind: "stay", loc: {lat: 41.4023, lng: 2.2013} },
       { t: "11:30", h: "Bogatell 海滩 · 告别地中海", d: "民宿步行 5min 的 Bogatell 海滩，巴塞本地人的海滩（比 Barceloneta 清静得多）。下水或者就坐在沙上吹半小时风——这是这趟旅行最后一次见地中海西段。", kind: "walk", img: "assets/img/spots/bogatell-beach.jpg", loc: {lat: 41.3970, lng: 2.2040}, hop: {via: "步行", dur: "5min"} },
