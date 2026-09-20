@@ -15,35 +15,39 @@
 const days = [
   {
     n: 1, date: "Sep 23–24 · Wed–Thu", city: "香港 → 马德里", theme: "En Route · Slow Down",
-    desc: "9/23 香港夜航出发，经阿布扎比转机，9/24 上午抵达马德里。抵达日不塞太多：丽池公园晒太阳倒时差，入住后按马德里节奏在 14:00 吃一顿 Michelin Bib 午餐，回房补觉；傍晚才出门逛太阳门和马约尔广场，19:30 只做 aperitivo，不把它当正餐。",
+    desc: "9/23 香港夜航出发，经阿布扎比转机，9/24 上午抵达马德里。落地后先去 Calle Mayor 1 免费寄存行李，再走马约尔广场、王宫和阿穆德纳主教座堂；12:30 取行李，13:00 入住，13:45 Trèsde 午餐，下午回房休息，傍晚逛太阳门和马约尔广场。",
     slots: [
       { t: "09-23 20:10", h: "香港 T1 起飞 · Etihad EY", d: "长途航班第一段。上机把时区表拨到马德里（−6h），先睡一觉。", kind: "transit", loc: {lat: 22.3080, lng: 113.9185} },
       { t: "09-24 00:25", h: "抵达阿布扎比 T-A", d: "转机 2 小时。找一杯咖啡，别买免税，登机时再看。", kind: "transit", loc: {lat: 24.4330, lng: 54.6511}, hop: {via: "Etihad EY 直飞", dur: "8h15m"} },
-      { t: "09-24 08:10", h: "抵达马德里 T4 Barajas", d: "机场地铁 8 号线直达市区。先寄存行李，不用急着入住。", kind: "transit", loc: {lat: 40.4936, lng: -3.5668}, hop: {via: "Etihad EY 转机", dur: "5h45m"} },
-      { t: "09:30", h: "Retiro 丽池公园 · 水晶宫", d: "买一杯冰咖啡，什么都不要做。看当地人。让阳光把时差晒掉。Palacio de Cristal 是园内玻璃展厅，随时有免费当代艺术展。", kind: "walk", img: "assets/img/spots/retiro-crystal-palace.jpg", loc: {lat: 40.4153, lng: -3.6844}, hop: {via: "Metro L8 → L2 到 Retiro", dur: "40min · 5€"} },
-      { t: "13:00", h: "Heart Of Madrid Apartments 入住", d: "马约尔广场旁的公寓，Calle Mayor 49。先放行李、洗把脸；西班牙正经午餐从 13:30 后才进入状态，不在 12 点硬塞一顿。", kind: "stay", loc: {lat: 40.4160, lng: -3.7080}, hop: {via: "步行 Retiro → Sol", dur: "18min · 1.4km"} },
+      { t: "09-24 08:10", h: "抵达马德里 T4 Barajas", d: "出关、取行李后直接去 Calle Mayor 1；不先去丽池公园。", kind: "transit", loc: {lat: 40.4936, lng: -3.5668}, hop: {via: "Etihad EY 转机", dur: "5h45m"} },
+      { t: "09:20", h: "机场 → Calle Mayor 1 · 前往免费寄存点", d: "从 T4 出站后乘官方 taxi 前往 Calle Mayor 1，约 30-40min。房东说明的寄存店是 KFC 旁的 craft store。", kind: "transit", loc: {lat: 40.4161, lng: -3.7090}, hop: {via: "官方 taxi T4 → Calle Mayor 1", dur: "30-40min · 机场固定价 €33"} },
+      { t: "10:00", h: "Calle Mayor 1 · 免费寄存行李", d: "把行李交给 KFC 旁的 craft store，免费寄存时段为 10:00-13:00。离开前确认取件，最晚 12:40 回到店里。", kind: "stay", loc: {lat: 40.4161, lng: -3.7090}, ticket: "免费 · 10:00-13:00", notice: "寄存点不是民宿前台；13:00 后不承诺继续保管。" },
+      { t: "10:15", h: "马约尔广场 → 王宫 → 阿穆德纳主教座堂", d: "从 Calle Mayor 1 出发，步行串联 Plaza Mayor、王宫外部和 Catedral de la Almudena；12:15 开始回 Calle Mayor 1。", kind: "walk", img: "assets/img/spots/sol-mayor.jpg", loc: {lat: 40.4157, lng: -3.7130}, hop: {via: "老城步行环线", dur: "约 2h · 1.5km"} },
+      { t: "12:30", h: "Calle Mayor 1 · 取回行李", d: "回 craft store 取行李；寄存点到 Heart Of Madrid Apartments（Calle Mayor 49）步行约 3min。", kind: "transit", loc: {lat: 40.4161, lng: -3.7090}, hop: {via: "步行", dur: "3min · 200m"} },
+      { t: "13:00", h: "Heart Of Madrid Apartments 入住", d: "马约尔广场旁的公寓，Calle Mayor 49。放下行李、洗把脸，13:45 步行去 Trèsde。", kind: "stay", loc: {lat: 40.4160, lng: -3.7080}, hop: {via: "步行 Calle Mayor 1 → 民宿", dur: "3min · 200m"} },
       { t: "13:45", h: "Trèsde · Michelin Bib 午餐", d: "Cava Alta 17 的 Michelin Bib Gourmand，小而不贵的现代西班牙菜。午餐 13:30-15:00，这一顿才是抵达日的正餐；从公寓步行约 12 分钟。两人点 2-3 道分享菜 + 酒水，人均约 40-50€，比星级 tasting 更适合第一天。", kind: "food", loc: {lat: 40.4122, lng: -3.7092}, hop: {via: "步行 Calle Mayor → La Latina", dur: "12min · 900m"}, link: "https://www.tresderestaurante.com/reservas/", ticket: "已订 · JAY DUAN · 13:45 · 2 人", notice: "CoverManager 订位已完成，餐厅稍后会发确认邮件。若航班延误，优先联系餐厅；不要为了赶位一路硬冲。" },
       { t: "15:30", h: "回民宿补觉 · 重新校时", d: "午餐后步行回 Calle Mayor 49，补睡 1.5-2 小时。把手机切到马德里时区，别再塞景点；傍晚醒来才有体力享受老城。", kind: "stay", loc: {lat: 40.4160, lng: -3.7080}, hop: {via: "步行", dur: "12min · 900m"} },
       { t: "18:00", h: "太阳门 & 马约尔广场漫步",  d: "从民宿楼下走出去就是太阳门（Puerta del Sol）和马约尔广场（Plaza Mayor），马德里的心脏。傍晚人流最有生气。", kind: "walk", img: "assets/img/spots/sol-mayor.jpg", loc: {lat: 40.4168, lng: -3.7038}, hop: {via: "步行", dur: "5min"} },
       { t: "19:30", h: "Mercado San Miguel · Aperitivo", d: "这不是正餐：14:00 已在 Trèsde 吃完午餐。这里按马德里晚间节奏，只点伊比利亚火腿、章鱼和一杯 Rioja，边站边感受夜生活刚刚开始。人均 15-25€。",  kind: "food", img: "assets/img/spots/mercado-san-miguel.jpg", loc: {lat: 40.4155, lng: -3.7091}, hop: {via: "步行", dur: "3min · 200m"}, link: "https://www.mercadodesanmiguel.es/" },
       { t: "21:30", h: "Círculo de Bellas Artes 屋顶", d: "顶楼露台看马德里入夜。门票 5€，附赠一杯。结束第一天。", kind: "venue", img: "assets/img/spots/circulo-bellas-artes.jpg", loc: {lat: 40.4188, lng: -3.6957}, hop: {via: "步行", dur: "10min · 800m"}, link: "https://www.circulobellasartes.com/azotea/", ticket: "露台 5€" }
     ],
-    vlog: ["香港 T1 值机牌", "阿布扎比转机航站楼", "飞机窗外日出", "Retiro 树影", "太阳门夜色", "Mercado San Miguel 火腿摊"],
+    vlog: ["香港 T1 值机牌", "阿布扎比转机航站楼", "飞机窗外日出", "Calle Mayor 1 行李寄存店", "王宫与阿穆德纳主教座堂", "太阳门夜色", "Mercado San Miguel 火腿摊"],
     stay: { name: "Heart Of Madrid Apartments", area: "Sol · Calle Mayor 49", note: "马约尔广场旁 · 阳台正对老街", url: "https://www.airbnb.cn/rooms/1254627226967989817" },
     mapCenter: {lat: 40.4170, lng: -3.7040, zoom: 15},
     returnHome: { from: "Círculo 屋顶", to: "Heart Of Madrid", distance: "1.1km", via: "步行", duration: "15min", note: "沿 Calle de Alcalá → Puerta del Sol → Calle Mayor，夜间主街人流稳定。" }
   },
   {
     n: 2, date: "Sep 25 · Fri", city: "马德里 → 巴塞罗那", theme: "OUIGO Morning · Casa Batlló · OBC Symphony Night",
-    desc: "早班 OUIGO 高铁 9:31 从 Atocha Almudena Grandes 站厅出发，12:58 抵达 Barcelona Sants。下午在巴特罗之家入内，15:30 民宿 Check-in。17:00 不再错误地安排晚餐，留作洗澡、整理和 merienda；20:45 听完 OBC 的 Borodin《波罗维茨舞曲》、Bartók《罗马尼亚民间舞曲》与 Tchaikovsky《天鹅湖》选段，按巴塞正常晚餐节奏回 Poblenou 吃 22:45 的晚餐。",
+    desc: "早班 OUIGO 高铁 9:31 从 Atocha Almudena Grandes 站厅出发，12:58 抵达 Barcelona Sants。下午在巴特罗之家入内，15:30 民宿 Check-in。傍晚去 Eixample 的 Vinitus 吃小份 Tapas，随后前往 Nou Barris 听 20:45 OBC 交响乐；散场后回 Poblenou 吃 22:45 的晚餐。",
     slots: [
       { t: "08:00", h: "民宿退房 → Atocha Almudena Grandes", d: "打车或 Metro L1 到 Atocha。注意 OUIGO 用的是 Atocha 子站厅『Almudena Grandes』，不是主 AVE 大厅——认准指示牌。行李需过安检，30 min 前登机口开、5 min 前关闸。", kind: "transit", img: "assets/img/spots/atocha-station.jpg", loc: {lat: 40.4067, lng: -3.6900}, hop: {via: "打车", dur: "10min · 8€"} },
       { t: "09:31", h: "OUIGO 06501 · 座位 1D + 1E", d: "OUIGO Max/XL 舱等，含 1 手提 + 1 客舱行李 + 1 额外 25kg 行李（票 QG3UVL 已付）。二层双人排，靠窗看西班牙内陆平原变加泰罗尼亚。", kind: "transit", loc: {lat: 40.4067, lng: -3.6900}, link: "https://www.ouigo.com/", ticket: "OUIGO Max/XL · 已购 QG3UVL" },
       { t: "12:58", h: "Barcelona Sants 抵达", d: "下车往地铁 L5 走。先把行李拖到 Poblenou 民宿楼下寄存（Rut's Loft 15:00 才 check-in），或直接选站边寄存柜 Lockers Sants。", kind: "transit", loc: {lat: 41.3792, lng: 2.1400}, hop: {via: "OUIGO 直达", dur: "3h27m"} },
       { t: "14:00", h: "Casa Batlló 巴特罗之家 · 入内参观", d: "高迪 1904 年为 Josep Batlló 改造的立面，龙鳞屋顶 + 骨骼阳台，室内的漩涡采光井是最震撼的空间。选 Blue Ticket 基础票即可，加钱 Silver/Gold 可跳队。9 月开放 09:00-20:00。", kind: "museum", img: "assets/img/spots/casa-batllo.jpg", loc: {lat: 41.3917, lng: 2.1649}, hop: {via: "Metro L5 Sants → L3 Passeig de Gràcia", dur: "20min · 2.5€"}, link: "https://www.casabatllo.es/en/", ticket: "Blue 35€ · Silver 45€ · Gold 49€（跳队）" },
       { t: "15:30", h: "Rut's Loft 入住 · Poblenou", d: "打车 15min 到 Calle Pellaires 35。植物设计 Loft，房东 Rut 会亲自开门。距离 Bogatell 海滩步行 5 分钟。", kind: "stay", loc: {lat: 41.4023, lng: 2.2013}, hop: {via: "打车 Passeig de Gràcia → Poblenou", dur: "15min · 12€"} },
-      { t: "17:00", h: "Poblenou · Merienda + 休整", d: "17:00 不在巴塞吃晚餐——多数正经厨房还没开。民宿安顿后喝咖啡、吃一份甜点或小三明治即可；洗澡、换衣服、充电，19:45 出门去 Nou Barris。", kind: "food", loc: {lat: 41.4018, lng: 2.2004}, hop: {via: "步行", dur: "5min"} },
-      { t: "20:00", h: "Poblenou → Nou Barris · 提前进场", d: "从 Poblenou 出发，地铁转线约 35-40 分钟。20:40 前到 Plaça Major de Nou Barris，广场音乐会无需预约，提前到能从容找位置。", kind: "transit", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "L4 → L1 / L11", dur: "35-40min"} },
+      { t: "17:00", h: "Poblenou → Eixample · 前往 Vinitus", d: "洗澡、换衣服后从 Rut's Loft 出发去 Vinitus；餐厅在 Passeig de Gràcia 一带，吃完直接向 Nou Barris 走，不回民宿。", kind: "transit", loc: {lat: 41.3925, lng: 2.1645}, hop: {via: "打车 / Metro L4 → Passeig de Gràcia", dur: "15-20min · €8-12"} },
+      { t: "18:00", h: "Vinitus · Tapas 小份晚餐", d: "Carrer del Consell de Cent 333。按帖子推荐点蒜香虾、烤鱿鱼、伊比利亚火腿、鹅肝牛肉 montadito、龙虾饭或 Sangria；不接受预订，现场排队。", kind: "food", loc: {lat: 41.3925, lng: 2.1645}, hop: {via: "步行入店", dur: "约 60-75min"}, link: "https://vinitusbarcelona.net/", ticket: "人均约 €20-30", notice: "每日约 11:00-01:00，厨房连续营业；周五 18:00 到店仍可能排队。备选：步行约 8min 的 Cervecería Catalana（Mallorca 236），同样不接受预订。" },
+      { t: "19:30", h: "Vinitus → Nou Barris · 提前进场", d: "Tapas 后直接前往 Plaça Major de Nou Barris；20:40 前到场，留时间找位置。", kind: "transit", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "Metro L5/L1/L11 或 taxi", dur: "25-35min"} },
       { t: "20:45", h: "OBC 交响乐团 · Mercè 广场免费音乐会", d: "巴塞罗那交响乐团暨加泰罗尼亚国家交响乐团（OBC）在 Plaça Major de Nou Barris 的年度免费公演。指挥 Miguel Sepúlveda，曲目：Borodin《波罗维茨舞曲》→ Bartók《罗马尼亚民间舞曲》→ Tchaikovsky《天鹅湖》选段。L'Auditori 页面列约 120 分钟，GuiaBCN 列 75 分钟；以 22:45 才能离场的保守时间做餐厅动线，免预约。", kind: "event", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "步行进场", dur: "20:40 前抵达"}, link: "https://www.auditori.cat/en/events/obc-merce-2026/", ticket: "免费 · 免预约 · 75-120min，按 2h 预留" },
       { t: "22:45", h: "La Broqueta · Poblenou 正式晚餐", d: "OBC 结束后回 Poblenou，22:45 才是这晚的正式晚餐。La Broqueta 周五连续营业至 00:00，离民宿约 5 分钟；点烤海鲜、烤肉或一份分享饭，终于按巴塞的真实节奏坐下来吃。人均约 25-35€。", kind: "food", loc: {lat: 41.4007, lng: 2.2014}, hop: {via: "Nou Barris → L11/L4 → Poblenou", dur: "35-40min"}, link: "https://www.bcnrestaurantes.com/eng/imprimir/la-broqueta", notice: "这是为 OBC 保留的晚餐窗口；若演出延迟，直接点轻食，00:00 前离店回民宿。" }
     ],
