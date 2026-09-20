@@ -81,7 +81,7 @@ const days = [
     slots: [
       { t: "10:45", h: "前往 Plaça de Sant Jaume · 叠人塔观赛", d: "从 Rut's Loft 出发前往老城，建议 10:45 到达 Plaça de Sant Jaume；11:30 叠人塔队伍从 Palau de la Virreina 出发，随后进入广场。", kind: "transit", loc: {lat: 41.3820, lng: 2.1770}, hop: {via: "Metro L4 Poblenou → Jaume I + 步行", dur: "25-30min · 2.5€"} },
       { t: "11:30", h: "Historic Casteller Event · 队伍巡游", d: "三支队伍从 Palau de la Virreina 出发前往 Plaça de Sant Jaume：Castellers de Barcelona、Minyons de Terrassa、Joves Xiquets de Valls。", kind: "event", loc: {lat: 41.3824, lng: 2.1735}, hop: {via: "步行跟随巡游", dur: "约 15-20min"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 无需预约" },
-      { t: "12:00", h: "Historic Casteller Event · Plaça de Sant Jaume", d: "在市政厅与 Generalitat 之间的 Plaça de Sant Jaume 观看高规格叠人塔活动。三支队伍预计挑战高难度人塔；活动免费，广场先到先得。", kind: "event", loc: {lat: 41.3820, lng: 2.1770}, hop: {via: "Plaça de Sant Jaume 现场", dur: "约 2h"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 12:00–14:00" },
+      { t: "12:00", h: "Historic Casteller Event · Plaça de Sant Jaume", d: "在市政厅与 Generalitat 之间的 Plaça de Sant Jaume 观看高规格叠人塔活动。三支队伍预计挑战高难度人塔；活动免费，广场先到先得。", kind: "event", img: "assets/img/spots/castellers-historic.jpg", imgMode: "portrait", loc: {lat: 41.3820, lng: 2.1770}, hop: {via: "Plaça de Sant Jaume 现场", dur: "约 2h"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 12:00–14:00" },
       { t: "15:15", h: "Paco Meralgo · 已确认午餐", d: "Carrer de Muntaner 171，08036 Barcelona。预订姓名 JAY DUAN，2 人，Zona Corsega / Corsega Zone。已确认 2026/9/27 周日 15:15；午餐后步行前往 Casa Milà。", kind: "food", img: "assets/img/spots/paco-meralgo.jpg", loc: {lat: 41.3960, lng: 2.1530}, hop: {via: "餐厅 → Casa Milà 步行", dur: "12-15min"}, link: "https://www.restaurantpacomeralgo.com/", ticket: "已订 · 2 人 · Zona Corsega", notice: "餐厅电话 +34 934 30 90 27 · info@restaurantpacomeralgo.com；如需修改或取消，联系餐厅。" },
       { t: "16:45", h: "Casa Milà 米拉之家 · 屋顶烟囱", d: "Passeig de Gràcia 92。16:45 入场，参观屋顶、阁楼与复原公寓，约 1.5h。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "步行 从 Paco Meralgo", dur: "12-15min"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
       { t: "18:30", h: "Carmel 山 · Carrer de Mühlberg 日落机位", d: "从 Casa Milà 打车前往 Carrer de Mühlberg，定位 Pont de Mühlberg。按帖子路线，从桥边步行约 2 分钟到 Mirador dels Bans del Carmel / Turó de la Rovira 观景点。日落约 19:38，留在山上拍到蓝调。", kind: "walk", img: "assets/img/spots/carmel-sunset-xhs.jpg", imgMode: "portrait", loc: {lat: 41.4182652, lng: 2.1613243}, hop: {via: "Casa Milà → Pont de Mühlberg 打车", dur: "20-25min · €15-20"}, link: "https://maps.google.com/?q=Pont+de+M%C3%BChlberg+Barcelona", ticket: "免费", notice: "机位：Carrer de Mühlberg，不是只导航到桥上；桥边步行约 2 分钟到观景点。穿防滑鞋。" },
@@ -239,11 +239,39 @@ const days = [
   }
 ];
 
+const dayBriefs = {
+  1: { summary: "落地先轻装进老城，午餐后回房补觉。", focus: "王宫 · 阿穆德纳 · 太阳门", shot: "暖石墙与深红细节", outfit: "米白 / 栗棕 / 酒红" },
+  2: { summary: "巴特罗之家、Vinitus Tapas，再去听 OBC。", focus: "建筑 · 小盘 · 交响乐", shot: "龙鳞立面与夜间吧台", outfit: "墨绿 / 奶油白 / 黑" },
+  3: { summary: "圣家堂午间彩窗，Boqueria 料理，夜看火魔。", focus: "彩窗 · Paella · Correfoc", shot: "橙红光与火花", outfit: "砖红 / 沙色 / 深棕" },
+  4: { summary: "上午看叠人塔，下午高迪建筑，傍晚上 Carmel。", focus: "Castells · Casa Milà · 日落", shot: "紫白队服与石墙人塔", outfit: "薰衣草紫 / 象牙白 / 黑" },
+  5: { summary: "巴塞最后半天，轻食后飞往尼斯。", focus: "海滩 · Barbocata2 · 转场", shot: "海蓝与城市线条", outfit: "海军蓝 / 白 / 赤陶" },
+  6: { summary: "Antibes 集市、城堡 Picasso、尼斯城堡山。", focus: "集市 · 毕加索 · 海湾", shot: "钴蓝海面与赭石城墙", outfit: "海蓝 / 亚麻白 / 芥末黄" },
+  7: { summary: "Èze 悬崖花园与 Villefranche 彩色海湾。", focus: "香水 · 悬崖 · 海湾", shot: "彩色立面与海天线", outfit: "柠檬黄 / 天蓝 / 白" },
+  8: { summary: "尼斯飞巴黎，入住左岸，Septime 只保留候补。", focus: "La Perle · Cézanne · 晚餐备选", shot: "左岸门牌与低饱和室内", outfit: "灰蓝 / 黑 / 银色" },
+  9: { summary: "卢浮宫减负路线，奥赛 Bartholdi，夜逛左岸。", focus: "三宝 · 自由女神 · Rue de Buci", shot: "金色大厅与塞纳河蓝调", outfit: "焦糖 / 海军蓝 / 米白" },
+  10: { summary: "Saint-Ouen 旧物、圣母院、20:45 塞纳河游船。", focus: "旧物 · 哥特建筑 · 夜航", shot: "旧画框与河面灯光", outfit: "橄榄绿 / 棕 / 奶油白" },
+  11: { summary: "左岸最后早餐，退房后前往 CDG。", focus: "咖啡 · Poilâne · 回程", shot: "清晨街角与面包纸袋", outfit: "燕麦色 / 深蓝 / 红色小点" }
+};
+
+const weatherMeta = {
+  1: { date: "2026-09-24", city: "Madrid", lat: 40.4168, lon: -3.7038 },
+  2: { date: "2026-09-25", city: "Barcelona", lat: 41.3874, lon: 2.1686 },
+  3: { date: "2026-09-26", city: "Barcelona", lat: 41.3874, lon: 2.1686 },
+  4: { date: "2026-09-27", city: "Barcelona", lat: 41.3874, lon: 2.1686 },
+  5: { date: "2026-09-28", city: "Nice", lat: 43.7102, lon: 7.2620 },
+  6: { date: "2026-09-29", city: "Nice", lat: 43.7102, lon: 7.2620 },
+  7: { date: "2026-09-30", city: "Nice", lat: 43.7102, lon: 7.2620 },
+  8: { date: "2026-10-01", city: "Paris", lat: 48.8566, lon: 2.3522 },
+  9: { date: "2026-10-02", city: "Paris", lat: 48.8566, lon: 2.3522 },
+  10: { date: "2026-10-03", city: "Paris", lat: 48.8566, lon: 2.3522 },
+  11: { date: "2026-10-04", city: "Paris", lat: 48.8566, lon: 2.3522 }
+};
+
 const missions = [
   { d: "Day 01", t: "在 Retiro 公园听完一整首歌不看手机。" },
   { d: "Day 02", t: "在 OUIGO 二层车厢窗边拍一张 3 秒 hyperlapse。" },
   { d: "Day 03", t: "在圣家堂彩窗染红的地板上站够两分钟。" },
-  { d: "Day 04", t: "在帆船甲板上不看手机看海 10 分钟。" },
+  { d: "Day 04", t: "看一座叠人塔完成，记住 enxaneta 举手的那一刻。" },
   { d: "Day 05", t: "在天使湾捡一颗鹅卵石，写上日期带回家。" },
   { d: "Day 06", t: "在 Antibes 集市买一小瓶普罗旺斯橄榄油。" },
   { d: "Day 07", t: "在 Èze 悬崖上给远方的人写一张明信片。" },
@@ -278,6 +306,52 @@ function toRoman(num) {
     while (n >= v) { out += s; n -= v; }
   }
   return out;
+}
+
+const weatherText = code => {
+  if (code === 0) return "晴朗";
+  if ([1, 2].includes(code)) return "晴间多云";
+  if (code === 3) return "多云";
+  if ([45, 48].includes(code)) return "雾";
+  if ([51, 53, 55, 56, 57].includes(code)) return "毛毛雨";
+  if ([61, 63, 65, 66, 67].includes(code)) return "有雨";
+  if ([71, 73, 75, 77].includes(code)) return "有雪";
+  if ([80, 81, 82].includes(code)) return "阵雨";
+  if ([95, 96, 99].includes(code)) return "雷雨";
+  return "天气更新中";
+};
+
+function renderWeatherSkeleton(meta) {
+  return `<div class="day-weather" data-weather-date="${meta.date}" data-weather-city="${meta.city}">
+    <div class="day-weather-head"><span>Weather · ${meta.city}</span><b>在线更新</b></div>
+    <div class="day-weather-main"><strong class="weather-temp">读取中</strong><span class="weather-state">正在获取 ${meta.date} 预报</span></div>
+    <div class="day-weather-meta"><span>最高 —</span><span>最低 —</span><span>降雨 —</span></div>
+  </div>`;
+}
+
+async function loadWeather(dayNumber) {
+  const meta = weatherMeta[dayNumber];
+  const el = document.querySelector(".day-weather");
+  if (!meta || !el) return;
+  const url = `https://api.open-meteo.com/v1/forecast?latitude=${meta.lat}&longitude=${meta.lon}&daily=temperature_2m_max,temperature_2m_min,weather_code,precipitation_probability_max&timezone=auto&start_date=${meta.date}&end_date=${meta.date}`;
+  try {
+    const response = await fetch(url, { signal: AbortSignal.timeout(7000) });
+    if (!response.ok) throw new Error("weather request failed");
+    const data = await response.json();
+    const daily = data.daily;
+    const max = Math.round(daily.temperature_2m_max[0]);
+    const min = Math.round(daily.temperature_2m_min[0]);
+    const rain = daily.precipitation_probability_max?.[0];
+    el.querySelector(".weather-temp").textContent = `${max}° / ${min}°`;
+    el.querySelector(".weather-state").textContent = weatherText(daily.weather_code[0]);
+    el.querySelector(".day-weather-meta").innerHTML = `<span>最高 ${max}°C</span><span>最低 ${min}°C</span><span>降雨 ${rain == null ? "—" : rain + "%"}</span>`;
+    el.classList.add("is-loaded");
+  } catch (error) {
+    el.querySelector(".weather-temp").textContent = "—";
+    el.querySelector(".weather-state").textContent = "临近日期自动刷新";
+    el.querySelector(".day-weather-meta").innerHTML = `<span>当前无法读取</span><span>请出发前再看</span><span>Open-Meteo</span>`;
+    el.classList.add("is-fallback");
+  }
 }
 
 function renderDay(n) {
@@ -370,6 +444,8 @@ function renderDay(n) {
         </div>`
   ) : "";
 
+  const brief = dayBriefs[d.n] || { summary: d.desc, focus: "按时间线执行", shot: "自然记录", outfit: "舒适、方便行走" };
+  const meta = weatherMeta[d.n];
   const returnHomeHtml = d.returnHome ? `
     <aside class="day-return" aria-label="当晚回住宿动线">
       <div class="day-return-top">
@@ -389,12 +465,14 @@ function renderDay(n) {
         ${d.date ? `<span class="day-hero-date">${d.date}</span>` : ""}
         <span class="day-hero-city">${d.city}</span>
         <span class="day-hero-theme">${d.theme}</span>
-        <p class="day-hero-desc">${d.desc}</p>
+        <section class="day-at-a-glance" aria-label="今日摘要">
+          <div class="glance-summary"><span class="glance-label">Today in one line</span><strong>${brief.summary}</strong></div>
+          <div class="glance-focus"><span class="glance-label">三件事</span><b>${brief.focus}</b></div>
+          <div class="glance-shoot"><span class="glance-label">出片建议</span><b>${brief.shot}</b></div>
+          <div class="glance-outfit"><span class="glance-label">服装色系</span><b>${brief.outfit}</b><span class="outfit-swatches"><i></i><i></i><i></i></span></div>
+        </section>
+        ${meta ? renderWeatherSkeleton(meta) : ""}
         ${stayHtml}
-        <div class="day-vlog">
-          <div class="day-vlog-title">📸 Vlog Shot List</div>
-          <div class="day-vlog-shots">${shotsHtml}</div>
-        </div>
       </div>
       ${altRestaurantsHtml}
       <div class="day-map-wrap">
@@ -407,8 +485,9 @@ function renderDay(n) {
       <div class="day-timeline">${slotsHtml}${returnHomeHtml}</div>
     </div>`;
 
-  // 渲染 Leaflet 地图
+  // 渲染地图与在线天气
   renderMap(d);
+  loadWeather(d.n);
 }
 
 function renderMap(d) {

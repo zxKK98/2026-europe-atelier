@@ -525,13 +525,66 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   color: var(--accent);
 }
 .day-hero-desc {
-  margin-top: 20px;
-  font-family: var(--display);
-  font-style: italic;
-  font-size: 17px;
-  color: var(--ink-2);
-  line-height: 1.7;
+  display: none;
 }
+.day-at-a-glance {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) repeat(3, minmax(120px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+.day-at-a-glance > div {
+  min-height: 88px;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: color-mix(in oklab, var(--paper) 75%, transparent);
+}
+.day-at-a-glance .glance-summary {
+  background: color-mix(in oklab, var(--accent) 9%, var(--paper));
+  border-color: color-mix(in oklab, var(--accent) 28%, var(--line));
+}
+.glance-label {
+  display: block;
+  margin-bottom: 9px;
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.glance-summary strong,
+.glance-focus b,
+.glance-shoot b,
+.glance-outfit b {
+  display: block;
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 600;
+}
+.glance-summary strong { font-family: var(--display); font-size: 17px; font-weight: 500; }
+.outfit-swatches { display: flex; gap: 5px; margin-top: 10px; }
+.outfit-swatches i { width: 18px; height: 6px; border-radius: 999px; background: var(--accent); }
+.outfit-swatches i:nth-child(2) { background: var(--ink-2); }
+.outfit-swatches i:nth-child(3) { background: var(--accent-2); }
+.day-weather {
+  margin-top: 14px;
+  padding: 15px 17px 14px;
+  border: 1px solid color-mix(in oklab, var(--accent-2) 40%, var(--line));
+  border-radius: 15px;
+  background: linear-gradient(135deg, color-mix(in oklab, var(--accent-2) 11%, var(--paper)), var(--paper));
+}
+.day-weather-head,
+.day-weather-meta,
+.day-weather-main { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.day-weather-head { font-family: var(--mono); font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-3); }
+.day-weather-head b { color: var(--accent-2); font-weight: 600; }
+.day-weather-main { justify-content: flex-start; margin: 8px 0 9px; }
+.weather-temp { font-family: var(--display); font-size: 29px; font-weight: 500; color: var(--ink); }
+.weather-state { font-size: 13px; color: var(--ink-2); }
+.day-weather-meta { justify-content: flex-start; flex-wrap: wrap; font-family: var(--mono); font-size: 10px; color: var(--ink-3); }
+.day-weather.is-fallback { opacity: .82; }
 
 .day-timeline {
   display: flex;
@@ -3745,4 +3798,33 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   .hg-2 { width: 124px; height: 88px;  bottom: 7%; left: -4%; }
   .hg-3 { width: 112px; height: 148px; top: 7%;  right: -3%; }
   .hg-4 { width: 100px; height: 130px; bottom: 8%; right: -4%; }
+}
+
+/* ---- Responsive Day Brief · desktop and phone use different information rhythm ---- */
+@media (min-width: 901px) {
+  .day-at-a-glance { grid-template-columns: minmax(210px, 1.55fr) repeat(3, minmax(128px, 1fr)); }
+  .day-card > .day-map-wrap { min-width: 0; }
+  .day-card > .day-timeline { min-width: 0; }
+}
+@media (max-width: 900px) {
+  .day-at-a-glance { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .day-at-a-glance > div { min-height: 82px; padding: 12px; }
+  .day-at-a-glance .glance-summary { grid-column: 1 / -1; }
+  .glance-summary strong { font-size: 16px; }
+  .glance-focus b, .glance-shoot b, .glance-outfit b { font-size: 12px; }
+  .day-weather { margin-top: 10px; padding: 13px 14px; }
+  .day-weather-main { margin: 7px 0; }
+  .weather-temp { font-size: 25px; }
+  .weather-state { font-size: 12px; }
+}
+@media (max-width: 520px) {
+  .day-card { width: 100%; max-width: 100%; overflow: hidden; }
+  .day-at-a-glance { grid-template-columns: 1fr 1fr; }
+  .day-at-a-glance > div { min-height: 78px; }
+  .glance-label { font-size: 8px; letter-spacing: .09em; }
+  .day-weather-meta { gap: 7px 12px; font-size: 9px; }
+  .day-map-wrap { order: 2; }
+  .day-timeline { order: 3; }
+  .slot-img.is-portrait { max-height: none; }
+  .slot-img.is-portrait img { object-position: center top; }
 }
