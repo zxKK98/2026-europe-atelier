@@ -399,7 +399,7 @@
   </div>
 
   <div class="todo-progress">
-    <span class="tp-count"><b id="tpDone">0</b><span>/20</span></span>
+    <span class="tp-count"><b id="tpDone">0</b><span>/21</span></span>
     <span class="tp-label">已预订</span>
     <span class="tp-bar"><span class="tp-fill" id="tpFill"></span></span>
     <button class="tp-reset" type="button" id="tpReset">全部重置</button>
@@ -470,6 +470,43 @@
       </ul>
       <div class="todo-actions">
           <a class="todo-link" href="https://sagradafamilia.org/en/tickets-individuals" target="_blank" rel="noopener">圣家堂官网 →</a>
+      </div>
+    </article>
+
+    <article class="todo-card level-done">
+      <div class="tc-media">
+        <img src="assets/img/spots/paco-meralgo.jpg?v=20260921d" alt="Paco Meralgo · 9/27 15:15 已确认午餐" loading="lazy" />
+        <span class="tc-badge"><i></i>已订</span>
+        <span class="tc-price">€35-45</span>
+        <h3 class="tc-title">Paco Meralgo · 9/27 午餐</h3>
+      </div>
+      <label class="tc-check" for="chk-paco-meralgo">
+        <input type="checkbox" id="chk-paco-meralgo" data-todo="paco-meralgo" />
+        <span class="tc-box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"></polyline></svg></span>
+        <span class="tc-check-txt">标记为已预订</span>
+        <span class="tc-folded">
+          <span class="tc-folded-title">Paco Meralgo · 9/27 午餐</span>
+          <span class="tc-folded-price">€35-45</span>
+        </span>
+      </label>
+      <button class="tc-caret" type="button" aria-label="展开详情"><svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+      <div class="tc-when">
+        <span class="tc-when-label">已确认</span>
+        <span class="tc-when-date">9/27 周日 15:15</span>
+        <span class="tc-when-note">2 人 · Zona Corsega</span>
+        <span class="tc-when-bj"><span class="tz">姓名</span>JAY DUAN</span>
+      </div>
+      <ul class="tc-facts">
+          <li><span class="k">餐厅</span><span class="v"><b>Restaurant Paco Meralgo</b></span></li>
+          <li><span class="k">地址</span><span class="v">Carrer de Muntaner, 171 · 08036 Barcelona</span></li>
+          <li><span class="k">区域</span><span class="v">Zona Corsega / Corsega Zone</span></li>
+          <li><span class="k">联系</span><span class="v">+34 934 30 90 27 · info@restaurantpacomeralgo.com</span></li>
+          <li class="is-warn"><span class="k">修改</span><span class="v">如需取消或修改，直接联系餐厅</span></li>
+      </ul>
+      <div class="todo-actions">
+          <a class="todo-link" href="https://www.restaurantpacomeralgo.com/" target="_blank" rel="noopener">餐厅官网 →</a>
+          <a class="todo-link" href="tel:+34934309027">电话 →</a>
+          <a class="todo-link" href="mailto:info@restaurantpacomeralgo.com">邮件 →</a>
       </div>
     </article>
 
@@ -1354,6 +1391,6 @@
   </div>
 </div>
 
-<script src="assets/app.js?v=20260921c"></script>
+<script src="assets/app.js?v=20260921d"></script>
 </body>
 </html>
