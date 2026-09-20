@@ -76,17 +76,19 @@ const days = [
     returnHome: { from: "Sips · Muntaner 108", to: "Rut's Loft · Poblenou", distance: "4.6km", via: "打车", duration: "15-18min", note: "01:00 后地铁已收班，直接在 Muntaner 街口叫 FreeNow / Cabify 回 Calle Pellaires，€13-17。周六深夜街上人多，手机收好。" }
   },
   {
-    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà + Carmel Sunset",
-    desc: "上午 10:00 GYG 地中海帆船与滨海酒庄。15:15 已确认的 Paco Meralgo 午餐，16:45 Casa Milà，18:30 前往 Carmel 山 Carrer de Mühlberg / Pont de Mühlberg 看日落。22:00 到 Nova Icària Beach 看 Mercè Piromusical。",
+    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · Historic Castellers", theme: "Castells + Casa Milà + Carmel Sunset",
+    desc: "上午 11:30 Palau de la Virreina 叠人塔队伍巡游，12:00 在 Plaça de Sant Jaume 观看 Historic Casteller Event。15:15 已确认的 Paco Meralgo 午餐，16:45 Casa Milà，18:30 前往 Carmel 山 Carrer de Mühlberg / Pont de Mühlberg 看日落。22:00 到 Nova Icària Beach 看 Mercè Piromusical。",
     slots: [
-      { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
+      { t: "10:45", h: "前往 Plaça de Sant Jaume · 叠人塔观赛", d: "从 Rut's Loft 出发前往老城，建议 10:45 到达 Plaça de Sant Jaume；11:30 叠人塔队伍从 Palau de la Virreina 出发，随后进入广场。", kind: "transit", loc: {lat: 41.3820, lng: 2.1770}, hop: {via: "Metro L4 Poblenou → Jaume I + 步行", dur: "25-30min · 2.5€"} },
+      { t: "11:30", h: "Historic Casteller Event · 队伍巡游", d: "三支队伍从 Palau de la Virreina 出发前往 Plaça de Sant Jaume：Castellers de Barcelona、Minyons de Terrassa、Joves Xiquets de Valls。", kind: "event", loc: {lat: 41.3824, lng: 2.1735}, hop: {via: "步行跟随巡游", dur: "约 15-20min"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 无需预约" },
+      { t: "12:00", h: "Historic Casteller Event · Plaça de Sant Jaume", d: "在市政厅与 Generalitat 之间的 Plaça de Sant Jaume 观看高规格叠人塔活动。三支队伍预计挑战高难度人塔；活动免费，广场先到先得。", kind: "event", loc: {lat: 41.3820, lng: 2.1770}, hop: {via: "Plaça de Sant Jaume 现场", dur: "约 2h"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 12:00–14:00" },
       { t: "15:15", h: "Paco Meralgo · 已确认午餐", d: "Carrer de Muntaner 171，08036 Barcelona。预订姓名 JAY DUAN，2 人，Zona Corsega / Corsega Zone。已确认 2026/9/27 周日 15:15；午餐后步行前往 Casa Milà。", kind: "food", img: "assets/img/spots/paco-meralgo.jpg", loc: {lat: 41.3960, lng: 2.1530}, hop: {via: "餐厅 → Casa Milà 步行", dur: "12-15min"}, link: "https://www.restaurantpacomeralgo.com/", ticket: "已订 · 2 人 · Zona Corsega", notice: "餐厅电话 +34 934 30 90 27 · info@restaurantpacomeralgo.com；如需修改或取消，联系餐厅。" },
       { t: "16:45", h: "Casa Milà 米拉之家 · 屋顶烟囱", d: "Passeig de Gràcia 92。16:45 入场，参观屋顶、阁楼与复原公寓，约 1.5h。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "步行 从 Paco Meralgo", dur: "12-15min"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
       { t: "18:30", h: "Carmel 山 · Carrer de Mühlberg 日落机位", d: "从 Casa Milà 打车前往 Carrer de Mühlberg，定位 Pont de Mühlberg。按帖子路线，从桥边步行约 2 分钟到 Mirador dels Bans del Carmel / Turó de la Rovira 观景点。日落约 19:38，留在山上拍到蓝调。", kind: "walk", img: "assets/img/spots/carmel-sunset-xhs.jpg", imgMode: "portrait", loc: {lat: 41.4182652, lng: 2.1613243}, hop: {via: "Casa Milà → Pont de Mühlberg 打车", dur: "20-25min · €15-20"}, link: "https://maps.google.com/?q=Pont+de+M%C3%BChlberg+Barcelona", ticket: "免费", notice: "机位：Carrer de Mühlberg，不是只导航到桥上；桥边步行约 2 分钟到观景点。穿防滑鞋。" },
       { t: "20:30", h: "Carmel 山 → Nova Icària", d: "从 Carrer de Mühlberg 打车前往 Nova Icària Beach，22:00 前抵达海边。", kind: "transit", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "官方 taxi / FreeNow", dur: "25-35min · €18-25"} },
       { t: "22:00", h: "Mercè Piromusical · Nova Icària Beach 烟火闭幕", d: "9/27 周日 22:00，Nova Icària Beach。", kind: "event", img: "assets/img/spots/merce-piromusical.jpg", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "海滨步行或 L4", dur: "烟火结束后步行回 Poblenou"}, link: "https://www.barcelona.cat/lamerce/en/news/josep-montero-of-oques-grasses-curates-the-soundtrack-for-la-merces-piromusical-40802", ticket: "免费 · 22:00" }
     ],
-    vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱", "Pont de Mühlberg 桥边上山", "焦糖山俯瞰圣家堂日落", "Nova Icària 海面上的 Piromusical 烟火"],
+    vlog: ["叠人塔队伍从 Palau de la Virreina 出发", "enxaneta 登顶瞬间", "Plaça de Sant Jaume 广场人群", "Casa Milà 屋顶烟囱", "Pont de Mühlberg 桥边上山", "焦糖山俯瞰圣家堂日落", "Nova Icària 海面上的 Piromusical 烟火"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12},
     returnHome: { from: "Nova Icària Piromusical", to: "Rut's Loft · Poblenou", distance: "约 1.8km", via: "海滨步行", duration: "20-25min", note: "烟火散场后沿海滨向北走回 Poblenou；先在人流边缘停 10 分钟，再步行回家。" }
@@ -687,7 +689,7 @@ const budget = {
       items: [
         { t: "Casa Milà 早鸟小团导览（Day 3）", amt: 307, note: "€39 · 替代 28€ 白天普通票 · 90min" },
         { t: "Paella 烹饪课 + Boqueria（Day 3）", amt: 565, note: "€72 起 · 9/26 周六 · 3h 含市集导览与晚餐" },
-        { t: "地中海帆船 + 滨海酒庄（Day 4）", amt: 872, note: "€111 · 9/27 10:00 出发 · 4h 含 4 款红酒" },
+        { t: "Historic Casteller Event（Day 4）", amt: 0, note: "免费 · 9/27 12:00–14:00 · Plaça de Sant Jaume · 叠人塔现场无需预约" },
         { t: "Seine Cruise 蓝调时刻 1h 游船（Day 10）", amt: 141, note: "€18 · 圣母院 Pont au Double 码头 · 提前购便宜" }
       ]
     },
