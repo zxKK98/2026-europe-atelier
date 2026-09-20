@@ -157,13 +157,18 @@ const days = [
       { t: "16:00", h: "Cézanne et nous · Grand Palais", d: "用 75-90min 看这场秋季大展：约 180 件作品，以 Cézanne 为核心，串联 Gauguin、Matisse、Picasso、Mondrian、Joan Mitchell、Bridget Riley 与 Peter Doig。重点不是“看一遍塞尚”，而是看他的结构、色彩和空间语言怎样被后来的现代艺术家拆解再造。", kind: "museum", img: "assets/img/spots/cezanne-et-nous.jpg", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "步行入场", dur: "75-90min"}, link: "https://www.grandpalais.fr/en/program/cezanne-et-nous", ticket: "全价 €19 · 建议预约时段", notice: "展期 2026/9/23-2027/1/17。此条为航班准点后的弹性项；若未在15:20离开公寓，直接跳过。" },
       { t: "17:35", h: "Grand Palais → Septime · 直接去餐厅", d: "看完展前往 Septime（80 Rue de Charonne）。", kind: "transit", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "打车", dur: "20-25min"} },
       { t: "18:05", h: "备用方案 · La Perle → Septime", d: "不去 Cézanne 时，18:05 从 La Perle 出发前往 80 Rue de Charonne。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "步行 + M4/M5 地铁", dur: "20-25min"}, notice: "与 Grand Palais → Septime 路线二选一。" },
-      { t: "19:30", h: "Septime · 米其林一星 tasting menu", d: "80 Rue de Charonne, 75011。Bertrand Grébaut 的餐厅，米其林一星 + 全球 50 佳常客，开创了巴黎「neo-bistro」这一派。晚市只有一套 tasting menu（无点菜），厨师按当天市场决定内容，蔬菜是主角而不是配角。室内 45 座、开放式厨房推到最里侧，声压约 68 分贝——能正常说话。南墙那排长条沙发（banquette）是最好的位置，订位时可以在备注里写一句。建议加配酒（自然酒为主，€90/人），或者按杯点。别跳过附加的奶酪拼盘。吃到 21:45-22:00。", kind: "food", img: "assets/img/spots/rue-de-charonne.jpg", loc: {lat: 48.8547, lng: 2.3806}, link: "https://septime-charonne.fr/en/", ticket: "晚市 tasting €135-160/人 · 配酒 +€90", notice: "订位必须在 9/10（周四）10:00 巴黎时间上官网抢——只放 21 天后的位，热门场次 4 分钟清空。周六周日不营业。" },
+      { t: "19:30", h: "Septime · waitlist 21:00", d: "80 Rue de Charonne, 75011。当前只有 10/1 周四 21:00、2 人 waitlist，尚未收到空位通知。", kind: "food", img: "assets/img/spots/rue-de-charonne.jpg", loc: {lat: 48.8547, lng: 2.3806}, link: "https://septime-charonne.fr/en/", ticket: "Waitlist · 10/1 21:00 · 2 人", notice: "以备选餐厅为主；若 Septime 临时放位，再替换当晚选择。" },
       { t: "22:10", h: "Septime La Cave · 1 杯自然酒", d: "Septime 用餐后到 3 Rue Basfroi，喝一杯自然酒；随后回 La Perle Saint Germain des Prés。", kind: "walk", loc: {lat: 48.8542, lng: 2.3822}, hop: {via: "步行 + 打车", dur: "约 15min 到酒店"}, link: "https://septime-charonne.fr/en/" }
     ],
     vlog: ["Californie 提前退房", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站", "La Perle 酒店凭证", "Grand Palais 塞尚展入口", "Septime 门牌与 tasting menu", "Septime La Cave 自然酒"],
     stay: { name: "La Perle Saint Germain des Prés", area: "14 Rue des Canettes · 75006 Paris", note: "1 晚 · CHEN/KANG · 2 成人 · Classic Double or Twin · 无早餐 · €371.60 · Airbnb 支付差价 · 确认号 2563285089", url: null },
     mapCenter: {lat: 48.8532, lng: 2.3358, zoom: 15},
-    returnHome: { from: "Septime La Cave", to: "La Perle Saint Germain des Prés", distance: "约 3.0km", via: "打车", duration: "12-15min", note: "3 Rue Basfroi → 14 Rue des Canettes。" }
+    returnHome: { from: "Septime La Cave", to: "La Perle Saint Germain des Prés", distance: "约 3.0km", via: "打车", duration: "12-15min", note: "3 Rue Basfroi → 14 Rue des Canettes。" },
+    altRestaurants: [
+      { rank: "A", name: "Clamato", tag: "同团队 · Michelin Bib Gourmand", time: "19:00–22:30", price: "€35–55 / 人", booking: "不接受预订 · 先到先得", route: "80 Rue de Charonne · Septime 隔壁", fit: "最接近 Septime 的替代：海鲜、小盘、自然酒。19:00 开门，建议 18:30 到门口排队。", url: "https://clamato-charonne.fr/" },
+      { rank: "B", name: "Le Servan", tag: "Michelin Guide · Modern Cuisine", time: "19:30–22:30", price: "€€ · 约 €50–70 / 人", booking: "需直接联系餐厅订位", route: "32 Rue Saint-Maur · 11 区", fit: "坐下来吃的完整晚餐；法式底子 + 亚洲风味，适合替代 Septime 的正式感。", url: "https://guide.michelin.com/tw/en/ile-de-france/paris/restaurant/le-servan" },
+      { rank: "C", name: "Erso", tag: "Michelin Guide · Modern Cuisine", time: "19:30–22:00", price: "€€ · 约 €50–70 / 人", booking: "晚餐强烈建议订位", route: "18 Rue Saint-Ambroise · 11 区", fit: "蓝色木质小餐厅 + 开放式厨房；更安静、更像一顿精致邻里晚餐。", url: "https://guide.michelin.com/mt/en/ile-de-france/paris/restaurant/erso" }
+    ]
   },
   {
     n: 9, date: "Oct 2 · Fri", city: "巴黎 · 左岸卢浮宫日", theme: "Louvre + Rive Gauche Salon",
@@ -322,6 +327,25 @@ function renderDay(n) {
     `<span>${v}</span>${i < d.vlog.length - 1 ? '<span class="arr">↓</span>' : ''}`
   ).join("");
 
+  const altRestaurantsHtml = d.altRestaurants ? `
+    <section class="day-alternatives" aria-label="Septime 备选餐厅">
+      <div class="day-alternatives-head">
+        <span class="day-alternatives-kicker">Plan B · 晚餐选择</span>
+        <h3>Septime 未放位时，选一间</h3>
+        <p>当前 waitlist：10/1 21:00 · 2 人。先按下面顺序处理，不需要再临时搜索。</p>
+      </div>
+      <div class="day-alternatives-grid">${d.altRestaurants.map(r => `
+        <a class="day-alt-card alt-${r.rank.toLowerCase()}" href="${r.url}" target="_blank" rel="noopener">
+          <div class="day-alt-top"><span class="day-alt-rank">${r.rank}</span><span class="day-alt-tag">${r.tag}</span></div>
+          <h4>${r.name}</h4>
+          <p class="day-alt-fit">${r.fit}</p>
+          <div class="day-alt-facts"><span>${r.time}</span><span>${r.price}</span></div>
+          <div class="day-alt-route">${r.route}</div>
+          <div class="day-alt-booking">${r.booking}</div>
+          <span class="day-alt-link">查看订位 / 营业信息 ↗</span>
+        </a>`).join("")}</div>
+    </section>` : "";
+
   // 住宿卡片：整卡可点击跳转
   const stayHtml = d.stay ? (
     d.stay.url ? `
@@ -366,6 +390,7 @@ function renderDay(n) {
           <div class="day-vlog-shots">${shotsHtml}</div>
         </div>
       </div>
+      ${altRestaurantsHtml}
       <div class="day-map-wrap">
         <div class="day-map-head">
           <span class="map-tag">Map · 今日动线</span>

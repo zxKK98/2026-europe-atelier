@@ -1767,6 +1767,57 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   }
 }
 
+/* ---- Day 8 · Septime waitlist alternatives ---- */
+.day-alternatives {
+  grid-column: 1 / -1;
+  margin: 8px 0 30px;
+  padding: 24px;
+  background: color-mix(in oklab, var(--accent-soft) 72%, var(--paper));
+  border: 1px solid var(--line);
+  border-radius: 16px;
+}
+.day-alternatives-head { margin-bottom: 18px; }
+.day-alternatives-kicker {
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+.day-alternatives-head h3 {
+  margin: 7px 0 5px;
+  font-family: var(--display);
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ink-1);
+}
+.day-alternatives-head p { margin: 0; color: var(--ink-2); font-size: 13px; }
+.day-alternatives-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.day-alt-card {
+  display: block;
+  padding: 16px;
+  color: inherit;
+  text-decoration: none;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease;
+}
+.day-alt-card:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 12px 26px -18px rgba(0,0,0,.35); }
+.day-alt-top { display: flex; align-items: center; gap: 8px; min-height: 24px; }
+.day-alt-rank { font-family: var(--display); font-size: 21px; color: var(--accent); }
+.day-alt-tag { font-family: var(--mono); font-size: 9px; letter-spacing: .08em; color: var(--ink-3); }
+.day-alt-card h4 { margin: 12px 0 7px; font-family: var(--display); font-size: 21px; font-weight: 500; color: var(--ink-1); }
+.day-alt-fit { margin: 0 0 13px; min-height: 64px; font-size: 12.5px; line-height: 1.6; color: var(--ink-2); }
+.day-alt-facts { display: flex; justify-content: space-between; gap: 8px; padding: 9px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: var(--mono); font-size: 10px; color: var(--accent); }
+.day-alt-route, .day-alt-booking { margin-top: 9px; font-size: 11px; line-height: 1.45; color: var(--ink-2); }
+.day-alt-booking { font-weight: 600; color: var(--ink); }
+.day-alt-link { display: inline-block; margin-top: 13px; font-family: var(--mono); font-size: 10px; letter-spacing: .04em; color: var(--accent); }
+@media (max-width: 900px) {
+  .day-alternatives { padding: 18px 14px; }
+  .day-alternatives-grid { grid-template-columns: 1fr; gap: 10px; }
+  .day-alt-fit { min-height: 0; }
+}
 /* ---- Day Map · Leaflet 交互地图 ---- */
 .day-map-wrap {
   grid-column: 1 / -1;
