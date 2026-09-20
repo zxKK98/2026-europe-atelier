@@ -72,19 +72,20 @@ const days = [
     returnHome: { from: "Sips · Muntaner 108", to: "Rut's Loft · Poblenou", distance: "4.6km", via: "打车", duration: "15-18min", note: "01:00 后地铁已收班，直接在 Muntaner 街口叫 FreeNow / Cabify 回 Calle Pellaires，€13-17。周六深夜街上人多，手机收好。" }
   },
   {
-    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà + Tibidabo Sunset",
-    desc: "上午 10:00 GYG 帆船出海 + 滨海酒庄品酒半日游（4h 固定行程）。下午看 Casa Milà；傍晚只留一段完整的 Tibidabo 体验：圣心堂最高露台、全城日落和蓝调。下山后前往 Nova Icària Beach，看 22:00 的 Mercè Piromusical 烟火闭幕。",
+    n: 4, date: "Sep 27 · Sun", city: "巴塞罗那 · 地中海帆船", theme: "Sail + Casa Milà + Carmel Sunset",
+    desc: "上午 10:00 GYG 地中海帆船与滨海酒庄。14:30 Paco Meralgo 午餐，15:30 Casa Milà，17:30 前往 Carmel 山 Carrer de Mühlberg / Pont de Mühlberg 看日落。22:00 到 Nova Icària Beach 看 Mercè Piromusical。",
     slots: [
       { t: "10:00", h: "GYG · 地中海帆船 + 滨海酒庄", d: "从 Port Olímpic 或 Port Vell 上船，出海 2h 沿海岸线航行，在滨海酒庄靠岸参观 + 品 4 款红酒。4h 固定行程，人均 90-120€。周日 10:00 出发场次。", kind: "event", img: "assets/img/spots/sailing-mediterranean.jpg", loc: {lat: 41.3860, lng: 2.1975}, hop: {via: "打车 Poblenou → Port Olímpic", dur: "8min · 6€"}, link: "https://www.getyourguide.com/barcelona-l45/", ticket: "€90-120 · 4h" },
       { t: "14:30", h: "Paco Meralgo · 米其林收录 alta taberna", d: "C/ Muntaner 171（Eixample Esquerra），与 Sips 同一条街、相距 500m。米其林指南「Good Cooking」收录，自称 alta taberna 高级酒馆，Google 近 6000 条评价 4.5 分。必点：Steak Tartare montadito（米其林点名必点）、竹蛏 razor clams、patatas bravas、pan con tomate、俄式沙拉 La Rusa、扇贝；黑板上的当日野生鱼和午市限定的米饭按市场走。tapas €12 起，人均 €35-45。", kind: "food", img: "assets/img/spots/paco-meralgo.jpg", loc: {lat: 41.3960, lng: 2.1530}, hop: {via: "步行 → Casa Milà", dur: "12-15min"}, link: "https://www.restaurantpacomeralgo.com/", ticket: "tapas €12 起 · 人均 €35-45", notice: "每日 13:00-16:00 / 20:00-00:30，周日照常营业。必须在官网 restaurantpacomeralgo.com 订位，周日午市也建议提前订。" },
-      { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱（从容版）", d: "Passeig de Gràcia 92 号。这天不赶时间，可以按最舒服的顺序慢慢看：先上屋顶看那片「战士」烟囱群（高迪把通风口做成了雕塑，砖石曲线在下午光里会发光），再下到阁楼看悬链拱结构（像鲸鱼骨架），最后看复原的高迪时代公寓。全程 1.5h，不用像赶场那样只盯屋顶。从 Paco Meralgo 吃完步行 12-15min 就到，动线完全顺，看完直接上山看日落。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "步行 从 Paco Meralgo", dur: "12-15min"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
-      { t: "17:00", h: "Tibidabo · 圣心堂登顶 + 日落全景", d: "从 Casa Milà 出发，FGC S1/S2 → Vallvidrera 缆车 → 111 路上山，约 70 分钟。18:20 登顶：教堂与观景区免费，电梯 €4；在耶稣雕像基座下拍整座巴塞、地中海和蓝调。20:00 原路下山，约 21:25 回到 Bogatell。", kind: "event", img: "assets/img/spots/tibidabo-xhs-sunset.jpg", imgMode: "portrait", loc: {lat: 41.4225, lng: 2.1190}, hop: {via: "FGC S1/S2 + Vallvidrera 缆车 + 111 路", dur: "往返约 4h25 · T-Casual 一区票"}, remote: { metric: "单程 70min · 往返 4h25", copy: "距离远，且 111 路下山末班约 21:30。若 16:50 仍未离开 Casa Milà、天气转差或体力不足，直接放弃登顶：回 Poblenou 休息，21:30 去 Nova Icària 看烟火闭幕。" }, link: "https://www.tibidabo.cat/en", ticket: "登顶电梯 €4", notice: "111 路下山末班约 21:30；山顶风大，比市区低 3-5°C，带防风外套。" },
-      { t: "22:00", h: "Mercè Piromusical · Nova Icària Beach 烟火闭幕", d: "官方最新更新：9/27 周日闭幕 Piromusical 改在 Nova Icària Beach 发射，原因是 Montjuïc / Fira 施工。烟火由 Pirotècnia Igual 发射，声音由 Oido 的 Marçal Cruz 混音，音乐由 Oques Grasses 主唱 Josep Montero 策划，并会强化加泰罗尼亚语歌曲。市政府官方页面目前确认地点与策划信息，具体入场/观看细节以临近日期公告为准；从 Poblenou 方向建议步行或乘 L4，别开车。", kind: "event", img: "assets/img/spots/merce-piromusical.jpg", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "Bogatell/Poblenou → 海滨步行或 L4", dur: "约 15-25min"}, link: "https://www.barcelona.cat/lamerce/en/news/josep-montero-of-oques-grasses-curates-the-soundtrack-for-la-merces-piromusical-40802", ticket: "免费 · 22:00（第三方官方日历已列时刻，市政府新闻页未单独重复时刻）" }
+      { t: "15:30", h: "Casa Milà 米拉之家 · 屋顶烟囱", d: "Passeig de Gràcia 92。15:30 入场，参观屋顶、阁楼与复原公寓，约 1.5h。", kind: "museum", img: "assets/img/spots/casa-mila.jpg", loc: {lat: 41.3954, lng: 2.1620}, hop: {via: "步行 从 Paco Meralgo", dur: "12-15min"}, link: "https://www.lapedrera.com/en", ticket: "自助 €24-28 · 官网可订" },
+      { t: "17:30", h: "Carmel 山 · Carrer de Mühlberg 日落机位", d: "从 Casa Milà 打车前往 Carrer de Mühlberg，定位 Pont de Mühlberg。按帖子路线，从桥边步行约 2 分钟到 Mirador dels Bans del Carmel / Turó de la Rovira 观景点。日落约 19:38，留在山上拍到蓝调。", kind: "walk", img: "assets/img/spots/carmel-sunset-xhs.jpg", imgMode: "portrait", loc: {lat: 41.4182652, lng: 2.1613243}, hop: {via: "Casa Milà → Pont de Mühlberg 打车", dur: "20-25min · €15-20"}, link: "https://maps.google.com/?q=Pont+de+M%C3%BChlberg+Barcelona", ticket: "免费", notice: "机位：Carrer de Mühlberg，不是只导航到桥上；桥边步行约 2 分钟到观景点。穿防滑鞋。" },
+      { t: "20:30", h: "Carmel 山 → Nova Icària", d: "从 Carrer de Mühlberg 打车前往 Nova Icària Beach，22:00 前抵达海边。", kind: "transit", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "官方 taxi / FreeNow", dur: "25-35min · €18-25"} },
+      { t: "22:00", h: "Mercè Piromusical · Nova Icària Beach 烟火闭幕", d: "9/27 周日 22:00，Nova Icària Beach。", kind: "event", img: "assets/img/spots/merce-piromusical.jpg", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "海滨步行或 L4", dur: "烟火结束后步行回 Poblenou"}, link: "https://www.barcelona.cat/lamerce/en/news/josep-montero-of-oques-grasses-curates-the-soundtrack-for-la-merces-piromusical-40802", ticket: "免费 · 22:00" }
     ],
-    vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱下午光", "Tibidabo 耶稣雕像与巴塞全景", "日落 → 蓝调延时", "Nova Icària 海面上的 Piromusical 烟火"],
+    vlog: ["帆船出港航拍", "Sangria 特写", "Casa Milà 屋顶烟囱", "Pont de Mühlberg 桥边上山", "焦糖山俯瞰圣家堂日落", "Nova Icària 海面上的 Piromusical 烟火"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12},
-    returnHome: { from: "Nova Icària Piromusical", to: "Rut's Loft · Poblenou", distance: "约 1.8km", via: "海滨步行", duration: "20-25min", note: "Nova Icària 与住处仍在同一段海滨，但烟火散场人潮会沿海岸线聚集；不要抢打车，先在人流边缘停 10 分钟，再沿海滨步行回 Poblenou 最稳。" }
+    returnHome: { from: "Nova Icària Piromusical", to: "Rut's Loft · Poblenou", distance: "约 1.8km", via: "海滨步行", duration: "20-25min", note: "烟火散场后沿海滨向北走回 Poblenou；先在人流边缘停 10 分钟，再步行回家。" }
   },
   {
     n: 5, date: "Sep 28 · Mon", city: "巴塞罗那 → 尼斯", theme: "Barcelona to Côte d'Azur",
@@ -143,33 +144,32 @@ const days = [
     returnHome: { from: "尼斯晚餐", to: "Casa Californie", distance: "视地点约 1-4km", via: "打车", duration: "8-15min", note: "这晚不锁定单一餐厅；饭后直接叫车回 220 Avenue de la Californie，避免为回程再折返 Tram。" }
   },
   {
-    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · Septime 之夜", theme: "Northbound · A Table at Septime",
-    desc: "航班定了：易捷 U24856，尼斯 12:35 → 奥利 14:05。为了赶 11:00 值机，民宿要提前退房——今早不去天使湾了，行李收好直接打车 T2。下午落地奥利后，先把行李放进 5 区拉丁区公寓；如果航班准点、入住顺利，16:00 弹性加餐去 Grand Palais 看 Cézanne et nous，17:35 直接去 Septime，不回公寓折返。若任何一环延误，就跳过塞尚，回阳台休息，18:05 按备用路线出发。今晚重头戏仍是 Septime：19:30 晚市，米其林一星、全球 50 佳；回来路上再拐进清真寺茶室喝薄荷茶。明天搬去左岸 46 Rue Jacob。",
+    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · Septime 之夜", theme: "Northbound · La Perle + Septime",
+    desc: "易捷 U24856：尼斯 12:35 → 奥利 14:05。14:00 后入住 La Perle Saint Germain des Prés，14 Rue des Canettes。16:00 弹性参观 Grand Palais 的 Cézanne et nous，19:30 Septime 晚餐；10/2 12:00 前退房，转住 46 Rue Jacob。",
     slots: [
       { t: "09:30", h: "Casa Californie 提前退房 · 收拾行李", d: "12:35 的航班要 11:00 到 T2 值机，所以今早提前退房（比 11:00 的硬性时间早）。天使湾散步这次跳过——留给明年。房东那边打个招呼，行李直接带走不寄存。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373}, notice: "为赶航班提前退房，不安排 Promenade 晨间散步。" },
       { t: "10:30", h: "打车 Californie → 尼斯机场 T2", d: "从 220 Avenue de la Californie 到 NCE T2 打车约 10-12min · 22€（双人分摊 11€）。也可以走 Tram T2（1.5€/人）但带行李换乘麻烦，赶飞机就打车。11:00 前到航站楼。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "打车", dur: "10-12min · 22€"} },
       { t: "11:00", h: "T2 值机 + 安检 · 机场吃早午饭", d: "易捷是廉航，网上提前 check-in 好、行李额确认清楚（随身 56×45×25cm 免费，托运需另购）。安检后 T2 有 Paul、Pret 之类，随便吃点——这趟航班无餐食，飞机上什么都没有。今晚 Septime 是 tasting menu，中午别吃太饱。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, notice: "easyJet 经济舱无餐食。登机前吃饱或买点带上。" },
       { t: "12:35", h: "NCE T2 → ORY T1 · easyJet U24856", d: "尼斯蔚蓝海岸 T2 12:35 起飞 → 巴黎奥利 T1 14:05 落地，飞行 1h30m，空客 320（中型）。订单号 1128150429939513，携程出票中。靠窗能看到阿尔卑斯山脊往北铺开——起飞后 20 分钟左右最好看。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "已购 · 总 ¥1,744 双人（人均 ¥872）", notice: "易捷 U24856 · 经济舱无餐食 · 空客 320。落地是奥利 ORY 不是 CDG。" },
-      { t: "14:05", h: "ORY T1 落地 · 打车进城", d: "奥利 T1 到 5 区拉丁区约 19km，打车 35-40min · €35-45（双人分摊约 €20）。出到达层直接上官方 taxi 队伍（巴黎奥利到左岸有固定价 €37），别理揽客的。两人带行李，这段就别折腾 Orlybus 换地铁了。", kind: "transit", loc: {lat: 48.7262, lng: 2.3652}, hop: {via: "打车 ORY T1 → 5 区", dur: "35-40min · €35-45"} },
-      { t: "15:00", h: "拉丁区公寓 Check-in · 清真寺景观阳台", d: "Airbnb「绝美景色 | 巴黎拉丁区」，房东 Audrey，★4.87（39 评）· 1 卧 2 床 1 卫 · 15:00 后可入住、明天 11:00 前退房。阳台正对巴黎大清真寺的绿瓦穹顶和白墙庭院。落地时间刚好卡上入住时段，行李放下就能休息。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.airbnb.cn/rooms/14190318" },
-      { t: "15:20", h: "弹性加餐 · 拉丁区 → Grand Palais", d: "只有在航班准点、14:05 落地后顺利进城、15:00 前后完成入住时执行。打车从拉丁区公寓到 Grand Palais 约 15-20min；如果 15:20 还没放下行李，立刻跳过，不影响今晚 Septime。", kind: "transit", loc: {lat: 48.8420, lng: 2.3554}, hop: {via: "打车 → Grand Palais", dur: "15-20min · 约 €12-18"}, notice: "弹性项：航班/入住任何一环延误就跳过，回公寓休息，18:05 按备用方案出发。" },
+      { t: "14:05", h: "ORY T1 落地 · 前往 La Perle", d: "奥利 T1 → 14 Rue des Canettes，官方 taxi 约 35-40min；巴黎左岸固定价 €37。", kind: "transit", loc: {lat: 48.7262, lng: 2.3652}, hop: {via: "官方 taxi ORY T1 → Saint-Germain", dur: "35-40min · €37"} },
+      { t: "15:00", h: "La Perle Saint Germain des Prés · Check-in", d: "14 Rue des Canettes，Classic Double or Twin Room，CHEN/KANG，2 位成人，无早餐。确认号 2563285089；订单号 112815100834077。", kind: "stay", loc: {lat: 48.8532, lng: 2.3358}, ticket: "10/1 入住 · 10/2 12:00 前退房" },
+      { t: "15:20", h: "La Perle → Grand Palais", d: "航班准点并完成入住后，前往 Grand Palais。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "打车", dur: "15-20min"} },
       { t: "16:00", h: "Cézanne et nous · Grand Palais", d: "用 75-90min 看这场秋季大展：约 180 件作品，以 Cézanne 为核心，串联 Gauguin、Matisse、Picasso、Mondrian、Joan Mitchell、Bridget Riley 与 Peter Doig。重点不是“看一遍塞尚”，而是看他的结构、色彩和空间语言怎样被后来的现代艺术家拆解再造。", kind: "museum", img: "assets/img/spots/cezanne-et-nous.jpg", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "步行入场", dur: "75-90min"}, link: "https://www.grandpalais.fr/en/program/cezanne-et-nous", ticket: "全价 €19 · 建议预约时段", notice: "展期 2026/9/23-2027/1/17。此条为航班准点后的弹性项；若未在15:20离开公寓，直接跳过。" },
-      { t: "17:35", h: "Grand Palais → Septime · 直接去餐厅", d: "看完展不回拉丁区，直接打车去 Septime（80 Rue de Charonne），约 20-25min。提前到店附近喝杯水，19:30 进晚市；这样不把时间浪费在“展览→公寓→再出门”的折返上。", kind: "transit", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "打车 Grand Palais → Septime", dur: "20-25min · 约 €15-22"} },
-      { t: "18:05", h: "备用方案 · 公寓 → Septime", d: "如果跳过 Cézanne：15:20 后就在阳台休息、换衣服，18:05 从公寓步行 3min 到 Place Monge，坐 M5 到 Bréguet-Sabin，再步行到 80 Rue de Charonne；约 20-25min，19:20 到店。", kind: "transit", loc: {lat: 48.8420, lng: 2.3554}, hop: {via: "步行 + M5 地铁", dur: "20-25min · 2.15€"}, notice: "与17:35“Grand Palais → Septime”二选一，不要两条都走。" },
+      { t: "17:35", h: "Grand Palais → Septime · 直接去餐厅", d: "看完展前往 Septime（80 Rue de Charonne）。", kind: "transit", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "打车", dur: "20-25min"} },
+      { t: "18:05", h: "备用方案 · La Perle → Septime", d: "不去 Cézanne 时，18:05 从 La Perle 出发前往 80 Rue de Charonne。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "步行 + M4/M5 地铁", dur: "20-25min"}, notice: "与 Grand Palais → Septime 路线二选一。" },
       { t: "19:30", h: "Septime · 米其林一星 tasting menu", d: "80 Rue de Charonne, 75011。Bertrand Grébaut 的餐厅，米其林一星 + 全球 50 佳常客，开创了巴黎「neo-bistro」这一派。晚市只有一套 tasting menu（无点菜），厨师按当天市场决定内容，蔬菜是主角而不是配角。室内 45 座、开放式厨房推到最里侧，声压约 68 分贝——能正常说话。南墙那排长条沙发（banquette）是最好的位置，订位时可以在备注里写一句。建议加配酒（自然酒为主，€90/人），或者按杯点。别跳过附加的奶酪拼盘。吃到 21:45-22:00。", kind: "food", img: "assets/img/spots/rue-de-charonne.jpg", loc: {lat: 48.8547, lng: 2.3806}, link: "https://septime-charonne.fr/en/", ticket: "晚市 tasting €135-160/人 · 配酒 +€90", notice: "订位必须在 9/10（周四）10:00 巴黎时间上官网抢——只放 21 天后的位，热门场次 4 分钟清空。周六周日不营业。" },
-      { t: "22:10", h: "Septime La Cave 或 M5 回拉丁区", d: "吃完还想坐一会：往回走 2min 是 Septime La Cave（3 Rue Basfroi），同一家的自然酒吧，站着喝一杯 €8-12，开到 23:00。不想续摊就直接 M5 回 Place Monge，20min。", kind: "walk", loc: {lat: 48.8542, lng: 2.3822}, hop: {via: "步行 2min / M5 回程 20min", dur: "视心情"} },
-      { t: "23:00", h: "清真寺茶室夜宵 · 薄荷茶收尾", d: "回到公寓楼下 1-2min 就是 La Mosquée de Paris 的 Salon de Thé，摩尔风瓷砖庭院和无花果树，营业到 23:00——赶得紧的话直接明早来喝，早上人更少、光更好。一杯薄荷茶 3€、一块东方酥点 2€。房源标题说的「土耳其浴室 1 分钟」就是这里的 hammam（要预约、单独收费）。抬头就是白天从阳台看到的那个绿顶。", kind: "walk", loc: {lat: 48.8420, lng: 2.3554}, link: "https://www.grandemosqueedeparis.fr/", ticket: "茶室 3-8€ · hammam 约 45€ 需预约", hop: {via: "步行", dur: "2min · 150m"} }
+      { t: "22:10", h: "Septime La Cave · 1 杯自然酒", d: "Septime 用餐后到 3 Rue Basfroi，喝一杯自然酒；随后回 La Perle Saint Germain des Prés。", kind: "walk", loc: {lat: 48.8542, lng: 2.3822}, hop: {via: "步行 + 打车", dur: "约 15min 到酒店"}, link: "https://septime-charonne.fr/en/" }
     ],
-    vlog: ["Californie 提前退房 · 关门那一刻", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站的第一口巴黎空气", "Grand Palais 塞尚展入口", "塞尚画面里的圣维克多山", "Septime 门牌与开放式厨房", "tasting menu 每一道的特写", "夜里 M5 车厢与回家的路"],
-    stay: { name: "绝美景色 · 巴黎拉丁区 · 土耳其浴室 1 分钟", area: "Quartier Latin · 75005 Paris · 清真寺景观阳台", note: "1 晚 · ★4.87（39 评）· 1 卧 2 床 1 卫 · 房东 Audrey · 人均 ¥882.96（总 ¥1,765.91）· 15:00 后入住 / 11:00 前退房", url: "https://www.airbnb.cn/rooms/14190318" },
-    mapCenter: {lat: 48.8432, lng: 2.3530, zoom: 14},
-    returnHome: { from: "清真寺茶室", to: "拉丁区 Airbnb", distance: "150m", via: "步行", duration: "2min", note: "茶室就在 5 区公寓旁；23:00 前离开后沿 Rue Geoffroy-Saint-Hilaire 回家即可。" }
+    vlog: ["Californie 提前退房", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站", "La Perle 酒店凭证", "Grand Palais 塞尚展入口", "Septime 门牌与 tasting menu", "Septime La Cave 自然酒"],
+    stay: { name: "La Perle Saint Germain des Prés", area: "14 Rue des Canettes · 75006 Paris", note: "1 晚 · CHEN/KANG · 2 成人 · Classic Double or Twin · 无早餐 · €371.60 · Airbnb 支付差价 · 确认号 2563285089", url: null },
+    mapCenter: {lat: 48.8532, lng: 2.3358, zoom: 15},
+    returnHome: { from: "Septime La Cave", to: "La Perle Saint Germain des Prés", distance: "约 3.0km", via: "打车", duration: "12-15min", note: "3 Rue Basfroi → 14 Rue des Canettes。" }
   },
   {
     n: 9, date: "Oct 2 · Fri", city: "巴黎 · 左岸卢浮宫日", theme: "Louvre + Rive Gauche Salon",
-    desc: "早上从拉丁区公寓 11:00 前退房，行李寄存或直接拖到 46 Rue Jacob。地铁 M7 一趟到卢浮宫，9:00-12:30 减负三宝路线。杜乐丽花园吃个 crêpe，13:30 走过塞纳河把行李搬进 46 Rue Jacob（15:00 才 check-in）。下午步行 12min 到奥赛，集中看 Bartholdi《自由照耀世界》+ VR：从自由女神的构想到铜板锤制、Eiffel 内部结构，再走进巴黎工作坊和纽约落成现场。傍晚花神/双叟咖啡露天座 + 圣日耳曼大道晚风。今晚开始就住 Truly Parisien 老公寓——奥赛/卢浮宫都是家门口。",
+    desc: "La Perle 12:00 前退房，行李转存 46 Rue Jacob。上午卢浮宫，午餐后步行过塞纳河入住 46 Rue Jacob；下午看奥赛 Bartholdi《自由照耀世界》+ VR，晚上 Rue de Buci 与左岸散步。",
     slots: [
-      { t: "08:20", h: "拉丁区公寓退房 · 行李处理", d: "公寓 11:00 前退房，但今天早出门，提前收拾好。两个选择：① 行李寄存在公寓（跟 Audrey 确认是否可以）；② 直接拖到 46 Rue Jacob 楼下用 Nannybag 寄存（5€/件/天），从公寓地铁 M7 到 Saint-Germain 约 15min。轻装去卢浮宫更舒服。", kind: "stay", loc: {lat: 48.8420, lng: 2.3554} },
+      { t: "08:20", h: "La Perle 退房 · 行李转存", d: "酒店 12:00 前退房。行李打车送到 46 Rue Jacob 或寄存在左岸，轻装前往卢浮宫。", kind: "stay", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "打车 La Perle → 46 Rue Jacob", dur: "10-15min"} },
       { t: "08:40", h: "M7 地铁 → 卢浮宫 Porte des Lions", d: "从公寓步行 3min 到 Place Monge 站，M7 线坐 6 站到 Palais Royal-Musée du Louvre（约 12min），出站走 4min 到南侧 Porte des Lions（黎塞留翼下）——这个侧门几乎不用排队。9:00 准时开门。", kind: "transit", loc: {lat: 48.8590, lng: 2.3346}, hop: {via: "步行 3min + M7 地铁 12min", dur: "20min · 2.15€"} },
       { t: "09:00", h: "卢浮宫 · 三宝主线（减负版）", d: "只看三样：《蒙娜丽莎》→《米洛的维纳斯》→《萨莫色雷斯的胜利女神》。走德农馆 2 楼长廊直插蒙娜丽莎，9:15 前到画前人还不多；再往回走看维罗内塞《迦拿的婚礼》。整场 3.5h 而非 5h。", kind: "museum", img: "assets/img/spots/louvre-mona-lisa.jpg", loc: {lat: 48.8606, lng: 2.3376}, link: "https://www.ticketlouvre.fr/", ticket: "非 EEA 32€ · 强制预约", notice: "周二闭馆。热浪或维修期部分展厅可能临时闭馆，参观当天可致电 +33 1 40 20 53 17 确认。" },
       { t: "11:30", h: "卢浮宫 · 法国浪漫主义红厅", d: "德农馆红厅：德拉克罗瓦《自由引导人民》、大卫《拿破仑加冕》、席里柯《美杜莎之筏》。三张大画都在同一个房间，20 分钟看完出门。", kind: "museum", loc: {lat: 48.8606, lng: 2.3376} },
@@ -188,7 +188,7 @@ const days = [
   },
   {
     n: 10, date: "Oct 3 · Sat", city: "巴黎 · 圣旺旧物 + 圣母院 + 铁塔", theme: "Saint-Ouen Flea Market + Notre-Dame + Eiffel",
-    desc: "今天不走温吞的左岸公园线，上午去巴黎北门的 Saint-Ouen 跳蚤市场：在 Dauphine、Vernaison、Paul Bert 一带看旧画框、黑胶、古董家具、复古衣物和各种有故事的旧物。午后回到西堤岛看巴黎圣母院，18:30 塞纳河蓝调游船看铁塔第一次亮灯，20:30 夏乐宫观景台看金色闪烁，最后去 Cambridge 收尾。",
+    desc: "上午 Saint-Ouen 跳蚤市场，午后回西堤岛看巴黎圣母院。20:45 乘 Les Vedettes du Pont Neuf 1 小时游船，登船前 15 分钟到 Square du Vert Galant；下船后去 The Cambridge 收尾。",
     slots: [
       { t: "09:15", h: "46 Rue Jacob → Saint-Ouen 跳蚤市场", d: "从左岸出发前往 Saint-Ouen，建议 M4 直达 Porte de Clignancourt，再步行穿过 périphérique 到 Rue des Rosiers；两人也可以直接打车，约 25-35min。市场周六 10:00 开始，尽量第一批到。", kind: "transit", loc: {lat: 48.85604, lng: 2.33403}, hop: {via: "Metro M4 / 打车", dur: "25-35min"} },
       { t: "10:00", h: "Saint-Ouen 跳蚤市场 · Dauphine + Vernaison + Paul Bert", d: "巴黎最大的古董与旧物聚落，不是一个单独市场，而是 Rue des Rosiers 周边多个市场组成的 7 公顷街区。优先逛 Marché Dauphine 的玻璃顶室内市场，再去 Vernaison 看更有跳蚤市场气质的摊位，最后按兴趣扫 Paul Bert。重点找：旧画框、黑胶、老海报、复古灯具、旅行箱、奇怪小雕塑。", kind: "walk", img: "assets/img/spots/saint-ouen-puces.jpg", loc: {lat: 48.90178, lng: 2.34157}, hop: {via: "步行穿市场", dur: "2.5-3h"}, link: "https://pucesdeparissaintouen.com/en/", ticket: "免费入场", notice: "周六 10:00-18:00。市场很大，不要试图一次逛完；贵重旧物先拍照记摊位，最后再回头买。" },
@@ -196,11 +196,13 @@ const days = [
       { t: "13:30", h: "Saint-Ouen → 西堤岛", d: "从 Porte de Clignancourt 乘 M4 南下到 Cité / Châtelet 一带，再步行到西堤岛。周六午后地铁和市场出口人流都大，13:30 必须离开，不要在最后一个摊位前拖太久。", kind: "transit", loc: {lat: 48.90178, lng: 2.34157}, hop: {via: "Metro M4 + 步行", dur: "35-45min"} },
       { t: "14:30", h: "西堤岛河岸缓冲 · 旧书摊 + Pont Neuf", d: "提前抵达西堤岛后，沿 Quai de l'Horloge 和 Quai de Montebello 慢慢走，看看旧书摊与 Pont Neuf 石雕。今天这段不是硬塞景点，而是给 Saint-Ouen 回城和圣母院预约之间留出的呼吸时间。", kind: "walk", loc: {lat: 48.85708, lng: 2.34099}, hop: {via: "步行沿塞纳河", dur: "40min · 1.5km"} },
       { t: "15:30", h: "巴黎圣母院 · 西堤岛修复主界面", d: "2019 年火灾后修复重开，塔尖 + 飞天拱壁 + 玫瑰花窗全部原样重建。目前进内殿排队约 30min，官网可预约免费时段（必须提前订）。", kind: "museum", img: "assets/img/spots/notre-dame.jpg", loc: {lat: 48.85299, lng: 2.34992}, hop: {via: "步行", dur: "10min · 0.8km"}, link: "https://www.notredamedeparis.fr/", ticket: "内殿免费 · 需官网预约时段", notice: "2024 年 12 月重开，塔楼登顶需另订。" },
-      { t: "18:30", h: "塞纳河蓝调游船 · Bateaux Parisiens", d: "圣母院旁的 Pont au Double 码头就有游船。18:45-19:15 是蓝调日落最佳时刻，20:00 整点在船上看铁塔第一次金色闪烁（Scintillement）。1h 航程 18€。", kind: "venue", loc: {lat: 48.8528, lng: 2.3501}, hop: {via: "步行", dur: "3min"}, link: "https://www.bateauxparisiens.com/", ticket: "1h 游船 18€ · 提前网购可 15€", gyg: { title: "Seine Cruise · 蓝调时刻 1h 游船", img: "assets/img/gyg/nodietclub.jpg", rating: "4.8", reviews: "45,000+", price: "€18 起 · 1h", url: "https://www.getyourguide.com/paris-l16/1-hour-seine-river-sightseeing-cruise-t128772/" } },
-      { t: "20:30", h: "Trocadéro 夏乐宫观景台", d: "游船下船后 Metro L6 到 Trocadéro（15min）。夏乐宫平台是拍铁塔的经典陆地视角。21:00 整点铁塔再一次 5 分钟金色闪烁——这是当晚第二次机会，比船上视角更近。免费。", kind: "walk", img: "assets/img/spots/eiffel-trocadero.jpg", loc: {lat: 48.8619, lng: 2.2886}, hop: {via: "游船 + Metro L6", dur: "40min"} },
-      { t: "22:15", h: "The Cambridge Public House · 世界第 20 收尾", d: "看完铁塔金色闪烁不回家，直接 M9 从 Trocadéro 坐到 République（11 站 25min）+ 步行 8min，约 22:20 到 8 Rue de Poitou。World's 50 Best Bars 2025 全球第 20，也是全球第一家 B Corp 认证酒吧——英式 pub 的外壳，精酿鸡尾酒的内核。必点：Guinness、house Pimm's（阿尔萨斯葡萄酒 + St Germain + gin）、每周一换的极简鸡尾酒（一份酒只用 3-6 种材料），配 sausage rolls / pies / pasties 垫肚子。不接预订、walk-in 友好，开到 01:00。", kind: "food", img: "assets/img/spots/the-cambridge.jpg", loc: {lat: 48.8637, lng: 2.3625}, hop: {via: "M9 Trocadéro → République + 步行 8min", dur: "33min"}, link: "https://www.thecambridge.paris/en/", ticket: "鸡尾酒 €14 · 精酿 €4.5-10 · 自然酒 €7 起", notice: "不接预订，walk-in 即可；周六 23:00 后会满，22:30 前到比较稳。" }
+      { t: "18:30", h: "西堤岛 → Pont Neuf · 码头周边", d: "从圣母院沿西堤岛步行到 Pont Neuf / Square du Vert Galant，20:30 前到达码头。", kind: "walk", loc: {lat: 48.8566, lng: 2.3412}, hop: {via: "步行", dur: "15-20min"} },
+      { t: "20:25", h: "Vedettes du Pont Neuf · 登船前到达", d: "Square du Vert Galant，75001 Paris。20:45 开船，凭证要求提前 15 分钟到达。", kind: "transit", loc: {lat: 48.8566, lng: 2.3412}, hop: {via: "步行", dur: "20:25 到码头"}, ticket: "凭证 1940875 · KANG CHEN · 3 位成人" },
+      { t: "20:45", h: "Les Vedettes du Pont Neuf · 1h 游船", d: "10/3/2026 20:45，Les Vedettes du Pont Neuf。登船点：Square du Vert Galant，75001 Paris。", kind: "venue", img: "assets/img/spots/seine-cruise.jpg", loc: {lat: 48.8566, lng: 2.3412}, hop: {via: "Square du Vert Galant", dur: "1h"}, link: "https://www.vedettesdupontneuf.com/", ticket: "已订 · dossier 1940875 · 已付款" },
+      { t: "22:00", h: "Pont Neuf 下船 · 前往 The Cambridge", d: "游船结束后从 Pont Neuf 前往 8 Rue de Poitou。", kind: "transit", loc: {lat: 48.8566, lng: 2.3412}, hop: {via: "打车 / 地铁", dur: "15-20min"} },
+      { t: "22:15", h: "The Cambridge Public House · 世界第 20 收尾", d: "从 Pont Neuf 到 8 Rue de Poitou，打车或地铁约 15-20min。World's 50 Best Bars 2025 全球第 20，也是全球第一家 B Corp 认证酒吧——英式 pub 的外壳，精酿鸡尾酒的内核。必点：Guinness、house Pimm's（阿尔萨斯葡萄酒 + St Germain + gin）、每周一换的极简鸡尾酒（一份酒只用 3-6 种材料），配 sausage rolls / pies / pasties 垫肚子。不接预订、walk-in 友好，开到 01:00。", kind: "food", img: "assets/img/spots/the-cambridge.jpg", loc: {lat: 48.8637, lng: 2.3625}, hop: {via: "M9 Trocadéro → République + 步行 8min", dur: "33min"}, link: "https://www.thecambridge.paris/en/", ticket: "鸡尾酒 €14 · 精酿 €4.5-10 · 自然酒 €7 起", notice: "不接预订，walk-in 即可；周六 23:00 后会满，22:30 前到比较稳。" }
     ],
-    vlog: ["Saint-Ouen 玻璃顶市场", "Dauphine 旧画框与黑胶", "Vernaison 摊位细节", "Pont Neuf 石雕仰拍", "圣母院飞天拱壁", "塞纳河蓝调水面", "铁塔金色闪烁 hyperlapse", "夏乐宫仰角", "Cambridge 的第一口 Pimm's"],
+    vlog: ["Saint-Ouen 玻璃顶市场", "Dauphine 旧画框与黑胶", "Vernaison 摊位细节", "Pont Neuf 石雕仰拍", "圣母院飞天拱壁", "Square du Vert Galant 登船凭证", "20:45 塞纳河夜航", "Cambridge 的第一口 Pimm's"],
     stay: { name: "Paris · Truly parisien apartment in St Germain des Prés", area: "6 区 · 46 Rue Jacob · ★4.91", note: "最后一晚 · 10/4 10:00 退房赶 CDG", url: "https://www.airbnb.com/rooms/23476199" },
     mapCenter: {lat: 48.8560, lng: 2.3380, zoom: 13},
     returnHome: { from: "The Cambridge（玛黑 3 区）", to: "46 Rue Jacob", distance: "2.3km", via: "打车 / 周六末班地铁", duration: "13-16min · €14-18", note: "周六地铁开到 01:40，可坐 M11 → Châtelet 换 M4 到 Saint-Germain-des-Prés（约 25min）；00:30 之后建议直接叫车，跨塞纳河 13-16min，€14-18。明早 10:00 退房赶 CDG，别硬撑。" }
@@ -609,7 +611,7 @@ const budget = {
         { t: "NCE 机场 T1 → 民宿 · 打车/Tram T2", amt: 20, note: "打车 15min 约 25€ 双人分摊，或 Tram T2 1.5€" },
         { t: "NCE → ORY · easyJet U24856 已购", amt: 872, note: "10/1 12:35-14:05 · 携程 1128150429939513 · 空客 320 · 经济舱无餐食 · 总 ¥1,744 / 2" },
         { t: "巴黎 Navigo Semaine 周票", amt: 235, note: "€30 周票（含 CDG↔市区），Sun-Sat 有效" },
-        { t: "ORY T1 → 拉丁区公寓 · 打车双人分摊", amt: 160, note: "10/1 14:05 落地 · €35-45 打车 / 2 · 35-40min · 约 19km" },
+        { t: "ORY T1 → La Perle · 打车双人分摊", amt: 148, note: "10/1 14:05 落地 · 巴黎左岸固定价 €37 / 2 · 35-40min" },
         { t: "10/4 打车 46 Rue Jacob → CDG · 双人分摊", amt: 220, note: "€55 打车 / 2 · 45-55min · 29.6km" },
         { t: "各城市打车零散 · 单人分摊", amt: 350, note: "巴塞/尼斯/巴黎 · 双人分摊后单人一半" }
       ]
@@ -620,7 +622,7 @@ const budget = {
         { t: "Madrid · Heart Of Madrid Apartments (1 晚)", amt: 642, note: "9/24 · 已订 · 单人 = 总 ¥1,284.09 / 2" },
         { t: "Barcelona · Rut's Loft Poblenou (3 晚)", amt: 2623, note: "9/25-9/28 · 已订 · 单人 = 总 ¥5,245.62 / 2" },
         { t: "Nice · Casa Californie Terrace & Beach (3 晚)", amt: 1670, note: "9/28-10/1 · 已订 · 单人 = 总 ¥3,339.72 / 2 · 房东 Aurore · HM8A4N4MFY" },
-        { t: "Paris · 拉丁区清真寺景观公寓 (1 晚)", amt: 883, note: "10/1 夜 · 已订 · ★4.87 · 单人 ¥882.96 = 总 ¥1,765.91 / 2 · 房东 Audrey · airbnb.cn/rooms/14190318" },
+        { t: "Paris · La Perle Saint Germain des Prés (1 晚)", amt: 1427, note: "10/1 夜 · Airbnb 支付差价 · 2 成人 · Classic Double/Twin · Pay at hotel €371.60 · 确认号 2563285089" },
         { t: "Paris · Truly Parisien St-Germain 46 Rue Jacob (2 晚)", amt: 2169, note: "10/2-10/4 · 已订 · ★4.91 · 单人 ¥2,168.89 = 总 ¥4,337.78 / 2 · airbnb.com/rooms/23476199" }
       ]
     },
@@ -636,9 +638,9 @@ const budget = {
         { t: "奥赛博物馆", amt: 126, note: "16€ 线上 · 10/2 下午 15:45 场 · 2026-03 起全员强制预约" },
         { t: "Palais Garnier 加尼叶歌剧院自助", amt: 118, note: "15€ · 10/3 上午（可选）· 现场不售票，必须线上订" },
         { t: "巴黎圣母院", amt: 0, note: "内殿免费 · 仅提前 2-3 天放号 · 塔楼登顶另付 16€" },
-        { t: "塞纳河蓝调游船", amt: 118, note: "€15（提前网购）· 现场 18€ · Bateaux Parisiens" },
+        { t: "Les Vedettes du Pont Neuf · 1h 游船", amt: 0, note: "10/3 20:45 · 已订已付款 · dossier 1940875 · 3 位成人 · KANG CHEN" },
         { t: "Círculo Bellas Artes 屋顶", amt: 39, note: "5€ 含一杯 · 9/24 收尾" },
-        { t: "Tibidabo 圣心堂登顶电梯", amt: 31, note: "4€ · 9/27 日落登顶 · 教堂与观景区免费" }
+        { t: "Carmel 山 · Pont de Mühlberg 日落", amt: 0, note: "免费 · 9/27 17:30 · Carrer de Mühlberg · 按帖子机位" }
       ]
     },
     {
