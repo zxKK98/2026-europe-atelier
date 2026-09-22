@@ -51,6 +51,14 @@ const days = [
       { t: "20:45", h: "OBC 交响乐团 · Mercè 广场免费音乐会", d: "巴塞罗那交响乐团暨加泰罗尼亚国家交响乐团（OBC）在 Plaça Major de Nou Barris 的年度免费公演。指挥 Miguel Sepúlveda，曲目：Borodin《波罗维茨舞曲》→ Bartók《罗马尼亚民间舞曲》→ Tchaikovsky《天鹅湖》选段。L'Auditori 页面列约 120 分钟，GuiaBCN 列 75 分钟；以 22:45 才能离场的保守时间做餐厅动线，免预约。", kind: "event", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "步行进场", dur: "20:40 前抵达"}, link: "https://www.auditori.cat/en/events/obc-merce-2026/", ticket: "免费 · 免预约 · 75-120min，按 2h 预留" },
       { t: "22:45", h: "La Broqueta · Poblenou 正式晚餐", d: "OBC 结束后回 Poblenou，22:45 才是这晚的正式晚餐。La Broqueta 周五连续营业至 00:00，离民宿约 5 分钟；点烤海鲜、烤肉或一份分享饭，终于按巴塞的真实节奏坐下来吃。人均约 25-35€。", kind: "food", loc: {lat: 41.4007, lng: 2.2014}, hop: {via: "Nou Barris → L11/L4 → Poblenou", dur: "35-40min"}, link: "https://www.bcnrestaurantes.com/eng/imprimir/la-broqueta", notice: "这是为 OBC 保留的晚餐窗口；若演出延迟，直接点轻食，00:00 前离店回民宿。" }
     ],
+    nightChoices: {
+      label: "La Mercè · 9/25 夜间二选一",
+      intro: "同晚的 OBC 与 Espigó del Gas 国际烟火在 22:00 重叠；只能选一条，不建议在两地之间硬赶。",
+      choices: [
+        { state: "KEEP PLAN", title: "OBC 交响乐团 · Nou Barris", time: "20:45 起 · 按 22:45 离场预留", fit: "保留既定晚餐节奏。完整听完 OBC 后回 Poblenou 的 La Broqueta，放弃 22:00 的烟火。", route: "Vinitus → Metro L5/L1/L11 或 taxi → Plaça Major de Nou Barris；最迟 20:40 到场。", arrival: "位置：Plaça Major de Nou Barris · 从 Vinitus 约 25–35min", exit: "散场：L11 → L4 → Poblenou，约 35–40min；再步行 5min 到 La Broqueta。", official: "https://www.auditori.cat/en/events/obc-merce-2026/" },
+        { state: "SWITCH PLAN", title: "International Fireworks Festival · FWF Concept", time: "22:00–22:20 · 免费", fit: "想看法国团队 FWF Concept 的海边 20 分钟烟火，就放弃 OBC；不要等 OBC 中途散场再赶，时间不成立。", route: "Vinitus → Passeig de Gràcia 乘 L4 往 La Pau → Ciutadella | Vila Olímpica → 沿海步行约 10min。", arrival: "位置：Espigó del Gas Beach，Passeig Marítim de la Barceloneta - Oriol Bohigas, 15–21；建议 21:25 前抵达。", exit: "散场：L4 Ciutadella | Vila Olímpica → Poblenou，再步行约 8min 回 Rut's Loft；或叫车回 Poblenou 约 15–20min。", official: "https://ajuntament.barcelona.cat/dretsidiversitat/en/detail/fwf-concept-fireworks-27th-international-fireworks-festival_99400092935" }
+      ]
+    },
     vlog: ["Atocha Almudena Grandes 站牌特写", "OUIGO 二层车厢座位 1D", "Casa Batlló 龙鳞屋顶仰角", "Poblenou 第一晚街角", "OBC 交响乐团 Nou Barris 广场全景", "天鹅湖终章时的人群"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1700, zoom: 13},
@@ -71,6 +79,14 @@ const days = [
       { t: "20:30–23:00", h: "Mercè 2026 · 地狱之门开启 → Correfoc 火跑全程", d: "20:30 在 Passeig de Gràcia 87 点燃 14m × 7m 的 Porta de l'Infern，火跑即由 Provença 向南推进。不要试图全程逆走抢位：以起点火门为第一机位，随后沿路线外侧顺着 Mallorca、València 方向南行跟拍；23:00 队伍在 Consell de Cent 路口收尾。下方两张图把路线与当晚节奏合并在一起，跟着四个节点走即可。", kind: "event", loc: {lat: 41.39350, lng: 2.16140}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Provença → Mallorca → València → Consell de Cent", dur: "400m · 约 2.5h"}, correfoc: { routeImg: "assets/img/spots/merce-correfoc-route.jpg", flowImg: "assets/img/spots/merce-correfoc-flow.png" }, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 无需预约" },
       { t: "23:30", h: "Sips · 世界第一酒吧（火跑结束后直奔）", d: "23:00 在 Consell de Cent 收尾后，顺人流步行到附近可上车街口再叫车；不要回 Provença 起点，也不再绕去 Bogatell。预留散场与封路缓冲，预计 23:30–23:45 到 Muntaner 108。Sips 是 2023 年全球最佳酒吧、近年稳定全球前三，做的是「吧台即剧场」：中央岛吧、没有传统 back bar，酒在桌上完成最后一步。必点 Krypta（倒进嗅觉装置里喝）、Primordial（双手捧金属铸模）、Frozen Martinez，多数 €15。周六开到 02:00。", kind: "food", img: "assets/img/spots/sips-barcelona.jpg", loc: {lat: 41.3925, lng: 2.1570}, hop: {via: "步行离开封路区 → 打车至 Muntaner 108", dur: "约 20-30min · €12-16"}, link: "https://sips.barcelona/", ticket: "鸡尾酒 €15-25", notice: "周二至周六 18:30-02:00，周日周一休。不接电话订位，只能发邮件 bookings@sips.barcelona；walk-in 看空位，23:00 后最难排。火跑散场会让 Passeig de Gràcia 周边拥堵，若 23:30 未离场就直接把到店预期推到 00:00。" }
     ],
+    nightChoices: {
+      label: "La Mercè · 9/26 火之二选一",
+      intro: "Correfoc 与 Espigó del Gas 的国际烟火同为 22:00 前后核心时段，相距约 4km；两条均完整体验才值得，不能串场。",
+      choices: [
+        { state: "KEEP PLAN", title: "Correfoc · Porta de l'Infern 火跑", time: "20:30–23:00 · 免费", fit: "保留最具参与感、也最适合拍摄的火跑夜。20:15 占位，先拍火门，再沿 Passeig de Gràcia 向南跟行。", route: "Boqueria → taxi 15–20min → Pg. de Gràcia / Provença；路线为 Provença → Mallorca → València → Consell de Cent。", arrival: "位置：起点 Pg. de Gràcia 87 / Provença；20:15 在路线外侧人行道占位，别站火线正面。", exit: "23:00 从 Consell de Cent 离开封路区再叫车；23:30–23:45 到 Sips（Muntaner 108）。", official: "https://www.barcelona.cat/lamerce/en" },
+        { state: "SWITCH PLAN", title: "International Fireworks Festival · 第二晚", time: "22:00–22:20 · 免费", fit: "若想连续两晚看海边国际烟火，今晚取消 Correfoc 与 Sips 的固定节奏；这是纯观赏型选择，不需要防火装备。", route: "Boqueria → taxi 15–20min 直达 Espigó del Gas；地铁可 L3 Liceu → Passeig de Gràcia 换 L4 至 Ciutadella | Vila Olímpica，再沿海步行约 10min。", arrival: "位置：Espigó del Gas Beach，Passeig Marítim de la Barceloneta - Oriol Bohigas, 15–21；建议 21:25 前到。", exit: "22:20 后若仍去 Sips，叫车约 15–20min；若回民宿，L4 Ciutadella | Vila Olímpica → Poblenou + 步行约 8min。", official: "https://www.tmb.cat/en/detall-avis/-/asset_publisher/T008gFXWe2mx?p_r_p_assetEntryId=1968892" }
+      ]
+    },
     vlog: ["Poblenou 早餐咖啡与海风", "圣家堂受难立面几何", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Sips 中央岛吧的 Krypta 嗅觉装置"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1720, zoom: 13},
@@ -89,6 +105,14 @@ const days = [
       { t: "20:30", h: "Carmel 山 → Nova Icària", d: "从 Carrer de Mühlberg 打车前往 Nova Icària Beach，22:00 前抵达海边。", kind: "transit", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "官方 taxi / FreeNow", dur: "25-35min · €18-25"} },
       { t: "22:00", h: "Mercè Piromusical · Nova Icària Beach 烟火闭幕", d: "9/27 周日 22:00，Nova Icària Beach。", kind: "event", img: "assets/img/spots/merce-piromusical.jpg", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "海滨步行或 L4", dur: "烟火结束后步行回 Poblenou"}, link: "https://www.barcelona.cat/lamerce/en/news/josep-montero-of-oques-grasses-curates-the-soundtrack-for-la-merces-piromusical-40802", ticket: "免费 · 22:00" }
     ],
+    nightChoices: {
+      label: "La Mercè · 9/27 最后一晚二选一",
+      intro: "巨人闭幕巡游与 22:00 Piromusical 有 30 分钟硬重叠。选择巨人就放弃烟火；选择烟火就不跟完整巡游。",
+      choices: [
+        { state: "KEEP PLAN", title: "La Mercè Piromusical · Nova Icària", time: "22:00–22:30 · 免费", fit: "保留 Carmel 日落 → 海面音乐烟火 → 步行回 Poblenou 的电影感收束。这是本届 La Mercè 官方定义的最终闭幕秀。", route: "Carmel / Pont de Mühlberg → 官方 taxi / FreeNow 直达 Pg. Marítim de Nova Icària；不建议依赖换乘。", arrival: "位置：Platja de la Nova Icària，Pg Marítim de Nova Icària, 60；20:30 从 Carmel 下山，建议 21:20–21:30 到场并靠人群边缘占位。", exit: "22:30 后先等人流疏散约 10min，再沿海滨向北步行回 Rut's Loft，约 20–25min / 1.8km；L4 也可从 Ciutadella | Vila Olímpica 或 Barceloneta 离开。", official: "https://www.barcelona.cat/lamerce/en/la-merce-piromusical" },
+        { state: "SWITCH PLAN", title: "Closing Ceremony · 城市巨人送别巡游", time: "20:30–22:30 · 免费", fit: "想把民俗收束拉满，就从 Carmel 日落切换为巨人巡游：完整跟着 City Giants 从 Sant Jaume 回到 Palau de la Virreina。此选项放弃 Piromusical。", route: "Casa Milà 步行至 Diagonal，乘 L3 往 Zona Universitària 方向到 Liceu，再步行约 8min 至 Plaça de Sant Jaume；全程约 20–25min。", arrival: "位置：Plaça de Sant Jaume，建议 19:55 前抵达；官方路线：Sant Jaume → Plaça del Rei → Plaça Nova → Plaça del Pi → La Rambla → Palau de la Virreina。", exit: "22:30 在 Palau de la Virreina / La Rambla 结束；步行至 Liceu，L3 → Passeig de Gràcia 换 L4 至 Poblenou，约 30–35min，或打车约 20min。", official: "https://www.barcelona.cat/lamerce/en/closing-ceremony" }
+      ]
+    },
     vlog: ["叠人塔队伍从 Palau de la Virreina 出发", "enxaneta 登顶瞬间", "Plaça de Sant Jaume 广场人群", "Casa Milà 屋顶烟囱", "Pont de Mühlberg 桥边上山", "焦糖山俯瞰圣家堂日落", "Nova Icària 海面上的 Piromusical 烟火"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12},
@@ -475,6 +499,27 @@ function renderDay(n) {
         </a>`).join("")}</div>
     </section>` : "";
 
+  const nightChoicesHtml = d.nightChoices ? `
+    <section class="day-night-choices" aria-label="${d.nightChoices.label}">
+      <div class="night-choice-head">
+        <span>Night choice · 自行决定</span>
+        <h3>${d.nightChoices.label}</h3>
+        <p>${d.nightChoices.intro}</p>
+      </div>
+      <div class="night-choice-grid">${d.nightChoices.choices.map((choice, index) => `
+        <article class="night-choice-card ${index === 0 ? "is-primary" : "is-alternative"}">
+          <div class="night-choice-top"><span>${choice.state}</span><b>${choice.time}</b></div>
+          <h4>${choice.title}</h4>
+          <p class="night-choice-fit">${choice.fit}</p>
+          <dl class="night-choice-details">
+            <div><dt>怎么去</dt><dd>${choice.route}</dd></div>
+            <div><dt>在哪看</dt><dd>${choice.arrival}</dd></div>
+            <div><dt>怎么走</dt><dd>${choice.exit}</dd></div>
+          </dl>
+          <a href="${choice.official}" target="_blank" rel="noopener" class="night-choice-link">官方活动信息 ↗</a>
+        </article>`).join("")}</div>
+    </section>` : "";
+
   // 住宿卡片：整卡可点击跳转
   const stayHtml = d.stay ? (
     d.stay.url ? `
@@ -524,6 +569,7 @@ function renderDay(n) {
         ${stayHtml}
       </div>
       ${altRestaurantsHtml}
+      ${nightChoicesHtml}
       <div class="day-map-wrap" aria-label="今日关键动线地图">
         <div class="day-map-head">
           <span class="map-tag">Map · 今日动线</span>
