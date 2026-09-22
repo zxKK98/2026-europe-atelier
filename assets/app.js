@@ -62,9 +62,10 @@ const days = [
       { t: "12:45", h: "圣家堂 · 已购票入内（留 2h30m）", d: "已购 12:45 场次（票面 30min 宽限，13:15 前入场有效）。正值午间太阳穿透西侧受难立面彩窗，把内殿柱林染成一整片橙红——高迪毕生的『石头森林』最魔幻的时刻。12:00 只做轻食补给；16:00 的 Paella 课会是下午的完整晚餐。",  kind: "museum", loc: {lat: 41.4036, lng: 2.1744}, img: "assets/img/spots/sagrada-familia.jpg", link: "https://sagradafamilia.org/en/tickets-individuals", ticket: "Basilica 26€（已购）· 含塔 36€", notice: "9 月开放 09:00-20:00。已购 9/26 周六 12:45 场次，13:15 前必须入场。需遮住肩膀和膝盖。" },
       { t: "15:15", h: "圣家堂 → Boqueria · 赶 GYG 集合", d: "出圣家堂后直接坐 L2 转 L3 到 Liceu，约 25 分钟。9/26 是周六；Boqueria 官方营业时间为周一至周六 08:00-20:30，市场导览可完整保留。", kind: "transit", loc: {lat: 41.3818, lng: 2.1717}, hop: {via: "Metro L2 → L3 · Liceu", dur: "25min · 2.5€"} },
       { t: "16:00", h: "GYG · Paella 烹饪课 + Boqueria 市集", d: "跟着大厨在 La Boqueria 选海鲜、米和藏红花，再回厨房做海鲜饭、Tapas 与 Sangria。全程 3 小时，市集导览、烹饪和晚餐都保留；9/26 是周六，不触发周日/节假日取消市集导览的规则。", kind: "food", loc: {lat: 41.3818, lng: 2.1717}, hop: {via: "步行出 Liceu", dur: "2min"}, link: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/", gyg: { title: "Paella 烹饪课 · Boqueria 市集采买", img: "assets/img/gyg/paella.jpg", rating: "4.8", reviews: "4,200+", price: "€72 起 · 3h", url: "https://www.getyourguide.com/barcelona-l45/paella-cooking-experience-with-boqueria-market-tour-t44533/" }, notice: "预订时选 9/26 周六 16:00 左右场次；若预订页仅显示相邻时段，以保留市集导览为优先。" },
-      { t: "19:15", h: "Boqueria → Passeig de Gràcia · Correfoc 入场", d: "课程结束后直接打车前往 Passeig de Gràcia 的 Provença 起点，约 15-20 分钟；19:35 左右抵达，先确认封路和观演位置。路线全长约 600m，主活动在 Provença → Consell de Cent 之间。", kind: "transit", loc: {lat: 41.39350, lng: 2.16140}, hop: {via: "打车 La Boqueria → Passeig de Gràcia / Provença", dur: "15-20min · €10-14"} },
-      { t: "20:30", h: "Mercè 2026 · Porta de l'Infern + Passeig de Gràcia Correfoc", d: "官方最新安排：9/26 周六在 Passeig de Gràcia 举行，先有 La Tabalada 鼓阵，18:00 是儿童 Correfoc；20:30 进入 Ceptrotada、点燃全新的 Porta de l'Infern 并启动成人 Correfoc。路线从 Passeig de Gràcia / Provença 往 Consell de Cent 方向约 600m。新地狱之门是本届最值得拍的视觉节点，但火线很近：长袖长裤、棉质衣物、帽子、包脚鞋，护目镜可选；站在侧面安全观看，不要正对火线。", kind: "event", loc: {lat: 41.39350, lng: 2.16140}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Passeig de Gràcia / Provença 起点", dur: "20:30 开始 · 600m 路线"}, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 无需预约" },
-      { t: "22:45", h: "Sips · 世界第一酒吧（火魔游行后直奔）", d: "Correfoc 主活动从 20:30 开始，结束和散场时间以现场为准；离开 Passeig de Gràcia 后直接打车到 Muntaner 108，不再绕去 Bogatell。Sips 是 2023 年全球最佳酒吧、近年稳定全球前三，做的是「吧台即剧场」：中央岛吧、没有传统 back bar，酒在桌上完成最后一步。必点 Krypta（倒进嗅觉装置里喝）、Primordial（双手捧金属铸模）、Frozen Martinez，多数 €15。周六开到 02:00。", kind: "food", img: "assets/img/spots/sips-barcelona.jpg", loc: {lat: 41.3925, lng: 2.1570}, hop: {via: "打车 Passeig de Gràcia → Muntaner 108", dur: "15-20min · €12-16"}, link: "https://sips.barcelona/", ticket: "鸡尾酒 €15-25", notice: "周二至周六 18:30-02:00，周日周一休。不接电话订位，只能发邮件 bookings@sips.barcelona；walk-in 看空位，23:00 后最难排。火魔游行散场会让 Passeig de Gràcia 周边拥堵，打车时间按现场延长。" }
+      { t: "19:15", h: "Boqueria → Passeig de Gràcia · 先抵 Provença", d: "课程结束后直接打车前往 Passeig de Gràcia / Provença，约 15–20 分钟；19:35 左右到场。先在 Casa Milà 一侧附近整理装备、确认封路与现场动向，不急着挤到火线前——真正的占位节点是 20:15。", kind: "transit", loc: {lat: 41.39350, lng: 2.16140}, hop: {via: "打车 La Boqueria → Passeig de Gràcia / Provença", dur: "15-20min · €10-14"} },
+      { t: "20:15", h: "Passeig de Gràcia · 沿线外侧占位", d: "从 Provença 口进入后，不要站在火跑正面；选 Passeig de Gràcia 路线外侧人行道，既能先拍 Porta de l'Infern，又留有随队向南走的空间。晚到只剩人头和大概率被前排挡住，20:15 到是最佳平衡。", kind: "event", loc: {lat: 41.39350, lng: 2.16140}, hop: {via: "Pg. de Gràcia 87 / Provença", dur: "外侧人行道 · 提前 15min"}, notice: "着装：长袖长裤、棉质衣物、帽子与包脚鞋；相机手机加防火星保护，绝不站在火线正前方。" },
+      { t: "20:30–23:00", h: "Mercè 2026 · 地狱之门开启 → Correfoc 火跑全程", d: "20:30 在 Passeig de Gràcia 87 点燃 14m × 7m 的 Porta de l'Infern，火跑即由 Provença 向南推进。不要试图全程逆走抢位：以起点火门为第一机位，随后沿路线外侧顺着 Mallorca、València 方向南行跟拍；23:00 队伍在 Consell de Cent 路口收尾。下方两张图把路线与当晚节奏合并在一起，跟着四个节点走即可。", kind: "event", loc: {lat: 41.39350, lng: 2.16140}, img: "assets/img/spots/merce-correfoc.jpg", hop: {via: "Provença → Mallorca → València → Consell de Cent", dur: "400m · 约 2.5h"}, correfoc: { routeImg: "assets/img/spots/merce-correfoc-route.jpg", flowImg: "assets/img/spots/merce-correfoc-flow.png" }, link: "https://www.barcelona.cat/lamerce/en", ticket: "免费 · 无需预约" },
+      { t: "23:30", h: "Sips · 世界第一酒吧（火跑结束后直奔）", d: "23:00 在 Consell de Cent 收尾后，顺人流步行到附近可上车街口再叫车；不要回 Provença 起点，也不再绕去 Bogatell。预留散场与封路缓冲，预计 23:30–23:45 到 Muntaner 108。Sips 是 2023 年全球最佳酒吧、近年稳定全球前三，做的是「吧台即剧场」：中央岛吧、没有传统 back bar，酒在桌上完成最后一步。必点 Krypta（倒进嗅觉装置里喝）、Primordial（双手捧金属铸模）、Frozen Martinez，多数 €15。周六开到 02:00。", kind: "food", img: "assets/img/spots/sips-barcelona.jpg", loc: {lat: 41.3925, lng: 2.1570}, hop: {via: "步行离开封路区 → 打车至 Muntaner 108", dur: "约 20-30min · €12-16"}, link: "https://sips.barcelona/", ticket: "鸡尾酒 €15-25", notice: "周二至周六 18:30-02:00，周日周一休。不接电话订位，只能发邮件 bookings@sips.barcelona；walk-in 看空位，23:00 后最难排。火跑散场会让 Passeig de Gràcia 周边拥堵，若 23:30 未离场就直接把到店预期推到 00:00。" }
     ],
     vlog: ["Poblenou 早餐咖啡与海风", "圣家堂受难立面几何", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Sips 中央岛吧的 Krypta 嗅觉装置"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
@@ -281,6 +282,20 @@ function renderDay(n) {
     const ticketHtml = s.ticket ? `<div class="slot-ticket"><span class="ticket-tag">Ticket</span> ${s.ticket}</div>` : "";
     const noticeHtml = s.notice ? `<div class="slot-notice"><span class="notice-tag">⚠ 公告</span> ${s.notice}</div>` : "";
     const remoteHtml = s.remote ? `<aside class="slot-remote" aria-label="远距离出行提醒"><div class="slot-remote-head"><span>Distance check</span><b>${s.remote.metric}</b></div><p>${s.remote.copy}</p></aside>` : "";
+    const correfocGuideHtml = s.correfoc ? `
+      <aside class="correfoc-guide" aria-label="火跑之夜路线与执行流程">
+        <div class="correfoc-guide-head">
+          <div><span>Mercè 2026 · Correfoc</span><h5>火跑之夜 · 一眼执行</h5></div>
+          <b>20:15–23:00</b>
+        </div>
+        <div class="correfoc-guide-facts">
+          <span>📍 20:15 外侧占位</span><span>🔥 20:30 地狱之门</span><span>🏃 400m 南行跟拍</span><span>🏁 23:00 Consell de Cent</span>
+        </div>
+        <div class="correfoc-guide-media">
+          <figure><img src="${s.correfoc.routeImg}" alt="La Mercè 火跑之夜路线图：Passeig de Gràcia Provença 至 Consell de Cent" loading="lazy" /><figcaption>路线：Provença → Consell de Cent</figcaption></figure>
+          <figure><img src="${s.correfoc.flowImg}" alt="La Mercè 火跑之夜当晚执行流程" loading="lazy" /><figcaption>节奏：占位 → 点火 → 跟行 → 离场</figcaption></figure>
+        </div>
+      </aside>` : "";
     const hopHtml = s.hop ? `<div class="slot-hop"><span class="hop-arr">↳</span> <b>${s.hop.via}</b> · ${s.hop.dur}</div>` : "";
     const gygHtml = s.gyg ? `
       <a class="slot-gyg" href="${s.gyg.url}" target="_blank" rel="noopener">
@@ -306,6 +321,7 @@ function renderDay(n) {
         ${imgHtml}
         ${hopHtml}
         ${remoteHtml}
+        ${correfocGuideHtml}
         <h4><span class="slot-icon">${slotIcon(s.kind)}</span> ${s.h}</h4>
         <p>${s.d}</p>
         ${ticketHtml}

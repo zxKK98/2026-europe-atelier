@@ -3695,3 +3695,102 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   .hg-3 { width: 112px; height: 148px; top: 7%;  right: -3%; }
   .hg-4 { width: 100px; height: 130px; bottom: 8%; right: -4%; }
 }
+
+/* ============================================================
+   3) Day 3 · Correfoc 路线卡
+   信息优先：先读四个动作，再看路线与流程原图。
+   ============================================================ */
+.correfoc-guide {
+  margin: 4px 0 18px;
+  padding: 20px;
+  border: 1px solid color-mix(in oklab, #d5422d 45%, var(--line));
+  border-radius: 16px;
+  background: linear-gradient(145deg, color-mix(in oklab, #d5422d 7%, var(--paper)), var(--paper));
+  box-shadow: 0 14px 32px -24px color-mix(in oklab, #7b1c14 60%, transparent);
+}
+.correfoc-guide-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid color-mix(in oklab, #d5422d 22%, var(--line));
+}
+.correfoc-guide-head span,
+.correfoc-guide-head b {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #b73425;
+}
+.correfoc-guide-head h5 {
+  margin-top: 5px;
+  font-family: var(--display);
+  font-size: 21px;
+  line-height: 1.15;
+  color: var(--ink);
+}
+.correfoc-guide-head b {
+  flex: 0 0 auto;
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: #c93225;
+  color: #fff;
+  letter-spacing: 0.04em;
+}
+.correfoc-guide-facts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 8px;
+  margin: 14px 0;
+}
+.correfoc-guide-facts span {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  padding: 8px 10px;
+  border-radius: 8px;
+  background: color-mix(in oklab, #d5422d 8%, var(--paper));
+  color: var(--ink-2);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1.35;
+}
+.correfoc-guide-media {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.correfoc-guide-media figure {
+  overflow: hidden;
+  margin: 0;
+  border: 1px solid color-mix(in oklab, #d5422d 18%, var(--line));
+  border-radius: 10px;
+  background: var(--paper);
+}
+.correfoc-guide-media img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+}
+.correfoc-guide-media figcaption {
+  padding: 8px 10px 9px;
+  color: var(--ink-2);
+  font-family: var(--mono);
+  font-size: 10px;
+  line-height: 1.35;
+  letter-spacing: 0.02em;
+}
+@media (max-width: 900px) {
+  .correfoc-guide { margin: 4px 0 16px; padding: 16px; }
+  .correfoc-guide-head h5 { font-size: 19px; }
+  .correfoc-guide-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .correfoc-guide-media { gap: 10px; }
+  .correfoc-guide-media figcaption { min-height: 42px; padding: 8px; }
+}
