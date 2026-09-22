@@ -3865,6 +3865,7 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
 }
 .night-choice-card.is-primary { border-top: 3px solid #aa6420; }
 .night-choice-card.is-alternative { border-top: 3px solid #a33b35; }
+.night-choice-card:only-child { grid-column: 1 / -1; }
 .night-choice-top {
   display: flex;
   justify-content: space-between;

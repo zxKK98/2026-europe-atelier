@@ -51,14 +51,6 @@ const days = [
       { t: "20:45", h: "OBC 交响乐团 · Mercè 广场免费音乐会", d: "巴塞罗那交响乐团暨加泰罗尼亚国家交响乐团（OBC）在 Plaça Major de Nou Barris 的年度免费公演。指挥 Miguel Sepúlveda，曲目：Borodin《波罗维茨舞曲》→ Bartók《罗马尼亚民间舞曲》→ Tchaikovsky《天鹅湖》选段。L'Auditori 页面列约 120 分钟，GuiaBCN 列 75 分钟；以 22:45 才能离场的保守时间做餐厅动线，免预约。", kind: "event", loc: {lat: 41.4490, lng: 2.1790}, hop: {via: "步行进场", dur: "20:40 前抵达"}, link: "https://www.auditori.cat/en/events/obc-merce-2026/", ticket: "免费 · 免预约 · 75-120min，按 2h 预留" },
       { t: "22:45", h: "La Broqueta · Poblenou 正式晚餐", d: "OBC 结束后回 Poblenou，22:45 才是这晚的正式晚餐。La Broqueta 周五连续营业至 00:00，离民宿约 5 分钟；点烤海鲜、烤肉或一份分享饭，终于按巴塞的真实节奏坐下来吃。人均约 25-35€。", kind: "food", loc: {lat: 41.4007, lng: 2.2014}, hop: {via: "Nou Barris → L11/L4 → Poblenou", dur: "35-40min"}, link: "https://www.bcnrestaurantes.com/eng/imprimir/la-broqueta", notice: "这是为 OBC 保留的晚餐窗口；若演出延迟，直接点轻食，00:00 前离店回民宿。" }
     ],
-    nightChoices: {
-      label: "La Mercè · 9/25 夜间二选一",
-      intro: "同晚的 OBC 与 Espigó del Gas 国际烟火在 22:00 重叠；只能选一条，不建议在两地之间硬赶。",
-      choices: [
-        { state: "KEEP PLAN", title: "OBC 交响乐团 · Nou Barris", time: "20:45 起 · 按 22:45 离场预留", fit: "保留既定晚餐节奏。完整听完 OBC 后回 Poblenou 的 La Broqueta，放弃 22:00 的烟火。", route: "Vinitus → Metro L5/L1/L11 或 taxi → Plaça Major de Nou Barris；最迟 20:40 到场。", arrival: "位置：Plaça Major de Nou Barris · 从 Vinitus 约 25–35min", exit: "散场：L11 → L4 → Poblenou，约 35–40min；再步行 5min 到 La Broqueta。", official: "https://www.auditori.cat/en/events/obc-merce-2026/" },
-        { state: "SWITCH PLAN", title: "International Fireworks Festival · FWF Concept", time: "22:00–22:20 · 免费", fit: "想看法国团队 FWF Concept 的海边 20 分钟烟火，就放弃 OBC；不要等 OBC 中途散场再赶，时间不成立。", route: "Vinitus → Passeig de Gràcia 乘 L4 往 La Pau → Ciutadella | Vila Olímpica → 沿海步行约 10min。", arrival: "位置：Espigó del Gas Beach，Passeig Marítim de la Barceloneta - Oriol Bohigas, 15–21；建议 21:25 前抵达。", exit: "散场：L4 Ciutadella | Vila Olímpica → Poblenou，再步行约 8min 回 Rut's Loft；或叫车回 Poblenou 约 15–20min。", official: "https://ajuntament.barcelona.cat/dretsidiversitat/en/detail/fwf-concept-fireworks-27th-international-fireworks-festival_99400092935" }
-      ]
-    },
     vlog: ["Atocha Almudena Grandes 站牌特写", "OUIGO 二层车厢座位 1D", "Casa Batlló 龙鳞屋顶仰角", "Poblenou 第一晚街角", "OBC 交响乐团 Nou Barris 广场全景", "天鹅湖终章时的人群"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.3900, lng: 2.1700, zoom: 13},
@@ -80,11 +72,10 @@ const days = [
       { t: "23:30", h: "Sips · 世界第一酒吧（火跑结束后直奔）", d: "23:00 在 Consell de Cent 收尾后，顺人流步行到附近可上车街口再叫车；不要回 Provença 起点，也不再绕去 Bogatell。预留散场与封路缓冲，预计 23:30–23:45 到 Muntaner 108。Sips 是 2023 年全球最佳酒吧、近年稳定全球前三，做的是「吧台即剧场」：中央岛吧、没有传统 back bar，酒在桌上完成最后一步。必点 Krypta（倒进嗅觉装置里喝）、Primordial（双手捧金属铸模）、Frozen Martinez，多数 €15。周六开到 02:00。", kind: "food", img: "assets/img/spots/sips-barcelona.jpg", loc: {lat: 41.3925, lng: 2.1570}, hop: {via: "步行离开封路区 → 打车至 Muntaner 108", dur: "约 20-30min · €12-16"}, link: "https://sips.barcelona/", ticket: "鸡尾酒 €15-25", notice: "周二至周六 18:30-02:00，周日周一休。不接电话订位，只能发邮件 bookings@sips.barcelona；walk-in 看空位，23:00 后最难排。火跑散场会让 Passeig de Gràcia 周边拥堵，若 23:30 未离场就直接把到店预期推到 00:00。" }
     ],
     nightChoices: {
-      label: "La Mercè · 9/26 火之二选一",
-      intro: "Correfoc 与 Espigó del Gas 的国际烟火同为 22:00 前后核心时段，相距约 4km；两条均完整体验才值得，不能串场。",
+      label: "La Mercè · 9/26 夜间锁定路线",
+      intro: "不再保留同晚的烟火备选。这晚只执行 Correfoc 全程火跑，再去 Sips；所有时间与离场交通已按封路缓冲排好。",
       choices: [
-        { state: "KEEP PLAN", title: "Correfoc · Porta de l'Infern 火跑", time: "20:30–23:00 · 免费", fit: "保留最具参与感、也最适合拍摄的火跑夜。20:15 占位，先拍火门，再沿 Passeig de Gràcia 向南跟行。", route: "Boqueria → taxi 15–20min → Pg. de Gràcia / Provença；路线为 Provença → Mallorca → València → Consell de Cent。", arrival: "位置：起点 Pg. de Gràcia 87 / Provença；20:15 在路线外侧人行道占位，别站火线正面。", exit: "23:00 从 Consell de Cent 离开封路区再叫车；23:30–23:45 到 Sips（Muntaner 108）。", official: "https://www.barcelona.cat/lamerce/en" },
-        { state: "SWITCH PLAN", title: "International Fireworks Festival · 第二晚", time: "22:00–22:20 · 免费", fit: "若想连续两晚看海边国际烟火，今晚取消 Correfoc 与 Sips 的固定节奏；这是纯观赏型选择，不需要防火装备。", route: "Boqueria → taxi 15–20min 直达 Espigó del Gas；地铁可 L3 Liceu → Passeig de Gràcia 换 L4 至 Ciutadella | Vila Olímpica，再沿海步行约 10min。", arrival: "位置：Espigó del Gas Beach，Passeig Marítim de la Barceloneta - Oriol Bohigas, 15–21；建议 21:25 前到。", exit: "22:20 后若仍去 Sips，叫车约 15–20min；若回民宿，L4 Ciutadella | Vila Olímpica → Poblenou + 步行约 8min。", official: "https://www.tmb.cat/en/detall-avis/-/asset_publisher/T008gFXWe2mx?p_r_p_assetEntryId=1968892" }
+        { state: "LOCKED PLAN", title: "Correfoc 火跑 → Sips", time: "20:15–00:00 · 火跑免费", fit: "20:15 在 Provença 外侧占位，20:30–23:00 沿火跑跟拍；离开封路区后直接前往 Sips，把最具参与感的一晚完整收住。", route: "Boqueria → taxi 15–20min → Pg. de Gràcia / Provença；路线为 Provença → Mallorca → València → Consell de Cent。", arrival: "位置：起点 Pg. de Gràcia 87 / Provença；20:15 在路线外侧人行道占位，别站火线正面。", exit: "23:00 从 Consell de Cent 离开封路区再叫车；23:30–23:45 到 Sips（Muntaner 108），约 00:00 入店。", official: "https://www.barcelona.cat/lamerce/en" }
       ]
     },
     vlog: ["Poblenou 早餐咖啡与海风", "圣家堂受难立面几何", "圣家堂彩窗染红的手", "Boqueria 海鲜摊与藏红花", "Paella 出锅特写", "Porta de l'Infern 火花特写", "Sips 中央岛吧的 Krypta 嗅觉装置"],
@@ -105,14 +96,6 @@ const days = [
       { t: "20:30", h: "Carmel 山 → Nova Icària", d: "从 Carrer de Mühlberg 打车前往 Nova Icària Beach，22:00 前抵达海边。", kind: "transit", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "官方 taxi / FreeNow", dur: "25-35min · €18-25"} },
       { t: "22:00", h: "Mercè Piromusical · Nova Icària Beach 烟火闭幕", d: "9/27 周日 22:00，Nova Icària Beach。", kind: "event", img: "assets/img/spots/merce-piromusical.jpg", loc: {lat: 41.3897, lng: 2.1965}, hop: {via: "海滨步行或 L4", dur: "烟火结束后步行回 Poblenou"}, link: "https://www.barcelona.cat/lamerce/en/news/josep-montero-of-oques-grasses-curates-the-soundtrack-for-la-merces-piromusical-40802", ticket: "免费 · 22:00" }
     ],
-    nightChoices: {
-      label: "La Mercè · 9/27 最后一晚二选一",
-      intro: "巨人闭幕巡游与 22:00 Piromusical 有 30 分钟硬重叠。选择巨人就放弃烟火；选择烟火就不跟完整巡游。",
-      choices: [
-        { state: "KEEP PLAN", title: "La Mercè Piromusical · Nova Icària", time: "22:00–22:30 · 免费", fit: "保留 Carmel 日落 → 海面音乐烟火 → 步行回 Poblenou 的电影感收束。这是本届 La Mercè 官方定义的最终闭幕秀。", route: "Carmel / Pont de Mühlberg → 官方 taxi / FreeNow 直达 Pg. Marítim de Nova Icària；不建议依赖换乘。", arrival: "位置：Platja de la Nova Icària，Pg Marítim de Nova Icària, 60；20:30 从 Carmel 下山，建议 21:20–21:30 到场并靠人群边缘占位。", exit: "22:30 后先等人流疏散约 10min，再沿海滨向北步行回 Rut's Loft，约 20–25min / 1.8km；L4 也可从 Ciutadella | Vila Olímpica 或 Barceloneta 离开。", official: "https://www.barcelona.cat/lamerce/en/la-merce-piromusical" },
-        { state: "SWITCH PLAN", title: "Closing Ceremony · 城市巨人送别巡游", time: "20:30–22:30 · 免费", fit: "想把民俗收束拉满，就从 Carmel 日落切换为巨人巡游：完整跟着 City Giants 从 Sant Jaume 回到 Palau de la Virreina。此选项放弃 Piromusical。", route: "Casa Milà 步行至 Diagonal，乘 L3 往 Zona Universitària 方向到 Liceu，再步行约 8min 至 Plaça de Sant Jaume；全程约 20–25min。", arrival: "位置：Plaça de Sant Jaume，建议 19:55 前抵达；官方路线：Sant Jaume → Plaça del Rei → Plaça Nova → Plaça del Pi → La Rambla → Palau de la Virreina。", exit: "22:30 在 Palau de la Virreina / La Rambla 结束；步行至 Liceu，L3 → Passeig de Gràcia 换 L4 至 Poblenou，约 30–35min，或打车约 20min。", official: "https://www.barcelona.cat/lamerce/en/closing-ceremony" }
-      ]
-    },
     vlog: ["叠人塔队伍从 Palau de la Virreina 出发", "enxaneta 登顶瞬间", "Plaça de Sant Jaume 广场人群", "Casa Milà 屋顶烟囱", "Pont de Mühlberg 桥边上山", "焦糖山俯瞰圣家堂日落", "Nova Icària 海面上的 Piromusical 烟火"],
     stay: { name: "Rut's Loft · Poblenou", area: "Calle Pellaires 35", note: "植物设计 Loft · 距 Bogatell 海滩步行 5min", url: "https://www.airbnb.cn/rooms/9140899" },
     mapCenter: {lat: 41.4090, lng: 2.1550, zoom: 12},
@@ -175,31 +158,26 @@ const days = [
     returnHome: { from: "尼斯晚餐", to: "Casa Californie", distance: "视地点约 1-4km", via: "打车", duration: "8-15min", note: "这晚不锁定单一餐厅；饭后直接叫车回 220 Avenue de la Californie，避免为回程再折返 Tram。" }
   },
   {
-    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · Septime 之夜", theme: "Northbound · La Perle + Septime",
-    desc: "易捷 U24856：尼斯 12:35 → 奥利 14:05。14:00 后入住 La Perle Saint Germain des Prés，14 Rue des Canettes。16:00 弹性参观 Grand Palais 的 Cézanne et nous，19:30 Septime 晚餐；10/2 12:00 前退房，转住 46 Rue Jacob。",
+    n: 8, date: "Oct 1 · Thu", city: "尼斯 → 巴黎 · Erso 之夜", theme: "Northbound · La Perle + Erso",
+    desc: "易捷 U24856：尼斯 12:35 → 奥利 14:05。14:00 后入住 La Perle Saint Germain des Prés，14 Rue des Canettes。16:00 弹性参观 Grand Palais 的 Cézanne et nous；19:45 已确认在 Erso（18 Rue Saint-Ambroise）用餐，JAY DUAN、2 人；10/2 12:00 前退房，转住 46 Rue Jacob。",
     slots: [
       { t: "09:30", h: "Casa Californie 提前退房 · 收拾行李", d: "12:35 的航班要 11:00 到 T2 值机，所以今早提前退房（比 11:00 的硬性时间早）。天使湾散步这次跳过——留给明年。房东那边打个招呼，行李直接带走不寄存。", kind: "stay", loc: {lat: 43.68793, lng: 7.24373}, notice: "为赶航班提前退房，不安排 Promenade 晨间散步。" },
       { t: "10:30", h: "打车 Californie → 尼斯机场 T2", d: "从 220 Avenue de la Californie 到 NCE T2 打车约 10-12min · 22€（双人分摊 11€）。也可以走 Tram T2（1.5€/人）但带行李换乘麻烦，赶飞机就打车。11:00 前到航站楼。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, hop: {via: "打车", dur: "10-12min · 22€"} },
-      { t: "11:00", h: "T2 值机 + 安检 · 机场吃早午饭", d: "易捷是廉航，网上提前 check-in 好、行李额确认清楚（随身 56×45×25cm 免费，托运需另购）。安检后 T2 有 Paul、Pret 之类，随便吃点——这趟航班无餐食，飞机上什么都没有。今晚 Septime 是 tasting menu，中午别吃太饱。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, notice: "easyJet 经济舱无餐食。登机前吃饱或买点带上。" },
+      { t: "11:00", h: "T2 值机 + 安检 · 机场吃早午饭", d: "易捷是廉航，网上提前 check-in 好、行李额确认清楚（随身 56×45×25cm 免费，托运需另购）。安检后 T2 有 Paul、Pret 之类，随便吃点——这趟航班无餐食，飞机上什么都没有。今晚 19:45 已订 Erso，中午别吃太饱。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, notice: "easyJet 经济舱无餐食。登机前吃饱或买点带上。" },
       { t: "12:35", h: "NCE T2 → ORY T1 · easyJet U24856", d: "尼斯蔚蓝海岸 T2 12:35 起飞 → 巴黎奥利 T1 14:05 落地，飞行 1h30m，空客 320（中型）。订单号 1128150429939513，携程出票中。靠窗能看到阿尔卑斯山脊往北铺开——起飞后 20 分钟左右最好看。", kind: "transit", loc: {lat: 43.6584, lng: 7.2149}, link: "https://www.easyjet.com/en", ticket: "已购 · 总 ¥1,744 双人（人均 ¥872）", notice: "易捷 U24856 · 经济舱无餐食 · 空客 320。落地是奥利 ORY 不是 CDG。" },
       { t: "14:05", h: "ORY T1 落地 · 前往 La Perle", d: "奥利 T1 → 14 Rue des Canettes，官方 taxi 约 35-40min；巴黎左岸固定价 €37。", kind: "transit", loc: {lat: 48.7262, lng: 2.3652}, hop: {via: "官方 taxi ORY T1 → Saint-Germain", dur: "35-40min · €37"} },
       { t: "15:00", h: "La Perle Saint Germain des Prés · Check-in", d: "14 Rue des Canettes，Classic Double or Twin Room，CHEN/KANG，2 位成人，无早餐。确认号 2563285089；订单号 112815100834077。", kind: "stay", loc: {lat: 48.8532, lng: 2.3358}, ticket: "10/1 入住 · 10/2 12:00 前退房" },
       { t: "15:20", h: "La Perle → Grand Palais", d: "航班准点并完成入住后，前往 Grand Palais。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "打车", dur: "15-20min"} },
       { t: "16:00", h: "Cézanne et nous · Grand Palais", d: "用 75-90min 看这场秋季大展：约 180 件作品，以 Cézanne 为核心，串联 Gauguin、Matisse、Picasso、Mondrian、Joan Mitchell、Bridget Riley 与 Peter Doig。重点不是“看一遍塞尚”，而是看他的结构、色彩和空间语言怎样被后来的现代艺术家拆解再造。", kind: "museum", img: "assets/img/spots/cezanne-et-nous.jpg", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "步行入场", dur: "75-90min"}, link: "https://www.grandpalais.fr/en/program/cezanne-et-nous", ticket: "全价 €19 · 建议预约时段", notice: "展期 2026/9/23-2027/1/17。此条为航班准点后的弹性项；若未在15:20离开公寓，直接跳过。" },
-      { t: "17:35", h: "Grand Palais → Septime · 直接去餐厅", d: "看完展前往 Septime（80 Rue de Charonne）。", kind: "transit", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "打车", dur: "20-25min"} },
-      { t: "18:05", h: "备用方案 · La Perle → Septime", d: "不去 Cézanne 时，18:05 从 La Perle 出发前往 80 Rue de Charonne。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "步行 + M4/M5 地铁", dur: "20-25min"}, notice: "与 Grand Palais → Septime 路线二选一。" },
-      { t: "19:30", h: "Septime · waitlist 21:00", d: "80 Rue de Charonne, 75011。当前只有 10/1 周四 21:00、2 人 waitlist，尚未收到空位通知。", kind: "food", img: "assets/img/spots/rue-de-charonne.jpg", loc: {lat: 48.8547, lng: 2.3806}, link: "https://septime-charonne.fr/en/", ticket: "Waitlist · 10/1 21:00 · 2 人", notice: "以备选餐厅为主；若 Septime 临时放位，再替换当晚选择。" },
-      { t: "22:10", h: "Septime La Cave · 1 杯自然酒", d: "Septime 用餐后到 3 Rue Basfroi，喝一杯自然酒；随后回 La Perle Saint Germain des Prés。", kind: "walk", loc: {lat: 48.8542, lng: 2.3822}, hop: {via: "步行 + 打车", dur: "约 15min 到酒店"}, link: "https://septime-charonne.fr/en/" }
+      { t: "17:35", h: "Grand Palais → Erso · 直接去餐厅", d: "看完展前往 Erso（18 Rue Saint-Ambroise, 75011 Paris）。", kind: "transit", loc: {lat: 48.8661, lng: 2.3126}, hop: {via: "打车", dur: "20-25min"} },
+      { t: "18:05", h: "备用方案 · La Perle → Erso", d: "不去 Cézanne 时，18:05 从 La Perle 出发前往 18 Rue Saint-Ambroise。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "M4 + M9 或打车", dur: "25-30min"}, notice: "与 Grand Palais → Erso 路线二选一；建议 19:30 前到附近。" },
+      { t: "19:45", h: "Erso · 已确认晚餐", d: "18 Rue Saint-Ambroise, 75011 Paris。已确认预订：2026/10/1 周四 19:45，JAY DUAN，2 人。Erso 是一间季节性法式邻里餐厅，开放式厨房与小庭院让这顿巴黎第一晚更松弛；按现场菜单点菜与配酒即可。", kind: "food", img: "assets/img/spots/erso.jpg", loc: {lat: 48.8623934, lng: 2.3781824}, link: "https://erso-restaurant.fr/en/home", ticket: "已订 · JAY DUAN · 10/1 19:45 · 2 人", notice: "官方电话 +33 1 81 69 96 55；周二至周六晚餐 19:30-22:00。若需调整，请使用确认邮件中的 Manage my reservation 链接。" },
+      { t: "22:00", h: "Erso → La Perle · 回左岸休息", d: "晚餐后直接打车回 La Perle Saint Germain des Prés，保留巴黎第一晚的休息节奏，不再额外塞酒吧。", kind: "transit", loc: {lat: 48.8532, lng: 2.3358}, hop: {via: "官方 taxi / G7", dur: "15-20min · 约 3.3km"} }
     ],
-    vlog: ["Californie 提前退房", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站", "La Perle 酒店凭证", "Grand Palais 塞尚展入口", "Septime 门牌与 tasting menu", "Septime La Cave 自然酒"],
+    vlog: ["Californie 提前退房", "NCE T2 值机牌与登机口", "空中阿尔卑斯北望", "ORY T1 出站", "La Perle 酒店凭证", "Grand Palais 塞尚展入口", "Erso 门牌与开放式厨房", "巴黎第一晚的返程车窗"],
     stay: { name: "La Perle Saint Germain des Prés", area: "14 Rue des Canettes · 75006 Paris", note: "1 晚 · CHEN/KANG · 2 成人 · Classic Double or Twin · 无早餐 · €371.60 · Airbnb 支付差价 · 确认号 2563285089", url: null },
     mapCenter: {lat: 48.8532, lng: 2.3358, zoom: 15},
-    returnHome: { from: "Septime La Cave", to: "La Perle Saint Germain des Prés", distance: "约 3.0km", via: "打车", duration: "12-15min", note: "3 Rue Basfroi → 14 Rue des Canettes。" },
-    altRestaurants: [
-      { rank: "A", name: "Clamato", tag: "同团队 · Michelin Bib Gourmand", time: "19:00–22:30", price: "€35–55 / 人", booking: "不接受预订 · 先到先得", route: "80 Rue de Charonne · Septime 隔壁", fit: "最接近 Septime 的替代：海鲜、小盘、自然酒。19:00 开门，建议 18:30 到门口排队。", url: "https://clamato-charonne.fr/" },
-      { rank: "B", name: "Le Servan", tag: "Michelin Guide · Modern Cuisine", time: "19:30–22:30", price: "€€ · 约 €50–70 / 人", booking: "需直接联系餐厅订位", route: "32 Rue Saint-Maur · 11 区", fit: "坐下来吃的完整晚餐；法式底子 + 亚洲风味，适合替代 Septime 的正式感。", url: "https://guide.michelin.com/tw/en/ile-de-france/paris/restaurant/le-servan" },
-      { rank: "C", name: "Erso", tag: "Michelin Guide · Modern Cuisine", time: "19:30–22:00", price: "€€ · 约 €50–70 / 人", booking: "晚餐强烈建议订位", route: "18 Rue Saint-Ambroise · 11 区", fit: "蓝色木质小餐厅 + 开放式厨房；更安静、更像一顿精致邻里晚餐。", url: "https://guide.michelin.com/mt/en/ile-de-france/paris/restaurant/erso" }
-    ]
+    returnHome: { from: "Erso · 18 Rue Saint-Ambroise", to: "La Perle Saint Germain des Prés", distance: "约 3.3km", via: "打车", duration: "15-20min", note: "Erso → 14 Rue des Canettes，晚餐后直接回酒店。" }
   },
   {
     n: 9, date: "Oct 2 · Fri", city: "巴黎 · 左岸卢浮宫日", theme: "Louvre + Rive Gauche Salon",
@@ -272,7 +250,7 @@ const dayBriefs = {
   5: { summary: "巴塞最后半天，轻食后飞往尼斯。", focus: "海滩 · Barbocata2 · 转场", shot: "海蓝与城市线条", outfit: "海军蓝 / 白 / 赤陶" },
   6: { summary: "Antibes 集市、城堡 Picasso、尼斯城堡山。", focus: "集市 · 毕加索 · 海湾", shot: "钴蓝海面与赭石城墙", outfit: "海蓝 / 亚麻白 / 芥末黄" },
   7: { summary: "Èze 悬崖花园与 Villefranche 彩色海湾。", focus: "香水 · 悬崖 · 海湾", shot: "彩色立面与海天线", outfit: "柠檬黄 / 天蓝 / 白" },
-  8: { summary: "尼斯飞巴黎，入住左岸，Septime 只保留候补。", focus: "La Perle · Cézanne · 晚餐备选", shot: "左岸门牌与低饱和室内", outfit: "灰蓝 / 黑 / 银色" },
+  8: { summary: "尼斯飞巴黎，入住左岸，19:45 已订 Erso。", focus: "La Perle · Cézanne · Erso", shot: "左岸门牌与低饱和室内", outfit: "灰蓝 / 黑 / 银色" },
   9: { summary: "卢浮宫减负路线，奥赛 Bartholdi，夜逛左岸。", focus: "三宝 · 自由女神 · Rue de Buci", shot: "金色大厅与塞纳河蓝调", outfit: "焦糖 / 海军蓝 / 米白" },
   10: { summary: "Saint-Ouen 旧物、圣母院、20:45 塞纳河游船。", focus: "旧物 · 哥特建筑 · 夜航", shot: "旧画框与河面灯光", outfit: "橄榄绿 / 棕 / 奶油白" },
   11: { summary: "左岸最后早餐，退房后前往 CDG。", focus: "咖啡 · Poilâne · 回程", shot: "清晨街角与面包纸袋", outfit: "燕麦色 / 深蓝 / 红色小点" }
@@ -480,29 +458,10 @@ function renderDay(n) {
     `<span>${v}</span>${i < d.vlog.length - 1 ? '<span class="arr">↓</span>' : ''}`
   ).join("");
 
-  const altRestaurantsHtml = d.altRestaurants ? `
-    <section class="day-alternatives" aria-label="Septime 备选餐厅">
-      <div class="day-alternatives-head">
-        <span class="day-alternatives-kicker">Plan B · 晚餐选择</span>
-        <h3>Septime 未放位时，选一间</h3>
-        <p>当前 waitlist：10/1 21:00 · 2 人。先按下面顺序处理，不需要再临时搜索。</p>
-      </div>
-      <div class="day-alternatives-grid">${d.altRestaurants.map(r => `
-        <a class="day-alt-card alt-${r.rank.toLowerCase()}" href="${r.url}" target="_blank" rel="noopener">
-          <div class="day-alt-top"><span class="day-alt-rank">${r.rank}</span><span class="day-alt-tag">${r.tag}</span></div>
-          <h4>${r.name}</h4>
-          <p class="day-alt-fit">${r.fit}</p>
-          <div class="day-alt-facts"><span>${r.time}</span><span>${r.price}</span></div>
-          <div class="day-alt-route">${r.route}</div>
-          <div class="day-alt-booking">${r.booking}</div>
-          <span class="day-alt-link">查看订位 / 营业信息 ↗</span>
-        </a>`).join("")}</div>
-    </section>` : "";
-
   const nightChoicesHtml = d.nightChoices ? `
     <section class="day-night-choices" aria-label="${d.nightChoices.label}">
       <div class="night-choice-head">
-        <span>Night choice · 自行决定</span>
+        <span>${d.nightChoices.choices.length === 1 ? "Night plan · 已锁定" : "Night choice · 自行决定"}</span>
         <h3>${d.nightChoices.label}</h3>
         <p>${d.nightChoices.intro}</p>
       </div>
@@ -568,7 +527,6 @@ function renderDay(n) {
         ${meta ? renderWeatherSkeleton(meta) : ""}
         ${stayHtml}
       </div>
-      ${altRestaurantsHtml}
       ${nightChoicesHtml}
       <div class="day-map-wrap" aria-label="今日关键动线地图">
         <div class="day-map-head">
@@ -848,7 +806,7 @@ const budget = {
       items: [
         { t: "早餐 x 11 · 咖啡店/面包房", amt: 770, note: "每天 8-10€ 单人" },
         { t: "午餐 x 11 · 中档小馆", amt: 2310, note: "每餐 25-35€ 单人 · 含 9/27 Paco Meralgo 已订午餐（约 35-45€）" },
-        { t: "Septime 晚市 tasting（10/1）", amt: 1176, note: "€150/人（tasting €135-160 + 配酒 €90 可选）· 米其林一星" },
+        { t: "Erso 已订晚餐（10/1）", amt: 700, note: "19:45 · 2 人已订；按 €45/人 + 饮品预留，结账以现场菜单为准" },
         { t: "晚餐 x 10 · 一顿好餐 + 日常", amt: 3500, note: "含 Casa Amàlia/Denassus/La Merenda 级别 45-60€ 单人" },
         { t: "咖啡/甜品/tapas 零花", amt: 900, note: "Nomad/Ten Belles/Café de Flore 等 单人" }
       ]
