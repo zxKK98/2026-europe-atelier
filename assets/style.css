@@ -1903,6 +1903,13 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   text-transform: uppercase;
   color: var(--ink-3);
 }
+.map-note {
+  margin: 10px 2px 0;
+  color: var(--ink-3);
+  font-family: var(--sans);
+  font-size: 11px;
+  line-height: 1.5;
+}
 .day-map {
   height: 360px;
   border-radius: 12px;
@@ -1970,6 +1977,11 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
 .map-popup {
   font-family: var(--sans);
   min-width: 200px;
+}
+.map-popup-stop + .map-popup-stop {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--line);
 }
 .popup-time {
   font-family: var(--mono);
@@ -2260,7 +2272,9 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
   .day-stay { padding: 12px 14px; }
   .day-stay-note { margin-left: 0; width: 100%; }
   .day-map-wrap { padding: 16px 14px 18px; }
-  .day-map { height: 280px; }
+  .day-map { height: clamp(260px, 72vw, 340px); }
+  .map-hint { font-size: 9.5px; letter-spacing: 0.08em; }
+  .map-note { font-size: 10.5px; }
   .bud-grid { grid-template-columns: 1fr; gap: 16px; }
   .bud-row { grid-template-columns: 1fr auto; }
   .bud-n { grid-column: 1 / -1; padding-top: 2px; }
@@ -3682,30 +3696,27 @@ body[data-active-part]:not([data-active-part="days"]) .mnav-days { display: none
    ============================================================ */
 @media (min-width: 901px) {
   .day-card {
+    grid-template-columns: minmax(0, 1fr);
     align-items: start;
-    column-gap: 60px;
     row-gap: 48px;
   }
   .day-hero {
     grid-column: 1;
     grid-row: 1;
+    max-width: 920px;
   }
   .day-map-wrap {
-    grid-column: 2;
-    grid-row: 1;
-    align-self: stretch;
-    display: flex;
-    flex-direction: column;
+    grid-column: 1 / -1;
+    grid-row: 2;
     margin: 0;
   }
   .day-map-wrap .day-map {
-    flex: 1 1 auto;
-    height: auto;
-    min-height: 360px;
+    height: clamp(440px, 42vw, 620px);
+    min-height: 0;
   }
   .day-timeline {
     grid-column: 1 / -1;
-    grid-row: 2;
+    grid-row: 3;
   }
   .day-return {
     margin: 4px 0 0 104px;

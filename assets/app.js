@@ -355,8 +355,41 @@ async function loadWeather(dayNumber) {
   }
 }
 
+function mapDistanceKm(a, b) {
+  const toRadians = deg => deg * Math.PI / 180;
+  const earthRadiusKm = 6371;
+  const latDelta = toRadians(b.lat - a.lat);
+  const lngDelta = toRadians(b.lng - a.lng);
+  const latA = toRadians(a.lat);
+  const latB = toRadians(b.lat);
+  const haversine = Math.sin(latDelta / 2) ** 2 + Math.cos(latA) * Math.cos(latB) * Math.sin(lngDelta / 2) ** 2;
+  return earthRadiusKm * 2 * Math.atan2(Math.sqrt(haversine), Math.sqrt(1 - haversine));
+}
+
+function selectMapStops(d) {
+  const center = d.mapCenter || { lat: 48.8600, lng: 2.3400 };
+  const localSlots = d.slots.filter(s => s.loc && Number.isFinite(s.loc.lat) && Number.isFinite(s.loc.lng) && mapDistanceKm(center, s.loc) <= 18);
+  // 地图讲“抵达后的城市动线”：交通段留在时间轴，关键停靠才进入地图。
+  const experienceSlots = localSlots.filter(s => s.kind !== "transit");
+  const candidates = experienceSlots.length ? experienceSlots : localSlots;
+  const groupedStops = new Map();
+
+  candidates.forEach(slot => {
+    const key = `${slot.loc.lat.toFixed(4)},${slot.loc.lng.toFixed(4)}`;
+    const existing = groupedStops.get(key);
+    if (existing) {
+      existing.slots.push(slot);
+    } else {
+      groupedStops.set(key, { loc: slot.loc, slots: [slot] });
+    }
+  });
+
+  return [...groupedStops.values()];
+}
+
 function renderDay(n) {
   const d = days[n - 1];
+  const mapStops = selectMapStops(d);
 
   // 销毁上一个地图
   if (currentMap) {
@@ -491,22 +524,23 @@ function renderDay(n) {
         ${stayHtml}
       </div>
       ${altRestaurantsHtml}
-      <div class="day-map-wrap">
+      <div class="day-map-wrap" aria-label="今日关键动线地图">
         <div class="day-map-head">
           <span class="map-tag">Map · 今日动线</span>
-          <span class="map-hint">点击标记看详情 · 拖动缩放</span>
+          <span class="map-hint">${mapStops.length} 个关键停靠 · 点按编号查看</span>
         </div>
         <div class="day-map" id="dayMap"></div>
+        <p class="map-note">虚线表达行程顺序，不代表实际道路或导航路线。</p>
       </div>
       <div class="day-timeline">${slotsHtml}${returnHomeHtml}</div>
     </div>`;
 
   // 渲染地图与在线天气
-  renderMap(d);
+  renderMap(d, mapStops);
   loadWeather(d.n);
 }
 
-function renderMap(d) {
+function renderMap(d, mapStops = selectMapStops(d)) {
   const mapEl = document.getElementById("dayMap");
   if (!mapEl || typeof L === "undefined") return;
 
@@ -514,62 +548,58 @@ function renderMap(d) {
   const map = L.map("dayMap", {
     scrollWheelZoom: false,
     zoomControl: true,
-    attributionControl: false
+    attributionControl: true
   }).setView([c.lat, c.lng], c.zoom);
 
-  // 使用 Carto Voyager 底图（比较柔和优雅）
-  L.tileLayer("https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}.png", {
-    subdomains: "abcd",
-    maxZoom: 20
+  // Esri World Street Map 无需暴露前端 key；保留必要署名，避免生产页面出现鉴权水印。
+  L.tileLayer("https://server.arcgisonline.com/ArcGIS/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+    maxZoom: 19,
+    attribution: "Tiles &copy; Esri"
   }).addTo(map);
 
-  const validSlots = d.slots.filter(s => s.loc && s.loc.lat && s.loc.lng);
   const latlngs = [];
-
-  validSlots.forEach((s, i) => {
-    const isMuseum = s.kind === "museum";
-    const isEvent = s.kind === "event";
+  mapStops.forEach((stop, i) => {
+    const primarySlot = stop.slots[0];
+    const isMuseum = primarySlot.kind === "museum";
+    const isEvent = primarySlot.kind === "event";
     const bg = isMuseum ? "#8a3a2a" : isEvent ? "#d97e2e" : "#3d3428";
-    // 从 slot.h 提取一个短地名（取 · 或 空格 或 - 前的部分，去除类别后缀）
-    const shortName = (s.label || s.h.split(/[·]|—|–|,/)[0]).trim().slice(0, 14);
-    // 只画小圆点，label 用 tooltip（可点击展开，鼠标悬停显示）
-    // 移动端把圆点放大到 34px，保证手指可以稳定点中
-    const pinSize = window.matchMedia("(max-width: 900px)").matches ? 34 : 28;
+    const shortName = (primarySlot.label || primarySlot.h.split(/[·]|—|–|,/)[0]).trim().slice(0, 18);
+    const pinSize = window.matchMedia("(max-width: 900px)").matches ? 36 : 32;
     const icon = L.divIcon({
       className: "custom-map-marker",
       html: `<div class="marker-pin-only" style="background:${bg}">${i + 1}</div>`,
       iconSize: [pinSize, pinSize],
       iconAnchor: [pinSize / 2, pinSize / 2]
     });
-
-    const popup = `
-      <div class="map-popup">
+    const popupStops = stop.slots.map(s => `
+      <article class="map-popup-stop">
         <div class="popup-time">${s.t}</div>
         <div class="popup-title">${s.h}</div>
-        <div class="popup-desc">${s.d.slice(0, 80)}${s.d.length > 80 ? "…" : ""}</div>
+        <div class="popup-desc">${s.d.slice(0, 110)}${s.d.length > 110 ? "…" : ""}</div>
         ${s.hop ? `<div class="popup-hop">↳ ${s.hop.via} · ${s.hop.dur}</div>` : ""}
         ${s.ticket ? `<div class="popup-ticket">🎫 ${s.ticket}</div>` : ""}
-        ${s.link ? `<a href="${s.link}" target="_blank" class="popup-link">官网 / 订票 →</a>` : ""}
-      </div>`;
+        ${s.link ? `<a href="${s.link}" target="_blank" rel="noopener" class="popup-link">官网 / 订票 →</a>` : ""}
+      </article>`).join("");
+    const popup = `<div class="map-popup">${popupStops}</div>`;
 
-    const marker = L.marker([s.loc.lat, s.loc.lng], { icon, riseOnHover: true, riseOffset: 500 })
+    const marker = L.marker([stop.loc.lat, stop.loc.lng], {
+      icon,
+      riseOnHover: true,
+      riseOffset: 500,
+      title: `${i + 1}. ${shortName}`
+    })
       .addTo(map)
-      .bindPopup(popup, { maxWidth: 260 })
+      .bindPopup(popup, { maxWidth: 300 })
       .bindTooltip(shortName, {
-        permanent: true,
-        direction: "right",
-        offset: [10, 0],
+        permanent: false,
+        direction: "top",
+        offset: [0, -18],
         className: `map-tip map-tip-${isMuseum ? "museum" : isEvent ? "event" : "base"}`
       });
 
-    // 悬停时上浮 tooltip
-    marker.on("mouseover", () => marker.getTooltip().getElement()?.classList.add("is-hover"));
-    marker.on("mouseout", () => marker.getTooltip().getElement()?.classList.remove("is-hover"));
-
-    latlngs.push([s.loc.lat, s.loc.lng]);
+    latlngs.push([stop.loc.lat, stop.loc.lng]);
   });
 
-  // 连线画路线
   if (latlngs.length > 1) {
     L.polyline(latlngs, {
       color: "#8a3a2a",
@@ -580,20 +610,18 @@ function renderMap(d) {
     }).addTo(map);
   }
 
-  // 自动 fit：只要 >= 2 个点就 fitBounds，保证所有标记落进可视区
-  if (latlngs.length > 1) {
-    map.fitBounds(latlngs, { padding: [50, 80], maxZoom: 15 });
-  } else if (latlngs.length === 1) {
-    map.setView(latlngs[0], 15);
-  }
+  const fitToStops = () => {
+    if (latlngs.length > 1) {
+      map.fitBounds(latlngs, { padding: [58, 72], maxZoom: 15 });
+    } else if (latlngs.length === 1) {
+      map.setView(latlngs[0], 15);
+    }
+  };
 
-  // 关键修复：Leaflet 在 DOM 尚未稳定时初始化会加载不全瓦片
-  // 延迟触发 invalidateSize，让 Leaflet 重新计算容器尺寸并补全瓦片
+  fitToStops();
   setTimeout(() => {
     map.invalidateSize();
-    if (latlngs.length > 1) {
-      map.fitBounds(latlngs, { padding: [50, 80], maxZoom: 15 });
-    }
+    fitToStops();
   }, 100);
   setTimeout(() => map.invalidateSize(), 400);
 
